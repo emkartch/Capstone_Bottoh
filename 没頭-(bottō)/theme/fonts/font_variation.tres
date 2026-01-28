@@ -1,8 +1,0 @@
-[gd_resource type="FontVariation" format=3 uid="uid://chpls76o1t7qo"]
-
-[ext_resource type="FontFile" uid="uid://doknopln2cg6f" path="res://theme/fonts/8-bit-operator/8bitOperatorPlus8-Regular.ttf" id="1_btsey"]
-[ext_resource type="FontFile" uid="uid://ba1sbh88npmr7" path="res://theme/fonts/Nosutaru Dot (M+)/Nosutaru-dotMPlusH-10-Regular.ttf" id="2_jrilk"]
-
-[resource]
-fallbacks = Array[Font]([ExtResource("2_jrilk")])
-base_font = ExtResource("1_btsey")

@@ -1,3 +1,136 @@
 [gd_scene format=3 uid="uid://b3p7eckxviy0"]
 
-[node name="Main" type="Node"]
+[ext_resource type="PackedScene" uid="uid://ce2yvk10bvhy5" path="res://hud/hud.tscn" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://bnndiueip2cxy" path="res://assets/BigNotePad.png" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://clrmiad5dkevj" path="res://assets/NotePage.png" id="2_1bvp3"]
+[ext_resource type="Theme" uid="uid://cp4nu80cltnic" path="res://theme/main_theme.tres" id="4_7mycd"]
+[ext_resource type="Texture2D" uid="uid://cbnhlqlr5fpw0" path="res://assets/Arrow.png" id="4_lquwl"]
+
+[node name="Main" type="Node" unique_id=1584147130]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1532248563]
+layer = -30
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=628221960]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8708281, 0.85806966, 0.6891579, 0.8784314)
+
+[node name="HUD" parent="." unique_id=179951230 instance=ExtResource("1_ig7tw")]
+
+[node name="NotesContainer" type="HBoxContainer" parent="." unique_id=214706214]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -898.0
+offset_top = -448.0
+offset_right = 898.0
+offset_bottom = 448.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Notepage" type="TextureRect" parent="NotesContainer" unique_id=1351321497]
+layout_mode = 2
+texture = ExtResource("2_1bvp3")
+
+[node name="QContainer" type="PanelContainer" parent="NotesContainer/Notepage" unique_id=1102672597]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -328.0
+offset_top = 110.0
+offset_right = 332.0
+offset_bottom = 830.0
+grow_horizontal = 2
+theme = ExtResource("4_7mycd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NotesContainer/Notepage/QContainer" unique_id=637540765]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="NotesContainer/Notepage/QContainer/VBoxContainer" unique_id=1904260829]
+visible = false
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+text = "Description"
+horizontal_alignment = 1
+autowrap_mode = 1
+
+[node name="Looks" type="Label" parent="NotesContainer/Notepage/QContainer/VBoxContainer" unique_id=71631382]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "背が高いですね。"
+autowrap_mode = 1
+
+[node name="Hair" type="Label" parent="NotesContainer/Notepage/QContainer/VBoxContainer" unique_id=699156828]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "髪は短いですね。"
+autowrap_mode = 1
+
+[node name="Clothes" type="Label" parent="NotesContainer/Notepage/QContainer/VBoxContainer" unique_id=1320000319]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "Put on... 青いTシャツ "
+autowrap_mode = 1
+
+[node name="Label" type="Label" parent="NotesContainer/Notepage/QContainer/VBoxContainer" unique_id=1995163215]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "and 野球帽。"
+autowrap_mode = 1
+
+[node name="Notepad" type="TextureRect" parent="NotesContainer" unique_id=732673504]
+layout_mode = 2
+texture = ExtResource("2_0xm2m")
+
+[node name="NContainer" type="PanelContainer" parent="NotesContainer/Notepad" unique_id=1778317565]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("4_7mycd")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NotesContainer/Notepad/NContainer" unique_id=2073525077]
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="NotesContainer/Notepad/NContainer/HBoxContainer" unique_id=356477493]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="NotesContainer/Notepad/NContainer/HBoxContainer/VBoxContainer3" unique_id=1794459325]
+layout_mode = 2
+text = "hi"
+
+[node name="Label" type="Label" parent="NotesContainer/Notepad/NContainer/HBoxContainer/VBoxContainer3" unique_id=1138938463]
+layout_mode = 2
+text = "hello"
+
+[node name="Spacer" type="Control" parent="NotesContainer/Notepad/NContainer/HBoxContainer" unique_id=271721088]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="NotesContainer/Notepad/NContainer/HBoxContainer" unique_id=660104857]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="NotesContainer/Notepad/NContainer/HBoxContainer/VBoxContainer2" unique_id=1666997710]
+layout_mode = 2
+text = "how are you"
+
+[node name="Label" type="Label" parent="NotesContainer/Notepad/NContainer/HBoxContainer/VBoxContainer2" unique_id=2108356381]
+layout_mode = 2
+text = "heyyy"
+
+[node name="Notepad Arrow (Right)" type="TextureButton" parent="." unique_id=1921228062]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("4_lquwl")

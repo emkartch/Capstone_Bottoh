@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://b7cq4ba2a0h3p"
-path="res://.godot/imported/8bitOperatorPlus-Regular.ttf-dab25eeb37d05a95a99ec46b88d0ef0f.fontdata"
+uid="uid://ba1sbh88npmr7"
+path="res://.godot/imported/Nosutaru-dotMPlusH-10-Regular.ttf-6a0851d698e5b0aa0b1ad721c6cfcd26.fontdata"
 
 [deps]
 
-source_file="res://theme/fonts/8-bit-operator/8bitOperatorPlus-Regular.ttf"
-dest_files=["res://.godot/imported/8bitOperatorPlus-Regular.ttf-dab25eeb37d05a95a99ec46b88d0ef0f.fontdata"]
+source_file="res://fonts/Nosutaru Dot (M+)/Nosutaru-dotMPlusH-10-Regular.ttf"
+dest_files=["res://.godot/imported/Nosutaru-dotMPlusH-10-Regular.ttf-6a0851d698e5b0aa0b1ad721c6cfcd26.fontdata"]
 
 [params]
 

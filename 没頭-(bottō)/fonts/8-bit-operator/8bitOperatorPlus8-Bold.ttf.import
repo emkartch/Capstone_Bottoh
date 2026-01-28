@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://pgnjyte703i5"
-path="res://.godot/imported/8bitOperatorPlusSC-Regular.ttf-185933f87d3a6d1cb8a38b09997b51bd.fontdata"
+uid="uid://daykksb3aonv1"
+path="res://.godot/imported/8bitOperatorPlus8-Bold.ttf-f402e009ca67de76eb6fbd4c2fe13a15.fontdata"
 
 [deps]
 
-source_file="res://theme/fonts/8-bit-operator/8bitOperatorPlusSC-Regular.ttf"
-dest_files=["res://.godot/imported/8bitOperatorPlusSC-Regular.ttf-185933f87d3a6d1cb8a38b09997b51bd.fontdata"]
+source_file="res://fonts/8-bit-operator/8bitOperatorPlus8-Bold.ttf"
+dest_files=["res://.godot/imported/8bitOperatorPlus8-Bold.ttf-f402e009ca67de76eb6fbd4c2fe13a15.fontdata"]
 
 [params]
 
