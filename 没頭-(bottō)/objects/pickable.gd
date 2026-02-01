@@ -17,26 +17,6 @@ func _process(_delta):
 	if is_hover:
 		if Input.is_action_just_pressed("click"):
 			emit_signal("clicked", self)
-			#if is_select:
-				##label.remove_theme_color_override("font_color")
-				##label.add_theme_color_override("font_color", Color.DIM_GRAY)
-				#select_line.visible = false
-				#is_select = false
-			#elif not is_select:
-				##label.add_theme_color_override("font_color", Color.AQUA)
-				##var tween = create_tween()
-				##tween.tween_property(select_line, "points[1][0]", text_size[0], 1.0)
-				#
-				#var selected = get_tree().get_nodes_in_group("selected")
-				#if selected.size > 0:
-					#selected[0].select_line.visible = false
-					#selected[0].is_select = false
-					#selected[0].remove_from_group("selected")
-				#
-				#add_to_group("selected")
-				#
-				#select_line.visible = true
-				#is_select = true
 
 func update_collision_shape():
 	# Ensure the label's text is updated before getting the size

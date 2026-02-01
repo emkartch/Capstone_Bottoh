@@ -159,6 +159,7 @@ size_flags_horizontal = 3
 [node name="Label" parent="NotesContainer/Notepad/Colors/Red JPN" index="1" unique_id=877096705]
 theme_override_font_sizes/font_size = 60
 text = "赤"
+horizontal_alignment = 1
 
 [node name="Red" type="Label" parent="NotesContainer/Notepad/Colors" unique_id=973651807]
 custom_minimum_size = Vector2(100, 0)
@@ -166,6 +167,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 60
 text = "Red"
+horizontal_alignment = 1
 autowrap_mode = 1
 
 [node name="Blue JPN" parent="NotesContainer/Notepad/Colors" unique_id=728258094 groups=["answer"] instance=ExtResource("4_272bh")]
@@ -175,6 +177,7 @@ size_flags_horizontal = 3
 [node name="Label" parent="NotesContainer/Notepad/Colors/Blue JPN" index="1" unique_id=877096705]
 theme_override_font_sizes/font_size = 60
 text = "青"
+horizontal_alignment = 1
 
 [node name="Blue" type="Label" parent="NotesContainer/Notepad/Colors" unique_id=89291622]
 custom_minimum_size = Vector2(100, 0)
@@ -182,6 +185,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 60
 text = "Blue"
+horizontal_alignment = 1
 autowrap_mode = 1
 
 [node name="R Notepad Arrow" type="TextureButton" parent="NotesContainer/Notepad" unique_id=1921228062]
