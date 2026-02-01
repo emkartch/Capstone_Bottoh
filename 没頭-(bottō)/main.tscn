@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bnndiueip2cxy" path="res://assets/BigNotePad.png" id="2_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://clrmiad5dkevj" path="res://assets/NotePage.png" id="2_1bvp3"]
 [ext_resource type="Theme" uid="uid://cp4nu80cltnic" path="res://theme/main_theme.tres" id="4_7mycd"]
+[ext_resource type="PackedScene" uid="uid://ruu4aha7prj4" path="res://objects/pickable.tscn" id="4_272bh"]
 [ext_resource type="Texture2D" uid="uid://cbnhlqlr5fpw0" path="res://assets/Arrow.png" id="4_lquwl"]
 
 [node name="Main" type="Node" unique_id=1584147130]
@@ -38,57 +39,90 @@ grow_vertical = 2
 layout_mode = 2
 texture = ExtResource("2_1bvp3")
 
-[node name="QContainer" type="PanelContainer" parent="NotesContainer/Notepage" unique_id=1102672597]
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -328.0
-offset_top = 110.0
-offset_right = 332.0
+[node name="Qcontainer" type="VBoxContainer" parent="NotesContainer/Notepage" unique_id=637540765]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 120.0
+offset_right = 780.0
 offset_bottom = 830.0
-grow_horizontal = 2
 theme = ExtResource("4_7mycd")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="NotesContainer/Notepage/QContainer" unique_id=637540765]
+[node name="Looks" type="HBoxContainer" parent="NotesContainer/Notepage/Qcontainer" unique_id=1823773648]
+layout_mode = 2
+theme = ExtResource("4_7mycd")
+theme_override_constants/separation = 0
+
+[node name="Dash" type="Label" parent="NotesContainer/Notepage/Qcontainer/Looks" unique_id=1720613816]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "- "
+
+[node name="Looks JPN2" parent="NotesContainer/Notepage/Qcontainer/Looks" unique_id=208457515 instance=ExtResource("4_272bh")]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="NotesContainer/Notepage/QContainer/VBoxContainer" unique_id=1904260829]
-visible = false
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 70
-text = "Description"
-horizontal_alignment = 1
-autowrap_mode = 1
-
-[node name="Looks" type="Label" parent="NotesContainer/Notepage/QContainer/VBoxContainer" unique_id=71631382]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 55
+[node name="Label" parent="NotesContainer/Notepage/Qcontainer/Looks/Looks JPN2" index="1" unique_id=877096705]
+offset_right = 240.0
+theme_override_font_sizes/font_size = 60
 text = "背が高い"
-autowrap_mode = 1
 
-[node name="Hair" type="Label" parent="NotesContainer/Notepage/QContainer/VBoxContainer" unique_id=699156828]
+[node name="Looks ENG" type="Label" parent="NotesContainer/Notepage/Qcontainer" unique_id=1206375763]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 55
-text = "髪は短い"
+text = "   Tall"
 autowrap_mode = 1
 
-[node name="Clothes" type="Label" parent="NotesContainer/Notepage/QContainer/VBoxContainer" unique_id=1320000319]
+[node name="Hair" type="Label" parent="NotesContainer/Notepage/Qcontainer" unique_id=699156828]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "- 髪は短い"
+autowrap_mode = 1
+
+[node name="Hair ENG" type="Label" parent="NotesContainer/Notepage/Qcontainer" unique_id=342407485]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 55
-text = "青いTシャツ "
+text = "   Short hair"
 autowrap_mode = 1
 
-[node name="Label" type="Label" parent="NotesContainer/Notepage/QContainer/VBoxContainer" unique_id=1995163215]
+[node name="Clothes" type="Label" parent="NotesContainer/Notepage/Qcontainer" unique_id=1320000319]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "- 青いTシャツ "
+autowrap_mode = 1
+
+[node name="Clothes ENG" type="HBoxContainer" parent="NotesContainer/Notepage/Qcontainer" unique_id=2118542091]
+layout_mode = 2
+
+[node name="Clothes Color ENG" type="Label" parent="NotesContainer/Notepage/Qcontainer/Clothes ENG" unique_id=1030930870]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 55
-text = "野球帽"
+text = "   Blue"
+
+[node name="Clothes Type ENG" type="Label" parent="NotesContainer/Notepage/Qcontainer/Clothes ENG" unique_id=543751626]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 55
+text = "T-shirt"
+autowrap_mode = 1
+
+[node name="Hat" type="Label" parent="NotesContainer/Notepage/Qcontainer" unique_id=1995163215]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "- 野球帽"
+autowrap_mode = 1
+
+[node name="Hat ENG" type="Label" parent="NotesContainer/Notepage/Qcontainer" unique_id=1527166313]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "   Baseball cap"
 autowrap_mode = 1
 
 [node name="Notepad" type="TextureRect" parent="NotesContainer" unique_id=732673504]
@@ -96,41 +130,103 @@ layout_mode = 2
 texture = ExtResource("2_0xm2m")
 
 [node name="NContainer" type="PanelContainer" parent="NotesContainer/Notepad" unique_id=1778317565]
+visible = false
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 120.0
+offset_top = 120.0
+offset_right = 780.0
+offset_bottom = 868.0
 theme = ExtResource("4_7mycd")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="NotesContainer/Notepad/NContainer" unique_id=2073525077]
+[node name="Colors" type="HBoxContainer" parent="NotesContainer/Notepad/NContainer" unique_id=2073525077]
+visible = false
 layout_mode = 2
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="NotesContainer/Notepad/NContainer/HBoxContainer" unique_id=356477493]
+[node name="VBoxContainer3" type="VBoxContainer" parent="NotesContainer/Notepad/NContainer/Colors" unique_id=356477493]
 layout_mode = 2
+size_flags_horizontal = 3
 
-[node name="Label2" type="Label" parent="NotesContainer/Notepad/NContainer/HBoxContainer/VBoxContainer3" unique_id=1794459325]
+[node name="Label2" type="Label" parent="NotesContainer/Notepad/NContainer/Colors/VBoxContainer3" unique_id=1794459325]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "hi"
+autowrap_mode = 1
 
-[node name="Label" type="Label" parent="NotesContainer/Notepad/NContainer/HBoxContainer/VBoxContainer3" unique_id=1138938463]
+[node name="Label" type="Label" parent="NotesContainer/Notepad/NContainer/Colors/VBoxContainer3" unique_id=1138938463]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "hello"
+autowrap_mode = 1
 
-[node name="Spacer" type="Control" parent="NotesContainer/Notepad/NContainer/HBoxContainer" unique_id=271721088]
+[node name="VBoxContainer2" type="VBoxContainer" parent="NotesContainer/Notepad/NContainer/Colors" unique_id=660104857]
 layout_mode = 2
+size_flags_horizontal = 3
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="NotesContainer/Notepad/NContainer/HBoxContainer" unique_id=660104857]
-layout_mode = 2
-
-[node name="Label2" type="Label" parent="NotesContainer/Notepad/NContainer/HBoxContainer/VBoxContainer2" unique_id=1666997710]
+[node name="Label2" type="Label" parent="NotesContainer/Notepad/NContainer/Colors/VBoxContainer2" unique_id=1666997710]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "how are you"
+autowrap_mode = 1
 
-[node name="Label" type="Label" parent="NotesContainer/Notepad/NContainer/HBoxContainer/VBoxContainer2" unique_id=2108356381]
+[node name="Label" type="Label" parent="NotesContainer/Notepad/NContainer/Colors/VBoxContainer2" unique_id=2108356381]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "heyyy"
+autowrap_mode = 1
 
-[node name="Notepad Arrow (Right)" type="TextureButton" parent="." unique_id=1921228062]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="R Notepad Arrow" type="TextureButton" parent="NotesContainer/Notepad" unique_id=1921228062]
+layout_mode = 0
+offset_left = 855.0
+offset_top = 448.0
+offset_right = 935.0
+offset_bottom = 528.0
 texture_normal = ExtResource("4_lquwl")
+
+[node name="L Notepad Arrow" type="TextureButton" parent="NotesContainer/Notepad" unique_id=1168084062]
+layout_mode = 0
+offset_left = -41.0
+offset_top = 448.0
+offset_right = 39.0
+offset_bottom = 528.0
+texture_normal = ExtResource("4_lquwl")
+flip_h = true
+
+[node name="Colors" type="GridContainer" parent="NotesContainer/Notepad" unique_id=278417901]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 120.0
+offset_right = 780.0
+offset_bottom = 868.0
+theme = ExtResource("4_7mycd")
+columns = 2
+
+[node name="Label4" type="Label" parent="NotesContainer/Notepad/Colors" unique_id=973651807]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "kuasebHHH"
+autowrap_mode = 1
+
+[node name="Label2" type="Label" parent="NotesContainer/Notepad/Colors" unique_id=89291622]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "hi"
+autowrap_mode = 1
+
+[node name="Label" type="Label" parent="NotesContainer/Notepad/Colors" unique_id=1813059457]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "hello"
+autowrap_mode = 1
+
+[node name="Label3" type="Label" parent="NotesContainer/Notepad/Colors" unique_id=1228670147]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "kuasebHHH"
+autowrap_mode = 1
+
+[editable path="NotesContainer/Notepage/Qcontainer/Looks/Looks JPN2"]
