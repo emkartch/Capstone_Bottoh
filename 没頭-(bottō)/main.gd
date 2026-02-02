@@ -11,6 +11,7 @@ extends Node
 
 @onready var r_arrow = get_node("NotesContainer/Notepad/R Notepad Arrow")
 @onready var l_arrow = get_node("NotesContainer/Notepad/L Notepad Arrow")
+@onready var submit_button = get_node("NotesContainer/Notepad/Submit")
 
 var group_type = null
 var select_group_type = null
@@ -21,7 +22,13 @@ func _ready():
 	
 	
 func _process(_delta):
-	pass
+	
+	var selected = get_tree().get_nodes_in_group("selected")
+	
+	if selected.size() == 2:
+		submit_button.visible = true
+	else:
+		submit_button.visible = false
 
 func _on_click(clicked_node):
 	
