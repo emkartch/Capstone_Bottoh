@@ -34,6 +34,11 @@ answer=""
 question=""
 selected=""
 pickable=""
+correct_looks=""
+correct_color_clothes=""
+correct_hair=""
+correct_type_clothes=""
+correct_hat=""
 
 [gui]
 

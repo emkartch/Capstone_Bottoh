@@ -1,12 +1,20 @@
 [gd_resource type="Theme" format=3 uid="uid://cp4nu80cltnic"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_afw5t"]
+bg_color = Color(0.39308554, 0.39308554, 0.39308533, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5fetd"]
 bg_color = Color(0.7176471, 0.7176471, 0.7176471, 0.7058824)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1knni"]
+bg_color = Color(0.24658787, 0.24658793, 0.24658778, 1)
 
 [resource]
 Button/colors/font_color = Color(0, 0, 0, 1)
 Button/font_sizes/font_size = 70
+Button/styles/hover = SubResource("StyleBoxFlat_afw5t")
 Button/styles/normal = SubResource("StyleBoxFlat_5fetd")
+Button/styles/pressed = SubResource("StyleBoxFlat_1knni")
 GridContainer/constants/v_separation = 30
 HBoxContainer/constants/separation = 35
 Label/colors/font_color = Color(0, 0, 0, 1)

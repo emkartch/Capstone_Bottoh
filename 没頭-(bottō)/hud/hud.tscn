@@ -1,3 +1,127 @@
 [gd_scene format=3 uid="uid://ce2yvk10bvhy5"]
 
+[ext_resource type="Script" uid="uid://csb4ei4d65gdf" path="res://hud/hud.gd" id="1_6ca3a"]
+[ext_resource type="Theme" uid="uid://cp4nu80cltnic" path="res://theme/main_theme.tres" id="2_2gk58"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_318vg"]
+bg_color = Color(0.92535293, 0.9253528, 0.9253529, 1)
+
 [node name="HUD" type="CanvasLayer" unique_id=179951230]
+script = ExtResource("1_6ca3a")
+
+[node name="StartText" type="CanvasLayer" parent="." unique_id=939995534]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="StartText" unique_id=307156639]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.47058824)
+
+[node name="Control" type="Control" parent="StartText" unique_id=1850258969]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_2gk58")
+
+[node name="PanelContainer" type="PanelContainer" parent="StartText/Control" unique_id=792033018]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -365.0
+offset_right = 500.0
+offset_bottom = 365.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_318vg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StartText/Control/PanelContainer" unique_id=201416702]
+self_modulate = Color(0.17254902, 1, 1, 1)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="StartText/Control/PanelContainer/VBoxContainer" unique_id=1731753321]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Using your notepad (on the right) match the correct meaning of the Japanese characters to the characters on the left. To do this, click on some Japanese on the right, click the matching Japanese on the left, then press submit."
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="StartText/Control/PanelContainer/VBoxContainer" unique_id=1581312613]
+layout_mode = 2
+text = "OK"
+
+[node name="EndText" type="CanvasLayer" parent="." unique_id=1492261261]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="EndText" unique_id=121955368]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.47058824)
+
+[node name="Control" type="Control" parent="EndText" unique_id=699802820]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_2gk58")
+
+[node name="PanelContainer" type="PanelContainer" parent="EndText/Control" unique_id=323686415]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -33.5
+offset_right = 250.0
+offset_bottom = 33.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_318vg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EndText/Control/PanelContainer" unique_id=1804401642]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="EndText/Control/PanelContainer/VBoxContainer" unique_id=990637736]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "You did it!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="StartText/Control/PanelContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
