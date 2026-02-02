@@ -1,6 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://cp4nu80cltnic"]
 
 [resource]
+GridContainer/constants/v_separation = 30
 HBoxContainer/constants/separation = 35
 Label/colors/font_color = Color(0, 0, 0, 1)
 Label/font_sizes/font_size = 70

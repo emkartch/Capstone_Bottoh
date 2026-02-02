@@ -31,15 +31,13 @@ func update_collision_shape():
 	# Assign the new shape to the CollisionShape2D node
 	collision_shape.shape = shape
 	
-	
 	area_2d.position.x = text_size[0] / 2
 	area_2d.position.y = text_size[1] / 2
+	#
+	#print(self.size.y)
 	
 	select_line.position.y = text_size[1]
 	select_line.points[1][0] = text_size[0]
-	
-	#var sl_x_point_1 = select_line.points[0][0]
-	#var sl_x_point_2 = select_line.points[1][0]
 	
 	# Optional: adjust label position if needed (e.g., center it relative to the collision shape's origin)
 	# label.position = -text_size / 2.0 # if the parent's origin is the center

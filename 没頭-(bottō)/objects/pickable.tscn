@@ -6,9 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_akkf5"]
 size = Vector2(18, 18)
 
-[node name="Pickable" type="Control" unique_id=1933757307 groups=["pickable"]]
-layout_mode = 3
-anchors_preset = 0
+[node name="Pickable" type="MarginContainer" unique_id=632896118 groups=["pickable"]]
+offset_right = 164.0
+offset_bottom = 78.0
 mouse_filter = 2
 script = ExtResource("1_0os3d")
 
@@ -19,9 +19,8 @@ position = Vector2(82, 39)
 shape = SubResource("RectangleShape2D_akkf5")
 
 [node name="Label" type="Label" parent="." unique_id=877096705]
-layout_mode = 0
-offset_right = 164.0
-offset_bottom = 78.0
+layout_mode = 2
+size_flags_vertical = 0
 theme = ExtResource("2_1spf1")
 text = "Text"
 
