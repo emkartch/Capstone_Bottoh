@@ -46,9 +46,11 @@ func update_collision_shape():
 func _on_area_2d_mouse_entered() -> void:
 	is_hover = true
 	#if not is_select:
-	label.add_theme_color_override("font_color", Color.DIM_GRAY)
+	label.add_theme_color_override("font_color", Color.BLACK)
+	label.add_theme_color_override("font_shadow_color", Color.DIM_GRAY)
 
 func _on_area_2d_mouse_exited() -> void:
 	is_hover = false
 	#if not is_select:
 	label.remove_theme_color_override("font_color")
+	label.remove_theme_color_override("font_shadow_color")

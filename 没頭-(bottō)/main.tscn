@@ -399,7 +399,7 @@ size_flags_horizontal = 3
 
 [node name="Label" parent="NotesContainer/Notepad/Clothes/Sweater JPN" index="1" unique_id=877096705]
 theme_override_font_sizes/font_size = 60
-text = "短い"
+text = "セーター"
 
 [node name="Sweater" type="Label" parent="NotesContainer/Notepad/Clothes" unique_id=174215429]
 custom_minimum_size = Vector2(100, 0)
@@ -415,7 +415,7 @@ size_flags_horizontal = 3
 
 [node name="Label" parent="NotesContainer/Notepad/Clothes/Jacket JPN" index="1" unique_id=877096705]
 theme_override_font_sizes/font_size = 60
-text = "背が高い"
+text = "ジャケット"
 
 [node name="Jacket" type="Label" parent="NotesContainer/Notepad/Clothes" unique_id=628649750]
 custom_minimum_size = Vector2(100, 0)
