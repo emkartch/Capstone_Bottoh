@@ -173,103 +173,144 @@ offset_top = 120.0
 offset_right = 780.0
 offset_bottom = 868.0
 theme = ExtResource("2_m440d")
+theme_override_constants/v_separation = 15
 columns = 2
 
-[node name="Red JPN" parent="NotesContainer/Notepad/Colors" unique_id=1717782050 groups=["answer"] instance=ExtResource("3_i8r2h")]
+[node name="Red JPN" type="Label" parent="NotesContainer/Notepad/Colors" unique_id=1925129939]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="Label" parent="NotesContainer/Notepad/Colors/Red JPN" index="1" unique_id=877096705]
 theme_override_font_sizes/font_size = 60
 text = "赤"
+autowrap_mode = 1
 
-[node name="Red" type="Label" parent="NotesContainer/Notepad/Colors" unique_id=1925129939]
-custom_minimum_size = Vector2(100, 0)
+[node name="Red" parent="NotesContainer/Notepad/Colors" unique_id=1717782050 groups=["answer"] instance=ExtResource("3_i8r2h")]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="Label" parent="NotesContainer/Notepad/Colors/Red" index="1" unique_id=877096705]
 theme_override_font_sizes/font_size = 60
 text = "Red"
-autowrap_mode = 1
 
-[node name="Orange JPN" parent="NotesContainer/Notepad/Colors" unique_id=1464781747 groups=["answer"] instance=ExtResource("3_i8r2h")]
+[node name="HSeparator2" type="HSeparator" parent="NotesContainer/Notepad/Colors" unique_id=1037328967]
+layout_mode = 2
+theme = ExtResource("2_m440d")
+
+[node name="HSeparator" type="HSeparator" parent="NotesContainer/Notepad/Colors" unique_id=623705905]
+layout_mode = 2
+theme = ExtResource("2_m440d")
+
+[node name="Orange JPN" type="Label" parent="NotesContainer/Notepad/Colors" unique_id=1013283888]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="Label" parent="NotesContainer/Notepad/Colors/Orange JPN" index="1" unique_id=877096705]
 theme_override_font_sizes/font_size = 60
 text = "オレンジ"
+autowrap_mode = 1
 
-[node name="Orange" type="Label" parent="NotesContainer/Notepad/Colors" unique_id=1013283888]
-custom_minimum_size = Vector2(100, 0)
+[node name="Orange" parent="NotesContainer/Notepad/Colors" unique_id=1464781747 groups=["answer"] instance=ExtResource("3_i8r2h")]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="Label" parent="NotesContainer/Notepad/Colors/Orange" index="1" unique_id=877096705]
 theme_override_font_sizes/font_size = 60
 text = "Orange"
-autowrap_mode = 1
 
-[node name="Yellow JPN" parent="NotesContainer/Notepad/Colors" unique_id=543358844 groups=["answer"] instance=ExtResource("3_i8r2h")]
+[node name="HSeparator3" type="HSeparator" parent="NotesContainer/Notepad/Colors" unique_id=1564494618]
+layout_mode = 2
+theme = ExtResource("2_m440d")
+
+[node name="HSeparator4" type="HSeparator" parent="NotesContainer/Notepad/Colors" unique_id=275486503]
+layout_mode = 2
+theme = ExtResource("2_m440d")
+
+[node name="Yellow JPN" type="Label" parent="NotesContainer/Notepad/Colors" unique_id=768024809]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="Label" parent="NotesContainer/Notepad/Colors/Yellow JPN" index="1" unique_id=877096705]
 theme_override_font_sizes/font_size = 60
 text = "黄色"
+autowrap_mode = 1
 
-[node name="Yellow" type="Label" parent="NotesContainer/Notepad/Colors" unique_id=768024809]
-custom_minimum_size = Vector2(100, 0)
+[node name="Yellow" parent="NotesContainer/Notepad/Colors" unique_id=543358844 groups=["answer"] instance=ExtResource("3_i8r2h")]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="Label" parent="NotesContainer/Notepad/Colors/Yellow" index="1" unique_id=877096705]
 theme_override_font_sizes/font_size = 60
 text = "Yellow"
-autowrap_mode = 1
 
-[node name="Green JPN" parent="NotesContainer/Notepad/Colors" unique_id=917381465 groups=["answer"] instance=ExtResource("3_i8r2h")]
+[node name="HSeparator5" type="HSeparator" parent="NotesContainer/Notepad/Colors" unique_id=1675443715]
+layout_mode = 2
+theme = ExtResource("2_m440d")
+
+[node name="HSeparator6" type="HSeparator" parent="NotesContainer/Notepad/Colors" unique_id=904457080]
+layout_mode = 2
+theme = ExtResource("2_m440d")
+
+[node name="Green JPN" type="Label" parent="NotesContainer/Notepad/Colors" unique_id=1094680068]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="Label" parent="NotesContainer/Notepad/Colors/Green JPN" index="1" unique_id=877096705]
 theme_override_font_sizes/font_size = 60
 text = "緑"
+autowrap_mode = 1
 
-[node name="Green" type="Label" parent="NotesContainer/Notepad/Colors" unique_id=1094680068]
-custom_minimum_size = Vector2(100, 0)
+[node name="Green" parent="NotesContainer/Notepad/Colors" unique_id=917381465 groups=["answer"] instance=ExtResource("3_i8r2h")]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="Label" parent="NotesContainer/Notepad/Colors/Green" index="1" unique_id=877096705]
 theme_override_font_sizes/font_size = 60
 text = "Green"
-autowrap_mode = 1
 
-[node name="Blue JPN" parent="NotesContainer/Notepad/Colors" unique_id=1888988331 groups=["answer", "correct_color_clothes"] instance=ExtResource("3_i8r2h")]
+[node name="HSeparator7" type="HSeparator" parent="NotesContainer/Notepad/Colors" unique_id=1108467083]
+layout_mode = 2
+theme = ExtResource("2_m440d")
+
+[node name="HSeparator8" type="HSeparator" parent="NotesContainer/Notepad/Colors" unique_id=333825929]
+layout_mode = 2
+theme = ExtResource("2_m440d")
+
+[node name="Blue JPN" type="Label" parent="NotesContainer/Notepad/Colors" unique_id=1495191263]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="Label" parent="NotesContainer/Notepad/Colors/Blue JPN" index="1" unique_id=877096705]
 theme_override_font_sizes/font_size = 60
 text = "青"
+autowrap_mode = 1
 
-[node name="Blue" type="Label" parent="NotesContainer/Notepad/Colors" unique_id=1495191263]
-custom_minimum_size = Vector2(100, 0)
+[node name="Blue" parent="NotesContainer/Notepad/Colors" unique_id=1888988331 groups=["answer", "correct_color_clothes"] instance=ExtResource("3_i8r2h")]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="Label" parent="NotesContainer/Notepad/Colors/Blue" index="1" unique_id=877096705]
 theme_override_font_sizes/font_size = 60
 text = "Blue"
-autowrap_mode = 1
 
-[node name="Purple JPN" parent="NotesContainer/Notepad/Colors" unique_id=1595989127 groups=["answer"] instance=ExtResource("3_i8r2h")]
+[node name="HSeparator9" type="HSeparator" parent="NotesContainer/Notepad/Colors" unique_id=1517754668]
 layout_mode = 2
-size_flags_horizontal = 3
+theme = ExtResource("2_m440d")
 
-[node name="Label" parent="NotesContainer/Notepad/Colors/Purple JPN" index="1" unique_id=877096705]
-theme_override_font_sizes/font_size = 60
-text = "紫"
+[node name="HSeparator10" type="HSeparator" parent="NotesContainer/Notepad/Colors" unique_id=433329893]
+layout_mode = 2
+theme = ExtResource("2_m440d")
 
-[node name="Purple" type="Label" parent="NotesContainer/Notepad/Colors" unique_id=668711334]
+[node name="Purple JPN" type="Label" parent="NotesContainer/Notepad/Colors" unique_id=668711334]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 60
-text = "Purple"
+text = "紫"
 autowrap_mode = 1
+
+[node name="Purple" parent="NotesContainer/Notepad/Colors" unique_id=1595989127 groups=["answer"] instance=ExtResource("3_i8r2h")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" parent="NotesContainer/Notepad/Colors/Purple" index="1" unique_id=877096705]
+theme_override_font_sizes/font_size = 60
+text = "Purple"
 
 [node name="Apperance" type="GridContainer" parent="NotesContainer/Notepad" unique_id=2038334354]
 visible = false
@@ -279,71 +320,101 @@ offset_top = 120.0
 offset_right = 780.0
 offset_bottom = 868.0
 theme = ExtResource("2_m440d")
+theme_override_constants/v_separation = 15
 columns = 2
 
-[node name="Long JPN" parent="NotesContainer/Notepad/Apperance" unique_id=1916724480 groups=["answer"] instance=ExtResource("3_i8r2h")]
+[node name="Long Hair JPN" type="Label" parent="NotesContainer/Notepad/Apperance" unique_id=953167134]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="Label" parent="NotesContainer/Notepad/Apperance/Long JPN" index="1" unique_id=877096705]
 theme_override_font_sizes/font_size = 60
 text = "髪は長い"
+autowrap_mode = 2
 
-[node name="Long Hair" type="Label" parent="NotesContainer/Notepad/Apperance" unique_id=953167134]
-custom_minimum_size = Vector2(100, 0)
+[node name="Long Hair" parent="NotesContainer/Notepad/Apperance" unique_id=1916724480 groups=["answer"] instance=ExtResource("3_i8r2h")]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="Label" parent="NotesContainer/Notepad/Apperance/Long Hair" index="1" unique_id=877096705]
+custom_minimum_size = Vector2(100, 0)
 theme_override_font_sizes/font_size = 60
 text = "Long Hair"
-autowrap_mode = 2
 
-[node name="Short Hair JPN" parent="NotesContainer/Notepad/Apperance" unique_id=1571690551 groups=["answer", "correct_hair"] instance=ExtResource("3_i8r2h")]
+[node name="HSeparator3" type="HSeparator" parent="NotesContainer/Notepad/Apperance" unique_id=807784578]
+layout_mode = 2
+theme = ExtResource("2_m440d")
+
+[node name="HSeparator4" type="HSeparator" parent="NotesContainer/Notepad/Apperance" unique_id=404231739]
+layout_mode = 2
+theme = ExtResource("2_m440d")
+
+[node name="Short Hair JPN" type="Label" parent="NotesContainer/Notepad/Apperance" unique_id=2052540355]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="Label" parent="NotesContainer/Notepad/Apperance/Short Hair JPN" index="1" unique_id=877096705]
 theme_override_font_sizes/font_size = 60
 text = "髪は短い"
+autowrap_mode = 2
 
-[node name="Short Hair" type="Label" parent="NotesContainer/Notepad/Apperance" unique_id=2052540355]
+[node name="Short Hair" parent="NotesContainer/Notepad/Apperance" unique_id=1571690551 groups=["answer", "correct_hair"] instance=ExtResource("3_i8r2h")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" parent="NotesContainer/Notepad/Apperance/Short Hair" index="1" unique_id=877096705]
+custom_minimum_size = Vector2(100, 0)
+theme_override_font_sizes/font_size = 60
+text = "Short
+Hair"
+
+[node name="HSeparator5" type="HSeparator" parent="NotesContainer/Notepad/Apperance" unique_id=422461467]
+layout_mode = 2
+theme = ExtResource("2_m440d")
+
+[node name="HSeparator6" type="HSeparator" parent="NotesContainer/Notepad/Apperance" unique_id=1375390410]
+layout_mode = 2
+theme = ExtResource("2_m440d")
+
+[node name="Tall JPN" type="Label" parent="NotesContainer/Notepad/Apperance" unique_id=130848927]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 60
-text = "Short Hair"
-autowrap_mode = 2
-
-[node name="Tall JPN" parent="NotesContainer/Notepad/Apperance" unique_id=42146326 groups=["answer", "correct_looks"] instance=ExtResource("3_i8r2h")]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" parent="NotesContainer/Notepad/Apperance/Tall JPN" index="1" unique_id=877096705]
 theme_override_font_sizes/font_size = 60
 text = "背が高い"
-
-[node name="Tall" type="Label" parent="NotesContainer/Notepad/Apperance" unique_id=130848927]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 60
-text = "Tall"
 autowrap_mode = 1
 
-[node name="Short (Stature) JPN" parent="NotesContainer/Notepad/Apperance" unique_id=1783282053 groups=["answer"] instance=ExtResource("3_i8r2h")]
+[node name="Tall" parent="NotesContainer/Notepad/Apperance" unique_id=42146326 groups=["answer", "correct_looks"] instance=ExtResource("3_i8r2h")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" parent="NotesContainer/Notepad/Apperance/Short (Stature) JPN" index="1" unique_id=877096705]
+[node name="Label" parent="NotesContainer/Notepad/Apperance/Tall" index="1" unique_id=877096705]
 theme_override_font_sizes/font_size = 60
-text = "背が低い"
+text = "Tall"
 
-[node name="Short (Stature)" type="Label" parent="NotesContainer/Notepad/Apperance" unique_id=335364478]
+[node name="HSeparator7" type="HSeparator" parent="NotesContainer/Notepad/Apperance" unique_id=392281060]
+layout_mode = 2
+theme = ExtResource("2_m440d")
+
+[node name="HSeparator8" type="HSeparator" parent="NotesContainer/Notepad/Apperance" unique_id=689442533]
+layout_mode = 2
+theme = ExtResource("2_m440d")
+
+[node name="Short (Stature) JPN" type="Label" parent="NotesContainer/Notepad/Apperance" unique_id=335364478]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 60
-text = "Short (Stature)"
+text = "背が低い"
 autowrap_mode = 2
+
+[node name="Short (Stature)" parent="NotesContainer/Notepad/Apperance" unique_id=1783282053 groups=["answer"] instance=ExtResource("3_i8r2h")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" parent="NotesContainer/Notepad/Apperance/Short (Stature)" index="1" unique_id=877096705]
+custom_minimum_size = Vector2(100, 0)
+theme_override_font_sizes/font_size = 60
+text = "Short
+(Stature)"
 
 [node name="Clothes" type="GridContainer" parent="NotesContainer/Notepad" unique_id=775067368]
 visible = false
@@ -353,22 +424,39 @@ offset_top = 120.0
 offset_right = 780.0
 offset_bottom = 868.0
 theme = ExtResource("2_m440d")
+theme_override_constants/v_separation = 15
 columns = 2
 
-[node name="T-Shirt JPN" parent="NotesContainer/Notepad/Clothes" unique_id=267447748 groups=["answer", "correct_type_clothes"] instance=ExtResource("3_i8r2h")]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" parent="NotesContainer/Notepad/Clothes/T-Shirt JPN" index="1" unique_id=877096705]
-theme_override_font_sizes/font_size = 60
-text = "Tシャツ"
-
-[node name="T-Shirt" type="Label" parent="NotesContainer/Notepad/Clothes" unique_id=1210788429]
+[node name="T-Shirt JPN" type="Label" parent="NotesContainer/Notepad/Clothes" unique_id=1210788429]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 60
+text = "Tシャツ"
+autowrap_mode = 1
+
+[node name="T-Shirt" parent="NotesContainer/Notepad/Clothes" unique_id=267447748 groups=["answer", "correct_type_clothes"] instance=ExtResource("3_i8r2h")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" parent="NotesContainer/Notepad/Clothes/T-Shirt" index="1" unique_id=877096705]
+theme_override_font_sizes/font_size = 60
 text = "T-Shirt"
+
+[node name="HSeparator3" type="HSeparator" parent="NotesContainer/Notepad/Clothes" unique_id=637885127]
+layout_mode = 2
+theme = ExtResource("2_m440d")
+
+[node name="HSeparator4" type="HSeparator" parent="NotesContainer/Notepad/Clothes" unique_id=1169867454]
+layout_mode = 2
+theme = ExtResource("2_m440d")
+
+[node name="Button Up Shirt JPN2" type="Label" parent="NotesContainer/Notepad/Clothes" unique_id=1342765374]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 60
+text = "シャツ"
 autowrap_mode = 1
 
 [node name="Button Up Shirt JPN" parent="NotesContainer/Notepad/Clothes" unique_id=279556067 groups=["answer"] instance=ExtResource("3_i8r2h")]
@@ -376,48 +464,58 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Label" parent="NotesContainer/Notepad/Clothes/Button Up Shirt JPN" index="1" unique_id=877096705]
+custom_minimum_size = Vector2(100, 0)
 theme_override_font_sizes/font_size = 60
-text = "シャツ"
+text = "Button Up
+Shirt"
 
-[node name="Button Up Shirt" type="Label" parent="NotesContainer/Notepad/Clothes" unique_id=1342765374]
+[node name="HSeparator5" type="HSeparator" parent="NotesContainer/Notepad/Clothes" unique_id=1376297360]
+layout_mode = 2
+theme = ExtResource("2_m440d")
+
+[node name="HSeparator6" type="HSeparator" parent="NotesContainer/Notepad/Clothes" unique_id=559083711]
+layout_mode = 2
+theme = ExtResource("2_m440d")
+
+[node name="Sweater JPN" type="Label" parent="NotesContainer/Notepad/Clothes" unique_id=1100268866]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 60
-text = "Button Up Shirt"
-autowrap_mode = 1
-
-[node name="Sweater JPN" parent="NotesContainer/Notepad/Clothes" unique_id=1103654083 groups=["answer"] instance=ExtResource("3_i8r2h")]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" parent="NotesContainer/Notepad/Clothes/Sweater JPN" index="1" unique_id=877096705]
 theme_override_font_sizes/font_size = 60
 text = "セーター"
+autowrap_mode = 1
 
-[node name="Sweater" type="Label" parent="NotesContainer/Notepad/Clothes" unique_id=1100268866]
-custom_minimum_size = Vector2(100, 0)
+[node name="Sweater" parent="NotesContainer/Notepad/Clothes" unique_id=1103654083 groups=["answer"] instance=ExtResource("3_i8r2h")]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="Label" parent="NotesContainer/Notepad/Clothes/Sweater" index="1" unique_id=877096705]
 theme_override_font_sizes/font_size = 60
 text = "Sweater"
-autowrap_mode = 1
 
-[node name="Jacket JPN" parent="NotesContainer/Notepad/Clothes" unique_id=626963725 groups=["answer"] instance=ExtResource("3_i8r2h")]
+[node name="HSeparator7" type="HSeparator" parent="NotesContainer/Notepad/Clothes" unique_id=1059781645]
 layout_mode = 2
-size_flags_horizontal = 3
+theme = ExtResource("2_m440d")
 
-[node name="Label" parent="NotesContainer/Notepad/Clothes/Jacket JPN" index="1" unique_id=877096705]
-theme_override_font_sizes/font_size = 60
-text = "ジャケット"
+[node name="HSeparator8" type="HSeparator" parent="NotesContainer/Notepad/Clothes" unique_id=596716198]
+layout_mode = 2
+theme = ExtResource("2_m440d")
 
-[node name="Jacket" type="Label" parent="NotesContainer/Notepad/Clothes" unique_id=1415624164]
+[node name="Jacket JPN" type="Label" parent="NotesContainer/Notepad/Clothes" unique_id=1415624164]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 60
-text = "Jacket"
+text = "ジャケット"
 autowrap_mode = 1
+
+[node name="Jacket" parent="NotesContainer/Notepad/Clothes" unique_id=626963725 groups=["answer"] instance=ExtResource("3_i8r2h")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" parent="NotesContainer/Notepad/Clothes/Jacket" index="1" unique_id=877096705]
+theme_override_font_sizes/font_size = 60
+text = "Jacket"
 
 [node name="Hats" type="GridContainer" parent="NotesContainer/Notepad" unique_id=1411059307]
 visible = false
@@ -427,56 +525,76 @@ offset_top = 120.0
 offset_right = 780.0
 offset_bottom = 868.0
 theme = ExtResource("2_m440d")
+theme_override_constants/v_separation = 15
 columns = 2
 
-[node name="Bucket Hat JPN" parent="NotesContainer/Notepad/Hats" unique_id=652137470 groups=["answer"] instance=ExtResource("3_i8r2h")]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" parent="NotesContainer/Notepad/Hats/Bucket Hat JPN" index="1" unique_id=877096705]
-theme_override_font_sizes/font_size = 60
-text = "バケット
-ハット"
-
-[node name="Bucket Hat" type="Label" parent="NotesContainer/Notepad/Hats" unique_id=903046270]
+[node name="Bucket Hat JPN" type="Label" parent="NotesContainer/Notepad/Hats" unique_id=903046270]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 60
-text = "Bucket Hat"
+text = "バケットハット"
 autowrap_mode = 2
 
-[node name="Baseball Cap Shirt JPN" parent="NotesContainer/Notepad/Hats" unique_id=234639994 groups=["answer", "correct_hat"] instance=ExtResource("3_i8r2h")]
+[node name="Bucket Hat" parent="NotesContainer/Notepad/Hats" unique_id=652137470 groups=["answer"] instance=ExtResource("3_i8r2h")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" parent="NotesContainer/Notepad/Hats/Baseball Cap Shirt JPN" index="1" unique_id=877096705]
+[node name="Label" parent="NotesContainer/Notepad/Hats/Bucket Hat" index="1" unique_id=877096705]
+custom_minimum_size = Vector2(100, 0)
+theme_override_font_sizes/font_size = 60
+text = "Bucket
+Hat"
+
+[node name="HSeparator3" type="HSeparator" parent="NotesContainer/Notepad/Hats" unique_id=1387858192]
+layout_mode = 2
+theme = ExtResource("2_m440d")
+
+[node name="HSeparator4" type="HSeparator" parent="NotesContainer/Notepad/Hats" unique_id=203381243]
+layout_mode = 2
+theme = ExtResource("2_m440d")
+
+[node name="Baseball Cap JPN" type="Label" parent="NotesContainer/Notepad/Hats" unique_id=246811867]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 60
 text = "野球帽"
-
-[node name="Baseball Cap" type="Label" parent="NotesContainer/Notepad/Hats" unique_id=246811867]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 60
-text = "Baseball Cap"
 autowrap_mode = 2
 
-[node name="Beanie JPN" parent="NotesContainer/Notepad/Hats" unique_id=1175926133 groups=["answer"] instance=ExtResource("3_i8r2h")]
+[node name="Baseball Cap" parent="NotesContainer/Notepad/Hats" unique_id=234639994 groups=["answer", "correct_hat"] instance=ExtResource("3_i8r2h")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" parent="NotesContainer/Notepad/Hats/Beanie JPN" index="1" unique_id=877096705]
+[node name="Label" parent="NotesContainer/Notepad/Hats/Baseball Cap" index="1" unique_id=877096705]
+custom_minimum_size = Vector2(100, 0)
 theme_override_font_sizes/font_size = 60
-text = "ビーニー"
+text = "Baseball
+Cap"
 
-[node name="Beanie" type="Label" parent="NotesContainer/Notepad/Hats" unique_id=1796499192]
+[node name="HSeparator5" type="HSeparator" parent="NotesContainer/Notepad/Hats" unique_id=1734533950]
+layout_mode = 2
+theme = ExtResource("2_m440d")
+
+[node name="HSeparator6" type="HSeparator" parent="NotesContainer/Notepad/Hats" unique_id=619635188]
+layout_mode = 2
+theme = ExtResource("2_m440d")
+
+[node name="Beanie JPN" type="Label" parent="NotesContainer/Notepad/Hats" unique_id=1796499192]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 60
-text = "Beanie"
+text = "ビーニー"
 autowrap_mode = 1
+
+[node name="Beanie" parent="NotesContainer/Notepad/Hats" unique_id=1175926133 groups=["answer"] instance=ExtResource("3_i8r2h")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" parent="NotesContainer/Notepad/Hats/Beanie" index="1" unique_id=877096705]
+theme_override_font_sizes/font_size = 60
+text = "Beanie"
 
 [node name="Submit" type="Button" parent="NotesContainer/Notepad" unique_id=1156617356]
 visible = false
@@ -513,6 +631,19 @@ texture_normal = ExtResource("5_vwrh8")
 texture_hover = ExtResource("6_yv1og")
 flip_h = true
 
+[node name="PageNumber" type="Label" parent="NotesContainer/Notepad" unique_id=351332291]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.13
+anchor_top = 0.965
+anchor_right = 0.13
+anchor_bottom = 0.965
+offset_top = -78.0
+offset_right = 78.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "1/4"
+
 [connection signal="pressed" from="NotesContainer/Notepad/Submit" to="." method="_on_submit_pressed"]
 [connection signal="pressed" from="NotesContainer/Notepad/R Notepad Arrow" to="." method="_on_r_notepad_arrow_pressed"]
 [connection signal="pressed" from="NotesContainer/Notepad/L Notepad Arrow" to="." method="_on_l_notepad_arrow_pressed"]
@@ -522,20 +653,20 @@ flip_h = true
 [editable path="NotesContainer/Notepage/Qcontainer/Clothes/Color JPN"]
 [editable path="NotesContainer/Notepage/Qcontainer/Clothes/Type JPN"]
 [editable path="NotesContainer/Notepage/Qcontainer/Hat/Hat JPN"]
-[editable path="NotesContainer/Notepad/Colors/Red JPN"]
-[editable path="NotesContainer/Notepad/Colors/Orange JPN"]
-[editable path="NotesContainer/Notepad/Colors/Yellow JPN"]
-[editable path="NotesContainer/Notepad/Colors/Green JPN"]
-[editable path="NotesContainer/Notepad/Colors/Blue JPN"]
-[editable path="NotesContainer/Notepad/Colors/Purple JPN"]
-[editable path="NotesContainer/Notepad/Apperance/Long JPN"]
-[editable path="NotesContainer/Notepad/Apperance/Short Hair JPN"]
-[editable path="NotesContainer/Notepad/Apperance/Tall JPN"]
-[editable path="NotesContainer/Notepad/Apperance/Short (Stature) JPN"]
-[editable path="NotesContainer/Notepad/Clothes/T-Shirt JPN"]
+[editable path="NotesContainer/Notepad/Colors/Red"]
+[editable path="NotesContainer/Notepad/Colors/Orange"]
+[editable path="NotesContainer/Notepad/Colors/Yellow"]
+[editable path="NotesContainer/Notepad/Colors/Green"]
+[editable path="NotesContainer/Notepad/Colors/Blue"]
+[editable path="NotesContainer/Notepad/Colors/Purple"]
+[editable path="NotesContainer/Notepad/Apperance/Long Hair"]
+[editable path="NotesContainer/Notepad/Apperance/Short Hair"]
+[editable path="NotesContainer/Notepad/Apperance/Tall"]
+[editable path="NotesContainer/Notepad/Apperance/Short (Stature)"]
+[editable path="NotesContainer/Notepad/Clothes/T-Shirt"]
 [editable path="NotesContainer/Notepad/Clothes/Button Up Shirt JPN"]
-[editable path="NotesContainer/Notepad/Clothes/Sweater JPN"]
-[editable path="NotesContainer/Notepad/Clothes/Jacket JPN"]
-[editable path="NotesContainer/Notepad/Hats/Bucket Hat JPN"]
-[editable path="NotesContainer/Notepad/Hats/Baseball Cap Shirt JPN"]
-[editable path="NotesContainer/Notepad/Hats/Beanie JPN"]
+[editable path="NotesContainer/Notepad/Clothes/Sweater"]
+[editable path="NotesContainer/Notepad/Clothes/Jacket"]
+[editable path="NotesContainer/Notepad/Hats/Bucket Hat"]
+[editable path="NotesContainer/Notepad/Hats/Baseball Cap"]
+[editable path="NotesContainer/Notepad/Hats/Beanie"]

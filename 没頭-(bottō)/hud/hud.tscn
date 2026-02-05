@@ -62,7 +62,7 @@ mouse_filter = 2
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
-text = "Using your notepad (on the right) by flipping through the pages using the arrows on screen to match the correct meaning of the Japanese characters to the characters on the left. To do this, click on some Japanese on the right, click the matching Japanese on the left, then press submit."
+text = "Using your notepad (on the right) by flipping through the pages using the arrows on screen to match the Japanese characters on the right to their meaning on the left. To do this, click on the Japanese on the left, click the matching English meaning on the right, then press submit."
 autowrap_mode = 2
 
 [node name="Button" type="Button" parent="StartEndPuzzleText/Control/PanelContainer/VBoxContainer" unique_id=1581312613]

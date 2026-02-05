@@ -6,6 +6,8 @@ extends Node
 @onready var question_array = get_tree().get_nodes_in_group("question")
 @onready var answer_array = get_tree().get_nodes_in_group("answer")
 
+@onready var page_number = get_node("NotesContainer/Notepad/PageNumber")
+
 @onready var page_1 = get_node("NotesContainer/Notepad/Colors")
 @onready var page_2 = get_node("NotesContainer/Notepad/Apperance")
 @onready var page_3 = get_node("NotesContainer/Notepad/Clothes")
@@ -97,15 +99,18 @@ func _on_r_notepad_arrow_pressed() -> void:
 		page_2.visible = true
 		l_arrow.visible = true
 		Global.notepad_page = 2
+		page_number.text = "2/4"
 	elif Global.notepad_page == 2:
 		page_2.visible = false
 		page_3.visible = true
 		Global.notepad_page = 3
+		page_number.text = "3/4"
 	elif Global.notepad_page == 3:
 		page_3.visible = false
 		page_4.visible = true
 		r_arrow.visible = false
 		Global.notepad_page = 4
+		page_number.text = "4/4"
 
 func _on_l_notepad_arrow_pressed() -> void:
 	if Global.notepad_page == 2:
@@ -113,15 +118,18 @@ func _on_l_notepad_arrow_pressed() -> void:
 		page_1.visible = true
 		l_arrow.visible = false
 		Global.notepad_page = 1
+		page_number.text = "1/4"
 	elif Global.notepad_page == 3:
 		page_3.visible = false
 		page_2.visible = true
 		Global.notepad_page = 2
+		page_number.text = "2/4"
 	elif Global.notepad_page == 4:
 		page_4.visible = false
 		page_3.visible = true
 		r_arrow.visible = true
 		Global.notepad_page = 3
+		page_number.text = "3/4"
 
 func _on_submit_pressed() -> void:
 	
