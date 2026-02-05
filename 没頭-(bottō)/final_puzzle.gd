@@ -1,6 +1,6 @@
 extends Node
 
-@onready var hud = $HUD
+@onready var hud = get_parent().get_node("HUD")
 
 @onready var pickable_array = get_tree().get_nodes_in_group("pickable")
 @onready var question_array = get_tree().get_nodes_in_group("question")
@@ -91,8 +91,6 @@ func _on_click(clicked_node):
 	group_type = null
 	select_group_type = null
 
-
-
 func _on_r_notepad_arrow_pressed() -> void:
 	if Global.notepad_page == 1:
 		page_1.visible = false
@@ -109,7 +107,6 @@ func _on_r_notepad_arrow_pressed() -> void:
 		r_arrow.visible = false
 		Global.notepad_page = 4
 
-
 func _on_l_notepad_arrow_pressed() -> void:
 	if Global.notepad_page == 2:
 		page_2.visible = false
@@ -125,7 +122,6 @@ func _on_l_notepad_arrow_pressed() -> void:
 		page_3.visible = true
 		r_arrow.visible = true
 		Global.notepad_page = 3
-
 
 func _on_submit_pressed() -> void:
 	
@@ -180,4 +176,3 @@ func _on_submit_pressed() -> void:
 		select.select_line.visible = false
 		select.is_select = false
 		select.remove_from_group("selected")
-		

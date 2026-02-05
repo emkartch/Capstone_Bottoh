@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://csb4ei4d65gdf" path="res://hud/hud.gd" id="1_6ca3a"]
 [ext_resource type="Theme" uid="uid://cp4nu80cltnic" path="res://theme/main_theme.tres" id="2_2gk58"]
+[ext_resource type="Texture2D" uid="uid://cbnhlqlr5fpw0" path="res://assets/Arrow.png" id="3_w8tcp"]
+[ext_resource type="Texture2D" uid="uid://cev8nqun6fo3" path="res://assets/GreyArrow.png" id="4_svhta"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_318vg"]
 bg_color = Color(0.92535293, 0.9253528, 0.9253529, 1)
@@ -9,9 +11,9 @@ bg_color = Color(0.92535293, 0.9253528, 0.9253529, 1)
 [node name="HUD" type="CanvasLayer" unique_id=179951230]
 script = ExtResource("1_6ca3a")
 
-[node name="StartText" type="CanvasLayer" parent="." unique_id=939995534]
+[node name="StartEndPuzzleText" type="CanvasLayer" parent="." unique_id=939995534]
 
-[node name="ColorRect" type="ColorRect" parent="StartText" unique_id=307156639]
+[node name="ColorRect" type="ColorRect" parent="StartEndPuzzleText" unique_id=307156639]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -19,7 +21,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.47058824)
 
-[node name="Control" type="Control" parent="StartText" unique_id=1850258969]
+[node name="Control" type="Control" parent="StartEndPuzzleText" unique_id=1850258969]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -35,7 +37,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("2_2gk58")
 
-[node name="PanelContainer" type="PanelContainer" parent="StartText/Control" unique_id=792033018]
+[node name="PanelContainer" type="PanelContainer" parent="StartEndPuzzleText/Control" unique_id=792033018]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -51,19 +53,19 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_318vg")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="StartText/Control/PanelContainer" unique_id=201416702]
+[node name="VBoxContainer" type="VBoxContainer" parent="StartEndPuzzleText/Control/PanelContainer" unique_id=201416702]
 self_modulate = Color(0.17254902, 1, 1, 1)
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Label" type="Label" parent="StartText/Control/PanelContainer/VBoxContainer" unique_id=1731753321]
+[node name="Label" type="Label" parent="StartEndPuzzleText/Control/PanelContainer/VBoxContainer" unique_id=1731753321]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "Using your notepad (on the right) by flipping through the pages using the arrows on screen to match the correct meaning of the Japanese characters to the characters on the left. To do this, click on some Japanese on the right, click the matching Japanese on the left, then press submit."
 autowrap_mode = 2
 
-[node name="Button" type="Button" parent="StartText/Control/PanelContainer/VBoxContainer" unique_id=1581312613]
+[node name="Button" type="Button" parent="StartEndPuzzleText/Control/PanelContainer/VBoxContainer" unique_id=1581312613]
 layout_mode = 2
 text = "OK"
 
@@ -123,4 +125,54 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[connection signal="pressed" from="StartText/Control/PanelContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[node name="Dialog" type="Control" parent="." unique_id=1732845649]
+visible = false
+layout_mode = 3
+anchor_top = 0.667
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_2gk58")
+
+[node name="Box" type="Panel" parent="Dialog" unique_id=949354063]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Continue" type="TextureButton" parent="Dialog/Box" unique_id=1403673656]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.97
+anchor_top = 0.97
+anchor_right = 1.0
+anchor_bottom = 0.97
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("3_w8tcp")
+texture_hover = ExtResource("4_svhta")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Dialog" unique_id=136578749]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Speaker" type="Label" parent="Dialog/VBoxContainer" unique_id=1959057897]
+layout_mode = 2
+text = "Somebody"
+
+[node name="Dialogue" type="RichTextLabel" parent="Dialog/VBoxContainer" unique_id=1380198217]
+layout_mode = 2
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at libero et enim semper consectetur nec in quam. Morbi eu ante tortor. Integer scelerisque condimentum lorem, sed imperdiet nibh suscipit nec."
+fit_content = true
+
+[connection signal="pressed" from="StartEndPuzzleText/Control/PanelContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
