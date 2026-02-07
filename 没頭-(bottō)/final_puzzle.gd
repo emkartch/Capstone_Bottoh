@@ -42,11 +42,14 @@ func _ready():
 	clothes_type_ans.modulate.a = 0
 	hat_ans.modulate.a = 0
 	
+	await hud.ready
+	
 	hud.show_start()
 	
 func _process(_delta):
 	
 	if looks_correct and hair_correct and clothes_color_correct and clothes_type_correct and hat_correct:
+		Global.game_end = true
 		hud.show_end()
 	
 	var selected = get_tree().get_nodes_in_group("selected")
