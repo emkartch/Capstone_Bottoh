@@ -5,7 +5,7 @@ extends Control
 @onready var main = get_node("/root/Main")
 @onready var _speaker = $VBoxContainer/Speaker
 @onready var _dialogue = $VBoxContainer/Dialogue
-@onready var _continue = $Box/Continue
+#@onready var _continue = $Box/Continue
 @onready var background = $"../GreyOut"
 
 func display_line(pause: bool, line: String, speaker : String = ""):
