@@ -17,6 +17,16 @@ thickness = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_os614"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5fetd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_afw5t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1knni"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_os614"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dut6s"]
+
 [resource]
 Button/colors/font_color = Color(0, 0, 0, 1)
 Button/font_sizes/font_size = 70
@@ -37,3 +47,8 @@ RichTextLabel/font_sizes/italics_font_size = 60
 RichTextLabel/font_sizes/mono_font_size = 60
 RichTextLabel/font_sizes/normal_font_size = 60
 VBoxContainer/constants/separation = 25
+VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_5fetd")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_afw5t")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_1knni")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_os614")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_dut6s")
