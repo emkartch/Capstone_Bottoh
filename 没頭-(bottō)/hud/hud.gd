@@ -1,22 +1,23 @@
 extends CanvasLayer
 
 @onready var main = get_node("/root/Main")
+@onready var dialog = $Dialog
 
-#@onready var startPanel = get_node("StartText/Control/PanelContainer")
-#@onready var endPanel = get_node("EndText/Control/PanelContainer")
-#
-#var viewport_size = get_viewport().size
-
-#func _ready():
-	#
+@onready var goal_button = $Goal/GoalButton
+@onready var goal_open = $Goal/GoalOpen
 
 func show_start():
-	$StartText.show()
-
-func _on_button_pressed() -> void:
-	$StartText.hide()
+	dialog.display_line(true,"Using your notepad (on the right) by flipping through the pages using the arrows on screen to match the Japanese characters on the right to their meaning on the left. To do this, click on the Japanese on the left, click the matching English meaning on the right, then press submit.","Tutorial")
 
 func show_end():
-	$EndText.show()
-	await get_tree().create_timer(3).timeout
-	main.get_tree().quit()
+	dialog.display_line("You did it!","Tutorial")
+
+func _on_goal_button_pressed() -> void:
+	
+	goal_button.visible = false
+	goal_open.visible = true
+
+func _on_exit_goal_button_pressed() -> void:
+	
+	goal_open.visible = false
+	goal_button.visible = true

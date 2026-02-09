@@ -9,6 +9,14 @@ bg_color = Color(0.7176471, 0.7176471, 0.7176471, 0.7058824)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1knni"]
 bg_color = Color(0.24658787, 0.24658793, 0.24658778, 1)
 
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_5fetd"]
+color = Color(0.4117647, 0.4117647, 0.4117647, 1)
+grow_begin = 2.0
+grow_end = 2.0
+thickness = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_os614"]
+
 [resource]
 Button/colors/font_color = Color(0, 0, 0, 1)
 Button/font_sizes/font_size = 70
@@ -17,6 +25,15 @@ Button/styles/normal = SubResource("StyleBoxFlat_5fetd")
 Button/styles/pressed = SubResource("StyleBoxFlat_1knni")
 GridContainer/constants/v_separation = 30
 HBoxContainer/constants/separation = 35
+HSeparator/constants/separation = 0
+HSeparator/styles/separator = SubResource("StyleBoxLine_5fetd")
 Label/colors/font_color = Color(0, 0, 0, 1)
 Label/font_sizes/font_size = 70
+Panel/styles/panel = SubResource("StyleBoxFlat_os614")
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+RichTextLabel/font_sizes/bold_font_size = 60
+RichTextLabel/font_sizes/bold_italics_font_size = 60
+RichTextLabel/font_sizes/italics_font_size = 60
+RichTextLabel/font_sizes/mono_font_size = 60
+RichTextLabel/font_sizes/normal_font_size = 60
 VBoxContainer/constants/separation = 25

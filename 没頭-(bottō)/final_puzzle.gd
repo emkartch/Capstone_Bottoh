@@ -1,10 +1,12 @@
 extends Node
 
-@onready var hud = $HUD
+@onready var hud = get_parent().get_node("HUD")
 
 @onready var pickable_array = get_tree().get_nodes_in_group("pickable")
 @onready var question_array = get_tree().get_nodes_in_group("question")
 @onready var answer_array = get_tree().get_nodes_in_group("answer")
+
+@onready var page_number = get_node("NotesContainer/Notepad/PageNumber")
 
 @onready var page_1 = get_node("NotesContainer/Notepad/Colors")
 @onready var page_2 = get_node("NotesContainer/Notepad/Apperance")
@@ -40,11 +42,14 @@ func _ready():
 	clothes_type_ans.modulate.a = 0
 	hat_ans.modulate.a = 0
 	
+	await hud.ready
+	
 	hud.show_start()
 	
 func _process(_delta):
 	
 	if looks_correct and hair_correct and clothes_color_correct and clothes_type_correct and hat_correct:
+		Global.game_end = true
 		hud.show_end()
 	
 	var selected = get_tree().get_nodes_in_group("selected")
@@ -91,24 +96,24 @@ func _on_click(clicked_node):
 	group_type = null
 	select_group_type = null
 
-
-
 func _on_r_notepad_arrow_pressed() -> void:
 	if Global.notepad_page == 1:
 		page_1.visible = false
 		page_2.visible = true
 		l_arrow.visible = true
 		Global.notepad_page = 2
+		page_number.text = "2/4"
 	elif Global.notepad_page == 2:
 		page_2.visible = false
 		page_3.visible = true
 		Global.notepad_page = 3
+		page_number.text = "3/4"
 	elif Global.notepad_page == 3:
 		page_3.visible = false
 		page_4.visible = true
 		r_arrow.visible = false
 		Global.notepad_page = 4
-
+		page_number.text = "4/4"
 
 func _on_l_notepad_arrow_pressed() -> void:
 	if Global.notepad_page == 2:
@@ -116,16 +121,18 @@ func _on_l_notepad_arrow_pressed() -> void:
 		page_1.visible = true
 		l_arrow.visible = false
 		Global.notepad_page = 1
+		page_number.text = "1/4"
 	elif Global.notepad_page == 3:
 		page_3.visible = false
 		page_2.visible = true
 		Global.notepad_page = 2
+		page_number.text = "2/4"
 	elif Global.notepad_page == 4:
 		page_4.visible = false
 		page_3.visible = true
 		r_arrow.visible = true
 		Global.notepad_page = 3
-
+		page_number.text = "3/4"
 
 func _on_submit_pressed() -> void:
 	
@@ -180,4 +187,3 @@ func _on_submit_pressed() -> void:
 		select.select_line.visible = false
 		select.is_select = false
 		select.remove_from_group("selected")
-		
