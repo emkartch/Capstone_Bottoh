@@ -7,8 +7,8 @@
 [node name="Main" type="Node" unique_id=1584147130]
 
 [node name="FinalPuzzle" parent="." unique_id=3365082 instance=ExtResource("1_0xm2m")]
-visible = false
 
 [node name="Inventory" parent="." unique_id=1839383855 instance=ExtResource("2_h2yge")]
+visible = false
 
 [node name="HUD" parent="." unique_id=179951230 instance=ExtResource("1_ig7tw")]

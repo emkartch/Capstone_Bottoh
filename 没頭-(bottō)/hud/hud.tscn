@@ -114,8 +114,10 @@ theme_override_font_sizes/font_size = 80
 text = "Goal:"
 
 [node name="GoalText" type="Label" parent="Goal/GoalOpen/VBoxContainer" unique_id=1516768583]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-text = "Goal text"
+text = "Match the Japanese characters to their English meanings."
+autowrap_mode = 2
 
 [node name="ExitGoalButton" type="TextureButton" parent="Goal/GoalOpen" unique_id=1785703919]
 layout_mode = 1
