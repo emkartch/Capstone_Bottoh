@@ -7,10 +7,10 @@ extends CanvasLayer
 @onready var goal_open = $Goal/GoalOpen
 
 func show_start():
-	dialog.display_line(true,"Using your notepad (on the right) by flipping through the pages using the arrows on screen to match the Japanese characters on the right to their meaning on the left. To do this, click on the Japanese on the left, click the matching English meaning on the right, then press submit.","Tutorial")
+	dialog.display_line(true,"Use your notepad (on the right) and flip through the pages using the arrows on screen to match the English defintions to the Japanese characters on the left. To do this, select both the Japanese on the left and its matching English meaning on the right, then press submit.","Tutorial")
 
 func show_end():
-	dialog.display_line("You did it!","Tutorial")
+	dialog.display_line(true,"You did it!","Tutorial")
 
 func _on_goal_button_pressed() -> void:
 	
