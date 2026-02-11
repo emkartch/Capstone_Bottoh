@@ -3,12 +3,14 @@
 [ext_resource type="Theme" uid="uid://cp4nu80cltnic" path="res://theme/main_theme.tres" id="1_62wf1"]
 [ext_resource type="Texture2D" uid="uid://cyerekk6aofke" path="res://assets/ShortArrow.png" id="2_f8i2h"]
 [ext_resource type="Script" uid="uid://b3uulu1fvp4xi" path="res://inventory/inventory_container.gd" id="2_lhcfm"]
+[ext_resource type="Texture2D" uid="uid://qyfslf8eigol" path="res://inventory/BackgroundInventory.png" id="3_0dv6l"]
 [ext_resource type="Texture2D" uid="uid://dypq21vkaun3r" path="res://assets/GreyShortArrow.png" id="3_f8i2h"]
+[ext_resource type="Texture2D" uid="uid://dmhunreje6uf5" path="res://inventory/InventorySquare.png" id="5_022t5"]
 [ext_resource type="Texture2D" uid="uid://dxdcblg2ibwh2" path="res://inventory/MessangerbagClosed.png" id="5_rsmrt"]
 [ext_resource type="Texture2D" uid="uid://bvc443624xejf" path="res://inventory/Expandbutton.png" id="6_rsmrt"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_je7cn"]
-bg_color = Color(0, 0, 0, 0.6627451)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_locsq"]
+texture = ExtResource("5_022t5")
 
 [node name="Inventory" type="Control" unique_id=213740819]
 layout_mode = 3
@@ -35,15 +37,18 @@ grow_vertical = 2
 icon = ExtResource("5_rsmrt")
 flat = true
 
-[node name="InventoryContainer" type="ColorRect" parent="." unique_id=1659283285]
+[node name="InventoryContainer" type="TextureRect" parent="." unique_id=1653766887]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.01
-anchor_top = 0.33
+anchor_top = 0.34
 anchor_right = 0.11
-anchor_bottom = 0.8
+anchor_bottom = 0.81
 grow_vertical = 2
 mouse_filter = 2
+texture = ExtResource("3_0dv6l")
+expand_mode = 1
 script = ExtResource("2_lhcfm")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="InventoryContainer" unique_id=1346998014]
@@ -68,7 +73,7 @@ custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_je7cn")
+theme_override_styles/panel = SubResource("StyleBoxTexture_locsq")
 
 [node name="Item" type="TextureRect" parent="InventoryContainer/ScrollContainer/VBoxContainer/Slot" unique_id=1273393416]
 layout_mode = 1
@@ -77,96 +82,101 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -64.0
-offset_top = -64.0
-offset_right = 64.0
-offset_bottom = 64.0
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
+expand_mode = 1
 
-[node name="Slot2" type="Panel" parent="InventoryContainer/ScrollContainer/VBoxContainer" unique_id=1467444534]
+[node name="Slot2" type="Panel" parent="InventoryContainer/ScrollContainer/VBoxContainer" unique_id=508425890]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_je7cn")
+theme_override_styles/panel = SubResource("StyleBoxTexture_locsq")
 
-[node name="Item" type="TextureRect" parent="InventoryContainer/ScrollContainer/VBoxContainer/Slot2" unique_id=1508022826]
+[node name="Item" type="TextureRect" parent="InventoryContainer/ScrollContainer/VBoxContainer/Slot2" unique_id=678063042]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -64.0
-offset_top = -64.0
-offset_right = 64.0
-offset_bottom = 64.0
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
+expand_mode = 1
 
-[node name="Slot3" type="Panel" parent="InventoryContainer/ScrollContainer/VBoxContainer" unique_id=435916877]
+[node name="Slot3" type="Panel" parent="InventoryContainer/ScrollContainer/VBoxContainer" unique_id=2033457933]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_je7cn")
+theme_override_styles/panel = SubResource("StyleBoxTexture_locsq")
 
-[node name="Item" type="TextureRect" parent="InventoryContainer/ScrollContainer/VBoxContainer/Slot3" unique_id=1091999240]
+[node name="Item" type="TextureRect" parent="InventoryContainer/ScrollContainer/VBoxContainer/Slot3" unique_id=1715698168]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -64.0
-offset_top = -64.0
-offset_right = 64.0
-offset_bottom = 64.0
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
+expand_mode = 1
 
-[node name="Slot4" type="Panel" parent="InventoryContainer/ScrollContainer/VBoxContainer" unique_id=1631614282]
+[node name="Slot4" type="Panel" parent="InventoryContainer/ScrollContainer/VBoxContainer" unique_id=1236580021]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_je7cn")
+theme_override_styles/panel = SubResource("StyleBoxTexture_locsq")
 
-[node name="Item" type="TextureRect" parent="InventoryContainer/ScrollContainer/VBoxContainer/Slot4" unique_id=607127998]
+[node name="Item" type="TextureRect" parent="InventoryContainer/ScrollContainer/VBoxContainer/Slot4" unique_id=1342413009]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -64.0
-offset_top = -64.0
-offset_right = 64.0
-offset_bottom = 64.0
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
+expand_mode = 1
 
-[node name="Slot5" type="Panel" parent="InventoryContainer/ScrollContainer/VBoxContainer" unique_id=1290083642]
+[node name="Slot5" type="Panel" parent="InventoryContainer/ScrollContainer/VBoxContainer" unique_id=877218428]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_je7cn")
+theme_override_styles/panel = SubResource("StyleBoxTexture_locsq")
 
-[node name="Item" type="TextureRect" parent="InventoryContainer/ScrollContainer/VBoxContainer/Slot5" unique_id=2030828846]
+[node name="Item" type="TextureRect" parent="InventoryContainer/ScrollContainer/VBoxContainer/Slot5" unique_id=1612538139]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -64.0
-offset_top = -64.0
-offset_right = 64.0
-offset_bottom = 64.0
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
+expand_mode = 1
 
 [node name="UpArrow" type="TextureButton" parent="InventoryContainer" unique_id=1957222319]
 layout_mode = 1
@@ -205,10 +215,10 @@ texture_disabled = ExtResource("3_f8i2h")
 [node name="ExpandButton" type="Button" parent="InventoryContainer" unique_id=255375102]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 1.1
-anchor_top = -0.04
-anchor_right = 1.1
-anchor_bottom = -0.04
+anchor_left = 1.07
+anchor_top = -0.03
+anchor_right = 1.07
+anchor_bottom = -0.03
 offset_left = -40.0
 offset_bottom = 40.0
 grow_horizontal = 0

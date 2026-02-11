@@ -8,6 +8,8 @@ extends Control
 #@onready var _continue = $Box/Continue
 @onready var background = $"../GreyOut"
 
+signal continue_true
+
 func display_line(pause: bool, line: String, speaker : String = ""):
 	_speaker.visible = (speaker != "")
 	_speaker.text = speaker
@@ -37,6 +39,8 @@ func close():
 	
 	if Global.game_end:
 		main.get_tree().quit()
+	
+	emit_signal("continue_true")
 
 func _on_continue_pressed() -> void:
 	close()

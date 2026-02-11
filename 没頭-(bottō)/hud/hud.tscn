@@ -5,10 +5,10 @@
 [ext_resource type="Script" uid="uid://dadl2ct6iu51b" path="res://hud/dialog.gd" id="3_svhta"]
 [ext_resource type="Texture2D" uid="uid://cbnhlqlr5fpw0" path="res://assets/Arrow.png" id="3_w8tcp"]
 [ext_resource type="Texture2D" uid="uid://cev8nqun6fo3" path="res://assets/GreyArrow.png" id="4_svhta"]
-[ext_resource type="Texture2D" uid="uid://clrmiad5dkevj" path="res://assets/NotePage.png" id="6_fjv1a"]
-[ext_resource type="Texture2D" uid="uid://ctyshvhmatwnm" path="res://assets/NotePadIcon.png" id="7_0ivg5"]
+[ext_resource type="Texture2D" uid="uid://dbq4s5le452yk" path="res://assets/NotePage (Smaller).png" id="6_qv4qp"]
 [ext_resource type="Texture2D" uid="uid://bthma8uk8dn3h" path="res://assets/X.png" id="7_qv4qp"]
 [ext_resource type="Texture2D" uid="uid://cc2vq3gm7y48" path="res://assets/GreyX.png" id="8_sh35x"]
+[ext_resource type="Texture2D" uid="uid://d120m6w405qbg" path="res://assets/Notebookpaper.png" id="9_qv4qp"]
 
 [node name="HUD" type="CanvasLayer" unique_id=179951230]
 process_mode = 3
@@ -91,31 +91,33 @@ theme = ExtResource("2_2gk58")
 [node name="GoalOpen" type="TextureRect" parent="Goal" unique_id=1058062832]
 visible = false
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -358.5
-offset_right = 537.5
-offset_bottom = 896.0
+anchors_preset = -1
+anchor_left = 1.01
+anchor_top = -0.01
+anchor_right = 1.01
+anchor_bottom = -0.01
+offset_left = -384.0
+offset_bottom = 384.0
 grow_horizontal = 0
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("6_fjv1a")
+texture = ExtResource("6_qv4qp")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Goal/GoalOpen" unique_id=726046158]
 layout_mode = 0
-offset_left = 115.0
-offset_top = 110.0
-offset_right = 785.0
-offset_bottom = 830.0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 335.80005
+offset_bottom = 353.8
+theme_override_constants/separation = 15
 
 [node name="Label" type="Label" parent="Goal/GoalOpen/VBoxContainer" unique_id=397293288]
 layout_mode = 2
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 40
 text = "Goal:"
 
 [node name="GoalText" type="Label" parent="Goal/GoalOpen/VBoxContainer" unique_id=1516768583]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Match the Japanese characters to their English meanings."
 autowrap_mode = 2
 
@@ -123,26 +125,26 @@ autowrap_mode = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.87
-anchor_top = 0.13
+anchor_top = 0.12
 anchor_right = 0.87
-anchor_bottom = 0.13
-offset_left = -80.0
-offset_bottom = 80.0
+anchor_bottom = 0.12
+offset_left = -48.0
+offset_bottom = 48.0
 grow_horizontal = 0
 texture_normal = ExtResource("7_qv4qp")
 texture_hover = ExtResource("8_sh35x")
 
 [node name="GoalButton" type="TextureButton" parent="Goal" unique_id=1348998633]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -138.0
-offset_top = 10.0
-offset_right = -10.0
-offset_bottom = 138.0
+anchors_preset = -1
+anchor_left = 0.995
+anchor_top = 0.01
+anchor_right = 0.995
+anchor_bottom = 0.01
+offset_left = -128.0
+offset_bottom = 128.0
 grow_horizontal = 0
-texture_normal = ExtResource("7_0ivg5")
+texture_normal = ExtResource("9_qv4qp")
 
 [connection signal="pressed" from="Dialog/Box/Continue" to="Dialog" method="_on_continue_pressed"]
 [connection signal="pressed" from="Goal/GoalOpen/ExitGoalButton" to="." method="_on_exit_goal_button_pressed"]

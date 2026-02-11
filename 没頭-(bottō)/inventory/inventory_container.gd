@@ -1,4 +1,4 @@
-extends ColorRect
+extends TextureRect
 
 @onready var scroll_container = $ScrollContainer
 @onready var up_arrow = $UpArrow
@@ -8,8 +8,8 @@ extends ColorRect
 
 var open_texture = preload("res://inventory/MessangerbagOpen.png")
 var closed_texture = preload("res://inventory/MessangerbagClosed.png")
-var expand_texture
-var minimize_texture
+var expand_texture = preload("res://inventory/Expandbutton.png")
+var minimize_texture = preload("res://inventory/MinimizeButton.png")
 
 var state = false
 var expand_state = false
@@ -66,10 +66,20 @@ func _on_messanger_bag_pressed() -> void:
 func _on_expand_button_pressed() -> void:
 	
 	if expand_state:
-		expand_button.set_button_icon(minimize_texture)
+		self.anchor_top = 0.34
+		self.anchor_bottom = 0.81
+		expand_button.set_button_icon(expand_texture)
 		expand_state = false
+		bag_button.visible = true
+		up_arrow.visible = true
+		down_arrow.visible = true
 		#self.visible = false
 	elif not expand_state:
-		expand_button.set_button_icon(expand_texture)
+		self.anchor_top = 0.099
+		self.anchor_bottom = 0.901
+		expand_button.set_button_icon(minimize_texture)
 		expand_state = true
+		bag_button.visible = false
+		up_arrow.visible = false
+		down_arrow.visible = false
 		#self.visible = true
