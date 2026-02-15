@@ -7,8 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://dypq21vkaun3r" path="res://assets/GreyShortArrow.png" id="3_f8i2h"]
 [ext_resource type="Texture2D" uid="uid://dmhunreje6uf5" path="res://inventory/InventorySquare.png" id="5_022t5"]
 [ext_resource type="Texture2D" uid="uid://dxdcblg2ibwh2" path="res://inventory/MessangerbagClosed.png" id="5_rsmrt"]
-[ext_resource type="Script" uid="uid://ctsqnisj8jucp" path="res://inventory/slot.gd" id="6_022t5"]
+[ext_resource type="Script" uid="uid://bx73qlcn2g61v" path="res://inventory/slot.gd" id="6_022t5"]
 [ext_resource type="Texture2D" uid="uid://bvc443624xejf" path="res://inventory/Expandbutton.png" id="6_rsmrt"]
+[ext_resource type="Texture2D" uid="uid://dyfhss0vstha6" path="res://inventory/NewsPaper.png" id="7_locsq"]
+[ext_resource type="Texture2D" uid="uid://cvpmlm7hwetli" path="res://assets/MiniNotePadClosed.png" id="8_uyjf6"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_locsq"]
 texture = ExtResource("5_022t5")
@@ -90,6 +92,7 @@ offset_right = 60.0
 offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("8_uyjf6")
 expand_mode = 1
 
 [node name="Slot2" type="Panel" parent="InventoryContainer/ScrollContainer/VBoxContainer" unique_id=508425890]
@@ -113,6 +116,7 @@ offset_right = 60.0
 offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("7_locsq")
 expand_mode = 1
 
 [node name="Slot3" type="Panel" parent="InventoryContainer/ScrollContainer/VBoxContainer" unique_id=2033457933]
@@ -183,13 +187,6 @@ offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1
-
-[node name="MoveableItem" type="Node2D" parent="InventoryContainer" unique_id=107954463]
-
-[node name="Item" type="TextureRect" parent="InventoryContainer/MoveableItem" unique_id=1169841134]
-custom_minimum_size = Vector2(120, 120)
-offset_right = 120.0
-offset_bottom = 120.0
 
 [node name="UpArrow" type="TextureButton" parent="InventoryContainer" unique_id=1957222319]
 layout_mode = 1

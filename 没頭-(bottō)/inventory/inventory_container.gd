@@ -7,14 +7,11 @@ extends TextureRect
 @onready var down_arrow = $DownArrow
 @onready var bag_button = $"../MessangerBag"
 @onready var expand_button = $ExpandButton
-@onready var moveable_item = $MoveableItem
 
-#const SlotClass = preload("res://inventory/slot.gd")
-#var temp_item_texture = null
-#var current_slot = null
-#var next_slot = null
-#var place_item = false
-#var timer = 0.1
+# custom cursor
+const hand_point = null #preload()
+const hand_closed = null #preload()
+# custom cursor
 
 var open_texture = preload("res://inventory/MessangerbagOpen.png")
 var closed_texture = preload("res://inventory/MessangerbagClosed.png")
@@ -28,9 +25,13 @@ func _ready():
 	
 	up_arrow.disabled = true
 	
-	#for v_slot in scroll_container.get_node("VBoxContainer").get_children():
-		#v_slot.connect("gui_input",slot_gui_input)
-		## v_slot.connect("gui_input", self, "slot_gui_input", [v_slot])
+	# CUSTOM CURSOR
+	#Input.set_custom_mouse_cursor(hand_point, Input.CURSOR_ARROW)
+	#Input.set_custom_mouse_cursor(hand_closed, Input.CURSOR_FORBIDDEN)
+	#Input.set_custom_mouse_cursor(hand_closed, Input.CURSOR_CAN_DROP)
+	#Input.set_custom_mouse_cursor(hand_closed, Input.CURSOR_DRAG)
+	# CUSTOM CURSOR
+
 
 func _process(_delta):
 	
@@ -45,51 +46,13 @@ func _process(_delta):
 		down_arrow.disabled = true
 	else:
 		down_arrow.disabled = false
-		
-	#if(place_item):
-		#timer -= delta
-		#
-		#if(timer <= 0):
-			#place_item = false
-			#timer = 0.1
-
-#func slot_gui_input(event: InputEvent): #event: InputEvent, slot: SlotClass):
-	#
-	#var slot = SlotClass
-	#
-	#if(place_item):
-		#next_slot = slot
-		#
-		## don't overwrite item
-		#if(next_slot.item.texture == null):
-			#current_slot.pick_from_slot()
-			#next_slot.put_into_slot(temp_item_texture)
-			#temp_item_texture = null
-			#place_item = false
-	#
-	#if(event is InputEventMouseButton):
-		## left mouse click pressed
-		#if(event.button_index) == MOUSE_BUTTON_LEFT && event.pressed:
-			#temp_item_texture = slot.item.get_texture()
-			#current_slot = slot
-			#moveable_item.visible = true
-			#moveable_item.get_node("Item").texture = temp_item_texture
-			#moveable_item.global_position = current_slot.item.get_global_transform().origin
-			#current_slot.pick_from_slot()
-			#
-		## left mouse click released
-		#if(event.button_index) == MOUSE_BUTTON_LEFT && !event.pressed:
-			#moveable_item.visible = false
-			#
-			#if(temp_item_texture != null):
-				#current_slot.put_into_slot(temp_item_texture)
-				#place_item = true
-#
-#func _input(_event):
-	#
-	#if(moveable_item.visible):
-		#
-		#moveable_item.global_position = get_global_mouse_position() + Vector2(-60,-60)
+	
+	# get rid of cursor change until custom cursor
+	
+	if Input.get_current_cursor_shape() == CURSOR_FORBIDDEN:
+		DisplayServer.cursor_set_shape(DisplayServer.CURSOR_ARROW)
+	
+	# get rid of cursor change until custom cursor
 
 func _on_up_arrow_pressed() -> void:
 	var value = scroll_container.get_v_scroll()
@@ -144,3 +107,15 @@ func _on_expand_button_pressed() -> void:
 		up_arrow.visible = false
 		down_arrow.visible = false
 		#self.visible = true
+
+var data_bk
+func _notification(what: int) -> void:
+	
+	if what == Node.NOTIFICATION_DRAG_BEGIN:
+		data_bk = get_viewport().gui_get_drag_data()
+	
+	if what == Node.NOTIFICATION_DRAG_END:
+		if not is_drag_successful():
+			if data_bk:
+				data_bk.show()
+				data_bk = null
