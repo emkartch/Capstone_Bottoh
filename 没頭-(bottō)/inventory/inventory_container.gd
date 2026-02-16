@@ -32,7 +32,6 @@ func _ready():
 	#Input.set_custom_mouse_cursor(hand_closed, Input.CURSOR_DRAG)
 	# CUSTOM CURSOR
 
-
 func _process(_delta):
 	
 	var value = scroll_container.get_v_scroll()

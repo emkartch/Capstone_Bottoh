@@ -3,7 +3,11 @@ extends Panel
 # Created with the help of Octodemy - https://www.youtube.com/watch?v=JUR1qQ79eJY
 
 @onready var icon : TextureRect = $Item
-@export var item: ItemData
+@export var item: ItemData :
+	set(value):
+		item = value
+		if is_node_ready() and item:
+			update_ui()
 
 func _ready() -> void:
 	update_ui()
@@ -14,6 +18,7 @@ func update_ui() -> void:
 		return
 		
 	icon.texture = item.icon
+	icon.show()
 	tooltip_text = item.item_name
 
 func _get_drag_data(_at_position: Vector2) -> Variant:
