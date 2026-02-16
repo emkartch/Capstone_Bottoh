@@ -76,8 +76,6 @@ func _on_down_arrow_pressed() -> void:
 
 func _on_messanger_bag_pressed() -> void:
 	
-	print(state)
-	
 	if state:
 		bag_button.set_button_icon(closed_texture)
 		state = false
@@ -117,5 +115,5 @@ func _notification(what: int) -> void:
 	if what == Node.NOTIFICATION_DRAG_END:
 		if not is_drag_successful():
 			if data_bk:
-				data_bk.show()
+				data_bk.icon.show()
 				data_bk = null

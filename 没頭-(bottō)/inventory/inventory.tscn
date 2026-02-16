@@ -9,8 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://dxdcblg2ibwh2" path="res://inventory/MessangerbagClosed.png" id="5_rsmrt"]
 [ext_resource type="Script" uid="uid://bx73qlcn2g61v" path="res://inventory/slot.gd" id="6_022t5"]
 [ext_resource type="Texture2D" uid="uid://bvc443624xejf" path="res://inventory/Expandbutton.png" id="6_rsmrt"]
+[ext_resource type="Resource" uid="uid://bnqheekv7nxc5" path="res://inventory/notebook.tres" id="7_ajlgj"]
 [ext_resource type="Texture2D" uid="uid://dyfhss0vstha6" path="res://inventory/NewsPaper.png" id="7_locsq"]
 [ext_resource type="Texture2D" uid="uid://cvpmlm7hwetli" path="res://assets/MiniNotePadClosed.png" id="8_uyjf6"]
+[ext_resource type="Resource" uid="uid://b5k5k6lp5r1hh" path="res://inventory/newspaper.tres" id="9_8eab2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_locsq"]
 texture = ExtResource("5_022t5")
@@ -78,6 +80,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxTexture_locsq")
 script = ExtResource("6_022t5")
+item = ExtResource("7_ajlgj")
 
 [node name="Item" type="TextureRect" parent="InventoryContainer/ScrollContainer/VBoxContainer/Slot" unique_id=1273393416]
 layout_mode = 1
@@ -102,6 +105,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxTexture_locsq")
 script = ExtResource("6_022t5")
+item = ExtResource("9_8eab2")
 
 [node name="Item" type="TextureRect" parent="InventoryContainer/ScrollContainer/VBoxContainer/Slot2" unique_id=678063042]
 layout_mode = 1
