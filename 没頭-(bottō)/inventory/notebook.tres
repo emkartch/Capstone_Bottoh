@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bnqheekv7nxc5"]
+
+[ext_resource type="Script" uid="uid://dsc0p3v3tlf5d" path="res://inventory/item_data.gd" id="1_64bkb"]
+[ext_resource type="Texture2D" uid="uid://cvpmlm7hwetli" path="res://assets/MiniNotePadClosed.png" id="1_o2lit"]
+[ext_resource type="Texture2D" uid="uid://bnndiueip2cxy" path="res://assets/BigNotePad.png" id="2_oyyob"]
+
+[resource]
+script = ExtResource("1_64bkb")
+item_name = "Notebook"
+icon = ExtResource("1_o2lit")
+item = ExtResource("2_oyyob")
+metadata/_custom_type_script = "uid://dsc0p3v3tlf5d"
