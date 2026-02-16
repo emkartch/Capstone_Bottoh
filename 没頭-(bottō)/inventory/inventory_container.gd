@@ -1,17 +1,10 @@
 extends TextureRect
 
-# Created with the help of Kilo Galaxia - https://www.youtube.com/watch?v=dHPCizHygWA
-
 @onready var scroll_container = $ScrollContainer
 @onready var up_arrow = $UpArrow
 @onready var down_arrow = $DownArrow
 @onready var bag_button = $"../MessangerBag"
 @onready var expand_button = $ExpandButton
-
-# custom cursor
-const hand_point = null #preload()
-const hand_closed = null #preload()
-# custom cursor
 
 var open_texture = preload("res://inventory/MessangerbagOpen.png")
 var closed_texture = preload("res://inventory/MessangerbagClosed.png")
@@ -25,13 +18,6 @@ func _ready():
 	
 	up_arrow.disabled = true
 	
-	# CUSTOM CURSOR
-	#Input.set_custom_mouse_cursor(hand_point, Input.CURSOR_ARROW)
-	#Input.set_custom_mouse_cursor(hand_closed, Input.CURSOR_FORBIDDEN)
-	#Input.set_custom_mouse_cursor(hand_closed, Input.CURSOR_CAN_DROP)
-	#Input.set_custom_mouse_cursor(hand_closed, Input.CURSOR_DRAG)
-	# CUSTOM CURSOR
-
 func _process(_delta):
 	
 	var value = scroll_container.get_v_scroll()
@@ -45,13 +31,6 @@ func _process(_delta):
 		down_arrow.disabled = true
 	else:
 		down_arrow.disabled = false
-	
-	# get rid of cursor change until custom cursor
-	
-	if Input.get_current_cursor_shape() == CURSOR_FORBIDDEN:
-		DisplayServer.cursor_set_shape(DisplayServer.CURSOR_ARROW)
-	
-	# get rid of cursor change until custom cursor
 
 func _on_up_arrow_pressed() -> void:
 	var value = scroll_container.get_v_scroll()
@@ -104,15 +83,3 @@ func _on_expand_button_pressed() -> void:
 		up_arrow.visible = false
 		down_arrow.visible = false
 		#self.visible = true
-
-var data_bk
-func _notification(what: int) -> void:
-	
-	if what == Node.NOTIFICATION_DRAG_BEGIN:
-		data_bk = get_viewport().gui_get_drag_data()
-	
-	if what == Node.NOTIFICATION_DRAG_END:
-		if not is_drag_successful():
-			if data_bk:
-				data_bk.icon.show()
-				data_bk = null
