@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cmo4e3yjv6qqr"]
+
+[node name="Bookstore" type="CanvasLayer" unique_id=2098828111]
+
+[node name="Background" type="TextureRect" parent="." unique_id=2132892583]
+offset_right = 40.0
+offset_bottom = 40.0

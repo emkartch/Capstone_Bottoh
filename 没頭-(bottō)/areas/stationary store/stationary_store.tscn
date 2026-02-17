@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ckskwsb0t3imc"]
+
+[ext_resource type="Texture2D" uid="uid://cn2jvlxdji1o" path="res://backgrounds/StationaryStoreInsideResize.png" id="1_3cjra"]
+
+[node name="StationaryStore" type="CanvasLayer" unique_id=809007711]
+
+[node name="Background" type="TextureRect" parent="." unique_id=1647210963]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_3cjra")
