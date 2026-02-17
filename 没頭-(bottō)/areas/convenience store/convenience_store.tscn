@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dnvvak36bdupi"]
+
+[ext_resource type="Texture2D" uid="uid://dld4egj6nx361" path="res://areas/convenience store/ConvienceStoreB.png" id="1_e7c0s"]
+
+[node name="ConvenienceStore" type="CanvasLayer" unique_id=1704651114]
+
+[node name="Background" type="TextureRect" parent="." unique_id=1561829408]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_e7c0s")
