@@ -22,6 +22,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*uid://c323jwsg8s3to"
+NavigationManager="*uid://csln5hpn6etp8"
 
 [display]
 

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cmo4e3yjv6qqr"]
 
 [ext_resource type="Texture2D" uid="uid://8028ovv1a1r5" path="res://areas/bookstore/BookstoreInsideB.png" id="1_npoyj"]
+[ext_resource type="PackedScene" uid="uid://c13d8uvmyxs6j" path="res://door.tscn" id="2_xc5xg"]
 
 [node name="Bookstore" type="CanvasLayer" unique_id=2098828111]
 
@@ -8,3 +9,18 @@
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_npoyj")
+
+[node name="Doors" type="Node" parent="." unique_id=1082704122]
+
+[node name="Door_BO" parent="Doors" unique_id=1136604104 instance=ExtResource("2_xc5xg")]
+offset_left = 858.0
+offset_top = 950.0
+offset_right = 1022.0
+offset_bottom = 1028.0
+current_level_tag = "bookstore"
+destination_level_tag = "bookstore_outside"
+
+[node name="Button" parent="Doors/Door_BO" index="0" unique_id=585534956]
+text = "Bookstore Outside"
+
+[editable path="Doors/Door_BO"]

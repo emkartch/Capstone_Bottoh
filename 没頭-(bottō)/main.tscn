@@ -1,14 +1,16 @@
 [gd_scene format=3 uid="uid://b3p7eckxviy0"]
 
-[ext_resource type="PackedScene" uid="uid://bwcp2gb1nvjbc" path="res://final_puzzle.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://ce2yvk10bvhy5" path="res://hud/hud.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://c0jxwmx85e3fo" path="res://inventory/inventory.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://sq8w3l2vuppa" path="res://scene_transition_animation.tscn" id="3_h2yge"]
 
 [node name="Main" type="Node" unique_id=1584147130]
 
-[node name="FinalPuzzle" parent="." unique_id=3365082 instance=ExtResource("1_0xm2m")]
-visible = false
-
 [node name="Inventory" parent="." unique_id=1839383855 instance=ExtResource("2_h2yge")]
+z_index = 1
 
 [node name="HUD" parent="." unique_id=179951230 instance=ExtResource("1_ig7tw")]
+layer = -1
+
+[node name="SceneTransitionAnimation" parent="." unique_id=1882445901 instance=ExtResource("3_h2yge")]
+z_index = 10

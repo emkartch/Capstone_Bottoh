@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ckskwsb0t3imc"]
 
 [ext_resource type="Texture2D" uid="uid://8se0qgcpgtkm" path="res://areas/stationary store/StationaryStoreInsideResize.png" id="1_3cjra"]
+[ext_resource type="PackedScene" uid="uid://c13d8uvmyxs6j" path="res://door.tscn" id="2_4u8tb"]
 
 [node name="StationaryStore" type="CanvasLayer" unique_id=809007711]
 
@@ -8,3 +9,18 @@
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_3cjra")
+
+[node name="Door" type="Node" parent="." unique_id=1090544651]
+
+[node name="Door_SSO" parent="Door" unique_id=1136604104 instance=ExtResource("2_4u8tb")]
+offset_left = 747.0
+offset_top = 958.0
+offset_right = 911.0
+offset_bottom = 1036.0
+current_level_tag = "stationary_store"
+destination_level_tag = "stationary_store_outside"
+
+[node name="Button" parent="Door/Door_SSO" index="0" unique_id=585534956]
+text = "Stationary Store Outside"
+
+[editable path="Door/Door_SSO"]

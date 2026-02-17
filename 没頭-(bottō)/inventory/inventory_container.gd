@@ -7,6 +7,8 @@ extends TextureRect
 @onready var down_arrow = $DownArrow
 @onready var bag_button = $"../MessangerBag"
 @onready var expand_button = $ExpandButton
+@onready var inventory_open = $"../InventoryOpen"
+@onready var hbox_inventory = $"../InventoryOpen/HBoxInventory"
 
 # custom cursor
 const hand_point = null #preload()
@@ -94,6 +96,8 @@ func _on_expand_button_pressed() -> void:
 		bag_button.visible = true
 		up_arrow.visible = true
 		down_arrow.visible = true
+		inventory_open.mouse_filter = MOUSE_FILTER_IGNORE
+		hbox_inventory.mouse_filter = MOUSE_FILTER_IGNORE
 		#self.visible = false
 	elif not expand_state:
 		self.anchor_top = 0.099
@@ -103,6 +107,8 @@ func _on_expand_button_pressed() -> void:
 		bag_button.visible = false
 		up_arrow.visible = false
 		down_arrow.visible = false
+		inventory_open.mouse_filter = MOUSE_FILTER_PASS
+		hbox_inventory.mouse_filter = MOUSE_FILTER_PASS
 		#self.visible = true
 
 var data_bk

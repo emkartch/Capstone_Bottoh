@@ -2,6 +2,7 @@ extends Panel
 
 # Created with the help of Octodemy - https://www.youtube.com/watch?v=JUR1qQ79eJY
 
+@onready var inventory = $"../../../.."
 @onready var icon : TextureRect = $Item
 @export var item: ItemData :
 	set(value):
@@ -16,7 +17,7 @@ func update_ui() -> void:
 	if not item:
 		icon.texture = null
 		return
-		
+	
 	icon.texture = item.icon
 	icon.show()
 	tooltip_text = item.item_name
@@ -29,6 +30,7 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 	var preview = duplicate()
 	var c = Control.new()
 	c.add_child(preview)
+	c.z_index = 2
 	preview.position -= Vector2(70,70)
 	preview.self_modulate = Color.TRANSPARENT
 	c.modulate = Color(c.modulate, 0.5)

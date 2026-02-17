@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d4cf1lpegyvjo"]
 
 [ext_resource type="Theme" uid="uid://cp4nu80cltnic" path="res://theme/main_theme.tres" id="1_cb00g"]
+[ext_resource type="PackedScene" uid="uid://c13d8uvmyxs6j" path="res://door.tscn" id="2_ieic3"]
 
 [node name="BarberShopOutside" type="CanvasLayer" unique_id=1257489079]
 
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Label" type="Label" parent="ColorRect" unique_id=1335133317]
 layout_mode = 0
@@ -17,3 +19,18 @@ offset_right = 40.0
 offset_bottom = 18.0
 theme = ExtResource("1_cb00g")
 text = "Barber Shop Outside"
+
+[node name="Doors" type="Node" parent="." unique_id=1240796291]
+
+[node name="Door_SV" parent="Doors" unique_id=1136604104 instance=ExtResource("2_ieic3")]
+offset_left = 200.0
+offset_top = 200.0
+offset_right = 637.0
+offset_bottom = 278.0
+current_level_tag = "barber_shop_outside"
+destination_level_tag = "street_view"
+
+[node name="Button" parent="Doors/Door_SV" index="0" unique_id=585534956]
+text = "Street View"
+
+[editable path="Doors/Door_SV"]
