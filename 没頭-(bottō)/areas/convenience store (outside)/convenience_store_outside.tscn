@@ -1,3 +1,19 @@
 [gd_scene format=3 uid="uid://xmmqk8bvgnux"]
 
+[ext_resource type="Theme" uid="uid://cp4nu80cltnic" path="res://theme/main_theme.tres" id="1_vd80n"]
+
 [node name="ConvenienceStoreOutside" type="CanvasLayer" unique_id=1632336513]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=792275888]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=144899564]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 18.0
+theme = ExtResource("1_vd80n")
+text = "Convenience Store Outside"

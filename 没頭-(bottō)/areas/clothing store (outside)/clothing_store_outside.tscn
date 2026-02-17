@@ -1,3 +1,19 @@
 [gd_scene format=3 uid="uid://u62qppuvkal4"]
 
+[ext_resource type="Theme" uid="uid://cp4nu80cltnic" path="res://theme/main_theme.tres" id="1_h6131"]
+
 [node name="ClothingStoreOutside" type="CanvasLayer" unique_id=2071860568]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1331483982]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=542215363]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 18.0
+theme = ExtResource("1_h6131")
+text = "Clothing Store Outside"

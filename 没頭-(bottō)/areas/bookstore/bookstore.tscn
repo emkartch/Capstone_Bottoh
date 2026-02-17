@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://cmo4e3yjv6qqr"]
 
+[ext_resource type="Texture2D" uid="uid://8028ovv1a1r5" path="res://areas/bookstore/BookstoreInsideB.png" id="1_npoyj"]
+
 [node name="Bookstore" type="CanvasLayer" unique_id=2098828111]
 
 [node name="Background" type="TextureRect" parent="." unique_id=2132892583]
 offset_right = 40.0
 offset_bottom = 40.0
+texture = ExtResource("1_npoyj")

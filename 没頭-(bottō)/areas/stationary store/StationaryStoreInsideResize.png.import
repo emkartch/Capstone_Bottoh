@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn2jvlxdji1o"
-path="res://.godot/imported/StationaryStoreInsideResize.png-47aacc307b711bb11d086036dc4ee19e.ctex"
+uid="uid://8se0qgcpgtkm"
+path="res://.godot/imported/StationaryStoreInsideResize.png-056957b04ebc75227057bd4919a4ce09.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://backgrounds/StationaryStoreInsideResize.png"
-dest_files=["res://.godot/imported/StationaryStoreInsideResize.png-47aacc307b711bb11d086036dc4ee19e.ctex"]
+source_file="res://areas/stationary store/StationaryStoreInsideResize.png"
+dest_files=["res://.godot/imported/StationaryStoreInsideResize.png-056957b04ebc75227057bd4919a4ce09.ctex"]
 
 [params]
 

@@ -1,3 +1,19 @@
 [gd_scene format=3 uid="uid://mfnya3fp0avt"]
 
+[ext_resource type="Theme" uid="uid://cp4nu80cltnic" path="res://theme/main_theme.tres" id="1_ypx8a"]
+
 [node name="StationaryStoreOutside" type="CanvasLayer" unique_id=940126247]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=410075306]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=704666936]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 18.0
+theme = ExtResource("1_ypx8a")
+text = "Stationary Store Outside"
