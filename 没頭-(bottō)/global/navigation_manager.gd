@@ -41,6 +41,7 @@ func _ready():
 	street_view = SV.instantiate()
 	
 	main.add_child(street_view)
+	main.move_child(street_view,0)
 	street_view.layer = -2
 
 func go_to_level(curr_level_tag,new_level_tag):
