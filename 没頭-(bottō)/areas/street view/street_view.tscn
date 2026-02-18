@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c1m6gfn8rmmdj"]
 
 [ext_resource type="Theme" uid="uid://cp4nu80cltnic" path="res://theme/main_theme.tres" id="1_7fnl3"]
+[ext_resource type="PackedScene" uid="uid://c13d8uvmyxs6j" path="res://door.tscn" id="2_160bg"]
 
 [node name="StreetView" type="CanvasLayer" unique_id=1923820669]
 
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Label" type="Label" parent="ColorRect" unique_id=175795434]
 layout_mode = 0
@@ -17,3 +19,78 @@ offset_right = 40.0
 offset_bottom = 18.0
 theme = ExtResource("1_7fnl3")
 text = "Street View"
+
+[node name="Doors" type="Node" parent="." unique_id=1746481026]
+
+[node name="Door_CSO" parent="Doors" unique_id=1136604104 instance=ExtResource("2_160bg")]
+offset_left = 88.0
+offset_top = 185.0
+offset_right = 252.0
+offset_bottom = 263.0
+current_level_tag = "street_view"
+destination_level_tag = "convenience_store_outside"
+
+[node name="Button" parent="Doors/Door_CSO" index="0" unique_id=585534956]
+text = "Convenience Store (Outside)"
+
+[node name="Door_SSO" parent="Doors" unique_id=2032482295 instance=ExtResource("2_160bg")]
+offset_left = 93.0
+offset_top = 317.0
+offset_right = 257.0
+offset_bottom = 395.0
+current_level_tag = "street_view"
+destination_level_tag = "stationary_store_outside"
+
+[node name="Button" parent="Doors/Door_SSO" index="0" unique_id=585534956]
+text = "Stationary Store (Outside)"
+
+[node name="Door_BO" parent="Doors" unique_id=953197170 instance=ExtResource("2_160bg")]
+offset_left = 89.0
+offset_top = 445.0
+offset_right = 253.0
+offset_bottom = 523.0
+current_level_tag = "street_view"
+destination_level_tag = "bookstore_outside"
+
+[node name="Button" parent="Doors/Door_BO" index="0" unique_id=585534956]
+text = "Bookstore (Outside)"
+
+[node name="Door_ClSO" parent="Doors" unique_id=2145179920 instance=ExtResource("2_160bg")]
+offset_left = 88.0
+offset_top = 568.0
+offset_right = 252.0
+offset_bottom = 646.0
+current_level_tag = "street_view"
+destination_level_tag = "clothing_store_outside"
+
+[node name="Button" parent="Doors/Door_ClSO" index="0" unique_id=585534956]
+text = "Clothing Store (Outside)"
+
+[node name="Door_HSO" parent="Doors" unique_id=2001290485 instance=ExtResource("2_160bg")]
+offset_left = 89.0
+offset_top = 690.0
+offset_right = 253.0
+offset_bottom = 768.0
+current_level_tag = "street_view"
+destination_level_tag = "hardware_store_outside"
+
+[node name="Button" parent="Doors/Door_HSO" index="0" unique_id=585534956]
+text = "Hardware Store (Outside)"
+
+[node name="Door_BSO" parent="Doors" unique_id=1118119295 instance=ExtResource("2_160bg")]
+offset_left = 93.0
+offset_top = 804.0
+offset_right = 257.0
+offset_bottom = 882.0
+current_level_tag = "street_view"
+destination_level_tag = "barber_shop_outside"
+
+[node name="Button" parent="Doors/Door_BSO" index="0" unique_id=585534956]
+text = "Barber Shop (Outside)"
+
+[editable path="Doors/Door_CSO"]
+[editable path="Doors/Door_SSO"]
+[editable path="Doors/Door_BO"]
+[editable path="Doors/Door_ClSO"]
+[editable path="Doors/Door_HSO"]
+[editable path="Doors/Door_BSO"]

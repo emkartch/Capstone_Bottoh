@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://cp4nu80cltnic" path="res://theme/main_theme.tres" id="1_62wf1"]
 [ext_resource type="Texture2D" uid="uid://cyerekk6aofke" path="res://assets/ShortArrow.png" id="2_f8i2h"]
+[ext_resource type="Shader" uid="uid://dxumlv84p2vo7" path="res://inventory/background_blur.gdshader" id="2_iigt5"]
 [ext_resource type="Script" uid="uid://b3uulu1fvp4xi" path="res://inventory/inventory_container.gd" id="2_lhcfm"]
 [ext_resource type="Texture2D" uid="uid://qyfslf8eigol" path="res://inventory/BackgroundInventory.png" id="3_0dv6l"]
 [ext_resource type="Texture2D" uid="uid://dypq21vkaun3r" path="res://assets/GreyShortArrow.png" id="3_f8i2h"]
@@ -15,6 +16,10 @@
 [ext_resource type="Resource" uid="uid://b5k5k6lp5r1hh" path="res://inventory/newspaper.tres" id="9_8eab2"]
 [ext_resource type="Script" uid="uid://nspu8rfrhb32" path="res://inventory/world_drop.gd" id="14_8eab2"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nclnd"]
+shader = ExtResource("2_iigt5")
+shader_parameter/blur_amount = 2.000000095
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_locsq"]
 texture = ExtResource("5_022t5")
 
@@ -25,7 +30,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme = ExtResource("1_62wf1")
+
+[node name="BackgroundBlur" type="ColorRect" parent="." unique_id=434837784]
+visible = false
+material = SubResource("ShaderMaterial_nclnd")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MessangerBag" type="Button" parent="." unique_id=1845026687]
 layout_mode = 1
@@ -40,6 +56,7 @@ offset_right = 80.0
 offset_bottom = 80.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_default_cursor_shape = 2
 icon = ExtResource("5_rsmrt")
 flat = true
 
@@ -52,7 +69,6 @@ anchor_top = 0.34
 anchor_right = 0.11
 anchor_bottom = 0.81
 grow_vertical = 2
-mouse_filter = 2
 texture = ExtResource("3_0dv6l")
 expand_mode = 1
 script = ExtResource("2_lhcfm")
@@ -207,6 +223,7 @@ offset_bottom = 9.544003
 grow_vertical = 2
 rotation = 4.712389
 pivot_offset = Vector2(0, 40)
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("2_f8i2h")
 texture_hover = ExtResource("3_f8i2h")
 texture_disabled = ExtResource("3_f8i2h")
@@ -224,6 +241,7 @@ offset_bottom = 9.544003
 grow_vertical = 2
 rotation = 1.5707964
 pivot_offset = Vector2(0, 40)
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("2_f8i2h")
 texture_hover = ExtResource("3_f8i2h")
 texture_disabled = ExtResource("3_f8i2h")
@@ -238,6 +256,7 @@ anchor_bottom = -0.03
 offset_left = -40.0
 offset_bottom = 40.0
 grow_horizontal = 0
+mouse_default_cursor_shape = 2
 icon = ExtResource("6_rsmrt")
 
 [node name="InventoryOpen" type="MarginContainer" parent="." unique_id=1070746806]
@@ -248,10 +267,12 @@ anchor_right = 0.92
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("14_8eab2")
 
 [node name="HBoxInventory" type="HBoxContainer" parent="InventoryOpen" unique_id=763409686]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = 0
 
 [connection signal="pressed" from="MessangerBag" to="InventoryContainer" method="_on_messanger_bag_pressed"]

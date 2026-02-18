@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dnvvak36bdupi"]
 
 [ext_resource type="Texture2D" uid="uid://dld4egj6nx361" path="res://areas/convenience store/ConvienceStoreB.png" id="1_e7c0s"]
+[ext_resource type="PackedScene" uid="uid://c13d8uvmyxs6j" path="res://door.tscn" id="2_1ktli"]
 
 [node name="ConvenienceStore" type="CanvasLayer" unique_id=1704651114]
 
@@ -8,3 +9,18 @@
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_e7c0s")
+
+[node name="Doors" type="Node" parent="." unique_id=826049362]
+
+[node name="Door_CSO" parent="Doors" unique_id=1136604104 instance=ExtResource("2_1ktli")]
+offset_left = 756.0
+offset_top = 954.0
+offset_right = 920.0
+offset_bottom = 1032.0
+current_level_tag = "convenience_store"
+destination_level_tag = "convenience_store_outside"
+
+[node name="Button" parent="Doors/Door_CSO" index="0" unique_id=585534956]
+text = "Convenience Store Outside"
+
+[editable path="Doors/Door_CSO"]

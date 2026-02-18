@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://mfnya3fp0avt"]
 
 [ext_resource type="Theme" uid="uid://cp4nu80cltnic" path="res://theme/main_theme.tres" id="1_ypx8a"]
+[ext_resource type="PackedScene" uid="uid://c13d8uvmyxs6j" path="res://door.tscn" id="2_tqcnd"]
 
 [node name="StationaryStoreOutside" type="CanvasLayer" unique_id=940126247]
 
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Label" type="Label" parent="ColorRect" unique_id=704666936]
 layout_mode = 0
@@ -17,3 +19,30 @@ offset_right = 40.0
 offset_bottom = 18.0
 theme = ExtResource("1_ypx8a")
 text = "Stationary Store Outside"
+
+[node name="Doors" type="Node" parent="." unique_id=1837340145]
+
+[node name="Door_SV" parent="Doors" unique_id=1136604104 instance=ExtResource("2_tqcnd")]
+offset_left = 166.0
+offset_top = 224.0
+offset_right = 330.0
+offset_bottom = 302.0
+current_level_tag = "stationary_store_outside"
+destination_level_tag = "street_view"
+
+[node name="Button" parent="Doors/Door_SV" index="0" unique_id=585534956]
+text = "Street View"
+
+[node name="Door_SS" parent="Doors" unique_id=49959100 instance=ExtResource("2_tqcnd")]
+offset_left = 170.0
+offset_top = 404.0
+offset_right = 334.0
+offset_bottom = 482.0
+current_level_tag = "stationary_store_outside"
+destination_level_tag = "stationary_store"
+
+[node name="Button" parent="Doors/Door_SS" index="0" unique_id=585534956]
+text = "Stationary Store"
+
+[editable path="Doors/Door_SV"]
+[editable path="Doors/Door_SS"]

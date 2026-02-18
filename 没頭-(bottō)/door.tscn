@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c13d8uvmyxs6j"]
+
+[ext_resource type="Script" uid="uid://csyrxgsx1sjv5" path="res://door.gd" id="1_ba8gm"]
+[ext_resource type="Theme" uid="uid://cp4nu80cltnic" path="res://theme/main_theme.tres" id="1_v6xrn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v6xrn"]
+
+[node name="Door" type="PanelContainer" unique_id=1136604104]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 45.0
+offset_bottom = 26.0
+mouse_filter = 2
+theme = ExtResource("1_v6xrn")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_v6xrn")
+script = ExtResource("1_ba8gm")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="." unique_id=585534956]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "Text"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

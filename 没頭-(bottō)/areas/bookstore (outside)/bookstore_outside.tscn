@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dlynmf5c7bmff"]
 
 [ext_resource type="Theme" uid="uid://cp4nu80cltnic" path="res://theme/main_theme.tres" id="1_eq8xv"]
+[ext_resource type="PackedScene" uid="uid://c13d8uvmyxs6j" path="res://door.tscn" id="2_af2uq"]
 
 [node name="BookstoreOutside" type="CanvasLayer" unique_id=1230676411]
 
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Label" type="Label" parent="ColorRect" unique_id=1531533655]
 layout_mode = 0
@@ -17,3 +19,30 @@ offset_right = 40.0
 offset_bottom = 18.0
 theme = ExtResource("1_eq8xv")
 text = "Bookstore Outside"
+
+[node name="Doors" type="Node" parent="." unique_id=1028086843]
+
+[node name="Door_B" parent="Doors" unique_id=1136604104 instance=ExtResource("2_af2uq")]
+offset_left = 202.0
+offset_top = 218.0
+offset_right = 366.0
+offset_bottom = 296.0
+current_level_tag = "bookstore_outside"
+destination_level_tag = "bookstore"
+
+[node name="Button" parent="Doors/Door_B" index="0" unique_id=585534956]
+text = "Bookstore"
+
+[node name="Door_SV" parent="Doors" unique_id=1069042883 instance=ExtResource("2_af2uq")]
+offset_left = 220.0
+offset_top = 446.0
+offset_right = 384.0
+offset_bottom = 524.0
+current_level_tag = "bookstore_outside"
+destination_level_tag = "street_view"
+
+[node name="Button" parent="Doors/Door_SV" index="0" unique_id=585534956]
+text = "Street View"
+
+[editable path="Doors/Door_B"]
+[editable path="Doors/Door_SV"]

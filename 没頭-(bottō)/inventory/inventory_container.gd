@@ -7,10 +7,14 @@ extends TextureRect
 @onready var down_arrow = $DownArrow
 @onready var bag_button = $"../MessangerBag"
 @onready var expand_button = $ExpandButton
+@onready var inventory_open = $"../InventoryOpen"
+@onready var hbox_inventory = $"../InventoryOpen/HBoxInventory"
+@onready var background_blur = $"../BackgroundBlur"
 
 # custom cursor
-const hand_point = null #preload()
-const hand_closed = null #preload()
+#const cursor_normal = preload("res://assets/CursorArrow.png")
+#const cursor_point = preload("res://assets/CursorHand.png")
+#const cursor_closed = preload("res://assets/CursorHandClosed.png")
 # custom cursor
 
 var open_texture = preload("res://inventory/MessangerbagOpen.png")
@@ -24,13 +28,6 @@ var expand_state = false
 func _ready():
 	
 	up_arrow.disabled = true
-	
-	# CUSTOM CURSOR
-	#Input.set_custom_mouse_cursor(hand_point, Input.CURSOR_ARROW)
-	#Input.set_custom_mouse_cursor(hand_closed, Input.CURSOR_FORBIDDEN)
-	#Input.set_custom_mouse_cursor(hand_closed, Input.CURSOR_CAN_DROP)
-	#Input.set_custom_mouse_cursor(hand_closed, Input.CURSOR_DRAG)
-	# CUSTOM CURSOR
 
 func _process(_delta):
 	
@@ -38,20 +35,19 @@ func _process(_delta):
 	
 	if value == 0:
 		up_arrow.disabled = true
+		up_arrow.mouse_default_cursor_shape = Control.CURSOR_ARROW
 	else:
 		up_arrow.disabled = false
+		up_arrow.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	
 	if value == 320:
 		down_arrow.disabled = true
+		down_arrow.mouse_default_cursor_shape = Control.CURSOR_ARROW
 	else:
 		down_arrow.disabled = false
+		down_arrow.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	
-	# get rid of cursor change until custom cursor
 	
-	if Input.get_current_cursor_shape() == CURSOR_FORBIDDEN:
-		DisplayServer.cursor_set_shape(DisplayServer.CURSOR_ARROW)
-	
-	# get rid of cursor change until custom cursor
 
 func _on_up_arrow_pressed() -> void:
 	var value = scroll_container.get_v_scroll()
@@ -94,7 +90,10 @@ func _on_expand_button_pressed() -> void:
 		bag_button.visible = true
 		up_arrow.visible = true
 		down_arrow.visible = true
-		#self.visible = false
+		inventory_open.mouse_filter = MOUSE_FILTER_IGNORE
+		hbox_inventory.mouse_filter = MOUSE_FILTER_IGNORE
+		background_blur.visible = false
+		
 	elif not expand_state:
 		self.anchor_top = 0.099
 		self.anchor_bottom = 0.901
@@ -103,7 +102,9 @@ func _on_expand_button_pressed() -> void:
 		bag_button.visible = false
 		up_arrow.visible = false
 		down_arrow.visible = false
-		#self.visible = true
+		inventory_open.mouse_filter = MOUSE_FILTER_PASS
+		hbox_inventory.mouse_filter = MOUSE_FILTER_PASS
+		background_blur.visible = true
 
 var data_bk
 func _notification(what: int) -> void:
