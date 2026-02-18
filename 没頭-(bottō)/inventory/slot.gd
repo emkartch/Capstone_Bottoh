@@ -13,6 +13,13 @@ extends Panel
 func _ready() -> void:
 	update_ui()
 
+func _process(_delta):
+	
+	if icon.texture != null:
+		icon.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	else:
+		icon.mouse_default_cursor_shape = Control.CURSOR_ARROW
+
 func update_ui() -> void:
 	if not item:
 		icon.texture = null
