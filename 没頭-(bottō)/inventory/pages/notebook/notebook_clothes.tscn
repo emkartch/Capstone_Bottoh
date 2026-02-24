@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://701gn22wnsvm"]
+
+[ext_resource type="Theme" uid="uid://cp4nu80cltnic" path="res://theme/main_theme.tres" id="1_36n3o"]
+[ext_resource type="PackedScene" uid="uid://ruu4aha7prj4" path="res://objects/pickable.tscn" id="2_blbfr"]
+
+[node name="Clothes" type="GridContainer" unique_id=725642407]
+visible = false
+offset_left = 120.0
+offset_top = 120.0
+offset_right = 780.0
+offset_bottom = 868.0
+theme = ExtResource("1_36n3o")
+theme_override_constants/v_separation = 15
+columns = 2
+
+[node name="T-Shirt JPN" type="Label" parent="." unique_id=1509015071]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 60
+text = "Tシャツ"
+autowrap_mode = 1
+
+[node name="T-Shirt" parent="." unique_id=632896118 groups=["answer", "correct_type_clothes"] instance=ExtResource("2_blbfr")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" parent="T-Shirt" index="1" unique_id=877096705]
+theme_override_font_sizes/font_size = 60
+text = "T-Shirt"
+
+[node name="HSeparator3" type="HSeparator" parent="." unique_id=1169695619]
+layout_mode = 2
+theme = ExtResource("1_36n3o")
+
+[node name="HSeparator4" type="HSeparator" parent="." unique_id=46934918]
+layout_mode = 2
+theme = ExtResource("1_36n3o")
+
+[node name="Button Up Shirt JPN2" type="Label" parent="." unique_id=1163418101]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 60
+text = "シャツ"
+autowrap_mode = 1
+
+[node name="Button Up Shirt JPN" parent="." unique_id=842705632 groups=["answer"] instance=ExtResource("2_blbfr")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" parent="Button Up Shirt JPN" index="1" unique_id=877096705]
+custom_minimum_size = Vector2(100, 0)
+theme_override_font_sizes/font_size = 60
+text = "Button Up
+Shirt"
+
+[node name="HSeparator5" type="HSeparator" parent="." unique_id=1832005895]
+layout_mode = 2
+theme = ExtResource("1_36n3o")
+
+[node name="HSeparator6" type="HSeparator" parent="." unique_id=2112142160]
+layout_mode = 2
+theme = ExtResource("1_36n3o")
+
+[node name="Sweater JPN" type="Label" parent="." unique_id=2122547418]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 60
+text = "セーター"
+autowrap_mode = 1
+
+[node name="Sweater" parent="." unique_id=107855271 groups=["answer"] instance=ExtResource("2_blbfr")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" parent="Sweater" index="1" unique_id=877096705]
+theme_override_font_sizes/font_size = 60
+text = "Sweater"
+
+[node name="HSeparator7" type="HSeparator" parent="." unique_id=1413078683]
+layout_mode = 2
+theme = ExtResource("1_36n3o")
+
+[node name="HSeparator8" type="HSeparator" parent="." unique_id=1299528228]
+layout_mode = 2
+theme = ExtResource("1_36n3o")
+
+[node name="Jacket JPN" type="Label" parent="." unique_id=1944555706]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 60
+text = "ジャケット"
+autowrap_mode = 1
+
+[node name="Jacket" parent="." unique_id=1460734412 groups=["answer"] instance=ExtResource("2_blbfr")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" parent="Jacket" index="1" unique_id=877096705]
+theme_override_font_sizes/font_size = 60
+text = "Jacket"
+
+[editable path="T-Shirt"]
+[editable path="Button Up Shirt JPN"]
+[editable path="Sweater"]
+[editable path="Jacket"]

@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://bnj35d03bixrn"]
+
+[ext_resource type="Theme" uid="uid://cp4nu80cltnic" path="res://theme/main_theme.tres" id="1_yhmqq"]
+[ext_resource type="PackedScene" uid="uid://ruu4aha7prj4" path="res://objects/pickable.tscn" id="2_hmd2o"]
+
+[node name="Hats" type="GridContainer" unique_id=1537680534]
+visible = false
+offset_left = 120.0
+offset_top = 120.0
+offset_right = 780.0
+offset_bottom = 868.0
+theme = ExtResource("1_yhmqq")
+theme_override_constants/v_separation = 15
+columns = 2
+
+[node name="Bucket Hat JPN" type="Label" parent="." unique_id=194491302]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 60
+text = "バケットハット"
+autowrap_mode = 2
+
+[node name="Bucket Hat" parent="." unique_id=632896118 groups=["answer"] instance=ExtResource("2_hmd2o")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" parent="Bucket Hat" index="1" unique_id=877096705]
+custom_minimum_size = Vector2(100, 0)
+theme_override_font_sizes/font_size = 60
+text = "Bucket
+Hat"
+
+[node name="HSeparator3" type="HSeparator" parent="." unique_id=177328124]
+layout_mode = 2
+theme = ExtResource("1_yhmqq")
+
+[node name="HSeparator4" type="HSeparator" parent="." unique_id=1499997660]
+layout_mode = 2
+theme = ExtResource("1_yhmqq")
+
+[node name="Baseball Cap JPN" type="Label" parent="." unique_id=87019203]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 60
+text = "野球帽"
+autowrap_mode = 2
+
+[node name="Baseball Cap" parent="." unique_id=1472566735 groups=["answer", "correct_hat"] instance=ExtResource("2_hmd2o")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" parent="Baseball Cap" index="1" unique_id=877096705]
+custom_minimum_size = Vector2(100, 0)
+theme_override_font_sizes/font_size = 60
+text = "Baseball
+Cap"
+
+[node name="HSeparator5" type="HSeparator" parent="." unique_id=796123920]
+layout_mode = 2
+theme = ExtResource("1_yhmqq")
+
+[node name="HSeparator6" type="HSeparator" parent="." unique_id=1717424140]
+layout_mode = 2
+theme = ExtResource("1_yhmqq")
+
+[node name="Beanie JPN" type="Label" parent="." unique_id=418506618]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 60
+text = "ビーニー"
+autowrap_mode = 1
+
+[node name="Beanie" parent="." unique_id=1394174413 groups=["answer"] instance=ExtResource("2_hmd2o")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" parent="Beanie" index="1" unique_id=877096705]
+theme_override_font_sizes/font_size = 60
+text = "Beanie"
+
+[editable path="Bucket Hat"]
+[editable path="Baseball Cap"]
+[editable path="Beanie"]

@@ -5,6 +5,9 @@ extends Control
 @onready var area_2d = $Area2D
 @onready var select_line = $SelectLine
 
+const cursor_normal = preload("res://assets/CursorArrow.png")
+const cursor_point = preload("res://assets/CursorHand.png")
+
 var is_hover = false
 var is_select = false
 
@@ -45,12 +48,12 @@ func update_collision_shape():
 
 func _on_area_2d_mouse_entered() -> void:
 	is_hover = true
-	#if not is_select:
+	Input.set_custom_mouse_cursor(cursor_point)
 	label.add_theme_color_override("font_color", Color.BLACK)
 	label.add_theme_color_override("font_shadow_color", Color.DIM_GRAY)
 
 func _on_area_2d_mouse_exited() -> void:
 	is_hover = false
-	#if not is_select:
+	Input.set_custom_mouse_cursor(cursor_normal)
 	label.remove_theme_color_override("font_color")
 	label.remove_theme_color_override("font_shadow_color")

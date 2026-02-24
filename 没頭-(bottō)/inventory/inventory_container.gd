@@ -11,12 +11,6 @@ extends TextureRect
 @onready var hbox_inventory = $"../InventoryOpen/HBoxInventory"
 @onready var background_blur = $"../BackgroundBlur"
 
-# custom cursor
-#const cursor_normal = preload("res://assets/CursorArrow.png")
-#const cursor_point = preload("res://assets/CursorHand.png")
-#const cursor_closed = preload("res://assets/CursorHandClosed.png")
-# custom cursor
-
 var open_texture = preload("res://inventory/MessangerbagOpen.png")
 var closed_texture = preload("res://inventory/MessangerbagClosed.png")
 var expand_texture = preload("res://inventory/Expandbutton.png")
@@ -120,7 +114,6 @@ func _notification(what: int) -> void:
 				data_bk.icon.show()
 				data_bk = null
 
-
 func _on_h_box_inventory_child_entered_tree(_node: Node) -> void:
 	
 	await inventory_open.world_drop_finished
@@ -134,8 +127,6 @@ func _on_h_box_inventory_child_entered_tree(_node: Node) -> void:
 		
 		var scale_factor = hbox_size/child_size_total
 		
-		#var margin_space = inventory_open.margins * scale_factor
-		
 		for child in hbox_inventory.get_children():
 			
 			var x_minimum = child.basic_x * scale_factor
@@ -146,6 +137,14 @@ func _on_h_box_inventory_child_entered_tree(_node: Node) -> void:
 			
 			var x_arrow_minimum = child.basic_arrow_x * scale_factor
 			var y_arrow_minimum = child.basic_arrow_y * scale_factor
+			
+			for c in child.get_node("OpenItemTexture").get_children():
+				
+				if c.is_class("VBoxContainer"):
+					
+					c.scale = Vector2(scale_factor,scale_factor)
+					
+					#c.position = Vector2(((x_minimum/2)-((c.size.x*scale_factor)/2)),((y_minimum/2 - 15)-((c.size.y*scale_factor)/2)))
 			
 			child.get_node("OpenItemTexture").set_custom_minimum_size(Vector2(x_minimum,y_minimum))
 			child.get_node("OpenItemTexture/OpenItemButton").set_custom_minimum_size(Vector2(x_button_minimum,y_button_minimum))
@@ -158,10 +157,10 @@ func _on_h_box_inventory_child_entered_tree(_node: Node) -> void:
 			child.get_node("OpenItemTexture/L Arrow").size = Vector2(0,0)
 			
 			child.get_node("OpenItemTexture/OpenItemButton").position.x = child.get_node("OpenItemTexture").size.x - child.get_node("OpenItemTexture/OpenItemButton").size.x
-			child.get_node("OpenItemTexture/R Arrow").position.x = child.get_node("OpenItemTexture").size.x - child.get_node("OpenItemTexture/R Arrow").size.x
+			child.get_node("OpenItemTexture/R Arrow").position.x = child.get_node("OpenItemTexture").size.x - child.get_node("OpenItemTexture/R Arrow").size.x - 5
 			child.get_node("OpenItemTexture/R Arrow").position.y = child.get_node("OpenItemTexture").size.y / 2
-			child.get_node("OpenItemTexture/L Arrow").position.x = child.get_node("OpenItemTexture").size.x - child.get_node("OpenItemTexture/L Arrow").size.x
-			child.get_node("OpenItemTexture/R Arrow").position.y = child.get_node("OpenItemTexture").size.y / 2
+			child.get_node("OpenItemTexture/L Arrow").position.x = 5
+			child.get_node("OpenItemTexture/L Arrow").position.y = child.get_node("OpenItemTexture").size.y / 2
 	else:
 		for child in hbox_inventory.get_children():
 			
@@ -185,10 +184,10 @@ func _on_h_box_inventory_child_entered_tree(_node: Node) -> void:
 			child.get_node("OpenItemTexture/L Arrow").size = Vector2(0,0)
 			
 			child.get_node("OpenItemTexture/OpenItemButton").position.x = child.get_node("OpenItemTexture").size.x - child.get_node("OpenItemTexture/OpenItemButton").size.x
-			child.get_node("OpenItemTexture/R Arrow").position.x = child.get_node("OpenItemTexture").size.x - child.get_node("OpenItemTexture/R Arrow").size.x
+			child.get_node("OpenItemTexture/R Arrow").position.x = child.get_node("OpenItemTexture").size.x - child.get_node("OpenItemTexture/R Arrow").size.x - 5
 			child.get_node("OpenItemTexture/R Arrow").position.y = child.get_node("OpenItemTexture").size.y / 2
-			child.get_node("OpenItemTexture/L Arrow").position.x = child.get_node("OpenItemTexture").size.x - child.get_node("OpenItemTexture/L Arrow").size.x
-			child.get_node("OpenItemTexture/R Arrow").position.y = child.get_node("OpenItemTexture").size.y / 2
+			child.get_node("OpenItemTexture/L Arrow").position.x = 5
+			child.get_node("OpenItemTexture/L Arrow").position.y = child.get_node("OpenItemTexture").size.y / 2
 
 func _on_h_box_inventory_child_exiting_tree(_node: Node) -> void:
 	
@@ -215,6 +214,14 @@ func _on_h_box_inventory_child_exiting_tree(_node: Node) -> void:
 			var x_arrow_minimum = child.basic_arrow_x * scale_factor
 			var y_arrow_minimum = child.basic_arrow_y * scale_factor
 			
+			for c in child.get_node("OpenItemTexture").get_children():
+				
+				if c.is_class("VBoxContainer"):
+					
+					c.scale = Vector2(1,1)
+					
+					#c.position = Vector2((x_minimum/2)-(c.size.x/2),((y_minimum/2 - 15)-(c.size.y/2)))
+			
 			child.get_node("OpenItemTexture").set_custom_minimum_size(Vector2(x_minimum,y_minimum))
 			child.get_node("OpenItemTexture/OpenItemButton").set_custom_minimum_size(Vector2(x_button_minimum,y_button_minimum))
 			child.get_node("OpenItemTexture/R Arrow").set_custom_minimum_size(Vector2(x_arrow_minimum,y_arrow_minimum))
@@ -226,10 +233,10 @@ func _on_h_box_inventory_child_exiting_tree(_node: Node) -> void:
 			child.get_node("OpenItemTexture/L Arrow").size = Vector2(0,0)
 			
 			child.get_node("OpenItemTexture/OpenItemButton").position.x = child.get_node("OpenItemTexture").size.x - child.get_node("OpenItemTexture/OpenItemButton").size.x
-			child.get_node("OpenItemTexture/R Arrow").position.x = child.get_node("OpenItemTexture").size.x - child.get_node("OpenItemTexture/R Arrow").size.x
+			child.get_node("OpenItemTexture/R Arrow").position.x = child.get_node("OpenItemTexture").size.x - child.get_node("OpenItemTexture/R Arrow").size.x - 5
 			child.get_node("OpenItemTexture/R Arrow").position.y = child.get_node("OpenItemTexture").size.y / 2
-			child.get_node("OpenItemTexture/L Arrow").position.x = child.get_node("OpenItemTexture").size.x - child.get_node("OpenItemTexture/L Arrow").size.x
-			child.get_node("OpenItemTexture/R Arrow").position.y = child.get_node("OpenItemTexture").size.y / 2
+			child.get_node("OpenItemTexture/L Arrow").position.x = 5
+			child.get_node("OpenItemTexture/L Arrow").position.y = child.get_node("OpenItemTexture").size.y / 2
 			
 	else:
 		for child in hbox_inventory.get_children():
@@ -254,7 +261,7 @@ func _on_h_box_inventory_child_exiting_tree(_node: Node) -> void:
 			child.get_node("OpenItemTexture/L Arrow").size = Vector2(0,0)
 			
 			child.get_node("OpenItemTexture/OpenItemButton").position.x = child.get_node("OpenItemTexture").size.x - child.get_node("OpenItemTexture/OpenItemButton").size.x
-			child.get_node("OpenItemTexture/R Arrow").position.x = child.get_node("OpenItemTexture").size.x - child.get_node("OpenItemTexture/R Arrow").size.x
+			child.get_node("OpenItemTexture/R Arrow").position.x = child.get_node("OpenItemTexture").size.x - child.get_node("OpenItemTexture/R Arrow").size.x - 5
 			child.get_node("OpenItemTexture/R Arrow").position.y = child.get_node("OpenItemTexture").size.y / 2
-			child.get_node("OpenItemTexture/L Arrow").position.x = child.get_node("OpenItemTexture").size.x - child.get_node("OpenItemTexture/L Arrow").size.x
-			child.get_node("OpenItemTexture/R Arrow").position.y = child.get_node("OpenItemTexture").size.y / 2
+			child.get_node("OpenItemTexture/L Arrow").position.x = 5
+			child.get_node("OpenItemTexture/L Arrow").position.y = child.get_node("OpenItemTexture").size.y / 2
