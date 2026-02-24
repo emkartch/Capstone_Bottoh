@@ -163,8 +163,10 @@ autowrap_mode = 1
 
 [node name="Notepad" type="TextureRect" parent="NotesContainer" unique_id=1542564145]
 layout_mode = 2
+size_flags_horizontal = 3
 theme = ExtResource("2_m440d")
 texture = ExtResource("4_74reb")
+stretch_mode = 5
 
 [node name="Colors" type="GridContainer" parent="NotesContainer/Notepad" unique_id=421517227]
 layout_mode = 0

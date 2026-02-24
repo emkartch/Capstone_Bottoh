@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cl4ulsvk88ws3"]
+
+[ext_resource type="Texture2D" uid="uid://dln533lt5atlw" path="res://inventory/OldMapIcon.png" id="1_tmfl5"]
+[ext_resource type="Script" uid="uid://dsc0p3v3tlf5d" path="res://inventory/item_data.gd" id="1_xuuie"]
+[ext_resource type="Texture2D" uid="uid://cgouvh33dl6fn" path="res://inventory/OldMap.png" id="2_cttsp"]
+
+[resource]
+script = ExtResource("1_xuuie")
+item_name = "Old Map"
+icon = ExtResource("1_tmfl5")
+item = ExtResource("2_cttsp")
+pages = 1
+metadata/_custom_type_script = "uid://dsc0p3v3tlf5d"

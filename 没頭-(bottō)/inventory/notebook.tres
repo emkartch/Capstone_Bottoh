@@ -9,4 +9,5 @@ script = ExtResource("1_64bkb")
 item_name = "Notebook"
 icon = ExtResource("1_o2lit")
 item = ExtResource("2_oyyob")
+pages = 1
 metadata/_custom_type_script = "uid://dsc0p3v3tlf5d"

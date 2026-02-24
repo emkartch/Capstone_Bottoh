@@ -9,4 +9,5 @@ script = ExtResource("1_d5mvc")
 item_name = "Newspaper"
 icon = ExtResource("1_qul3g")
 item = ExtResource("2_lrl0y")
+pages = 2
 metadata/_custom_type_script = "uid://dsc0p3v3tlf5d"
