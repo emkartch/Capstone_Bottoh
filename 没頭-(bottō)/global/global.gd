@@ -1,8 +1,8 @@
 extends Node
 
-#@onready var hud = get_node("/root/HUD")
-
 var notepad_page = 1
+
+#var newspaper_page = 1
 
 var main_pause = false
 

@@ -3,11 +3,12 @@
 [ext_resource type="Script" uid="uid://dsc0p3v3tlf5d" path="res://inventory/item_data.gd" id="1_d5mvc"]
 [ext_resource type="Texture2D" uid="uid://dyfhss0vstha6" path="res://inventory/NewsPaper.png" id="1_qul3g"]
 [ext_resource type="Texture2D" uid="uid://d38pexc3rh1aa" path="res://inventory/1stPageNP.png" id="2_lrl0y"]
+[ext_resource type="Texture2D" uid="uid://cq4qtqfuv6ymw" path="res://inventory/2ndPageNP.png" id="3_lrl0y"]
 
 [resource]
 script = ExtResource("1_d5mvc")
 item_name = "Newspaper"
 icon = ExtResource("1_qul3g")
-item = ExtResource("2_lrl0y")
+item = Array[Texture2D]([ExtResource("2_lrl0y"), ExtResource("3_lrl0y")])
 pages = 2
 metadata/_custom_type_script = "uid://dsc0p3v3tlf5d"

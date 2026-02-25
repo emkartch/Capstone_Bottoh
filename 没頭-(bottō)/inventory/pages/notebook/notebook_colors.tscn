@@ -1,0 +1,158 @@
+[gd_scene format=3 uid="uid://dyp6a5fb03rd1"]
+
+[ext_resource type="Theme" uid="uid://cp4nu80cltnic" path="res://theme/main_theme.tres" id="1_rudoo"]
+[ext_resource type="PackedScene" uid="uid://ruu4aha7prj4" path="res://objects/pickable.tscn" id="2_6fd30"]
+
+[node name="Colors" type="GridContainer" unique_id=2105346091]
+offset_left = 120.0
+offset_top = 120.0
+offset_right = 780.0
+offset_bottom = 868.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_rudoo")
+theme_override_constants/v_separation = 15
+columns = 2
+
+[node name="Red JPN" type="Label" parent="." unique_id=552939462]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 60
+text = "赤"
+autowrap_mode = 1
+
+[node name="Red" parent="." unique_id=632896118 groups=["answer"] instance=ExtResource("2_6fd30")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" parent="Red" index="1" unique_id=877096705]
+theme_override_font_sizes/font_size = 60
+text = "Red"
+
+[node name="HSeparator2" type="HSeparator" parent="." unique_id=327027489]
+layout_mode = 2
+theme = ExtResource("1_rudoo")
+
+[node name="HSeparator" type="HSeparator" parent="." unique_id=265658579]
+layout_mode = 2
+theme = ExtResource("1_rudoo")
+
+[node name="Orange JPN" type="Label" parent="." unique_id=1082886024]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 60
+text = "オレンジ"
+autowrap_mode = 1
+
+[node name="Orange" parent="." unique_id=1446864909 groups=["answer"] instance=ExtResource("2_6fd30")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" parent="Orange" index="1" unique_id=877096705]
+theme_override_font_sizes/font_size = 60
+text = "Orange"
+
+[node name="HSeparator3" type="HSeparator" parent="." unique_id=496585057]
+layout_mode = 2
+theme = ExtResource("1_rudoo")
+
+[node name="HSeparator4" type="HSeparator" parent="." unique_id=2068061841]
+layout_mode = 2
+theme = ExtResource("1_rudoo")
+
+[node name="Yellow JPN" type="Label" parent="." unique_id=794037080]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 60
+text = "黄色"
+autowrap_mode = 1
+
+[node name="Yellow" parent="." unique_id=1463622842 groups=["answer"] instance=ExtResource("2_6fd30")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" parent="Yellow" index="1" unique_id=877096705]
+theme_override_font_sizes/font_size = 60
+text = "Yellow"
+
+[node name="HSeparator5" type="HSeparator" parent="." unique_id=904374212]
+layout_mode = 2
+theme = ExtResource("1_rudoo")
+
+[node name="HSeparator6" type="HSeparator" parent="." unique_id=1779500323]
+layout_mode = 2
+theme = ExtResource("1_rudoo")
+
+[node name="Green JPN" type="Label" parent="." unique_id=969425203]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 60
+text = "緑"
+autowrap_mode = 1
+
+[node name="Green" parent="." unique_id=123476305 groups=["answer"] instance=ExtResource("2_6fd30")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" parent="Green" index="1" unique_id=877096705]
+theme_override_font_sizes/font_size = 60
+text = "Green"
+
+[node name="HSeparator7" type="HSeparator" parent="." unique_id=387112666]
+layout_mode = 2
+theme = ExtResource("1_rudoo")
+
+[node name="HSeparator8" type="HSeparator" parent="." unique_id=1648353769]
+layout_mode = 2
+theme = ExtResource("1_rudoo")
+
+[node name="Blue JPN" type="Label" parent="." unique_id=564808435]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 60
+text = "青"
+autowrap_mode = 1
+
+[node name="Blue" parent="." unique_id=1517958600 groups=["answer", "correct_color_clothes"] instance=ExtResource("2_6fd30")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" parent="Blue" index="1" unique_id=877096705]
+theme_override_font_sizes/font_size = 60
+text = "Blue"
+
+[node name="HSeparator9" type="HSeparator" parent="." unique_id=1633879540]
+layout_mode = 2
+theme = ExtResource("1_rudoo")
+
+[node name="HSeparator10" type="HSeparator" parent="." unique_id=1217164957]
+layout_mode = 2
+theme = ExtResource("1_rudoo")
+
+[node name="Purple JPN" type="Label" parent="." unique_id=1011115657]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 60
+text = "紫"
+autowrap_mode = 1
+
+[node name="Purple" parent="." unique_id=441133930 groups=["answer"] instance=ExtResource("2_6fd30")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" parent="Purple" index="1" unique_id=877096705]
+theme_override_font_sizes/font_size = 60
+text = "Purple"
+
+[editable path="Red"]
+[editable path="Orange"]
+[editable path="Yellow"]
+[editable path="Green"]
+[editable path="Blue"]
+[editable path="Purple"]

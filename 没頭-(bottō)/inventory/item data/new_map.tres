@@ -8,6 +8,6 @@
 script = ExtResource("1_1mjau")
 item_name = "New Map"
 icon = ExtResource("1_tsv7o")
-item = ExtResource("2_pl854")
+item = Array[Texture2D]([ExtResource("2_pl854")])
 pages = 1
 metadata/_custom_type_script = "uid://dsc0p3v3tlf5d"

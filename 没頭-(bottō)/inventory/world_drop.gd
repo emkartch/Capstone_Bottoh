@@ -22,7 +22,7 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 		
 		node.set_meta("item_data", data.item)
 		
-		node.get_node("OpenItemTexture").texture = data.item.item
+		node.get_node("OpenItemTexture").texture = data.item.item[0]
 		
 		var texture_size = node.get_node("OpenItemTexture").texture.get_size()
 		

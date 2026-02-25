@@ -53,6 +53,7 @@ grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("5_wrs3s")
 texture_hover = ExtResource("6_0u6dj")
 texture_disabled = ExtResource("6_0u6dj")
@@ -76,3 +77,6 @@ texture_disabled = ExtResource("6_0u6dj")
 ignore_texture_size = true
 stretch_mode = 5
 flip_h = true
+
+[connection signal="pressed" from="OpenItemTexture/R Arrow" to="." method="_on_r_arrow_pressed"]
+[connection signal="pressed" from="OpenItemTexture/L Arrow" to="." method="_on_l_arrow_pressed"]
