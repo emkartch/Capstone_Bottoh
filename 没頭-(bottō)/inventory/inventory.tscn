@@ -6,12 +6,12 @@
 [ext_resource type="Script" uid="uid://b3uulu1fvp4xi" path="res://inventory/inventory_container.gd" id="2_lhcfm"]
 [ext_resource type="Texture2D" uid="uid://qyfslf8eigol" path="res://inventory/BackgroundInventory.png" id="3_0dv6l"]
 [ext_resource type="Texture2D" uid="uid://dypq21vkaun3r" path="res://assets/GreyShortArrow.png" id="3_f8i2h"]
-[ext_resource type="Texture2D" uid="uid://dmhunreje6uf5" path="res://inventory/InventorySquare.png" id="5_022t5"]
 [ext_resource type="Texture2D" uid="uid://dxdcblg2ibwh2" path="res://inventory/MessangerbagClosed.png" id="5_rsmrt"]
-[ext_resource type="Script" uid="uid://bx73qlcn2g61v" path="res://inventory/slot.gd" id="6_022t5"]
+[ext_resource type="PackedScene" uid="uid://duevndqg3ryqh" path="res://inventory/slot.tscn" id="6_inc80"]
 [ext_resource type="Texture2D" uid="uid://bvc443624xejf" path="res://inventory/Expandbutton.png" id="6_rsmrt"]
 [ext_resource type="Resource" uid="uid://bnqheekv7nxc5" path="res://inventory/item data/notebook.tres" id="7_ajlgj"]
 [ext_resource type="Texture2D" uid="uid://dyfhss0vstha6" path="res://inventory/NewsPaper.png" id="7_locsq"]
+[ext_resource type="Shader" uid="uid://cv3ryj4ylh74m" path="res://assets/outline.gdshader" id="8_uj086"]
 [ext_resource type="Texture2D" uid="uid://cvpmlm7hwetli" path="res://assets/MiniNotePadClosed.png" id="8_uyjf6"]
 [ext_resource type="Resource" uid="uid://b5k5k6lp5r1hh" path="res://inventory/item data/newspaper.tres" id="9_8eab2"]
 [ext_resource type="Resource" uid="uid://bv3sglq0n3auv" path="res://inventory/item data/note.tres" id="12_uj086"]
@@ -26,8 +26,55 @@
 shader = ExtResource("2_iigt5")
 shader_parameter/blur_amount = 2.000000095
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_locsq"]
-texture = ExtResource("5_022t5")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ihdgy"]
+resource_local_to_scene = true
+shader = ExtResource("8_uj086")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x6dpd"]
+resource_local_to_scene = true
+shader = ExtResource("8_uj086")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qgctf"]
+resource_local_to_scene = true
+shader = ExtResource("8_uj086")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tf2jx"]
+resource_local_to_scene = true
+shader = ExtResource("8_uj086")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_56l34"]
+resource_local_to_scene = true
+shader = ExtResource("8_uj086")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
 
 [node name="Inventory" type="Control" unique_id=213740819]
 layout_mode = 3
@@ -97,130 +144,45 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 20
 
-[node name="Slot" type="Panel" parent="InventoryContainer/ScrollContainer/VBoxInventory" unique_id=642916503 groups=["pickable"]]
-custom_minimum_size = Vector2(140, 140)
+[node name="Slot" parent="InventoryContainer/ScrollContainer/VBoxInventory" unique_id=1600701809 instance=ExtResource("6_inc80")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxTexture_locsq")
-script = ExtResource("6_022t5")
 item = ExtResource("7_ajlgj")
 
-[node name="Item" type="TextureRect" parent="InventoryContainer/ScrollContainer/VBoxInventory/Slot" unique_id=1273393416]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -60.0
-offset_top = -60.0
-offset_right = 60.0
-offset_bottom = 60.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Item" parent="InventoryContainer/ScrollContainer/VBoxInventory/Slot" index="0" unique_id=1804702880]
+material = SubResource("ShaderMaterial_ihdgy")
 texture = ExtResource("8_uyjf6")
-expand_mode = 1
 
-[node name="Slot2" type="Panel" parent="InventoryContainer/ScrollContainer/VBoxInventory" unique_id=508425890]
-custom_minimum_size = Vector2(140, 140)
+[node name="Slot2" parent="InventoryContainer/ScrollContainer/VBoxInventory" unique_id=556575379 instance=ExtResource("6_inc80")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxTexture_locsq")
-script = ExtResource("6_022t5")
 item = ExtResource("9_8eab2")
 
-[node name="Item" type="TextureRect" parent="InventoryContainer/ScrollContainer/VBoxInventory/Slot2" unique_id=678063042]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -60.0
-offset_top = -60.0
-offset_right = 60.0
-offset_bottom = 60.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Item" parent="InventoryContainer/ScrollContainer/VBoxInventory/Slot2" index="0" unique_id=1804702880]
+material = SubResource("ShaderMaterial_x6dpd")
 texture = ExtResource("7_locsq")
-expand_mode = 1
 
-[node name="Slot3" type="Panel" parent="InventoryContainer/ScrollContainer/VBoxInventory" unique_id=2033457933]
-custom_minimum_size = Vector2(140, 140)
+[node name="Slot3" parent="InventoryContainer/ScrollContainer/VBoxInventory" unique_id=1425520509 instance=ExtResource("6_inc80")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxTexture_locsq")
-script = ExtResource("6_022t5")
 item = ExtResource("12_uj086")
 
-[node name="Item" type="TextureRect" parent="InventoryContainer/ScrollContainer/VBoxInventory/Slot3" unique_id=1715698168]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -60.0
-offset_top = -60.0
-offset_right = 60.0
-offset_bottom = 60.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Item" parent="InventoryContainer/ScrollContainer/VBoxInventory/Slot3" index="0" unique_id=1804702880]
+material = SubResource("ShaderMaterial_qgctf")
 texture = ExtResource("13_ihdgy")
-expand_mode = 1
 
-[node name="Slot4" type="Panel" parent="InventoryContainer/ScrollContainer/VBoxInventory" unique_id=1236580021]
-custom_minimum_size = Vector2(140, 140)
+[node name="Slot4" parent="InventoryContainer/ScrollContainer/VBoxInventory" unique_id=1581384247 instance=ExtResource("6_inc80")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxTexture_locsq")
-script = ExtResource("6_022t5")
-item = ExtResource("14_x6dpd")
-
-[node name="Item" type="TextureRect" parent="InventoryContainer/ScrollContainer/VBoxInventory/Slot4" unique_id=1342413009]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -60.0
-offset_top = -60.0
-offset_right = 60.0
-offset_bottom = 60.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("15_qgctf")
-expand_mode = 1
-
-[node name="Slot5" type="Panel" parent="InventoryContainer/ScrollContainer/VBoxInventory" unique_id=877218428]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxTexture_locsq")
-script = ExtResource("6_022t5")
 item = ExtResource("16_tf2jx")
 
-[node name="Item" type="TextureRect" parent="InventoryContainer/ScrollContainer/VBoxInventory/Slot5" unique_id=1612538139]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -60.0
-offset_top = -60.0
-offset_right = 60.0
-offset_bottom = 60.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Item" parent="InventoryContainer/ScrollContainer/VBoxInventory/Slot4" index="0" unique_id=1804702880]
+material = SubResource("ShaderMaterial_tf2jx")
 texture = ExtResource("17_56l34")
-expand_mode = 1
+
+[node name="Slot5" parent="InventoryContainer/ScrollContainer/VBoxInventory" unique_id=1029458052 instance=ExtResource("6_inc80")]
+layout_mode = 2
+item = ExtResource("14_x6dpd")
+
+[node name="Item" parent="InventoryContainer/ScrollContainer/VBoxInventory/Slot5" index="0" unique_id=1804702880]
+material = SubResource("ShaderMaterial_56l34")
+texture = ExtResource("15_qgctf")
 
 [node name="UpArrow" type="TextureButton" parent="InventoryContainer" unique_id=1957222319]
 layout_mode = 1
@@ -294,3 +256,9 @@ alignment = 1
 [connection signal="pressed" from="InventoryContainer/ExpandButton" to="InventoryContainer" method="_on_expand_button_pressed"]
 [connection signal="child_entered_tree" from="InventoryOpen/HBoxInventory" to="InventoryContainer" method="_on_h_box_inventory_child_entered_tree"]
 [connection signal="child_exiting_tree" from="InventoryOpen/HBoxInventory" to="InventoryContainer" method="_on_h_box_inventory_child_exiting_tree"]
+
+[editable path="InventoryContainer/ScrollContainer/VBoxInventory/Slot"]
+[editable path="InventoryContainer/ScrollContainer/VBoxInventory/Slot2"]
+[editable path="InventoryContainer/ScrollContainer/VBoxInventory/Slot3"]
+[editable path="InventoryContainer/ScrollContainer/VBoxInventory/Slot4"]
+[editable path="InventoryContainer/ScrollContainer/VBoxInventory/Slot5"]

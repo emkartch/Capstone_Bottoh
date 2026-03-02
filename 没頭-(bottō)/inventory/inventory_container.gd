@@ -101,6 +101,21 @@ func _on_messanger_bag_pressed() -> void:
 		bag_button.set_button_icon(closed_texture)
 		state = false
 		self.visible = false
+		var selected = get_tree().get_nodes_in_group("selected")
+		if not selected.is_empty():
+			for select in selected:
+				
+				if select is Panel:
+					select.icon.material.set_shader_parameter("width",0)
+					select.icon.material.set_shader_parameter("color",Color.WHITE)
+				elif select.item == null:
+					select.select_line.visible = false
+				else:
+					select.object.material.set_shader_parameter("width",0)
+					select.object.material.set_shader_parameter("color",Color.WHITE)
+				select.is_select = false
+				select.remove_from_group("selected")
+				
 	elif not state:
 		bag_button.set_button_icon(open_texture)
 		state = true
@@ -315,60 +330,3 @@ func _on_h_box_inventory_child_exiting_tree(_node: Node) -> void:
 			child.get_node("OpenItemTexture/R Arrow").position.y = child.get_node("OpenItemTexture").size.y / 2
 			child.get_node("OpenItemTexture/L Arrow").position.x = 5
 			child.get_node("OpenItemTexture/L Arrow").position.y = child.get_node("OpenItemTexture").size.y / 2
-
-#func _on_click(clicked_node):
-	#
-	#if clicked_node.is_in_group("question"):
-		#group_type = 'question'
-	#else:
-		#group_type = 'answer'
-#
-	#if clicked_node.is_select:
-		#
-		##clicked_node.select_line.visible = false
-		#if clicked_node.item == null:
-			#clicked_node.select_line.visible = false
-		#else:
-			#clicked_node.object.material.set_shader_parameter("width",0)
-			#clicked_node.object.material.set_shader_parameter("color",Color.WHITE)
-		#
-		#clicked_node.is_select = false
-		#clicked_node.remove_from_group("selected")
-		#
-	#elif not clicked_node.is_select:
-#
-		#var selected = get_tree().get_nodes_in_group("selected")
-		#
-		#if not selected.is_empty():
-			#for select in selected:
-				#if select.is_in_group("question"):
-					#select_group_type = 'question'
-				#else:
-					#select_group_type = 'answer'
-				#
-				#if group_type == select_group_type:
-					#
-					##select.select_line.visible = false
-					#if clicked_node.item == null:
-						#select.select_line.visible = false
-					#else:
-						#clicked_node.object.material.set_shader_parameter("width",0)
-						#clicked_node.object.material.set_shader_parameter("color",Color.WHITE)
-					#
-					#select.is_select = false
-					#select.remove_from_group("selected")
-		#
-		#clicked_node.add_to_group("selected")
-		#
-		##clicked_node.select_line.visible = true
-		#if clicked_node.item == null:
-			#clicked_node.select_line.visible = true
-		#else:
-			#clicked_node.object.material.set_shader_parameter("width",10)
-			#clicked_node.object.material.set_shader_parameter("color",Color.GOLD)
-		#
-		#
-		#clicked_node.is_select = true
-	#
-	#group_type = null
-	#select_group_type = null

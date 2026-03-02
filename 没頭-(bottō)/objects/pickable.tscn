@@ -8,6 +8,7 @@
 size = Vector2(18, 18)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_akkf5"]
+resource_local_to_scene = true
 shader = ExtResource("3_1spf1")
 shader_parameter/color = Color(0.4117647, 0.4117647, 0.4117647, 1)
 shader_parameter/width = 0.0
@@ -38,6 +39,7 @@ theme = ExtResource("2_1spf1")
 text = "Text"
 
 [node name="Object" type="TextureRect" parent="." unique_id=966148529]
+visible = false
 material = SubResource("ShaderMaterial_akkf5")
 layout_mode = 2
 mouse_filter = 2

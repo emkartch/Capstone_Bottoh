@@ -63,6 +63,14 @@ func _ready():
 	# CUSTOM CURSOR
 	
 	connect_button.pressed.connect(_on_connect_button_pressed)
+	
+	var pickable_array = get_tree().get_nodes_in_group("pickable")
+	
+	for pick in pickable_array:
+		
+		if not pick.clicked.is_connected(Global._on_pickable_click):
+		
+			pick.clicked.connect(Global._on_pickable_click)
 
 func _process(_delta):
 	
@@ -120,25 +128,39 @@ func _on_connect_button_pressed() -> void:
 
 func _on_pickable_click(clicked_node):
 	
-	if clicked_node.is_in_group("question"):
+	if clicked_node is Panel:
+		
+		if !clicked_node.inventory_open:
+			
+			_handle_select(clicked_node)
+		
+	else:
+		_handle_select(clicked_node)
+
+func _handle_select(node):
+	
+	if node.is_in_group("question"):
 		group_type = 'question'
 	else:
 		group_type = 'answer'
 
-	if clicked_node.is_select:
+	if node.is_select:
 		
 		#clicked_node.select_line.visible = false
-		if clicked_node.item == null:
-			clicked_node.select_line.visible = false
+		if node is Panel:
+			node.icon.material.set_shader_parameter("width",0)
+			node.icon.material.set_shader_parameter("color",Color.WHITE)
+		elif node.item == null:
+			node.select_line.visible = false
 		else:
-			clicked_node.object.material.set_shader_parameter("width",0)
-			clicked_node.object.material.set_shader_parameter("color",Color.WHITE)
+			node.object.material.set_shader_parameter("width",0)
+			node.object.material.set_shader_parameter("color",Color.WHITE)
 		
-		clicked_node.is_select = false
-		clicked_node.remove_from_group("selected")
+		node.is_select = false
+		node.remove_from_group("selected")
 		
-	elif not clicked_node.is_select:
-
+	elif not node.is_select:
+		
 		var selected = get_tree().get_nodes_in_group("selected")
 		
 		if not selected.is_empty():
@@ -151,26 +173,32 @@ func _on_pickable_click(clicked_node):
 				if group_type == select_group_type:
 					
 					#select.select_line.visible = false
-					if clicked_node.item == null:
+					if node is Panel:
+						select.icon.material.set_shader_parameter("width",0)
+						select.icon.material.set_shader_parameter("color",Color.WHITE)
+					elif node.item == null:
 						select.select_line.visible = false
 					else:
-						clicked_node.object.material.set_shader_parameter("width",0)
-						clicked_node.object.material.set_shader_parameter("color",Color.WHITE)
+						select.object.material.set_shader_parameter("width",0)
+						select.object.material.set_shader_parameter("color",Color.WHITE)
 					
 					select.is_select = false
 					select.remove_from_group("selected")
 		
-		clicked_node.add_to_group("selected")
+		node.add_to_group("selected")
 		
 		#clicked_node.select_line.visible = true
-		if clicked_node.item == null:
-			clicked_node.select_line.visible = true
+		if node is Panel:
+			node.icon.material.set_shader_parameter("width",5)
+			node.icon.material.set_shader_parameter("color",Color.GOLD)
+		elif node.item == null:
+			node.select_line.visible = true
 		else:
-			clicked_node.object.material.set_shader_parameter("width",10)
-			clicked_node.object.material.set_shader_parameter("color",Color.GOLD)
+			node.object.material.set_shader_parameter("width",10)
+			node.object.material.set_shader_parameter("color",Color.GOLD)
 		
 		
-		clicked_node.is_select = true
+		node.is_select = true
 	
 	group_type = null
 	select_group_type = null

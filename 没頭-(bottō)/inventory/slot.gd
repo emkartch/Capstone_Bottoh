@@ -3,6 +3,7 @@ extends Panel
 # Created with the help of Octodemy - https://www.youtube.com/watch?v=JUR1qQ79eJY
 
 @onready var inventory = $"../../../.."
+@onready var inventory_container = get_node("/root/Main/Inventory/InventoryContainer")
 @onready var icon : TextureRect = $Item
 @export var item: ItemData :
 	set(value):
@@ -10,10 +11,29 @@ extends Panel
 		if is_node_ready() and item:
 			update_ui()
 
+var is_hover = false
+var is_select = false
+
+var inventory_open = false
+
+signal clicked(emitter_node)
+
 func _ready() -> void:
 	update_ui()
 
 func _process(_delta):
+	
+	if is_hover:
+		if Input.is_action_just_pressed("click"):
+			emit_signal("clicked", self)
+	
+	if inventory_container.expand_state:
+		
+		inventory_open = true
+		
+	else:
+		
+		inventory_open = false
 	
 	if icon.texture != null:
 		icon.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
@@ -49,7 +69,7 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 
 func _can_drop_data(_at_position: Vector2, _data: Variant) -> bool:
 	return true
-	
+
 func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	var tmp = item
 	item = data.item
@@ -58,3 +78,26 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	data.icon.show()
 	update_ui()
 	data.update_ui()
+
+func _on_mouse_entered() -> void:
+	
+	is_hover = true
+	
+	icon.material.set_shader_parameter("color",Color.WHITE)
+	
+	if not is_select:
+		
+		icon.material.set_shader_parameter("width",5)
+		
+
+func _on_mouse_exited() -> void:
+	is_hover = false
+	
+	if is_select:
+		
+		icon.material.set_shader_parameter("color",Color.GOLD)
+
+	if not is_select:
+	
+		icon.material.set_shader_parameter("width",0)
+		
