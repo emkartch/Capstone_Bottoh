@@ -14,6 +14,7 @@ theme_override_constants/v_separation = 15
 columns = 2
 
 [node name="T-Shirt JPN" type="Label" parent="." unique_id=1509015071]
+modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -22,6 +23,7 @@ text = "Tシャツ"
 autowrap_mode = 1
 
 [node name="T-Shirt" parent="." unique_id=632896118 groups=["answer", "correct_type_clothes"] instance=ExtResource("2_blbfr")]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -37,7 +39,8 @@ theme = ExtResource("1_36n3o")
 layout_mode = 2
 theme = ExtResource("1_36n3o")
 
-[node name="Button Up Shirt JPN2" type="Label" parent="." unique_id=1163418101]
+[node name="Button Up Shirt JPN" type="Label" parent="." unique_id=1163418101]
+modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -45,11 +48,12 @@ theme_override_font_sizes/font_size = 60
 text = "シャツ"
 autowrap_mode = 1
 
-[node name="Button Up Shirt JPN" parent="." unique_id=842705632 groups=["answer"] instance=ExtResource("2_blbfr")]
+[node name="Button Up Shirt" parent="." unique_id=842705632 groups=["answer"] instance=ExtResource("2_blbfr")]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" parent="Button Up Shirt JPN" index="1" unique_id=877096705]
+[node name="Label" parent="Button Up Shirt" index="1" unique_id=877096705]
 custom_minimum_size = Vector2(100, 0)
 theme_override_font_sizes/font_size = 60
 text = "Button Up
@@ -64,6 +68,7 @@ layout_mode = 2
 theme = ExtResource("1_36n3o")
 
 [node name="Sweater JPN" type="Label" parent="." unique_id=2122547418]
+modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -72,6 +77,7 @@ text = "セーター"
 autowrap_mode = 1
 
 [node name="Sweater" parent="." unique_id=107855271 groups=["answer"] instance=ExtResource("2_blbfr")]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -88,6 +94,7 @@ layout_mode = 2
 theme = ExtResource("1_36n3o")
 
 [node name="Jacket JPN" type="Label" parent="." unique_id=1944555706]
+modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -96,6 +103,7 @@ text = "ジャケット"
 autowrap_mode = 1
 
 [node name="Jacket" parent="." unique_id=1460734412 groups=["answer"] instance=ExtResource("2_blbfr")]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -104,6 +112,6 @@ theme_override_font_sizes/font_size = 60
 text = "Jacket"
 
 [editable path="T-Shirt"]
-[editable path="Button Up Shirt JPN"]
+[editable path="Button Up Shirt"]
 [editable path="Sweater"]
 [editable path="Jacket"]

@@ -4,11 +4,74 @@
 [ext_resource type="Theme" uid="uid://cp4nu80cltnic" path="res://theme/main_theme.tres" id="2_2gk58"]
 [ext_resource type="Script" uid="uid://dadl2ct6iu51b" path="res://hud/dialog.gd" id="3_svhta"]
 [ext_resource type="Texture2D" uid="uid://cbnhlqlr5fpw0" path="res://assets/Arrow.png" id="3_w8tcp"]
+[ext_resource type="Texture2D" uid="uid://nqspkns4iyov" path="res://inventory/TextBox.png" id="4_hwufu"]
 [ext_resource type="Texture2D" uid="uid://cev8nqun6fo3" path="res://assets/GreyArrow.png" id="4_svhta"]
 [ext_resource type="Texture2D" uid="uid://dbq4s5le452yk" path="res://assets/NotePage (Smaller).png" id="6_qv4qp"]
 [ext_resource type="Texture2D" uid="uid://bthma8uk8dn3h" path="res://assets/X.png" id="7_qv4qp"]
 [ext_resource type="Texture2D" uid="uid://cc2vq3gm7y48" path="res://assets/GreyX.png" id="8_sh35x"]
 [ext_resource type="Texture2D" uid="uid://d120m6w405qbg" path="res://assets/Notebookpaper.png" id="9_qv4qp"]
+[ext_resource type="Script" uid="uid://b4wnpbm4ar8gk" path="res://hud/notification.gd" id="10_sh35x"]
+[ext_resource type="Texture2D" uid="uid://2uoeuu05tj0j" path="res://inventory/NotificationBox.png" id="12_mq7b8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jvpmi"]
+texture = ExtResource("4_hwufu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t2ad4"]
+texture = ExtResource("12_mq7b8")
+
+[sub_resource type="Animation" id="Animation_hwufu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-470, 20)]
+}
+
+[sub_resource type="Animation" id="Animation_mq7b8"]
+resource_name = "notif_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-470, 20), Vector2(20, 20)]
+}
+
+[sub_resource type="Animation" id="Animation_jvpmi"]
+resource_name = "notif_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(20, 20), Vector2(-470, 20)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t2ad4"]
+_data = {
+&"RESET": SubResource("Animation_hwufu"),
+&"notif_in": SubResource("Animation_mq7b8"),
+&"notif_out": SubResource("Animation_jvpmi")
+}
 
 [node name="HUD" type="CanvasLayer" unique_id=179951230]
 process_mode = 3
@@ -43,15 +106,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(960, 0)
 mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_jvpmi")
 
 [node name="Continue" type="TextureButton" parent="Dialog/Box" unique_id=1403673656]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.97
-anchor_top = 0.97
-anchor_right = 1.0
-anchor_bottom = 0.97
+anchor_left = 0.985
+anchor_top = 0.96
+anchor_right = 0.985
+anchor_bottom = 0.96
 offset_left = -40.0
 offset_top = -40.0
 grow_horizontal = 0
@@ -62,9 +127,11 @@ texture_hover = ExtResource("4_svhta")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Dialog" unique_id=136578749]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = 0.015
+anchor_top = 0.05
+anchor_right = 0.985
+anchor_bottom = 0.95
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -148,6 +215,49 @@ offset_bottom = 128.0
 grow_horizontal = 0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("9_qv4qp")
+
+[node name="Notification" type="Control" parent="." unique_id=1241564741]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -470.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 170.0
+theme = ExtResource("2_2gk58")
+script = ExtResource("10_sh35x")
+
+[node name="Box" type="Panel" parent="Notification" unique_id=1249111142]
+layout_mode = 0
+offset_right = 450.0
+offset_bottom = 150.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_t2ad4")
+
+[node name="Text" type="Label" parent="Notification/Box" unique_id=1758758188]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "Goal Updated"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Notification" unique_id=1274578642]
+libraries/ = SubResource("AnimationLibrary_t2ad4")
+
+[node name="ConnectButton" type="Button" parent="." unique_id=555135791]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -146.0
+offset_right = 146.0
+offset_bottom = 78.0
+grow_horizontal = 2
+theme = ExtResource("2_2gk58")
+text = "Connect"
 
 [connection signal="pressed" from="Dialog/Box/Continue" to="Dialog" method="_on_continue_pressed"]
 [connection signal="pressed" from="Goal/GoalOpen/ExitGoalButton" to="." method="_on_exit_goal_button_pressed"]
