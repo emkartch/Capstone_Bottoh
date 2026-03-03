@@ -50,6 +50,8 @@ var hat_correct = false
 @onready var popup = get_node("/root/Main/HUD/PopUpMenu")
 @onready var dialog = get_node("/root/Main/HUD/Dialog")
 
+var run_show_popup = true
+
 var visible_popup = false
 var popup_ans = null
 
@@ -59,6 +61,9 @@ var select_click = false
 
 var group_type = null
 var select_group_type = null
+
+var speaker = null
+var text = null
 
 # For pickable clicked
 
@@ -103,10 +108,6 @@ func _process(_delta):
 			
 			popup_ans = "leave"
 			
-			#block_rect.visible = false
-			#
-			#detect_rect.visible = false
-			
 		elif info_click:
 			
 			popup.visible = false
@@ -117,10 +118,6 @@ func _process(_delta):
 			
 			popup_ans =  "information"
 			
-			#block_rect.visible = false
-			#
-			#detect_rect.visible = false
-			
 		elif select_click:
 			
 			popup.visible = false
@@ -130,10 +127,6 @@ func _process(_delta):
 			visible_popup = false
 			
 			popup_ans = "select"
-			
-			#block_rect.visible = false
-			#
-			#detect_rect.visible = false
 
 func _on_connect_button_pressed() -> void:
 	
@@ -182,33 +175,47 @@ func _on_connect_button_pressed() -> void:
 
 func _on_pickable_click(clicked_node):
 	
-	show_popup()
-	
-	while popup_ans == null:
-		await get_tree().process_frame
-	
-	if popup_ans == "select":
+	if run_show_popup:
 		
-		if clicked_node is Panel:
+		run_show_popup = false
+		
+		show_popup()
+		
+		while popup_ans == null:
+			await get_tree().process_frame
+		
+		if popup_ans == "select":
 			
-			if !clicked_node.inventory_open:
+			if clicked_node is Panel:
 				
+				if !clicked_node.inventory_open:
+					
+					_handle_select(clicked_node)
+				
+			else:
 				_handle_select(clicked_node)
 			
-		else:
-			_handle_select(clicked_node)
+		elif popup_ans == 'information':
+			
+			if not clicked_node.get_meta_list().is_empty():
+				
+				var item_data = clicked_node.get_meta('item_data')
+				
+				speaker = String(item_data.item_name) + " Information"
+				
+				text = String(item_data.description)
+				
+			else:
+				
+				speaker = String(clicked_node.item_name) + " Information"
+				
+				text = String(clicked_node.description)
+			
+			dialog.display_line(true,text,speaker)
+			
+		popup_ans = null
 		
-	elif popup_ans == 'information':
-		
-		var item_data = clicked_node.get_meta('item_data')
-		
-		var speaker = String(item_data.item_name) + " Information"
-		
-		var text = String(item_data.description)
-		
-		dialog.display_line(true,text,speaker)
-		
-	popup_ans = null
+		run_show_popup = true
 
 func _handle_select(node):
 	
@@ -283,10 +290,6 @@ func check_correct():
 		#hud.show_end()
 
 func show_popup():
-	
-	#block_rect.visible = true
-	
-	#detect_rect.visible = true
 	
 	visible_popup = true
 	

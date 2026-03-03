@@ -6,6 +6,7 @@ extends Control
 @onready var area_2d = $Area2D
 @onready var select_line = $SelectLine
 
+@export var item_name: String
 @export var item: Texture2D
 @export var description: String
 

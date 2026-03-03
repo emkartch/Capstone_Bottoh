@@ -31,6 +31,7 @@ offset_bottom = 740.0
 
 [node name="Pickable" parent="ColorRect/Selectables" unique_id=632896118 groups=["answer"] instance=ExtResource("2_4u1ha")]
 layout_mode = 0
+item_name = "Color Pamphlet"
 item = ExtResource("3_ttx4h")
 description = "This is colors"
 
