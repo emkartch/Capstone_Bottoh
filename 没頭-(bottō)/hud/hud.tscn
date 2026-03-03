@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://d120m6w405qbg" path="res://assets/Notebookpaper.png" id="9_qv4qp"]
 [ext_resource type="Script" uid="uid://b4wnpbm4ar8gk" path="res://hud/notification.gd" id="10_sh35x"]
 [ext_resource type="Texture2D" uid="uid://2uoeuu05tj0j" path="res://inventory/NotificationBox.png" id="12_mq7b8"]
+[ext_resource type="PackedScene" uid="uid://csnjyfc1uapsx" path="res://hud/pop_up_menu.tscn" id="13_mq7b8"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jvpmi"]
 texture = ExtResource("4_hwufu")
@@ -258,6 +259,9 @@ offset_bottom = 78.0
 grow_horizontal = 2
 theme = ExtResource("2_2gk58")
 text = "Connect"
+
+[node name="PopUpMenu" parent="." unique_id=1848782344 instance=ExtResource("13_mq7b8")]
+visible = false
 
 [connection signal="pressed" from="Dialog/Box/Continue" to="Dialog" method="_on_continue_pressed"]
 [connection signal="pressed" from="Goal/GoalOpen/ExitGoalButton" to="." method="_on_exit_goal_button_pressed"]

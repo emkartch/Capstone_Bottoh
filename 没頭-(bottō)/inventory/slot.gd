@@ -5,6 +5,7 @@ extends Panel
 @onready var inventory = $"../../../.."
 @onready var inventory_container = get_node("/root/Main/Inventory/InventoryContainer")
 @onready var icon : TextureRect = $Item
+#@onready var item_data = self.set_meta('item_data', item)
 @export var item: ItemData :
 	set(value):
 		item = value
@@ -20,6 +21,8 @@ signal clicked(emitter_node)
 
 func _ready() -> void:
 	update_ui()
+	
+	self.set_meta('item_data', item)
 
 func _process(_delta):
 	

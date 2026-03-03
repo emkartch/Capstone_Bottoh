@@ -47,6 +47,16 @@ var hat_correct = false
 
 # For pickable clicked
 
+@onready var popup = get_node("/root/Main/HUD/PopUpMenu")
+@onready var dialog = get_node("/root/Main/HUD/Dialog")
+
+var visible_popup = false
+var popup_ans = null
+
+var popup_hover = false
+var info_click = false
+var select_click = false
+
 var group_type = null
 var select_group_type = null
 
@@ -74,12 +84,56 @@ func _ready():
 
 func _process(_delta):
 	
+	check_correct()
+	
 	var selected = get_tree().get_nodes_in_group("selected")
 	
 	if selected.size() == 2:
 		connect_button.visible = true
 	else:
 		connect_button.visible = false
+	
+	if visible_popup:
+		
+		if not popup_hover:
+			
+			popup.visible = false
+			
+			visible_popup = false
+			
+			popup_ans = "leave"
+			
+			#block_rect.visible = false
+			#
+			#detect_rect.visible = false
+			
+		elif info_click:
+			
+			popup.visible = false
+			
+			info_click = false
+			
+			visible_popup = false
+			
+			popup_ans =  "information"
+			
+			#block_rect.visible = false
+			#
+			#detect_rect.visible = false
+			
+		elif select_click:
+			
+			popup.visible = false
+			
+			select_click = false
+			
+			visible_popup = false
+			
+			popup_ans = "select"
+			
+			#block_rect.visible = false
+			#
+			#detect_rect.visible = false
 
 func _on_connect_button_pressed() -> void:
 	
@@ -128,14 +182,33 @@ func _on_connect_button_pressed() -> void:
 
 func _on_pickable_click(clicked_node):
 	
-	if clicked_node is Panel:
+	show_popup()
+	
+	while popup_ans == null:
+		await get_tree().process_frame
+	
+	if popup_ans == "select":
 		
-		if !clicked_node.inventory_open:
+		if clicked_node is Panel:
 			
+			if !clicked_node.inventory_open:
+				
+				_handle_select(clicked_node)
+			
+		else:
 			_handle_select(clicked_node)
 		
-	else:
-		_handle_select(clicked_node)
+	elif popup_ans == 'information':
+		
+		var item_data = clicked_node.get_meta('item_data')
+		
+		var speaker = String(item_data.item_name) + " Information"
+		
+		var text = String(item_data.description)
+		
+		dialog.display_line(true,text,speaker)
+		
+	popup_ans = null
 
 func _handle_select(node):
 	
@@ -202,3 +275,29 @@ func _handle_select(node):
 	
 	group_type = null
 	select_group_type = null
+
+func check_correct():
+	
+	if looks_correct and hair_correct and clothes_color_correct and clothes_type_correct and hat_correct:
+		Global.game_end = true
+		#hud.show_end()
+
+func show_popup():
+	
+	#block_rect.visible = true
+	
+	#detect_rect.visible = true
+	
+	visible_popup = true
+	
+	var mouse_position: Vector2 = get_viewport().get_mouse_position()
+	
+	mouse_position.x -= 90
+	
+	mouse_position.y -= 90
+	
+	popup.position = mouse_position
+	
+	popup_hover = true
+	
+	popup.visible = true

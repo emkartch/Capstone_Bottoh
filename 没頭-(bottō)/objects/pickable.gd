@@ -7,6 +7,7 @@ extends Control
 @onready var select_line = $SelectLine
 
 @export var item: Texture2D
+@export var description: String
 
 const cursor_normal = preload("res://assets/CursorArrow.png")
 const cursor_point = preload("res://assets/CursorHand.png")

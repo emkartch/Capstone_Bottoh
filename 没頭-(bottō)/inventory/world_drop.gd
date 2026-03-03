@@ -26,6 +26,8 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 				
 				node = world_item.instantiate()
 				
+				node.set_meta("item_data", data.item)
+				
 				Global.open_newspaper = node
 				
 			else:
@@ -37,6 +39,8 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 			if Global.open_new_map == null:
 				
 				node = world_item.instantiate()
+				
+				node.set_meta("item_data", data.item)
 				
 				Global.open_new_map = node
 				
@@ -50,6 +54,8 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 				
 				node = world_item.instantiate()
 				
+				node.set_meta("item_data", data.item)
+				
 				Global.open_note = node
 				
 			else:
@@ -61,6 +67,8 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 			if Global.open_notebook == null:
 				
 				node = world_item.instantiate()
+				
+				node.set_meta("item_data", data.item)
 				
 				node.add_to_group("question")
 				
@@ -76,13 +84,13 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 				
 				node = world_item.instantiate()
 				
+				node.set_meta("item_data", data.item)
+				
 				Global.open_old_map = node
 				
 			else:
 				
 				node = Global.open_old_map
-		
-		node.set_meta("item_data", data.item)
 		
 		node.get_node("OpenItemTexture").texture = data.item.item[0]
 		
