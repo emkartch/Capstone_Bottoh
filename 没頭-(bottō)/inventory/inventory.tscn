@@ -2,7 +2,6 @@
 
 [ext_resource type="Theme" uid="uid://cp4nu80cltnic" path="res://theme/main_theme.tres" id="1_62wf1"]
 [ext_resource type="Texture2D" uid="uid://cyerekk6aofke" path="res://assets/ShortArrow.png" id="2_f8i2h"]
-[ext_resource type="Shader" uid="uid://dxumlv84p2vo7" path="res://inventory/background_blur.gdshader" id="2_iigt5"]
 [ext_resource type="Script" uid="uid://b3uulu1fvp4xi" path="res://inventory/inventory_container.gd" id="2_lhcfm"]
 [ext_resource type="Texture2D" uid="uid://qyfslf8eigol" path="res://inventory/BackgroundInventory.png" id="3_0dv6l"]
 [ext_resource type="Texture2D" uid="uid://dypq21vkaun3r" path="res://assets/GreyShortArrow.png" id="3_f8i2h"]
@@ -23,8 +22,27 @@
 [ext_resource type="Texture2D" uid="uid://dln533lt5atlw" path="res://inventory/OldMapIcon.png" id="17_56l34"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nclnd"]
-shader = ExtResource("2_iigt5")
-shader_parameter/blur_amount = 2.000000095
+resource_local_to_scene = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tjdag"]
+resource_local_to_scene = true
+shader = ExtResource("8_uj086")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uj086"]
+resource_local_to_scene = true
+shader = ExtResource("8_uj086")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ihdgy"]
 resource_local_to_scene = true
@@ -56,26 +74,6 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/number_of_images = Vector2(1, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tf2jx"]
-resource_local_to_scene = true
-shader = ExtResource("8_uj086")
-shader_parameter/color = Color(1, 1, 1, 1)
-shader_parameter/width = 0.0
-shader_parameter/pattern = 2
-shader_parameter/inside = false
-shader_parameter/add_margins = true
-shader_parameter/number_of_images = Vector2(1, 1)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_56l34"]
-resource_local_to_scene = true
-shader = ExtResource("8_uj086")
-shader_parameter/color = Color(1, 1, 1, 1)
-shader_parameter/width = 0.0
-shader_parameter/pattern = 2
-shader_parameter/inside = false
-shader_parameter/add_margins = true
-shader_parameter/number_of_images = Vector2(1, 1)
-
 [node name="Inventory" type="Control" unique_id=213740819]
 layout_mode = 3
 anchors_preset = 15
@@ -86,9 +84,18 @@ grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("1_62wf1")
 
-[node name="BackgroundBlur" type="ColorRect" parent="." unique_id=434837784]
+[node name="BackgroundBlur2" type="ColorRect" parent="." unique_id=553406456]
 visible = false
 material = SubResource("ShaderMaterial_nclnd")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackgroundBlur" type="ColorRect" parent="." unique_id=434837784]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -149,7 +156,7 @@ layout_mode = 2
 item = ExtResource("7_ajlgj")
 
 [node name="Item" parent="InventoryContainer/ScrollContainer/VBoxInventory/Slot" index="0" unique_id=1804702880]
-material = SubResource("ShaderMaterial_ihdgy")
+material = SubResource("ShaderMaterial_tjdag")
 texture = ExtResource("8_uyjf6")
 
 [node name="Slot2" parent="InventoryContainer/ScrollContainer/VBoxInventory" unique_id=556575379 instance=ExtResource("6_inc80")]
@@ -157,7 +164,7 @@ layout_mode = 2
 item = ExtResource("9_8eab2")
 
 [node name="Item" parent="InventoryContainer/ScrollContainer/VBoxInventory/Slot2" index="0" unique_id=1804702880]
-material = SubResource("ShaderMaterial_x6dpd")
+material = SubResource("ShaderMaterial_uj086")
 texture = ExtResource("7_locsq")
 
 [node name="Slot3" parent="InventoryContainer/ScrollContainer/VBoxInventory" unique_id=1425520509 instance=ExtResource("6_inc80")]
@@ -165,7 +172,7 @@ layout_mode = 2
 item = ExtResource("12_uj086")
 
 [node name="Item" parent="InventoryContainer/ScrollContainer/VBoxInventory/Slot3" index="0" unique_id=1804702880]
-material = SubResource("ShaderMaterial_qgctf")
+material = SubResource("ShaderMaterial_ihdgy")
 texture = ExtResource("13_ihdgy")
 
 [node name="Slot4" parent="InventoryContainer/ScrollContainer/VBoxInventory" unique_id=1581384247 instance=ExtResource("6_inc80")]
@@ -173,7 +180,7 @@ layout_mode = 2
 item = ExtResource("16_tf2jx")
 
 [node name="Item" parent="InventoryContainer/ScrollContainer/VBoxInventory/Slot4" index="0" unique_id=1804702880]
-material = SubResource("ShaderMaterial_tf2jx")
+material = SubResource("ShaderMaterial_x6dpd")
 texture = ExtResource("17_56l34")
 
 [node name="Slot5" parent="InventoryContainer/ScrollContainer/VBoxInventory" unique_id=1029458052 instance=ExtResource("6_inc80")]
@@ -181,7 +188,7 @@ layout_mode = 2
 item = ExtResource("14_x6dpd")
 
 [node name="Item" parent="InventoryContainer/ScrollContainer/VBoxInventory/Slot5" index="0" unique_id=1804702880]
-material = SubResource("ShaderMaterial_56l34")
+material = SubResource("ShaderMaterial_qgctf")
 texture = ExtResource("15_qgctf")
 
 [node name="UpArrow" type="TextureButton" parent="InventoryContainer" unique_id=1957222319]
