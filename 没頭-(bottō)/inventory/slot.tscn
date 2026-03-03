@@ -1,18 +1,44 @@
 [gd_scene format=3 uid="uid://duevndqg3ryqh"]
 
+[ext_resource type="Shader" uid="uid://cv3ryj4ylh74m" path="res://assets/outline.gdshader" id="1_87gbl"]
 [ext_resource type="Texture2D" uid="uid://dmhunreje6uf5" path="res://inventory/InventorySquare.png" id="1_u4i3g"]
+[ext_resource type="Script" uid="uid://bx73qlcn2g61v" path="res://inventory/slot.gd" id="2_ecxla"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sthnt"]
-size = Vector2(140, 140)
-
-[node name="Slot" type="Area2D" unique_id=418292341]
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1970510466]
-offset_right = 140.0
-offset_bottom = 140.0
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_locsq"]
 texture = ExtResource("1_u4i3g")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ecxla"]
+resource_local_to_scene = true
+shader = ExtResource("1_87gbl")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[node name="Slot" type="Panel" unique_id=1600701809 groups=["pickable", "question"]]
+custom_minimum_size = Vector2(140, 140)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_locsq")
+script = ExtResource("2_ecxla")
+
+[node name="Item" type="TextureRect" parent="." unique_id=1804702880]
+material = SubResource("ShaderMaterial_ecxla")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
 expand_mode = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=199886517]
-position = Vector2(70, 70)
-shape = SubResource("RectangleShape2D_sthnt")
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

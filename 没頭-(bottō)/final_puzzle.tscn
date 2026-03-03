@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://clrmiad5dkevj" path="res://assets/NotePage.png" id="1_hjal2"]
 [ext_resource type="Script" uid="uid://kiqc8al3isty" path="res://final_puzzle.gd" id="1_m440d"]
 [ext_resource type="Theme" uid="uid://cp4nu80cltnic" path="res://theme/main_theme.tres" id="2_m440d"]
-[ext_resource type="PackedScene" uid="uid://ruu4aha7prj4" path="res://objects/pickable.tscn" id="3_i8r2h"]
+[ext_resource type="PackedScene" uid="uid://h51whi87hrsw" path="res://inventory/pages/note/note_qcontainer.tscn" id="3_yv1og"]
 [ext_resource type="Texture2D" uid="uid://bnndiueip2cxy" path="res://assets/BigNotePad.png" id="4_74reb"]
 [ext_resource type="Texture2D" uid="uid://cbnhlqlr5fpw0" path="res://assets/Arrow.png" id="5_vwrh8"]
 [ext_resource type="PackedScene" uid="uid://dyp6a5fb03rd1" path="res://inventory/pages/notebook/notebook_colors.tscn" id="6_5rl6k"]
@@ -41,130 +41,12 @@ layout_mode = 2
 texture = ExtResource("1_hjal2")
 stretch_mode = 5
 
-[node name="Qcontainer" type="VBoxContainer" parent="NotesContainer/Notepage" unique_id=1277901893]
+[node name="Qcontainer" parent="NotesContainer/Notepage" unique_id=651033403 instance=ExtResource("3_yv1og")]
 layout_mode = 0
-offset_left = 120.0
-offset_top = 120.0
-offset_right = 780.0
-offset_bottom = 830.0
-theme = ExtResource("2_m440d")
-
-[node name="Looks" type="HBoxContainer" parent="NotesContainer/Notepage/Qcontainer" unique_id=2117006773]
-layout_mode = 2
-theme = ExtResource("2_m440d")
-theme_override_constants/separation = 0
-
-[node name="Dash" type="Label" parent="NotesContainer/Notepage/Qcontainer/Looks" unique_id=937082690]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 60
-text = "- "
-
-[node name="Looks JPN" parent="NotesContainer/Notepage/Qcontainer/Looks" unique_id=632896118 groups=["correct_looks", "question"] instance=ExtResource("3_i8r2h")]
-layout_mode = 2
-
-[node name="Label" parent="NotesContainer/Notepage/Qcontainer/Looks/Looks JPN" index="1" unique_id=877096705]
-theme_override_font_sizes/font_size = 60
-text = "背が高い"
-
-[node name="Looks ENG" type="Label" parent="NotesContainer/Notepage/Qcontainer" unique_id=434107404]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 55
-text = "   Tall"
-autowrap_mode = 1
-
-[node name="Hair" type="HBoxContainer" parent="NotesContainer/Notepage/Qcontainer" unique_id=369826606]
-layout_mode = 2
-theme = ExtResource("2_m440d")
-theme_override_constants/separation = 0
-
-[node name="Dash" type="Label" parent="NotesContainer/Notepage/Qcontainer/Hair" unique_id=764926666]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 60
-text = "- "
-
-[node name="Hair JPN2" parent="NotesContainer/Notepage/Qcontainer/Hair" unique_id=1655880858 groups=["correct_hair", "question"] instance=ExtResource("3_i8r2h")]
-layout_mode = 2
-
-[node name="Label" parent="NotesContainer/Notepage/Qcontainer/Hair/Hair JPN2" index="1" unique_id=877096705]
-theme_override_font_sizes/font_size = 60
-text = "髪は短い"
-
-[node name="Hair ENG" type="Label" parent="NotesContainer/Notepage/Qcontainer" unique_id=1259421868]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 55
-text = "   Short hair"
-autowrap_mode = 1
-
-[node name="Clothes" type="HBoxContainer" parent="NotesContainer/Notepage/Qcontainer" unique_id=1168527179]
-layout_mode = 2
-theme = ExtResource("2_m440d")
-theme_override_constants/separation = 0
-
-[node name="Dash" type="Label" parent="NotesContainer/Notepage/Qcontainer/Clothes" unique_id=2111732982]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 60
-text = "- "
-
-[node name="Color JPN" parent="NotesContainer/Notepage/Qcontainer/Clothes" unique_id=1903029440 groups=["correct_color_clothes", "question"] instance=ExtResource("3_i8r2h")]
-layout_mode = 2
-
-[node name="Label" parent="NotesContainer/Notepage/Qcontainer/Clothes/Color JPN" index="1" unique_id=877096705]
-theme_override_font_sizes/font_size = 60
-text = "青い"
-
-[node name="Type JPN" parent="NotesContainer/Notepage/Qcontainer/Clothes" unique_id=1333567567 groups=["correct_type_clothes", "question"] instance=ExtResource("3_i8r2h")]
-layout_mode = 2
-
-[node name="Label" parent="NotesContainer/Notepage/Qcontainer/Clothes/Type JPN" index="1" unique_id=877096705]
-theme_override_font_sizes/font_size = 60
-text = "Tシャツ"
-
-[node name="Clothes ENG" type="HBoxContainer" parent="NotesContainer/Notepage/Qcontainer" unique_id=247421559]
-layout_mode = 2
-
-[node name="Clothes Color ENG" type="Label" parent="NotesContainer/Notepage/Qcontainer/Clothes ENG" unique_id=1741846699]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 55
-text = "   Blue"
-
-[node name="Clothes Type ENG" type="Label" parent="NotesContainer/Notepage/Qcontainer/Clothes ENG" unique_id=471532100]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 55
-text = "T-shirt"
-autowrap_mode = 1
-
-[node name="Hat" type="HBoxContainer" parent="NotesContainer/Notepage/Qcontainer" unique_id=625651587]
-layout_mode = 2
-theme = ExtResource("2_m440d")
-theme_override_constants/separation = 0
-
-[node name="Dash" type="Label" parent="NotesContainer/Notepage/Qcontainer/Hat" unique_id=58772609]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 60
-text = "- "
-
-[node name="Hat JPN" parent="NotesContainer/Notepage/Qcontainer/Hat" unique_id=1414090775 groups=["correct_hat", "question"] instance=ExtResource("3_i8r2h")]
-layout_mode = 2
-
-[node name="Label" parent="NotesContainer/Notepage/Qcontainer/Hat/Hat JPN" index="1" unique_id=877096705]
-theme_override_font_sizes/font_size = 60
-text = "野球帽"
-
-[node name="Hat ENG" type="Label" parent="NotesContainer/Notepage/Qcontainer" unique_id=1069430268]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 55
-text = "   Baseball cap"
-autowrap_mode = 1
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 660.0
+offset_bottom = 710.0
 
 [node name="Notepad" type="TextureRect" parent="NotesContainer" unique_id=1542564145]
 layout_mode = 2
@@ -253,11 +135,6 @@ text = "1/4"
 [connection signal="pressed" from="NotesContainer/Notepad/R Notepad Arrow" to="." method="_on_r_notepad_arrow_pressed"]
 [connection signal="pressed" from="NotesContainer/Notepad/L Notepad Arrow" to="." method="_on_l_notepad_arrow_pressed"]
 
-[editable path="NotesContainer/Notepage/Qcontainer/Looks/Looks JPN"]
-[editable path="NotesContainer/Notepage/Qcontainer/Hair/Hair JPN2"]
-[editable path="NotesContainer/Notepage/Qcontainer/Clothes/Color JPN"]
-[editable path="NotesContainer/Notepage/Qcontainer/Clothes/Type JPN"]
-[editable path="NotesContainer/Notepage/Qcontainer/Hat/Hat JPN"]
 [editable path="NotesContainer/Notepad/Colors"]
 [editable path="NotesContainer/Notepad/Colors/Red"]
 [editable path="NotesContainer/Notepad/Colors/Orange"]

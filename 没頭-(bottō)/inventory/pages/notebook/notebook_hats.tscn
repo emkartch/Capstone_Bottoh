@@ -14,6 +14,7 @@ theme_override_constants/v_separation = 15
 columns = 2
 
 [node name="Bucket Hat JPN" type="Label" parent="." unique_id=194491302]
+modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -22,6 +23,7 @@ text = "バケットハット"
 autowrap_mode = 2
 
 [node name="Bucket Hat" parent="." unique_id=632896118 groups=["answer"] instance=ExtResource("2_hmd2o")]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -40,6 +42,7 @@ layout_mode = 2
 theme = ExtResource("1_yhmqq")
 
 [node name="Baseball Cap JPN" type="Label" parent="." unique_id=87019203]
+modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -48,6 +51,7 @@ text = "野球帽"
 autowrap_mode = 2
 
 [node name="Baseball Cap" parent="." unique_id=1472566735 groups=["answer", "correct_hat"] instance=ExtResource("2_hmd2o")]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -66,6 +70,7 @@ layout_mode = 2
 theme = ExtResource("1_yhmqq")
 
 [node name="Beanie JPN" type="Label" parent="." unique_id=418506618]
+modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -74,6 +79,7 @@ text = "ビーニー"
 autowrap_mode = 1
 
 [node name="Beanie" parent="." unique_id=1394174413 groups=["answer"] instance=ExtResource("2_hmd2o")]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 

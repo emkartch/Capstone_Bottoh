@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://h51whi87hrsw"]
+
+[ext_resource type="Theme" uid="uid://cp4nu80cltnic" path="res://theme/main_theme.tres" id="1_vhorj"]
+[ext_resource type="PackedScene" uid="uid://ruu4aha7prj4" path="res://objects/pickable.tscn" id="2_o1l47"]
+
+[node name="Qcontainer" type="VBoxContainer" unique_id=651033403]
+custom_minimum_size = Vector2(580, 600)
+offset_left = 120.0
+offset_top = 120.0
+offset_right = 700.0
+offset_bottom = 811.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_vhorj")
+theme_override_constants/separation = 15
+
+[node name="Looks" type="HBoxContainer" parent="." unique_id=1817802459]
+layout_mode = 2
+theme = ExtResource("1_vhorj")
+theme_override_constants/separation = 0
+
+[node name="Dash" type="Label" parent="Looks" unique_id=1435763437]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "- "
+
+[node name="Looks JPN" parent="Looks" unique_id=632896118 groups=["correct_looks", "question"] instance=ExtResource("2_o1l47")]
+layout_mode = 2
+
+[node name="Label" parent="Looks/Looks JPN" index="1" unique_id=877096705]
+theme_override_font_sizes/font_size = 60
+text = "背が高い"
+
+[node name="Looks ENG" type="Label" parent="." unique_id=1831724375]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "   Tall"
+autowrap_mode = 1
+
+[node name="Hair" type="HBoxContainer" parent="." unique_id=2105274827]
+layout_mode = 2
+theme = ExtResource("1_vhorj")
+theme_override_constants/separation = 0
+
+[node name="Dash" type="Label" parent="Hair" unique_id=1645011802]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "- "
+
+[node name="Hair JPN2" parent="Hair" unique_id=1746748937 groups=["correct_hair", "question"] instance=ExtResource("2_o1l47")]
+layout_mode = 2
+
+[node name="Label" parent="Hair/Hair JPN2" index="1" unique_id=877096705]
+theme_override_font_sizes/font_size = 60
+text = "髪は短い"
+
+[node name="Hair ENG" type="Label" parent="." unique_id=697378006]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "   Short hair"
+autowrap_mode = 1
+
+[node name="Clothes" type="HBoxContainer" parent="." unique_id=1696743443]
+layout_mode = 2
+theme = ExtResource("1_vhorj")
+theme_override_constants/separation = 0
+
+[node name="Dash" type="Label" parent="Clothes" unique_id=1842658136]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "- "
+
+[node name="Color JPN" parent="Clothes" unique_id=1813657881 groups=["correct_color_clothes", "question"] instance=ExtResource("2_o1l47")]
+layout_mode = 2
+
+[node name="Label" parent="Clothes/Color JPN" index="1" unique_id=877096705]
+theme_override_font_sizes/font_size = 60
+text = "青い"
+
+[node name="Type JPN" parent="Clothes" unique_id=2052640907 groups=["correct_type_clothes", "question"] instance=ExtResource("2_o1l47")]
+layout_mode = 2
+
+[node name="Label" parent="Clothes/Type JPN" index="1" unique_id=877096705]
+theme_override_font_sizes/font_size = 60
+text = "Tシャツ"
+
+[node name="Clothes ENG" type="HBoxContainer" parent="." unique_id=2000013572]
+layout_mode = 2
+
+[node name="Clothes Color ENG" type="Label" parent="Clothes ENG" unique_id=1721930203]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "   Blue"
+
+[node name="Clothes Type ENG" type="Label" parent="Clothes ENG" unique_id=642117993]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 55
+text = "T-shirt"
+autowrap_mode = 1
+
+[node name="Hat" type="HBoxContainer" parent="." unique_id=422629088]
+layout_mode = 2
+theme = ExtResource("1_vhorj")
+theme_override_constants/separation = 0
+
+[node name="Dash" type="Label" parent="Hat" unique_id=1524625352]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "- "
+
+[node name="Hat JPN" parent="Hat" unique_id=1612017149 groups=["correct_hat", "question"] instance=ExtResource("2_o1l47")]
+layout_mode = 2
+
+[node name="Label" parent="Hat/Hat JPN" index="1" unique_id=877096705]
+theme_override_font_sizes/font_size = 60
+text = "野球帽"
+
+[node name="Hat ENG" type="Label" parent="." unique_id=1800424193]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "   Baseball cap"
+autowrap_mode = 1
+
+[editable path="Looks/Looks JPN"]
+[editable path="Hair/Hair JPN2"]
+[editable path="Clothes/Color JPN"]
+[editable path="Clothes/Type JPN"]
+[editable path="Hat/Hat JPN"]

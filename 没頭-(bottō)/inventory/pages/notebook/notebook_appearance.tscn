@@ -14,6 +14,7 @@ theme_override_constants/v_separation = 15
 columns = 2
 
 [node name="Long Hair JPN" type="Label" parent="." unique_id=522716851]
+modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -22,6 +23,7 @@ text = "髪は長い"
 autowrap_mode = 2
 
 [node name="Long Hair" parent="." unique_id=632896118 groups=["answer"] instance=ExtResource("2_44cdc")]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -39,6 +41,7 @@ layout_mode = 2
 theme = ExtResource("1_e5s4t")
 
 [node name="Short Hair JPN" type="Label" parent="." unique_id=501867829]
+modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -47,6 +50,7 @@ text = "髪は短い"
 autowrap_mode = 2
 
 [node name="Short Hair" parent="." unique_id=2061989465 groups=["answer", "correct_hair"] instance=ExtResource("2_44cdc")]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -65,6 +69,7 @@ layout_mode = 2
 theme = ExtResource("1_e5s4t")
 
 [node name="Tall JPN" type="Label" parent="." unique_id=1846161379]
+modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -73,6 +78,7 @@ text = "背が高い"
 autowrap_mode = 1
 
 [node name="Tall" parent="." unique_id=2067699509 groups=["answer", "correct_looks"] instance=ExtResource("2_44cdc")]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -89,6 +95,7 @@ layout_mode = 2
 theme = ExtResource("1_e5s4t")
 
 [node name="Short (Stature) JPN" type="Label" parent="." unique_id=50473835]
+modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -97,6 +104,7 @@ text = "背が低い"
 autowrap_mode = 2
 
 [node name="Short (Stature)" parent="." unique_id=944960379 groups=["answer"] instance=ExtResource("2_44cdc")]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 

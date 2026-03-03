@@ -17,10 +17,80 @@ func _can_drop_data(_at_position: Vector2, _data: Variant) -> bool:
 func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	
 	if inventory_container.expand_state:
-	
-		var node = world_item.instantiate()
 		
-		node.set_meta("item_data", data.item)
+		var node = null
+		
+		if data.item.item_name == "Newspaper":
+			
+			if Global.open_newspaper == null:
+				
+				node = world_item.instantiate()
+				
+				node.set_meta("item_data", data.item)
+				
+				Global.open_newspaper = node
+				
+			else:
+				
+				node = Global.open_newspaper
+				
+		elif data.item.item_name == "New Map":
+			
+			if Global.open_new_map == null:
+				
+				node = world_item.instantiate()
+				
+				node.set_meta("item_data", data.item)
+				
+				Global.open_new_map = node
+				
+			else:
+				
+				node = Global.open_new_map
+				
+		elif data.item.item_name == "Note":
+			
+			if Global.open_note == null:
+				
+				node = world_item.instantiate()
+				
+				node.set_meta("item_data", data.item)
+				
+				Global.open_note = node
+				
+			else:
+				
+				node = Global.open_note
+		
+		elif data.item.item_name == "Notebook":
+			
+			if Global.open_notebook == null:
+				
+				node = world_item.instantiate()
+				
+				node.set_meta("item_data", data.item)
+				
+				node.add_to_group("question")
+				
+				Global.open_notebook = node
+				
+			else:
+				
+				node = Global.open_notebook
+				
+		elif data.item.item_name == "Old Map":
+			
+			if Global.open_old_map == null:
+				
+				node = world_item.instantiate()
+				
+				node.set_meta("item_data", data.item)
+				
+				Global.open_old_map = node
+				
+			else:
+				
+				node = Global.open_old_map
 		
 		node.get_node("OpenItemTexture").texture = data.item.item[0]
 		
@@ -50,7 +120,9 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 		
 		node.get_node("OpenItemTexture").set_custom_minimum_size(Vector2(size_x,texture_size[1]))
 		
-		node.get_node("OpenItemTexture/OpenItemButton").pressed.connect(_on_button_pressed.bind(node))
+		if not node.get_node("OpenItemTexture/OpenItemButton").pressed.is_connected(_on_button_pressed.bind(node)):
+		
+			node.get_node("OpenItemTexture/OpenItemButton").pressed.connect(_on_button_pressed.bind(node))
 		
 		data.item = null
 	
@@ -63,5 +135,6 @@ func _on_button_pressed(node):
 		
 		slot.item = node.get_meta("item_data")	
 		slot.update_ui()
-		node.queue_free()
+		var parent = node.get_parent()
+		parent.remove_child(node)
 		break

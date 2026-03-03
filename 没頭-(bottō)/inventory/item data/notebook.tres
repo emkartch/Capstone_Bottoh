@@ -10,4 +10,5 @@ item_name = "Notebook"
 icon = ExtResource("1_qfttv")
 item = Array[Texture2D]([ExtResource("2_yg6eq")])
 pages = 4
+description = "This is notebook"
 metadata/_custom_type_script = "uid://dsc0p3v3tlf5d"

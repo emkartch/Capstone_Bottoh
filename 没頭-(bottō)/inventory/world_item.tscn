@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://de4sudurufd34"]
 
-[ext_resource type="Texture2D" uid="uid://bnndiueip2cxy" path="res://assets/BigNotePad.png" id="2_0u6dj"]
+[ext_resource type="Texture2D" uid="uid://clrmiad5dkevj" path="res://assets/NotePage.png" id="2_0u6dj"]
 [ext_resource type="Texture2D" uid="uid://bthma8uk8dn3h" path="res://assets/X.png" id="2_gcf00"]
 [ext_resource type="Script" uid="uid://bh5jfh6rkimot" path="res://inventory/world_item.gd" id="2_wrs3s"]
 [ext_resource type="Texture2D" uid="uid://cc2vq3gm7y48" path="res://assets/GreyX.png" id="3_aurr3"]

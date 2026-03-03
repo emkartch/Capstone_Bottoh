@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://csnjyfc1uapsx"]
+
+[ext_resource type="Theme" uid="uid://cp4nu80cltnic" path="res://theme/main_theme.tres" id="1_s341x"]
+[ext_resource type="Script" uid="uid://vr740kmfvuo4" path="res://hud/pop_up_menu.gd" id="2_trexd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_trexd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s341x"]
+size = Vector2(528, 250)
+
+[node name="PopUpMenu" type="Panel" unique_id=1851742840]
+offset_left = -176.0
+offset_top = -63.0
+offset_right = 352.0
+offset_bottom = 187.0
+theme = ExtResource("1_s341x")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_trexd")
+script = ExtResource("2_trexd")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=352809817]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1397427328]
+position = Vector2(88, 62)
+shape = SubResource("RectangleShape2D_s341x")
+
+[node name="Node" type="Node2D" parent="." unique_id=653612998]
+position = Vector2(176, 63)
+
+[node name="PanelContainer" type="PanelContainer" parent="Node" unique_id=1317150017]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Node/PanelContainer" unique_id=733794055]
+layout_mode = 2
+theme = ExtResource("1_s341x")
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Node/PanelContainer/MarginContainer" unique_id=1064029381]
+layout_mode = 2
+
+[node name="Information" type="Button" parent="Node/PanelContainer/MarginContainer/VBoxContainer" unique_id=1018151585]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 40
+text = "Information"
+
+[node name="Select" type="Button" parent="Node/PanelContainer/MarginContainer/VBoxContainer" unique_id=665130845]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 40
+text = "Select"
+
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="Node/PanelContainer/MarginContainer/VBoxContainer/Information" to="." method="_on_information_pressed"]
+[connection signal="pressed" from="Node/PanelContainer/MarginContainer/VBoxContainer/Select" to="." method="_on_select_pressed"]

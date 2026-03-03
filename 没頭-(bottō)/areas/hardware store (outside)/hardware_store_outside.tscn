@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://brybq5uqj71t7"]
 
 [ext_resource type="Theme" uid="uid://cp4nu80cltnic" path="res://theme/main_theme.tres" id="1_p62k5"]
+[ext_resource type="PackedScene" uid="uid://ruu4aha7prj4" path="res://objects/pickable.tscn" id="2_4u1ha"]
 [ext_resource type="PackedScene" uid="uid://c13d8uvmyxs6j" path="res://door.tscn" id="2_wip6l"]
+[ext_resource type="Texture2D" uid="uid://dmhunreje6uf5" path="res://inventory/InventorySquare.png" id="3_ttx4h"]
 
 [node name="HardwareStoreOutside" type="CanvasLayer" unique_id=1574600429]
 
@@ -19,6 +21,19 @@ offset_right = 40.0
 offset_bottom = 18.0
 theme = ExtResource("1_p62k5")
 text = "Hardware Store Outside"
+
+[node name="Selectables" type="Control" parent="ColorRect" unique_id=590021954]
+anchors_preset = 0
+offset_left = 900.0
+offset_top = 700.0
+offset_right = 940.0
+offset_bottom = 740.0
+
+[node name="Pickable" parent="ColorRect/Selectables" unique_id=632896118 groups=["answer"] instance=ExtResource("2_4u1ha")]
+layout_mode = 0
+item_name = "Color Pamphlet"
+item = ExtResource("3_ttx4h")
+description = "This is colors"
 
 [node name="Doors" type="Node" parent="." unique_id=2121549788]
 

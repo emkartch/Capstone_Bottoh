@@ -10,11 +10,32 @@ extends TextureRect
 @onready var inventory_open = $"../InventoryOpen"
 @onready var hbox_inventory = $"../InventoryOpen/HBoxInventory"
 @onready var background_blur = $"../BackgroundBlur"
+#@onready var connect_button = get_node("/root/Main/HUD/ConnectButton")
+#@onready var notif = get_node("/root/Main/HUD/Notification")
+#
+#var looks_ans = null
+#var hair_ans = null
+#var clothes_color_ans = null
+#var clothes_type_ans = null
+#var hat_ans = null
+#
+#var looks_correct = false
+#var hair_correct = false
+#var clothes_color_correct = false
+#var clothes_type_correct = false
+#var hat_correct = false
 
 var open_texture = preload("res://inventory/MessangerbagOpen.png")
 var closed_texture = preload("res://inventory/MessangerbagClosed.png")
 var expand_texture = preload("res://inventory/Expandbutton.png")
 var minimize_texture = preload("res://inventory/MinimizeButton.png")
+
+var pickable_array = null
+var question_array = null
+var answer_array = null
+
+#var group_type = null
+#var select_group_type = null
 
 var state = false
 var expand_state = false
@@ -26,6 +47,8 @@ func _ready():
 	up_arrow.disabled = true
 	
 	hbox_size = 1526 #hbox_inventory.size.x
+	
+	#connect_button.pressed.connect(_on_connect_button_pressed)
 
 func _process(_delta):
 	
@@ -44,6 +67,13 @@ func _process(_delta):
 	else:
 		down_arrow.disabled = false
 		down_arrow.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+		
+	#var selected = get_tree().get_nodes_in_group("selected")
+	#
+	#if selected.size() == 2:
+		#connect_button.visible = true
+	#else:
+		#connect_button.visible = false
 
 func _on_up_arrow_pressed() -> void:
 	var value = scroll_container.get_v_scroll()
@@ -71,6 +101,21 @@ func _on_messanger_bag_pressed() -> void:
 		bag_button.set_button_icon(closed_texture)
 		state = false
 		self.visible = false
+		var selected = get_tree().get_nodes_in_group("selected")
+		if not selected.is_empty():
+			for select in selected:
+				
+				if select is Panel:
+					select.icon.material.set_shader_parameter("width",0)
+					select.icon.material.set_shader_parameter("color",Color.WHITE)
+				elif select.item == null:
+					select.select_line.visible = false
+				else:
+					select.object.material.set_shader_parameter("width",0)
+					select.object.material.set_shader_parameter("color",Color.WHITE)
+				select.is_select = false
+				select.remove_from_group("selected")
+				
 	elif not state:
 		bag_button.set_button_icon(open_texture)
 		state = true
@@ -117,6 +162,16 @@ func _notification(what: int) -> void:
 func _on_h_box_inventory_child_entered_tree(_node: Node) -> void:
 	
 	await inventory_open.world_drop_finished
+	
+	pickable_array = get_tree().get_nodes_in_group("pickable")
+	question_array = get_tree().get_nodes_in_group("question")
+	answer_array = get_tree().get_nodes_in_group("answer")
+	
+	for pick in pickable_array:
+		
+		if not pick.clicked.is_connected(Global._on_pickable_click):
+		
+			pick.clicked.connect(Global._on_pickable_click)
 	
 	var child_size_total = 0
 	
@@ -173,6 +228,12 @@ func _on_h_box_inventory_child_entered_tree(_node: Node) -> void:
 			var x_arrow_minimum = child.basic_arrow_x
 			var y_arrow_minimum = child.basic_arrow_y
 			
+			for c in child.get_node("OpenItemTexture").get_children():
+				
+				if c.is_class("VBoxContainer"):
+					
+					c.scale = Vector2(1,1)
+			
 			child.get_node("OpenItemTexture").set_custom_minimum_size(Vector2(x_minimum,y_minimum))
 			child.get_node("OpenItemTexture/OpenItemButton").set_custom_minimum_size(Vector2(x_button_minimum,y_button_minimum))
 			child.get_node("OpenItemTexture/R Arrow").set_custom_minimum_size(Vector2(x_arrow_minimum,y_arrow_minimum))
@@ -218,9 +279,7 @@ func _on_h_box_inventory_child_exiting_tree(_node: Node) -> void:
 				
 				if c.is_class("VBoxContainer"):
 					
-					c.scale = Vector2(1,1)
-					
-					#c.position = Vector2((x_minimum/2)-(c.size.x/2),((y_minimum/2 - 15)-(c.size.y/2)))
+					c.scale = Vector2(scale_factor,scale_factor)
 			
 			child.get_node("OpenItemTexture").set_custom_minimum_size(Vector2(x_minimum,y_minimum))
 			child.get_node("OpenItemTexture/OpenItemButton").set_custom_minimum_size(Vector2(x_button_minimum,y_button_minimum))
@@ -249,6 +308,12 @@ func _on_h_box_inventory_child_exiting_tree(_node: Node) -> void:
 			
 			var x_arrow_minimum = child.basic_arrow_x
 			var y_arrow_minimum = child.basic_arrow_y
+			
+			for c in child.get_node("OpenItemTexture").get_children():
+				
+				if c.is_class("VBoxContainer"):
+					
+					c.scale = Vector2(1,1)
 			
 			child.get_node("OpenItemTexture").set_custom_minimum_size(Vector2(x_minimum,y_minimum))
 			child.get_node("OpenItemTexture/OpenItemButton").set_custom_minimum_size(Vector2(x_button_minimum,y_button_minimum))

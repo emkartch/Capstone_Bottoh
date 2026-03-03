@@ -101,3 +101,11 @@ func go_to_level(curr_level_tag,new_level_tag):
 		main.move_child(scene_to_load,-1)
 		scene_to_load.layer = -2
 		transition_animation.play("fade_out")
+		
+		var pickable_array = get_tree().get_nodes_in_group("pickable")
+		
+		for pick in pickable_array:
+			
+			if not pick.clicked.is_connected(Global._on_pickable_click):
+			
+				pick.clicked.connect(Global._on_pickable_click)

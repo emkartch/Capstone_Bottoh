@@ -4,11 +4,23 @@ extends CenterContainer
 @onready var r_arrow = $"OpenItemTexture/R Arrow"
 @onready var l_arrow = $"OpenItemTexture/L Arrow"
 @onready var open_item_texture = $OpenItemTexture
+#@onready var inventory_container = $"../../../InventoryContainer"
 
 @onready var notebook_appearance = preload("res://inventory/pages/notebook/notebook_appearance.tscn")
 @onready var notebook_clothes = preload("res://inventory/pages/notebook/notebook_clothes.tscn")
 @onready var notebook_colors = preload("res://inventory/pages/notebook/notebook_colors.tscn")
 @onready var notebook_hats = preload("res://inventory/pages/notebook/notebook_hats.tscn")
+
+@onready var note_questions = preload("res://inventory/pages/note/note_qcontainer.tscn")
+
+#var pickable_array = null
+#var question_array = null
+#var answer_array = null
+
+var pick_checked = false
+
+#var group_type = null
+#var select_group_type = null
 
 var margins = 128
 
@@ -33,6 +45,8 @@ var hats = null
 
 var notebook_title = null
 var page_number = null
+
+var questions = null
 
 func _ready():
 	
@@ -81,10 +95,26 @@ func _ready():
 		
 		open_item_texture.add_child(VBox)
 		
-		appearance = notebook_appearance.instantiate()
-		clothes = notebook_clothes.instantiate()
-		colors = notebook_colors.instantiate()
-		hats = notebook_hats.instantiate()
+		if Global.notebook_appearance == null:
+			
+			Global.notebook_appearance = notebook_appearance.instantiate()
+		
+		if Global.notebook_clothes == null:
+			
+			Global.notebook_clothes = notebook_clothes.instantiate()
+			
+		if Global.notebook_colors == null:
+			
+			Global.notebook_colors = notebook_colors.instantiate()
+			
+		if Global.notebook_hats == null:
+			
+			Global.notebook_hats = notebook_hats.instantiate()
+		
+		appearance = Global.notebook_appearance
+		clothes = Global.notebook_clothes
+		colors = Global.notebook_colors
+		hats = Global.notebook_hats
 		
 		appearance.visible = true
 		clothes.visible = false
@@ -100,6 +130,32 @@ func _ready():
 		VBox.add_child(clothes)
 		VBox.add_child(colors)
 		VBox.add_child(hats)
+		
+	elif item_data.item_name == "Note":
+		
+		if Global.note_questions == null:
+			
+			Global.note_questions = note_questions.instantiate()
+		
+		questions = Global.note_questions
+		
+		questions.size = Vector2(0,0)
+		
+		questions.position = Vector2(80,45)
+		
+		questions.pivot_offset = questions.size / 2
+		
+		questions.set_offsets_preset(Control.PRESET_CENTER,Control.PRESET_MODE_KEEP_SIZE,0)
+		
+		questions.set_anchors_preset(Control.PRESET_CENTER)
+		
+		open_item_texture.add_child(questions)
+		
+		Global.looks_ans = questions.get_node("Looks ENG")
+		Global.hair_ans = questions.get_node("Hair ENG")
+		Global.clothes_color_ans = questions.get_node("Clothes ENG/Clothes Color ENG")
+		Global.clothes_type_ans = questions.get_node("Clothes ENG/Clothes Type ENG")
+		Global.hat_ans = questions.get_node("Hat ENG")
 
 func _on_r_arrow_pressed() -> void:
 	
