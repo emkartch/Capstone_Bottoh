@@ -23,12 +23,18 @@ func _ready() -> void:
 	update_ui()
 	
 	self.set_meta('item_data', item)
+	
+	if item.item_name == "Notebook":
+		
+		self.add_to_group("notebook")
 
 func _process(_delta):
 	
 	if is_hover:
-		if Input.is_action_just_pressed("click"):
-			emit_signal("clicked", self)
+		if icon.visible:
+			if not inventory_container.expand_state:
+				if Input.is_action_just_pressed("click"):
+					emit_signal("clicked", self)
 	
 	if inventory_container.expand_state:
 		
@@ -91,7 +97,6 @@ func _on_mouse_entered() -> void:
 	if not is_select:
 		
 		icon.material.set_shader_parameter("width",5)
-		
 
 func _on_mouse_exited() -> void:
 	is_hover = false
@@ -103,4 +108,3 @@ func _on_mouse_exited() -> void:
 	if not is_select:
 	
 		icon.material.set_shader_parameter("width",0)
-		

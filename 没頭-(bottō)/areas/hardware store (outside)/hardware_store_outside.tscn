@@ -3,7 +3,18 @@
 [ext_resource type="Theme" uid="uid://cp4nu80cltnic" path="res://theme/main_theme.tres" id="1_p62k5"]
 [ext_resource type="PackedScene" uid="uid://ruu4aha7prj4" path="res://objects/pickable.tscn" id="2_4u1ha"]
 [ext_resource type="PackedScene" uid="uid://c13d8uvmyxs6j" path="res://door.tscn" id="2_wip6l"]
-[ext_resource type="Texture2D" uid="uid://dmhunreje6uf5" path="res://inventory/InventorySquare.png" id="3_ttx4h"]
+[ext_resource type="Texture2D" uid="uid://dkcwojr2ma604" path="res://areas/hardware store (outside)/ColorPamphlet.png" id="3_ttx4h"]
+[ext_resource type="Shader" uid="uid://cv3ryj4ylh74m" path="res://assets/outline.gdshader" id="4_i4d15"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i4d15"]
+resource_local_to_scene = true
+shader = ExtResource("4_i4d15")
+shader_parameter/color = Color(0.4117647, 0.4117647, 0.4117647, 1)
+shader_parameter/width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
 
 [node name="HardwareStoreOutside" type="CanvasLayer" unique_id=1574600429]
 
@@ -24,16 +35,23 @@ text = "Hardware Store Outside"
 
 [node name="Selectables" type="Control" parent="ColorRect" unique_id=590021954]
 anchors_preset = 0
-offset_left = 900.0
-offset_top = 700.0
-offset_right = 940.0
-offset_bottom = 740.0
+offset_left = 1306.0
+offset_top = 752.0
+offset_right = 1346.0
+offset_bottom = 792.0
+mouse_filter = 2
 
-[node name="Pickable" parent="ColorRect/Selectables" unique_id=632896118 groups=["answer"] instance=ExtResource("2_4u1ha")]
+[node name="Pickable" parent="ColorRect/Selectables" unique_id=632896118 groups=["answer", "notebook_color_pamphlet"] instance=ExtResource("2_4u1ha")]
 layout_mode = 0
+offset_left = 91.0
+offset_right = 163.0
+offset_bottom = 192.0
 item_name = "Color Pamphlet"
 item = ExtResource("3_ttx4h")
-description = "This is colors"
+description = "This is a pamphlet containing translations for basic colors from Japanese to English."
+
+[node name="Object" parent="ColorRect/Selectables/Pickable" index="2" unique_id=966148529]
+material = SubResource("ShaderMaterial_i4d15")
 
 [node name="Doors" type="Node" parent="." unique_id=2121549788]
 
@@ -48,4 +66,5 @@ destination_level_tag = "street_view"
 [node name="Button" parent="Doors/Door_SV" index="0" unique_id=585534956]
 text = "Street View"
 
+[editable path="ColorRect/Selectables/Pickable"]
 [editable path="Doors/Door_SV"]

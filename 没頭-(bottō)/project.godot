@@ -42,6 +42,11 @@ correct_color_clothes=""
 correct_hair=""
 correct_type_clothes=""
 correct_hat=""
+notebook=""
+notebook_book=""
+notebook_hair_poster=""
+notebook_clothes_hats_poster=""
+notebook_color_pamphlet=""
 
 [gui]
 

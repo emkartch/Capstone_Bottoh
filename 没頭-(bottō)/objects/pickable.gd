@@ -24,8 +24,9 @@ func _ready():
 	
 func _process(_delta):
 	if is_hover:
-		if Input.is_action_just_pressed("click"):
-			emit_signal("clicked", self)
+		if self.modulate.a != 0:
+			if Input.is_action_just_pressed("click"):
+				emit_signal("clicked", self)
 
 func update_collision_shape():
 	

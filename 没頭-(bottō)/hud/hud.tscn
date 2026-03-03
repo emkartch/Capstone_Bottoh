@@ -74,6 +74,8 @@ _data = {
 &"notif_out": SubResource("Animation_jvpmi")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mq7b8"]
+
 [node name="HUD" type="CanvasLayer" unique_id=179951230]
 process_mode = 3
 script = ExtResource("1_6ca3a")
@@ -85,7 +87,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 color = Color(0, 0, 0, 0.47058824)
 
 [node name="Dialog" type="Control" parent="." unique_id=1732845649]
@@ -187,7 +188,7 @@ text = "Goal:"
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "Match the Japanese characters to their English meanings."
+text = "Use your surroundings to fill out your notebook."
 autowrap_mode = 2
 
 [node name="ExitGoalButton" type="TextureButton" parent="Goal/GoalOpen" unique_id=1785703919]
@@ -258,11 +259,31 @@ offset_right = 146.0
 offset_bottom = 78.0
 grow_horizontal = 2
 theme = ExtResource("2_2gk58")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mq7b8")
 text = "Connect"
 
 [node name="PopUpMenu" parent="." unique_id=1848782344 instance=ExtResource("13_mq7b8")]
 visible = false
 
+[node name="Tutorial" type="Button" parent="." unique_id=1903746495]
+visible = false
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -177.0
+offset_top = -43.5
+offset_bottom = 43.5
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("2_2gk58")
+theme_override_font_sizes/font_size = 40
+text = "Show
+Tutorial
+Again"
+
 [connection signal="pressed" from="Dialog/Box/Continue" to="Dialog" method="_on_continue_pressed"]
 [connection signal="pressed" from="Goal/GoalOpen/ExitGoalButton" to="." method="_on_exit_goal_button_pressed"]
 [connection signal="pressed" from="Goal/GoalButton" to="." method="_on_goal_button_pressed"]
+[connection signal="pressed" from="Tutorial" to="." method="_on_tutorial_pressed"]

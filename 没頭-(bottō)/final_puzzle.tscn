@@ -9,8 +9,69 @@
 [ext_resource type="PackedScene" uid="uid://dyp6a5fb03rd1" path="res://inventory/pages/notebook/notebook_colors.tscn" id="6_5rl6k"]
 [ext_resource type="Texture2D" uid="uid://cev8nqun6fo3" path="res://assets/GreyArrow.png" id="6_yv1og"]
 [ext_resource type="PackedScene" uid="uid://chw8y3moxedx8" path="res://inventory/pages/notebook/notebook_appearance.tscn" id="7_0o6ea"]
+[ext_resource type="Shader" uid="uid://cv3ryj4ylh74m" path="res://assets/outline.gdshader" id="7_5rl6k"]
 [ext_resource type="PackedScene" uid="uid://701gn22wnsvm" path="res://inventory/pages/notebook/notebook_clothes.tscn" id="8_m6hdx"]
 [ext_resource type="PackedScene" uid="uid://bnj35d03bixrn" path="res://inventory/pages/notebook/notebook_hats.tscn" id="9_ha5ct"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0o6ea"]
+resource_local_to_scene = true
+shader = ExtResource("7_5rl6k")
+shader_parameter/color = Color(0.4117647, 0.4117647, 0.4117647, 1)
+shader_parameter/width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m6hdx"]
+resource_local_to_scene = true
+shader = ExtResource("7_5rl6k")
+shader_parameter/color = Color(0.4117647, 0.4117647, 0.4117647, 1)
+shader_parameter/width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ha5ct"]
+resource_local_to_scene = true
+shader = ExtResource("7_5rl6k")
+shader_parameter/color = Color(0.4117647, 0.4117647, 0.4117647, 1)
+shader_parameter/width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dns8x"]
+resource_local_to_scene = true
+shader = ExtResource("7_5rl6k")
+shader_parameter/color = Color(0.4117647, 0.4117647, 0.4117647, 1)
+shader_parameter/width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7hwdn"]
+resource_local_to_scene = true
+shader = ExtResource("7_5rl6k")
+shader_parameter/color = Color(0.4117647, 0.4117647, 0.4117647, 1)
+shader_parameter/width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ohruj"]
+resource_local_to_scene = true
+shader = ExtResource("7_5rl6k")
+shader_parameter/color = Color(0.4117647, 0.4117647, 0.4117647, 1)
+shader_parameter/width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
 
 [node name="FinalPuzzle" type="CanvasLayer" unique_id=3365082]
 script = ExtResource("1_m440d")
@@ -61,6 +122,24 @@ offset_left = 0.0
 offset_top = 0.0
 offset_right = 660.0
 offset_bottom = 748.0
+
+[node name="Object" parent="NotesContainer/Notepad/Colors/Red" parent_id_path=PackedInt32Array(2105346091, 632896118) index="2" unique_id=966148529]
+material = SubResource("ShaderMaterial_0o6ea")
+
+[node name="Object" parent="NotesContainer/Notepad/Colors/Orange" parent_id_path=PackedInt32Array(2105346091, 1446864909) index="2" unique_id=966148529]
+material = SubResource("ShaderMaterial_m6hdx")
+
+[node name="Object" parent="NotesContainer/Notepad/Colors/Yellow" parent_id_path=PackedInt32Array(2105346091, 1463622842) index="2" unique_id=966148529]
+material = SubResource("ShaderMaterial_ha5ct")
+
+[node name="Object" parent="NotesContainer/Notepad/Colors/Green" parent_id_path=PackedInt32Array(2105346091, 123476305) index="2" unique_id=966148529]
+material = SubResource("ShaderMaterial_dns8x")
+
+[node name="Object" parent="NotesContainer/Notepad/Colors/Blue" parent_id_path=PackedInt32Array(2105346091, 1517958600) index="2" unique_id=966148529]
+material = SubResource("ShaderMaterial_7hwdn")
+
+[node name="Object" parent="NotesContainer/Notepad/Colors/Purple" parent_id_path=PackedInt32Array(2105346091, 441133930) index="2" unique_id=966148529]
+material = SubResource("ShaderMaterial_ohruj")
 
 [node name="Apperance" parent="NotesContainer/Notepad" unique_id=1947491269 instance=ExtResource("7_0o6ea")]
 layout_mode = 0

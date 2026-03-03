@@ -6,16 +6,12 @@ extends CenterContainer
 @onready var open_item_texture = $OpenItemTexture
 #@onready var inventory_container = $"../../../InventoryContainer"
 
-@onready var notebook_appearance = preload("res://inventory/pages/notebook/notebook_appearance.tscn")
-@onready var notebook_clothes = preload("res://inventory/pages/notebook/notebook_clothes.tscn")
-@onready var notebook_colors = preload("res://inventory/pages/notebook/notebook_colors.tscn")
-@onready var notebook_hats = preload("res://inventory/pages/notebook/notebook_hats.tscn")
+#@onready var notebook_appearance = preload("res://inventory/pages/notebook/notebook_appearance.tscn")
+#@onready var notebook_clothes = preload("res://inventory/pages/notebook/notebook_clothes.tscn")
+#@onready var notebook_colors = preload("res://inventory/pages/notebook/notebook_colors.tscn")
+#@onready var notebook_hats = preload("res://inventory/pages/notebook/notebook_hats.tscn")
 
 @onready var note_questions = preload("res://inventory/pages/note/note_qcontainer.tscn")
-
-#var pickable_array = null
-#var question_array = null
-#var answer_array = null
 
 var pick_checked = false
 
@@ -95,21 +91,51 @@ func _ready():
 		
 		open_item_texture.add_child(VBox)
 		
-		if Global.notebook_appearance == null:
-			
-			Global.notebook_appearance = notebook_appearance.instantiate()
-		
-		if Global.notebook_clothes == null:
-			
-			Global.notebook_clothes = notebook_clothes.instantiate()
-			
-		if Global.notebook_colors == null:
-			
-			Global.notebook_colors = notebook_colors.instantiate()
-			
-		if Global.notebook_hats == null:
-			
-			Global.notebook_hats = notebook_hats.instantiate()
+		#if Global.notebook_appearance == null:
+			#
+			#Global.notebook_appearance = notebook_appearance.instantiate()
+			#
+			#for child in Global.notebook_appearance.get_children():
+				#
+				#if child is not HSeparator:
+					#
+					#if child.name == "Long Hair" or child.name == "Short Hair" or child.name == "Long Hair JPN" or child.name == "Short Hair JPN":
+						#
+						#Global.notebook_hair_nodes.append(child)
+						#
+					#elif child.name == "Tall" or child.name == "Short (Stature)" or child.name == "Tall JPN" or child.name == "Short (Stature) JPN":
+						#
+						#Global.notebook_appearances_nodes.append(child)
+			#
+		#if Global.notebook_clothes == null:
+			#
+			#Global.notebook_clothes = notebook_clothes.instantiate()
+			#
+			#for child in Global.notebook_clothes.get_children():
+				#
+				#if child is not HSeparator:
+					#
+					#Global.notebook_clothes_hats_nodes.append(child)
+			#
+		#if Global.notebook_colors == null:
+			#
+			#Global.notebook_colors = notebook_colors.instantiate()
+			#
+			#for child in Global.notebook_colors.get_children():
+				#
+				#if child is not HSeparator:
+					#
+					#Global.notebook_color_nodes.append(child)
+			#
+		#if Global.notebook_hats == null:
+			#
+			#Global.notebook_hats = notebook_hats.instantiate()
+			#
+			#for child in Global.notebook_hats.get_children():
+				#
+				#if child is not HSeparator:
+					#
+					#Global.notebook_clothes_hats_nodes.append(child)
 		
 		appearance = Global.notebook_appearance
 		clothes = Global.notebook_clothes
