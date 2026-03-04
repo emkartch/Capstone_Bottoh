@@ -5,18 +5,31 @@ extends Control
 @onready var main = get_node("/root/Main")
 @onready var _speaker = $VBoxContainer/Speaker
 @onready var _dialogue = $VBoxContainer/Dialogue
-#@onready var _continue = $Box/Continue
+@onready var container = $VBoxContainer
 @onready var background = $"../GreyOut"
 
 signal continue_true
 
-func display_line(pause: bool, line: String, speaker : String = ""):
+func display_line(pause: bool,grey_out: bool, line: String, speaker : String = ""):
 	_speaker.visible = (speaker != "")
 	_speaker.text = speaker
 	_dialogue.text = line
 	
+	if speaker != "":
+		
+		container.anchor_top = 0.11
+	
+	else:
+	
+		container.anchor_top = 0.09
+	
 	if pause:
 		Global.main_pause = true
+		
+	if grey_out:
+		background.color.a = 111
+	else:
+		background.color.a = 0
 	
 	open()
 

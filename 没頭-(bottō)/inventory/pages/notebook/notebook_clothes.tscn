@@ -2,47 +2,6 @@
 
 [ext_resource type="Theme" uid="uid://cp4nu80cltnic" path="res://theme/main_theme.tres" id="1_36n3o"]
 [ext_resource type="PackedScene" uid="uid://ruu4aha7prj4" path="res://objects/pickable.tscn" id="2_blbfr"]
-[ext_resource type="Shader" uid="uid://cv3ryj4ylh74m" path="res://assets/outline.gdshader" id="3_blbfr"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_blbfr"]
-resource_local_to_scene = true
-shader = ExtResource("3_blbfr")
-shader_parameter/color = Color(0.4117647, 0.4117647, 0.4117647, 1)
-shader_parameter/width = 0.0
-shader_parameter/pattern = 2
-shader_parameter/inside = false
-shader_parameter/add_margins = true
-shader_parameter/number_of_images = Vector2(1, 1)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fhw6a"]
-resource_local_to_scene = true
-shader = ExtResource("3_blbfr")
-shader_parameter/color = Color(0.4117647, 0.4117647, 0.4117647, 1)
-shader_parameter/width = 0.0
-shader_parameter/pattern = 2
-shader_parameter/inside = false
-shader_parameter/add_margins = true
-shader_parameter/number_of_images = Vector2(1, 1)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fxyd8"]
-resource_local_to_scene = true
-shader = ExtResource("3_blbfr")
-shader_parameter/color = Color(0.4117647, 0.4117647, 0.4117647, 1)
-shader_parameter/width = 0.0
-shader_parameter/pattern = 2
-shader_parameter/inside = false
-shader_parameter/add_margins = true
-shader_parameter/number_of_images = Vector2(1, 1)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_whqxg"]
-resource_local_to_scene = true
-shader = ExtResource("3_blbfr")
-shader_parameter/color = Color(0.4117647, 0.4117647, 0.4117647, 1)
-shader_parameter/width = 0.0
-shader_parameter/pattern = 2
-shader_parameter/inside = false
-shader_parameter/add_margins = true
-shader_parameter/number_of_images = Vector2(1, 1)
 
 [node name="Clothes" type="GridContainer" unique_id=725642407]
 visible = false
@@ -72,9 +31,6 @@ size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 60
 text = "T-Shirt"
 
-[node name="Object" parent="T-Shirt" index="2" unique_id=966148529]
-material = SubResource("ShaderMaterial_blbfr")
-
 [node name="HSeparator3" type="HSeparator" parent="." unique_id=1169695619]
 layout_mode = 2
 theme = ExtResource("1_36n3o")
@@ -103,9 +59,6 @@ theme_override_font_sizes/font_size = 60
 text = "Button Up
 Shirt"
 
-[node name="Object" parent="Button Up Shirt" index="2" unique_id=966148529]
-material = SubResource("ShaderMaterial_fhw6a")
-
 [node name="HSeparator5" type="HSeparator" parent="." unique_id=1832005895]
 layout_mode = 2
 theme = ExtResource("1_36n3o")
@@ -132,9 +85,6 @@ size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 60
 text = "Sweater"
 
-[node name="Object" parent="Sweater" index="2" unique_id=966148529]
-material = SubResource("ShaderMaterial_fxyd8")
-
 [node name="HSeparator7" type="HSeparator" parent="." unique_id=1413078683]
 layout_mode = 2
 theme = ExtResource("1_36n3o")
@@ -160,9 +110,6 @@ size_flags_horizontal = 3
 [node name="Label" parent="Jacket" index="1" unique_id=877096705]
 theme_override_font_sizes/font_size = 60
 text = "Jacket"
-
-[node name="Object" parent="Jacket" index="2" unique_id=966148529]
-material = SubResource("ShaderMaterial_whqxg")
 
 [editable path="T-Shirt"]
 [editable path="Button Up Shirt"]

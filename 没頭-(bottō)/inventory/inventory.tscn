@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://cp4nu80cltnic" path="res://theme/main_theme.tres" id="1_62wf1"]
 [ext_resource type="Texture2D" uid="uid://cyerekk6aofke" path="res://assets/ShortArrow.png" id="2_f8i2h"]
+[ext_resource type="Shader" uid="uid://dxumlv84p2vo7" path="res://inventory/background_blur.gdshader" id="2_iigt5"]
 [ext_resource type="Script" uid="uid://b3uulu1fvp4xi" path="res://inventory/inventory_container.gd" id="2_lhcfm"]
 [ext_resource type="Texture2D" uid="uid://qyfslf8eigol" path="res://inventory/BackgroundInventory.png" id="3_0dv6l"]
 [ext_resource type="Texture2D" uid="uid://dypq21vkaun3r" path="res://assets/GreyShortArrow.png" id="3_f8i2h"]
@@ -23,6 +24,8 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nclnd"]
 resource_local_to_scene = true
+shader = ExtResource("2_iigt5")
+shader_parameter/blur_amount = 2.000000095
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tjdag"]
 resource_local_to_scene = true
@@ -84,18 +87,9 @@ grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("1_62wf1")
 
-[node name="BackgroundBlur2" type="ColorRect" parent="." unique_id=553406456]
+[node name="BackgroundBlur" type="ColorRect" parent="." unique_id=553406456]
 visible = false
 material = SubResource("ShaderMaterial_nclnd")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="BackgroundBlur" type="ColorRect" parent="." unique_id=434837784]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

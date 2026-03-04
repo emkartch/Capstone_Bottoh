@@ -2,67 +2,6 @@
 
 [ext_resource type="Theme" uid="uid://cp4nu80cltnic" path="res://theme/main_theme.tres" id="1_rudoo"]
 [ext_resource type="PackedScene" uid="uid://ruu4aha7prj4" path="res://objects/pickable.tscn" id="2_6fd30"]
-[ext_resource type="Shader" uid="uid://cv3ryj4ylh74m" path="res://assets/outline.gdshader" id="3_6fd30"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4jftl"]
-resource_local_to_scene = true
-shader = ExtResource("3_6fd30")
-shader_parameter/color = Color(0.4117647, 0.4117647, 0.4117647, 1)
-shader_parameter/width = 0.0
-shader_parameter/pattern = 2
-shader_parameter/inside = false
-shader_parameter/add_margins = true
-shader_parameter/number_of_images = Vector2(1, 1)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_uf7ax"]
-resource_local_to_scene = true
-shader = ExtResource("3_6fd30")
-shader_parameter/color = Color(0.4117647, 0.4117647, 0.4117647, 1)
-shader_parameter/width = 0.0
-shader_parameter/pattern = 2
-shader_parameter/inside = false
-shader_parameter/add_margins = true
-shader_parameter/number_of_images = Vector2(1, 1)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2oy86"]
-resource_local_to_scene = true
-shader = ExtResource("3_6fd30")
-shader_parameter/color = Color(0.4117647, 0.4117647, 0.4117647, 1)
-shader_parameter/width = 0.0
-shader_parameter/pattern = 2
-shader_parameter/inside = false
-shader_parameter/add_margins = true
-shader_parameter/number_of_images = Vector2(1, 1)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jt7h8"]
-resource_local_to_scene = true
-shader = ExtResource("3_6fd30")
-shader_parameter/color = Color(0.4117647, 0.4117647, 0.4117647, 1)
-shader_parameter/width = 0.0
-shader_parameter/pattern = 2
-shader_parameter/inside = false
-shader_parameter/add_margins = true
-shader_parameter/number_of_images = Vector2(1, 1)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_i5wbe"]
-resource_local_to_scene = true
-shader = ExtResource("3_6fd30")
-shader_parameter/color = Color(0.4117647, 0.4117647, 0.4117647, 1)
-shader_parameter/width = 0.0
-shader_parameter/pattern = 2
-shader_parameter/inside = false
-shader_parameter/add_margins = true
-shader_parameter/number_of_images = Vector2(1, 1)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_24pim"]
-resource_local_to_scene = true
-shader = ExtResource("3_6fd30")
-shader_parameter/color = Color(0.4117647, 0.4117647, 0.4117647, 1)
-shader_parameter/width = 0.0
-shader_parameter/pattern = 2
-shader_parameter/inside = false
-shader_parameter/add_margins = true
-shader_parameter/number_of_images = Vector2(1, 1)
 
 [node name="Colors" type="GridContainer" unique_id=2105346091]
 visible = false
@@ -94,9 +33,6 @@ size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 60
 text = "Red"
 
-[node name="Object" parent="Red" index="2" unique_id=966148529]
-material = SubResource("ShaderMaterial_4jftl")
-
 [node name="HSeparator2" type="HSeparator" parent="." unique_id=327027489]
 layout_mode = 2
 theme = ExtResource("1_rudoo")
@@ -122,9 +58,6 @@ size_flags_horizontal = 3
 [node name="Label" parent="Orange" index="1" unique_id=877096705]
 theme_override_font_sizes/font_size = 60
 text = "Orange"
-
-[node name="Object" parent="Orange" index="2" unique_id=966148529]
-material = SubResource("ShaderMaterial_uf7ax")
 
 [node name="HSeparator3" type="HSeparator" parent="." unique_id=496585057]
 layout_mode = 2
@@ -152,9 +85,6 @@ size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 60
 text = "Yellow"
 
-[node name="Object" parent="Yellow" index="2" unique_id=966148529]
-material = SubResource("ShaderMaterial_2oy86")
-
 [node name="HSeparator5" type="HSeparator" parent="." unique_id=904374212]
 layout_mode = 2
 theme = ExtResource("1_rudoo")
@@ -180,9 +110,6 @@ size_flags_horizontal = 3
 [node name="Label" parent="Green" index="1" unique_id=877096705]
 theme_override_font_sizes/font_size = 60
 text = "Green"
-
-[node name="Object" parent="Green" index="2" unique_id=966148529]
-material = SubResource("ShaderMaterial_jt7h8")
 
 [node name="HSeparator7" type="HSeparator" parent="." unique_id=387112666]
 layout_mode = 2
@@ -210,9 +137,6 @@ size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 60
 text = "Blue"
 
-[node name="Object" parent="Blue" index="2" unique_id=966148529]
-material = SubResource("ShaderMaterial_i5wbe")
-
 [node name="HSeparator9" type="HSeparator" parent="." unique_id=1633879540]
 layout_mode = 2
 theme = ExtResource("1_rudoo")
@@ -238,9 +162,6 @@ size_flags_horizontal = 3
 [node name="Label" parent="Purple" index="1" unique_id=877096705]
 theme_override_font_sizes/font_size = 60
 text = "Purple"
-
-[node name="Object" parent="Purple" index="2" unique_id=966148529]
-material = SubResource("ShaderMaterial_24pim")
 
 [editable path="Red"]
 [editable path="Orange"]

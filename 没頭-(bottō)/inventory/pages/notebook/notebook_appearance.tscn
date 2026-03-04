@@ -2,47 +2,6 @@
 
 [ext_resource type="Theme" uid="uid://cp4nu80cltnic" path="res://theme/main_theme.tres" id="1_e5s4t"]
 [ext_resource type="PackedScene" uid="uid://ruu4aha7prj4" path="res://objects/pickable.tscn" id="2_44cdc"]
-[ext_resource type="Shader" uid="uid://cv3ryj4ylh74m" path="res://assets/outline.gdshader" id="3_hh667"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hh667"]
-resource_local_to_scene = true
-shader = ExtResource("3_hh667")
-shader_parameter/color = Color(0.4117647, 0.4117647, 0.4117647, 1)
-shader_parameter/width = 0.0
-shader_parameter/pattern = 2
-shader_parameter/inside = false
-shader_parameter/add_margins = true
-shader_parameter/number_of_images = Vector2(1, 1)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mmght"]
-resource_local_to_scene = true
-shader = ExtResource("3_hh667")
-shader_parameter/color = Color(0.4117647, 0.4117647, 0.4117647, 1)
-shader_parameter/width = 0.0
-shader_parameter/pattern = 2
-shader_parameter/inside = false
-shader_parameter/add_margins = true
-shader_parameter/number_of_images = Vector2(1, 1)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wljgl"]
-resource_local_to_scene = true
-shader = ExtResource("3_hh667")
-shader_parameter/color = Color(0.4117647, 0.4117647, 0.4117647, 1)
-shader_parameter/width = 0.0
-shader_parameter/pattern = 2
-shader_parameter/inside = false
-shader_parameter/add_margins = true
-shader_parameter/number_of_images = Vector2(1, 1)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_lg5x1"]
-resource_local_to_scene = true
-shader = ExtResource("3_hh667")
-shader_parameter/color = Color(0.4117647, 0.4117647, 0.4117647, 1)
-shader_parameter/width = 0.0
-shader_parameter/pattern = 2
-shader_parameter/inside = false
-shader_parameter/add_margins = true
-shader_parameter/number_of_images = Vector2(1, 1)
 
 [node name="Apperance" type="GridContainer" unique_id=1947491269]
 visible = false
@@ -73,9 +32,6 @@ custom_minimum_size = Vector2(100, 0)
 theme_override_font_sizes/font_size = 60
 text = "Long Hair"
 
-[node name="Object" parent="Long Hair" index="2" unique_id=966148529]
-material = SubResource("ShaderMaterial_hh667")
-
 [node name="HSeparator3" type="HSeparator" parent="." unique_id=1934631936]
 layout_mode = 2
 theme = ExtResource("1_e5s4t")
@@ -104,9 +60,6 @@ theme_override_font_sizes/font_size = 60
 text = "Short
 Hair"
 
-[node name="Object" parent="Short Hair" index="2" unique_id=966148529]
-material = SubResource("ShaderMaterial_mmght")
-
 [node name="HSeparator5" type="HSeparator" parent="." unique_id=340995469]
 layout_mode = 2
 theme = ExtResource("1_e5s4t")
@@ -132,9 +85,6 @@ size_flags_horizontal = 3
 [node name="Label" parent="Tall" index="1" unique_id=877096705]
 theme_override_font_sizes/font_size = 60
 text = "Tall"
-
-[node name="Object" parent="Tall" index="2" unique_id=966148529]
-material = SubResource("ShaderMaterial_wljgl")
 
 [node name="HSeparator7" type="HSeparator" parent="." unique_id=536974578]
 layout_mode = 2
@@ -163,9 +113,6 @@ custom_minimum_size = Vector2(100, 0)
 theme_override_font_sizes/font_size = 60
 text = "Short
 (Stature)"
-
-[node name="Object" parent="Short (Stature)" index="2" unique_id=966148529]
-material = SubResource("ShaderMaterial_lg5x1")
 
 [editable path="Long Hair"]
 [editable path="Short Hair"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8se0qgcpgtkm"
-path="res://.godot/imported/StationaryStoreInsideResize.png-056957b04ebc75227057bd4919a4ce09.ctex"
+uid="uid://c864qe0vh0wvq"
+path="res://.godot/imported/ConvienceStoreBCounter.png-cdb7bef42e213944b3ffc2483e565a63.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://areas/stationary store/StationaryStoreInsideResize.png"
-dest_files=["res://.godot/imported/StationaryStoreInsideResize.png-056957b04ebc75227057bd4919a4ce09.ctex"]
+source_file="res://areas/convenience store/ConvienceStoreBCounter.png"
+dest_files=["res://.godot/imported/ConvienceStoreBCounter.png-cdb7bef42e213944b3ffc2483e565a63.ctex"]
 
 [params]
 

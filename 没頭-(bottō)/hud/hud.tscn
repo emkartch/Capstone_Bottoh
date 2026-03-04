@@ -17,6 +17,13 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jvpmi"]
 texture = ExtResource("4_hwufu")
 
+[sub_resource type="InputEventKey" id="InputEventKey_mq7b8"]
+device = -1
+keycode = 4194309
+
+[sub_resource type="Shortcut" id="Shortcut_jvpmi"]
+events = [SubResource("InputEventKey_mq7b8")]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t2ad4"]
 texture = ExtResource("12_mq7b8")
 
@@ -87,7 +94,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.47058824)
+color = Color(0, 0, 0, 0.43529412)
 
 [node name="Dialog" type="Control" parent="." unique_id=1732845649]
 visible = false
@@ -124,6 +131,7 @@ offset_top = -40.0
 grow_horizontal = 0
 grow_vertical = 0
 mouse_default_cursor_shape = 2
+shortcut = SubResource("Shortcut_jvpmi")
 texture_normal = ExtResource("3_w8tcp")
 texture_hover = ExtResource("4_svhta")
 
@@ -131,9 +139,9 @@ texture_hover = ExtResource("4_svhta")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.015
-anchor_top = 0.05
+anchor_top = 0.09
 anchor_right = 0.985
-anchor_bottom = 0.95
+anchor_bottom = 0.93
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -145,6 +153,7 @@ text = "Somebody"
 
 [node name="Dialogue" type="RichTextLabel" parent="Dialog/VBoxContainer" unique_id=1380198217]
 layout_mode = 2
+bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at libero et enim semper consectetur nec in quam. Morbi eu ante tortor. Integer scelerisque condimentum lorem, sed imperdiet nibh suscipit nec."
 fit_content = true
 

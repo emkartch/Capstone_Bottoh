@@ -1,21 +1,10 @@
 [gd_scene format=3 uid="uid://cmo4e3yjv6qqr"]
 
 [ext_resource type="Texture2D" uid="uid://8028ovv1a1r5" path="res://areas/bookstore/BookstoreInsideB.png" id="1_npoyj"]
-[ext_resource type="PackedScene" uid="uid://ruu4aha7prj4" path="res://objects/pickable.tscn" id="2_fd8no"]
+[ext_resource type="PackedScene" uid="uid://5s8jfcpui2rh" path="res://objects/interactable.tscn" id="2_70fny"]
 [ext_resource type="PackedScene" uid="uid://c13d8uvmyxs6j" path="res://door.tscn" id="2_xc5xg"]
 [ext_resource type="Texture2D" uid="uid://doe1dkn7ligvj" path="res://areas/bookstore/BookstoreCounter.png" id="3_4vq32"]
 [ext_resource type="Texture2D" uid="uid://chocsl6pqcw1t" path="res://areas/bookstore/BookstoreBookSized.png" id="3_70fny"]
-[ext_resource type="Shader" uid="uid://cv3ryj4ylh74m" path="res://assets/outline.gdshader" id="4_qxn1p"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4e0xy"]
-resource_local_to_scene = true
-shader = ExtResource("4_qxn1p")
-shader_parameter/color = Color(0.4117647, 0.4117647, 0.4117647, 1)
-shader_parameter/width = 0.0
-shader_parameter/pattern = 2
-shader_parameter/inside = false
-shader_parameter/add_margins = true
-shader_parameter/number_of_images = Vector2(1, 1)
 
 [node name="Bookstore" type="CanvasLayer" unique_id=2098828111]
 
@@ -26,28 +15,23 @@ texture = ExtResource("1_npoyj")
 
 [node name="Selectables" type="Control" parent="Background" unique_id=2021018853]
 anchors_preset = 0
-offset_left = 854.5
-offset_right = 894.5
-offset_bottom = 40.0
+offset_left = 919.0
+offset_top = 142.58
+offset_right = 919.0
+offset_bottom = 142.58
 mouse_filter = 2
 
-[node name="Pickable" parent="Background/Selectables" unique_id=632896118 groups=["answer", "notebook_book"] instance=ExtResource("2_fd8no")]
+[node name="Interactable" parent="Background/Selectables" unique_id=632896118 instance=ExtResource("2_70fny")]
+visible = false
 layout_mode = 0
-offset_left = 64.5
-offset_top = 143.0
-offset_right = 98.5
-offset_bottom = 308.0
-item_name = "Children's Book"
+offset_right = 33.0
+offset_bottom = 165.0
+item_name = "BookstoreBook"
 item = ExtResource("3_70fny")
-description = "This book lists grammar describing appearance in both Japanese and English."
-
-[node name="Object" parent="Background/Selectables/Pickable" index="2" unique_id=966148529]
-visible = true
-material = SubResource("ShaderMaterial_4e0xy")
-size_flags_horizontal = 4
-size_flags_vertical = 4
+description = "Book"
 
 [node name="Counter" type="TextureRect" parent="Background" unique_id=285709245]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -67,5 +51,4 @@ destination_level_tag = "bookstore_outside"
 [node name="Button" parent="Doors/Door_BO" index="0" unique_id=585534956]
 text = "Bookstore Outside"
 
-[editable path="Background/Selectables/Pickable"]
 [editable path="Doors/Door_BO"]

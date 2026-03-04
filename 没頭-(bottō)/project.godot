@@ -47,6 +47,8 @@ notebook_book=""
 notebook_hair_poster=""
 notebook_clothes_hats_poster=""
 notebook_color_pamphlet=""
+slot=""
+interactable=""
 
 [gui]
 
