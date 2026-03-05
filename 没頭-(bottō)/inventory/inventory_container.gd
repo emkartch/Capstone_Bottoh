@@ -145,9 +145,9 @@ func _on_h_box_inventory_child_entered_tree(_node: Node) -> void:
 	
 	for pick in pickable_array:
 		
-		if not pick.clicked.is_connected(Global._on_pickable_click):
+		if not pick.pick_clicked.is_connected(Global._on_pickable_click):
 		
-			pick.clicked.connect(Global._on_pickable_click)
+			pick.pick_clicked.connect(Global._on_pickable_click)
 	
 	var child_size_total = 0
 	

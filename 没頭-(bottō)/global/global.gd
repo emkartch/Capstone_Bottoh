@@ -93,6 +93,8 @@ var text = null
 
 # Goal changes
 
+var new_info = false
+
 func _ready():
 	
 	# CUSTOM CURSOR
@@ -417,50 +419,67 @@ func _on_interactable_click(node):
 	
 	await dialog.continue_true
 	
-	dialog.display_line(true,false,"[i]This might be good information to add to my notebook.[/i]")
-	
-	await dialog.continue_true
+	#dialog.display_line(true,false,"[i]This might be good information to add to my notebook.[/i]")
+	#
+	#await dialog.continue_true
 	
 	if node.item_name == "BookstoreBook":
 		
-		for item in notebook_appearances_nodes:
+		if not appearance_filled:
 			
-			item.modulate.a = 255
-		
-		notif.display_notif("Notebook Updated")
+			new_info = true
 			
-		appearance_filled = true
+			for item in notebook_appearances_nodes:
+				
+				item.modulate.a = 255
+				
+			appearance_filled = true
 	
 	elif node.item_name == "ClothingPoster":
 		
-		for item in notebook_clothes_hats_nodes:
+		if not clothes_hats_filled:
 			
-			item.modulate.a = 255
+			new_info = true
 			
-		notif.display_notif("Notebook Updated")
-		
-		clothes_hats_filled = true
+			for item in notebook_clothes_hats_nodes:
+				
+				item.modulate.a = 255
+			
+			clothes_hats_filled = true
 	
 	elif node.item_name == "ColorPamphlet":
 		
-		for item in notebook_color_nodes:
-				
-			item.modulate.a = 255
-		
-		notif.display_notif("Notebook Updated")
-		
-		colors_filled = true
+		if not colors_filled:
+			
+			new_info = true
+			
+			for item in notebook_color_nodes:
+					
+				item.modulate.a = 255
+			
+			colors_filled = true
 	
 	elif node.item_name == "HaircutPoster":
 		
-		for item in notebook_hair_nodes:
+		if not hairs_filled:
 			
-			item.modulate.a = 255
+			new_info = true
+			
+			for item in notebook_hair_nodes:
+				
+				item.modulate.a = 255
+			
+			hairs_filled = true
+		
+	if new_info:
+		
+		dialog.display_line(true,false,"[i]This might be good information to add to my notebook.[/i]")
+		
+		await dialog.continue_true
 		
 		notif.display_notif("Notebook Updated")
 		
-		hairs_filled = true
-
+		new_info = false
 
 func _on_slot_click(node):
 	
