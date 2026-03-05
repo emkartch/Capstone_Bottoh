@@ -2,6 +2,8 @@
 
 [ext_resource type="Theme" uid="uid://cp4nu80cltnic" path="res://theme/main_theme.tres" id="1_h6131"]
 [ext_resource type="PackedScene" uid="uid://c13d8uvmyxs6j" path="res://door.tscn" id="2_0jmgq"]
+[ext_resource type="PackedScene" uid="uid://5s8jfcpui2rh" path="res://objects/interactable.tscn" id="2_lgj6w"]
+[ext_resource type="Texture2D" uid="uid://btp1l0xncg24f" path="res://areas/clothing store (outside)/ClothingPoster.png" id="3_1xu02"]
 
 [node name="ClothingStoreOutside" type="CanvasLayer" unique_id=2071860568]
 
@@ -19,6 +21,20 @@ offset_right = 40.0
 offset_bottom = 18.0
 theme = ExtResource("1_h6131")
 text = "Clothing Store Outside"
+
+[node name="Selectables" type="Control" parent="ColorRect" unique_id=1013212452]
+anchors_preset = 0
+offset_left = 1248.0
+offset_top = 303.0
+offset_right = 1288.0
+offset_bottom = 343.0
+mouse_filter = 2
+
+[node name="Interactable" parent="ColorRect/Selectables" unique_id=632896118 instance=ExtResource("2_lgj6w")]
+layout_mode = 0
+item_name = "ClothingPoster"
+item = ExtResource("3_1xu02")
+description = "Clothing and Hats"
 
 [node name="Doors" type="Node" parent="." unique_id=1652516609]
 

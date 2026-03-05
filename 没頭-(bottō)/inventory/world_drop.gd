@@ -70,7 +70,7 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 				
 				node.set_meta("item_data", data.item)
 				
-				node.add_to_group("question")
+				#node.add_to_group("question")
 				
 				Global.open_notebook = node
 				

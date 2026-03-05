@@ -5,9 +5,6 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_trexd"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s341x"]
-size = Vector2(528, 250)
-
 [node name="PopUpMenu" type="Panel" unique_id=1851742840]
 offset_left = -176.0
 offset_top = -63.0
@@ -16,13 +13,6 @@ offset_bottom = 187.0
 theme = ExtResource("1_s341x")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_trexd")
 script = ExtResource("2_trexd")
-
-[node name="Area2D" type="Area2D" parent="." unique_id=352809817]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1397427328]
-position = Vector2(88, 62)
-shape = SubResource("RectangleShape2D_s341x")
 
 [node name="Node" type="Node2D" parent="." unique_id=653612998]
 position = Vector2(176, 63)

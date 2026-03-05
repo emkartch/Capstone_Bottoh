@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://cmo4e3yjv6qqr"]
 
 [ext_resource type="Texture2D" uid="uid://8028ovv1a1r5" path="res://areas/bookstore/BookstoreInsideB.png" id="1_npoyj"]
+[ext_resource type="PackedScene" uid="uid://5s8jfcpui2rh" path="res://objects/interactable.tscn" id="2_70fny"]
 [ext_resource type="PackedScene" uid="uid://c13d8uvmyxs6j" path="res://door.tscn" id="2_xc5xg"]
+[ext_resource type="Texture2D" uid="uid://doe1dkn7ligvj" path="res://areas/bookstore/BookstoreCounter.png" id="3_4vq32"]
+[ext_resource type="Texture2D" uid="uid://chocsl6pqcw1t" path="res://areas/bookstore/BookstoreBookSized.png" id="3_70fny"]
 
 [node name="Bookstore" type="CanvasLayer" unique_id=2098828111]
 
@@ -9,6 +12,31 @@
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_npoyj")
+
+[node name="Selectables" type="Control" parent="Background" unique_id=2021018853]
+anchors_preset = 0
+offset_left = 919.0
+offset_top = 142.58
+offset_right = 919.0
+offset_bottom = 142.58
+mouse_filter = 2
+
+[node name="Interactable" parent="Background/Selectables" unique_id=632896118 instance=ExtResource("2_70fny")]
+visible = false
+layout_mode = 0
+offset_right = 33.0
+offset_bottom = 165.0
+item_name = "BookstoreBook"
+item = ExtResource("3_70fny")
+description = "Book"
+
+[node name="Counter" type="TextureRect" parent="Background" unique_id=285709245]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("3_4vq32")
 
 [node name="Doors" type="Node" parent="." unique_id=1082704122]
 

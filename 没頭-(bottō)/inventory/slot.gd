@@ -17,18 +17,24 @@ var is_select = false
 
 var inventory_open = false
 
-signal clicked(emitter_node)
+signal slot_clicked(emitter_node)
 
 func _ready() -> void:
 	update_ui()
 	
 	self.set_meta('item_data', item)
+	
+	if item.item_name == "Notebook":
+		
+		self.add_to_group("notebook")
 
 func _process(_delta):
 	
 	if is_hover:
-		if Input.is_action_just_pressed("click"):
-			emit_signal("clicked", self)
+		if icon.visible:
+			if not inventory_container.expand_state:
+				if Input.is_action_just_pressed("click"):
+					emit_signal("slot_clicked", self)
 	
 	if inventory_container.expand_state:
 		
@@ -85,22 +91,20 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 func _on_mouse_entered() -> void:
 	
 	is_hover = true
-	
-	icon.material.set_shader_parameter("color",Color.WHITE)
-	
-	if not is_select:
+	#
+	#icon.material.set_shader_parameter("color",Color.WHITE)
+	#
+	#if not is_select:
 		
-		icon.material.set_shader_parameter("width",5)
-		
+	icon.material.set_shader_parameter("width",5)
 
 func _on_mouse_exited() -> void:
 	is_hover = false
+	#
+	#if is_select:
+		#
+		#icon.material.set_shader_parameter("color",Color.GOLD)
+#
+	#if not is_select:
 	
-	if is_select:
-		
-		icon.material.set_shader_parameter("color",Color.GOLD)
-
-	if not is_select:
-	
-		icon.material.set_shader_parameter("width",0)
-		
+	icon.material.set_shader_parameter("width",0)

@@ -10,20 +10,6 @@ extends TextureRect
 @onready var inventory_open = $"../InventoryOpen"
 @onready var hbox_inventory = $"../InventoryOpen/HBoxInventory"
 @onready var background_blur = $"../BackgroundBlur"
-#@onready var connect_button = get_node("/root/Main/HUD/ConnectButton")
-#@onready var notif = get_node("/root/Main/HUD/Notification")
-#
-#var looks_ans = null
-#var hair_ans = null
-#var clothes_color_ans = null
-#var clothes_type_ans = null
-#var hat_ans = null
-#
-#var looks_correct = false
-#var hair_correct = false
-#var clothes_color_correct = false
-#var clothes_type_correct = false
-#var hat_correct = false
 
 var open_texture = preload("res://inventory/MessangerbagOpen.png")
 var closed_texture = preload("res://inventory/MessangerbagClosed.png")
@@ -33,9 +19,6 @@ var minimize_texture = preload("res://inventory/MinimizeButton.png")
 var pickable_array = null
 var question_array = null
 var answer_array = null
-
-#var group_type = null
-#var select_group_type = null
 
 var state = false
 var expand_state = false
@@ -67,13 +50,6 @@ func _process(_delta):
 	else:
 		down_arrow.disabled = false
 		down_arrow.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
-		
-	#var selected = get_tree().get_nodes_in_group("selected")
-	#
-	#if selected.size() == 2:
-		#connect_button.visible = true
-	#else:
-		#connect_button.visible = false
 
 func _on_up_arrow_pressed() -> void:
 	var value = scroll_container.get_v_scroll()
@@ -169,9 +145,9 @@ func _on_h_box_inventory_child_entered_tree(_node: Node) -> void:
 	
 	for pick in pickable_array:
 		
-		if not pick.clicked.is_connected(Global._on_pickable_click):
+		if not pick.pick_clicked.is_connected(Global._on_pickable_click):
 		
-			pick.clicked.connect(Global._on_pickable_click)
+			pick.pick_clicked.connect(Global._on_pickable_click)
 	
 	var child_size_total = 0
 	

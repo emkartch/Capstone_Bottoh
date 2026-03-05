@@ -17,6 +17,13 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jvpmi"]
 texture = ExtResource("4_hwufu")
 
+[sub_resource type="InputEventKey" id="InputEventKey_mq7b8"]
+device = -1
+keycode = 4194309
+
+[sub_resource type="Shortcut" id="Shortcut_jvpmi"]
+events = [SubResource("InputEventKey_mq7b8")]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t2ad4"]
 texture = ExtResource("12_mq7b8")
 
@@ -74,6 +81,8 @@ _data = {
 &"notif_out": SubResource("Animation_jvpmi")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mq7b8"]
+
 [node name="HUD" type="CanvasLayer" unique_id=179951230]
 process_mode = 3
 script = ExtResource("1_6ca3a")
@@ -85,8 +94,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-color = Color(0, 0, 0, 0.47058824)
+color = Color(0, 0, 0, 0.43529412)
 
 [node name="Dialog" type="Control" parent="." unique_id=1732845649]
 visible = false
@@ -123,6 +131,7 @@ offset_top = -40.0
 grow_horizontal = 0
 grow_vertical = 0
 mouse_default_cursor_shape = 2
+shortcut = SubResource("Shortcut_jvpmi")
 texture_normal = ExtResource("3_w8tcp")
 texture_hover = ExtResource("4_svhta")
 
@@ -130,9 +139,9 @@ texture_hover = ExtResource("4_svhta")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.015
-anchor_top = 0.05
+anchor_top = 0.09
 anchor_right = 0.985
-anchor_bottom = 0.95
+anchor_bottom = 0.93
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -144,6 +153,7 @@ text = "Somebody"
 
 [node name="Dialogue" type="RichTextLabel" parent="Dialog/VBoxContainer" unique_id=1380198217]
 layout_mode = 2
+bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at libero et enim semper consectetur nec in quam. Morbi eu ante tortor. Integer scelerisque condimentum lorem, sed imperdiet nibh suscipit nec."
 fit_content = true
 
@@ -187,7 +197,7 @@ text = "Goal:"
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "Match the Japanese characters to their English meanings."
+text = "Use your surroundings to fill out your notebook."
 autowrap_mode = 2
 
 [node name="ExitGoalButton" type="TextureButton" parent="Goal/GoalOpen" unique_id=1785703919]
@@ -258,11 +268,31 @@ offset_right = 146.0
 offset_bottom = 78.0
 grow_horizontal = 2
 theme = ExtResource("2_2gk58")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mq7b8")
 text = "Connect"
 
 [node name="PopUpMenu" parent="." unique_id=1848782344 instance=ExtResource("13_mq7b8")]
 visible = false
 
+[node name="Tutorial" type="Button" parent="." unique_id=1903746495]
+visible = false
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -177.0
+offset_top = -43.5
+offset_bottom = 43.5
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("2_2gk58")
+theme_override_font_sizes/font_size = 40
+text = "Show
+Tutorial
+Again"
+
 [connection signal="pressed" from="Dialog/Box/Continue" to="Dialog" method="_on_continue_pressed"]
 [connection signal="pressed" from="Goal/GoalOpen/ExitGoalButton" to="." method="_on_exit_goal_button_pressed"]
 [connection signal="pressed" from="Goal/GoalButton" to="." method="_on_goal_button_pressed"]
+[connection signal="pressed" from="Tutorial" to="." method="_on_tutorial_pressed"]

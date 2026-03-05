@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://5s8jfcpui2rh"]
+
+[ext_resource type="Script" uid="uid://b4nyj2x21eupb" path="res://objects/interactable.gd" id="1_gtrkg"]
+[ext_resource type="Shader" uid="uid://cv3ryj4ylh74m" path="res://assets/outline.gdshader" id="2_u3dfy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_akkf5"]
+size = Vector2(18, 18)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tbuwl"]
+resource_local_to_scene = true
+shader = ExtResource("2_u3dfy")
+shader_parameter/color = Color(0.4117647, 0.4117647, 0.4117647, 1)
+shader_parameter/width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[node name="Interactable" type="MarginContainer" unique_id=632896118 groups=["interactable"]]
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+mouse_default_cursor_shape = 2
+script = ExtResource("1_gtrkg")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=756642164]
+position = Vector2(82, 39)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1824044740]
+shape = SubResource("RectangleShape2D_akkf5")
+
+[node name="Object" type="TextureRect" parent="." unique_id=1494835307]
+material = SubResource("ShaderMaterial_tbuwl")
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

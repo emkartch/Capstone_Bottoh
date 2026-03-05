@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ckskwsb0t3imc"]
 
-[ext_resource type="Texture2D" uid="uid://8se0qgcpgtkm" path="res://areas/stationary store/StationaryStoreInsideResize.png" id="1_3cjra"]
+[ext_resource type="Texture2D" uid="uid://bv2uyyxd22kft" path="res://areas/stationary store/StationaryStoreInsideB.png" id="1_3cjra"]
 [ext_resource type="PackedScene" uid="uid://c13d8uvmyxs6j" path="res://door.tscn" id="2_4u8tb"]
 
 [node name="StationaryStore" type="CanvasLayer" unique_id=809007711]

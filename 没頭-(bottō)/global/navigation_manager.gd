@@ -109,3 +109,11 @@ func go_to_level(curr_level_tag,new_level_tag):
 			if not pick.clicked.is_connected(Global._on_pickable_click):
 			
 				pick.clicked.connect(Global._on_pickable_click)
+		
+		var interactable_array = get_tree().get_nodes_in_group("interactable")
+		
+		for interact in interactable_array:
+			
+			if not interact.interact_clicked.is_connected(Global._on_interactable_click):
+			
+				interact.interact_clicked.connect(Global._on_interactable_click)
