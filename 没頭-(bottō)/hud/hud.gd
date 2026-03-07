@@ -34,7 +34,7 @@ func show_start():
 func show_end():
 	tutorial_button.visible = false
 	
-	dialog.display_line(true,"You did it!","Tutorial")
+	dialog.display_line(true,false,"You did it!","Tutorial")
 
 func next_level_tutorial():
 	

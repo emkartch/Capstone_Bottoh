@@ -28,7 +28,7 @@ NavigationManager="*uid://csln5hpn6etp8"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/resizable=false
+window/stretch/mode="canvas_items"
 mouse_cursor/custom_image="uid://cqtkfkmldoa4l"
 
 [global_group]
