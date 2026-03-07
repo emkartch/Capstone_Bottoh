@@ -22,7 +22,6 @@ offset_bottom = 142.58
 mouse_filter = 2
 
 [node name="Interactable" parent="Background/Selectables" unique_id=632896118 instance=ExtResource("2_70fny")]
-visible = false
 layout_mode = 0
 offset_right = 33.0
 offset_bottom = 165.0
@@ -31,7 +30,6 @@ item = ExtResource("3_70fny")
 description = "Book"
 
 [node name="Counter" type="TextureRect" parent="Background" unique_id=285709245]
-visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0

@@ -1,7 +1,6 @@
 extends Control
 
 @onready var label = $Label
-#@onready var object = $Object
 @onready var collision_shape = $Area2D/CollisionShape2D
 @onready var area_2d = $Area2D
 @onready var select_line = $SelectLine
