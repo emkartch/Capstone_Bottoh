@@ -52,7 +52,7 @@ _data = {
 &"fade_out": SubResource("Animation_4mwcp")
 }
 
-[node name="SceneTransitionAnimation" type="Node2D" unique_id=1882445901]
+[node name="SceneTransitionAnimation" type="CanvasLayer" unique_id=1785735440]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1793514331]
 offset_left = -230.0

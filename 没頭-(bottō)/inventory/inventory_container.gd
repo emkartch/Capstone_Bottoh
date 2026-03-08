@@ -233,8 +233,11 @@ func _on_h_box_inventory_child_exiting_tree(_node: Node) -> void:
 	var child_size_total = 0
 	
 	for child in hbox_inventory.get_children():
-		if not child.is_queued_for_deletion():
+		
+		if not child.exiting:
 			child_size_total += (child.basic_x)
+		else:
+			child.exiting = false
 	
 	if child_size_total > hbox_size:
 		

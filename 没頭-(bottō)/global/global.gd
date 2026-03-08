@@ -36,8 +36,8 @@ var note_questions = null
 @onready var hats = preload("res://inventory/pages/notebook/notebook_hats.tscn")
 
 @onready var hud = get_node("/root/Main/HUD")
-@onready var connect_button = get_node("/root/Main/HUD/ConnectButton")
-@onready var notif = get_node("/root/Main/HUD/Notification")
+@onready var connect_button = get_node("/root/Main/HUD/InGame/ConnectButton")
+@onready var notif = get_node("/root/Main/HUD/InGame/Notification")
 
 var notebook_appearances_nodes = []
 var notebook_clothes_hats_nodes = []
@@ -61,14 +61,13 @@ var clothes_hats_filled = false
 var colors_filled = false
 var hairs_filled = false
 
-
 # Make connect button work 
 
 # For pickable clicked
 
 @onready var inventory_container = get_node("/root/Main/Inventory/InventoryContainer")
-@onready var popup = get_node("/root/Main/HUD/PopUpMenu")
-@onready var dialog = get_node("/root/Main/HUD/Dialog")
+#@onready var popup = get_node("/root/Main/HUD/InGame/PopUpMenu")
+@onready var dialog = get_node("/root/Main/HUD/InGame/Dialog")
 
 var run_show_popup = true
 
@@ -89,7 +88,7 @@ var text = null
 
 # Goal changes
 
-@onready var goal_text = get_node("/root/Main/HUD/Goal/GoalOpen/VBoxContainer/GoalText")
+@onready var goal_text = get_node("/root/Main/HUD/InGame/Goal/GoalOpen/VBoxContainer/GoalText")
 
 # Goal changes
 
@@ -106,22 +105,6 @@ func _ready():
 	# CUSTOM CURSOR
 	
 	connect_button.pressed.connect(_on_connect_button_pressed)
-	
-	#var pickable_array = get_tree().get_nodes_in_group("pickable")
-	#
-	#for pick in pickable_array:
-		#
-		#if not pick.pick_clicked.is_connected(_on_pickable_click):
-		#
-			#pick.pick_clicked.connect(_on_pickable_click)
-	#
-	#var interactable_array = get_tree().get_nodes_in_group("interactable")
-	#
-	#for interact in interactable_array:
-		#
-		#if not interact.interact_clicked.is_connected(_on_interactable_click):
-		#
-			#interact.interact_clicked.connect(_on_interactable_click)
 	
 	var slot_array = get_tree().get_nodes_in_group("slot")
 	
@@ -169,9 +152,9 @@ func _ready():
 			
 			notebook_clothes_hats_nodes.append(child)
 	
-	#await hud.ready
-	#
-	#hud.show_start()
+	await hud.ready
+	
+	hud.show_start()
 
 func _process(_delta):
 	

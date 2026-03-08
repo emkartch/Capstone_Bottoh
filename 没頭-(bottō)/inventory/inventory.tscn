@@ -27,16 +27,6 @@ resource_local_to_scene = true
 shader = ExtResource("2_iigt5")
 shader_parameter/blur_amount = 2.000000095
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tjdag"]
-resource_local_to_scene = true
-shader = ExtResource("8_uj086")
-shader_parameter/color = Color(1, 1, 1, 1)
-shader_parameter/width = 0.0
-shader_parameter/pattern = 2
-shader_parameter/inside = false
-shader_parameter/add_margins = true
-shader_parameter/number_of_images = Vector2(1, 1)
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uj086"]
 resource_local_to_scene = true
 shader = ExtResource("8_uj086")
@@ -68,6 +58,16 @@ shader_parameter/add_margins = true
 shader_parameter/number_of_images = Vector2(1, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qgctf"]
+resource_local_to_scene = true
+shader = ExtResource("8_uj086")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tf2jx"]
 resource_local_to_scene = true
 shader = ExtResource("8_uj086")
 shader_parameter/color = Color(1, 1, 1, 1)
@@ -150,7 +150,7 @@ layout_mode = 2
 item = ExtResource("7_ajlgj")
 
 [node name="Item" parent="InventoryContainer/ScrollContainer/VBoxInventory/Slot" index="0" unique_id=1804702880]
-material = SubResource("ShaderMaterial_tjdag")
+material = SubResource("ShaderMaterial_uj086")
 texture = ExtResource("8_uyjf6")
 
 [node name="Slot2" parent="InventoryContainer/ScrollContainer/VBoxInventory" unique_id=556575379 instance=ExtResource("6_inc80")]
@@ -158,7 +158,7 @@ layout_mode = 2
 item = ExtResource("9_8eab2")
 
 [node name="Item" parent="InventoryContainer/ScrollContainer/VBoxInventory/Slot2" index="0" unique_id=1804702880]
-material = SubResource("ShaderMaterial_uj086")
+material = SubResource("ShaderMaterial_ihdgy")
 texture = ExtResource("7_locsq")
 
 [node name="Slot3" parent="InventoryContainer/ScrollContainer/VBoxInventory" unique_id=1425520509 instance=ExtResource("6_inc80")]
@@ -166,7 +166,7 @@ layout_mode = 2
 item = ExtResource("12_uj086")
 
 [node name="Item" parent="InventoryContainer/ScrollContainer/VBoxInventory/Slot3" index="0" unique_id=1804702880]
-material = SubResource("ShaderMaterial_ihdgy")
+material = SubResource("ShaderMaterial_x6dpd")
 texture = ExtResource("13_ihdgy")
 
 [node name="Slot4" parent="InventoryContainer/ScrollContainer/VBoxInventory" unique_id=1581384247 instance=ExtResource("6_inc80")]
@@ -174,7 +174,7 @@ layout_mode = 2
 item = ExtResource("16_tf2jx")
 
 [node name="Item" parent="InventoryContainer/ScrollContainer/VBoxInventory/Slot4" index="0" unique_id=1804702880]
-material = SubResource("ShaderMaterial_x6dpd")
+material = SubResource("ShaderMaterial_qgctf")
 texture = ExtResource("17_56l34")
 
 [node name="Slot5" parent="InventoryContainer/ScrollContainer/VBoxInventory" unique_id=1029458052 instance=ExtResource("6_inc80")]
@@ -182,7 +182,7 @@ layout_mode = 2
 item = ExtResource("14_x6dpd")
 
 [node name="Item" parent="InventoryContainer/ScrollContainer/VBoxInventory/Slot5" index="0" unique_id=1804702880]
-material = SubResource("ShaderMaterial_qgctf")
+material = SubResource("ShaderMaterial_tf2jx")
 texture = ExtResource("15_qgctf")
 
 [node name="UpArrow" type="TextureButton" parent="InventoryContainer" unique_id=1957222319]

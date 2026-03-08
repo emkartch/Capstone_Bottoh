@@ -86,13 +86,3 @@ func _on_area_2d_mouse_exited() -> void:
 		
 	label.remove_theme_color_override("font_color")
 	label.remove_theme_color_override("font_shadow_color")
-		
-	#else:
-		#
-		#if is_select:
-			#
-			#object.material.set_shader_parameter("color",Color.GOLD)
-	#
-		#if not is_select:
-		#
-			#object.material.set_shader_parameter("width",0)
