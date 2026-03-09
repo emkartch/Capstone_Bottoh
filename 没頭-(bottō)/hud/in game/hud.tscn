@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://dg8df3c2mesr8" path="res://hud/title screen/OpenPassport1.png" id="14_s867w"]
 [ext_resource type="Texture2D" uid="uid://chrxsdpem181w" path="res://hud/title screen/TitleScreen1.png" id="14_ul0pr"]
 [ext_resource type="Texture2D" uid="uid://bu42hxku0aoel" path="res://hud/title screen/OpenPassport2.png" id="15_31xeh"]
+[ext_resource type="Texture2D" uid="uid://b48e6qamaq6yx" path="res://hud/title screen/Title Logo.png" id="15_n3i3j"]
 [ext_resource type="Texture2D" uid="uid://j5dw0oh5d7nl" path="res://hud/title screen/TitleScreen2.png" id="15_s867w"]
 [ext_resource type="Texture2D" uid="uid://cokjp58l2p7fs" path="res://hud/title screen/OpenPassport3.png" id="16_n3i3j"]
 [ext_resource type="Texture2D" uid="uid://17w82mmu55nk" path="res://hud/title screen/TitleScreen3.png" id="16_s3k6s"]
@@ -472,10 +473,22 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("14_s867w")
 
+[node name="Title Logo" type="TextureRect" parent="TitleScreen" unique_id=1930320092]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -360.0
+offset_right = 360.0
+offset_bottom = 320.0
+grow_horizontal = 2
+theme = ExtResource("2_2gk58")
+texture = ExtResource("15_n3i3j")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TitleScreen" unique_id=1566414271]
 libraries/ = SubResource("AnimationLibrary_mcppi")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TitleScreen" unique_id=2056952131]
+visible = false
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.9
@@ -501,6 +514,14 @@ layout_mode = 2
 theme = ExtResource("2_2gk58")
 theme_override_font_sizes/font_size = 100
 text = "Settings"
+
+[node name="Label" type="Label" parent="TitleScreen" unique_id=1208799082]
+visible = false
+offset_left = 15.0
+offset_top = 2.0
+offset_right = 55.0
+offset_bottom = 20.0
+text = "没頭"
 
 [node name="LogoScreen" type="CanvasLayer" parent="." unique_id=113019954]
 visible = false
