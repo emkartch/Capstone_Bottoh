@@ -44,6 +44,8 @@ var page_number = null
 
 var questions = null
 
+var exiting = false
+
 func _ready():
 	
 	if item_data.pages > 1:

@@ -1,15 +1,41 @@
 extends CanvasLayer
 
 @onready var main = get_node("/root/Main")
-@onready var dialog = $Dialog
+@onready var dialog = $InGame/Dialog
 
-@onready var goal_button = $Goal/GoalButton
-@onready var goal_open = $Goal/GoalOpen
-@onready var tutorial_button = $Tutorial
+@onready var goal_button = $InGame/Goal/GoalButton
+@onready var goal_open = $InGame/Goal/GoalOpen
+@onready var tutorial_button = $InGame/Tutorial
 
-#@onready var popup_menu = preload("res://hud/pop_up_menu.tscn")
+@onready var logo_screen = $LogoScreen
+@onready var title_screen = $TitleScreen
+@onready var in_game = $InGame
+
+@onready var transition_animation = get_node("/root/Main/SceneTransitionAnimation/AnimationPlayer")
+
+func _ready():
+	
+	logo_screen.visible = true
+	title_screen.visible = false
+	in_game.visible = false
 
 func show_start():
+	
+	transition_animation.play("fade_out")
+	
+	await get_tree().create_timer(3.0).timeout 
+	
+	transition_animation.play("fade_in")
+	
+	await transition_animation.animation_finished
+	
+	logo_screen.visible = false
+	title_screen.visible = true
+	await get_tree().create_timer(1.0).timeout 
+	
+	transition_animation.play("fade_out")
+
+func show_middle():
 	
 	tutorial_button.visible = false
 	
@@ -66,7 +92,9 @@ func _on_exit_goal_button_pressed() -> void:
 
 func _on_tutorial_pressed() -> void:
 	
-	if Global.level == 1:
-		show_start()
-	elif Global.level ==2:
-		next_level_tutorial()
+	pass
+	
+	#if Global.level == 1:
+		#show_start()
+	#elif Global.level ==2:
+		#next_level_tutorial()

@@ -133,6 +133,7 @@ func _on_button_pressed(node):
 	for slot in %VBoxInventory.get_children():
 		if slot.item: continue
 		
+		node.exiting = true
 		slot.item = node.get_meta("item_data")	
 		slot.update_ui()
 		var parent = node.get_parent()

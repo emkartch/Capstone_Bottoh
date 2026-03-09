@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://b4wnpbm4ar8gk" path="res://hud/notification.gd" id="10_sh35x"]
 [ext_resource type="Texture2D" uid="uid://2uoeuu05tj0j" path="res://inventory/NotificationBox.png" id="12_mq7b8"]
 [ext_resource type="PackedScene" uid="uid://csnjyfc1uapsx" path="res://hud/pop_up_menu.tscn" id="13_mq7b8"]
+[ext_resource type="Texture2D" uid="uid://dmhunreje6uf5" path="res://inventory/InventorySquare.png" id="14_jvpmi"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jvpmi"]
 texture = ExtResource("4_hwufu")
@@ -87,7 +88,9 @@ _data = {
 process_mode = 3
 script = ExtResource("1_6ca3a")
 
-[node name="GreyOut" type="ColorRect" parent="." unique_id=307156639]
+[node name="InGame" type="CanvasLayer" parent="." unique_id=655899486]
+
+[node name="GreyOut" type="ColorRect" parent="InGame" unique_id=307156639]
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
@@ -96,7 +99,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.43529412)
 
-[node name="Dialog" type="Control" parent="." unique_id=1732845649]
+[node name="Dialog" type="Control" parent="InGame" unique_id=1732845649]
 visible = false
 layout_mode = 3
 anchor_top = 0.667
@@ -108,7 +111,7 @@ mouse_filter = 2
 theme = ExtResource("2_2gk58")
 script = ExtResource("3_svhta")
 
-[node name="Box" type="Panel" parent="Dialog" unique_id=949354063]
+[node name="Box" type="Panel" parent="InGame/Dialog" unique_id=949354063]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -119,7 +122,7 @@ pivot_offset = Vector2(960, 0)
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_jvpmi")
 
-[node name="Continue" type="TextureButton" parent="Dialog/Box" unique_id=1403673656]
+[node name="Continue" type="TextureButton" parent="InGame/Dialog/Box" unique_id=1403673656]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.985
@@ -135,7 +138,7 @@ shortcut = SubResource("Shortcut_jvpmi")
 texture_normal = ExtResource("3_w8tcp")
 texture_hover = ExtResource("4_svhta")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Dialog" unique_id=136578749]
+[node name="VBoxContainer" type="VBoxContainer" parent="InGame/Dialog" unique_id=136578749]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.015
@@ -147,17 +150,17 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_constants/separation = 10
 
-[node name="Speaker" type="Label" parent="Dialog/VBoxContainer" unique_id=1959057897]
+[node name="Speaker" type="Label" parent="InGame/Dialog/VBoxContainer" unique_id=1959057897]
 layout_mode = 2
 text = "Somebody"
 
-[node name="Dialogue" type="RichTextLabel" parent="Dialog/VBoxContainer" unique_id=1380198217]
+[node name="Dialogue" type="RichTextLabel" parent="InGame/Dialog/VBoxContainer" unique_id=1380198217]
 layout_mode = 2
 bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at libero et enim semper consectetur nec in quam. Morbi eu ante tortor. Integer scelerisque condimentum lorem, sed imperdiet nibh suscipit nec."
 fit_content = true
 
-[node name="Goal" type="Control" parent="." unique_id=1521384049]
+[node name="Goal" type="Control" parent="InGame" unique_id=1521384049]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -167,7 +170,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("2_2gk58")
 
-[node name="GoalOpen" type="TextureRect" parent="Goal" unique_id=1058062832]
+[node name="GoalOpen" type="TextureRect" parent="InGame/Goal" unique_id=1058062832]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -180,7 +183,7 @@ offset_bottom = 384.0
 grow_horizontal = 0
 texture = ExtResource("6_qv4qp")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Goal/GoalOpen" unique_id=726046158]
+[node name="VBoxContainer" type="VBoxContainer" parent="InGame/Goal/GoalOpen" unique_id=726046158]
 layout_mode = 0
 offset_left = 50.0
 offset_top = 50.0
@@ -188,19 +191,19 @@ offset_right = 335.80005
 offset_bottom = 353.8
 theme_override_constants/separation = 15
 
-[node name="Label" type="Label" parent="Goal/GoalOpen/VBoxContainer" unique_id=397293288]
+[node name="Label" type="Label" parent="InGame/Goal/GoalOpen/VBoxContainer" unique_id=397293288]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Goal:"
 
-[node name="GoalText" type="Label" parent="Goal/GoalOpen/VBoxContainer" unique_id=1516768583]
+[node name="GoalText" type="Label" parent="InGame/Goal/GoalOpen/VBoxContainer" unique_id=1516768583]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Use your surroundings to fill out your notebook."
 autowrap_mode = 2
 
-[node name="ExitGoalButton" type="TextureButton" parent="Goal/GoalOpen" unique_id=1785703919]
+[node name="ExitGoalButton" type="TextureButton" parent="InGame/Goal/GoalOpen" unique_id=1785703919]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.87
@@ -214,7 +217,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("7_qv4qp")
 texture_hover = ExtResource("8_sh35x")
 
-[node name="GoalButton" type="TextureButton" parent="Goal" unique_id=1348998633]
+[node name="GoalButton" type="TextureButton" parent="InGame/Goal" unique_id=1348998633]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.995
@@ -227,7 +230,7 @@ grow_horizontal = 0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("9_qv4qp")
 
-[node name="Notification" type="Control" parent="." unique_id=1241564741]
+[node name="Notification" type="Control" parent="InGame" unique_id=1241564741]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -470.0
@@ -237,13 +240,13 @@ offset_bottom = 170.0
 theme = ExtResource("2_2gk58")
 script = ExtResource("10_sh35x")
 
-[node name="Box" type="Panel" parent="Notification" unique_id=1249111142]
+[node name="Box" type="Panel" parent="InGame/Notification" unique_id=1249111142]
 layout_mode = 0
 offset_right = 450.0
 offset_bottom = 150.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_t2ad4")
 
-[node name="Text" type="Label" parent="Notification/Box" unique_id=1758758188]
+[node name="Text" type="Label" parent="InGame/Notification/Box" unique_id=1758758188]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -256,10 +259,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Notification" unique_id=1274578642]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="InGame/Notification" unique_id=1274578642]
 libraries/ = SubResource("AnimationLibrary_t2ad4")
 
-[node name="ConnectButton" type="Button" parent="." unique_id=555135791]
+[node name="ConnectButton" type="Button" parent="InGame" unique_id=555135791]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -271,10 +274,10 @@ theme = ExtResource("2_2gk58")
 theme_override_styles/normal = SubResource("StyleBoxFlat_mq7b8")
 text = "Connect"
 
-[node name="PopUpMenu" parent="." unique_id=1848782344 instance=ExtResource("13_mq7b8")]
+[node name="PopUpMenu" parent="InGame" unique_id=1848782344 instance=ExtResource("13_mq7b8")]
 visible = false
 
-[node name="Tutorial" type="Button" parent="." unique_id=1903746495]
+[node name="Tutorial" type="Button" parent="InGame" unique_id=1903746495]
 visible = false
 anchors_preset = 6
 anchor_left = 1.0
@@ -292,7 +295,56 @@ text = "Show
 Tutorial
 Again"
 
-[connection signal="pressed" from="Dialog/Box/Continue" to="Dialog" method="_on_continue_pressed"]
-[connection signal="pressed" from="Goal/GoalOpen/ExitGoalButton" to="." method="_on_exit_goal_button_pressed"]
-[connection signal="pressed" from="Goal/GoalButton" to="." method="_on_goal_button_pressed"]
-[connection signal="pressed" from="Tutorial" to="." method="_on_tutorial_pressed"]
+[node name="TitleScreen" type="CanvasLayer" parent="." unique_id=265224508]
+
+[node name="ColorRect" type="ColorRect" parent="TitleScreen" unique_id=84389369]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="TitleScreen" unique_id=585496023]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.5
+offset_top = -39.0
+offset_right = 100.5
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_2gk58")
+text = "Start"
+
+[node name="LogoScreen" type="CanvasLayer" parent="." unique_id=113019954]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="LogoScreen" unique_id=275358647]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Logo" type="TextureRect" parent="LogoScreen" unique_id=823582151]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -96.0
+offset_right = 96.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_jvpmi")
+
+[connection signal="pressed" from="InGame/Dialog/Box/Continue" to="InGame/Dialog" method="_on_continue_pressed"]
+[connection signal="pressed" from="InGame/Goal/GoalOpen/ExitGoalButton" to="." method="_on_exit_goal_button_pressed"]
+[connection signal="pressed" from="InGame/Goal/GoalButton" to="." method="_on_goal_button_pressed"]
+[connection signal="pressed" from="InGame/Tutorial" to="." method="_on_tutorial_pressed"]
