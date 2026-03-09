@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bq3sh6brpkqpd"]
 
 [ext_resource type="Script" uid="uid://dsc0p3v3tlf5d" path="res://inventory/item_data.gd" id="1_mtaeq"]
-[ext_resource type="Texture2D" uid="uid://cvpmlm7hwetli" path="res://assets/MiniNotePadClosed.png" id="1_uaec8"]
-[ext_resource type="Texture2D" uid="uid://clrmiad5dkevj" path="res://assets/NotePage.png" id="2_w4h4b"]
+[ext_resource type="Texture2D" uid="uid://cuwk73vu050o2" path="res://inventory/USPassport.png" id="1_r5wts"]
 
 [resource]
 script = ExtResource("1_mtaeq")
 item_name = "Passport"
-icon = ExtResource("1_uaec8")
-item = Array[Texture2D]([ExtResource("2_w4h4b")])
+icon = ExtResource("1_r5wts")
+item = Array[Texture2D]([ExtResource("1_r5wts")])
 pages = 1
+description = "Passport"
 metadata/_custom_type_script = "uid://dsc0p3v3tlf5d"
