@@ -18,7 +18,7 @@ extends CanvasLayer
 func _ready():
 	
 	logo_screen.visible = true
-	title_screen.visible = true
+	title_screen.visible = false
 	in_game.visible = false
 	
 	title_screen_background.texture = preload("res://hud/title screen/TitleScreen1.png")
@@ -34,7 +34,7 @@ func show_start():
 	await transition_animation.animation_finished
 	
 	logo_screen.visible = false
-	#title_screen.visible = true
+	title_screen.visible = true
 	await get_tree().create_timer(1.0).timeout 
 	
 	transition_animation.play("fade_out")

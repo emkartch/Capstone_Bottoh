@@ -351,6 +351,7 @@ Tutorial
 Again"
 
 [node name="TitleScreen" type="CanvasLayer" parent="." unique_id=265224508]
+visible = false
 
 [node name="Background" type="TextureRect" parent="TitleScreen" unique_id=1304080602]
 anchors_preset = 8
