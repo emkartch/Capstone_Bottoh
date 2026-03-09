@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://csnjyfc1uapsx"]
 
 [ext_resource type="Theme" uid="uid://cp4nu80cltnic" path="res://theme/main_theme.tres" id="1_s341x"]
-[ext_resource type="Script" uid="uid://vr740kmfvuo4" path="res://hud/pop_up_menu.gd" id="2_trexd"]
+[ext_resource type="Script" uid="uid://vr740kmfvuo4" path="res://hud/in game/pop_up_menu.gd" id="2_trexd"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_trexd"]
 

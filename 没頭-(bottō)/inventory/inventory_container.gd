@@ -66,8 +66,8 @@ func _on_down_arrow_pressed() -> void:
 	
 	var final_value = value + 160
 	
-	if final_value > 320:
-		final_value = 320
+	if final_value > 480:
+		final_value = 480
 
 	scroll_container.set_v_scroll(final_value)
 

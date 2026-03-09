@@ -12,12 +12,16 @@ extends CanvasLayer
 @onready var in_game = $InGame
 
 @onready var transition_animation = get_node("/root/Main/SceneTransitionAnimation/AnimationPlayer")
+@onready var title_screen_animate = $TitleScreen/AnimationPlayer
+@onready var title_screen_background = $TitleScreen/Background
 
 func _ready():
 	
 	logo_screen.visible = true
-	title_screen.visible = false
+	title_screen.visible = true
 	in_game.visible = false
+	
+	title_screen_background.texture = preload("res://hud/title screen/TitleScreen1.png")
 
 func show_start():
 	
@@ -30,10 +34,14 @@ func show_start():
 	await transition_animation.animation_finished
 	
 	logo_screen.visible = false
-	title_screen.visible = true
+	#title_screen.visible = true
 	await get_tree().create_timer(1.0).timeout 
 	
 	transition_animation.play("fade_out")
+	
+	await transition_animation.animation_finished
+	
+	title_screen_animate.play("title_screen")
 
 func show_middle():
 	

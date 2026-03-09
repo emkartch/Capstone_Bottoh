@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://ce2yvk10bvhy5"]
 
-[ext_resource type="Script" uid="uid://csb4ei4d65gdf" path="res://hud/hud.gd" id="1_6ca3a"]
+[ext_resource type="Script" uid="uid://csb4ei4d65gdf" path="res://hud/in game/hud.gd" id="1_6ca3a"]
 [ext_resource type="Theme" uid="uid://cp4nu80cltnic" path="res://theme/main_theme.tres" id="2_2gk58"]
-[ext_resource type="Script" uid="uid://dadl2ct6iu51b" path="res://hud/dialog.gd" id="3_svhta"]
+[ext_resource type="Script" uid="uid://dadl2ct6iu51b" path="res://hud/in game/dialog.gd" id="3_svhta"]
 [ext_resource type="Texture2D" uid="uid://cbnhlqlr5fpw0" path="res://assets/Arrow.png" id="3_w8tcp"]
 [ext_resource type="Texture2D" uid="uid://nqspkns4iyov" path="res://inventory/TextBox.png" id="4_hwufu"]
 [ext_resource type="Texture2D" uid="uid://cev8nqun6fo3" path="res://assets/GreyArrow.png" id="4_svhta"]
@@ -10,10 +10,27 @@
 [ext_resource type="Texture2D" uid="uid://bthma8uk8dn3h" path="res://assets/X.png" id="7_qv4qp"]
 [ext_resource type="Texture2D" uid="uid://cc2vq3gm7y48" path="res://assets/GreyX.png" id="8_sh35x"]
 [ext_resource type="Texture2D" uid="uid://d120m6w405qbg" path="res://assets/Notebookpaper.png" id="9_qv4qp"]
-[ext_resource type="Script" uid="uid://b4wnpbm4ar8gk" path="res://hud/notification.gd" id="10_sh35x"]
+[ext_resource type="Script" uid="uid://b4wnpbm4ar8gk" path="res://hud/in game/notification.gd" id="10_sh35x"]
 [ext_resource type="Texture2D" uid="uid://2uoeuu05tj0j" path="res://inventory/NotificationBox.png" id="12_mq7b8"]
-[ext_resource type="PackedScene" uid="uid://csnjyfc1uapsx" path="res://hud/pop_up_menu.tscn" id="13_mq7b8"]
+[ext_resource type="PackedScene" uid="uid://csnjyfc1uapsx" path="res://hud/in game/pop_up_menu.tscn" id="13_mq7b8"]
 [ext_resource type="Texture2D" uid="uid://dmhunreje6uf5" path="res://inventory/InventorySquare.png" id="14_jvpmi"]
+[ext_resource type="Texture2D" uid="uid://chrxsdpem181w" path="res://hud/title screen/TitleScreen1.png" id="14_ul0pr"]
+[ext_resource type="Texture2D" uid="uid://j5dw0oh5d7nl" path="res://hud/title screen/TitleScreen2.png" id="15_s867w"]
+[ext_resource type="Texture2D" uid="uid://17w82mmu55nk" path="res://hud/title screen/TitleScreen3.png" id="16_s3k6s"]
+[ext_resource type="Texture2D" uid="uid://ct62wwsww5mnd" path="res://hud/title screen/TitleScreen4.png" id="17_d3jir"]
+[ext_resource type="Texture2D" uid="uid://ou2c515roar4" path="res://hud/title screen/TitleScreen5.png" id="18_1cwdk"]
+[ext_resource type="Texture2D" uid="uid://bfnay4rrid6vk" path="res://hud/title screen/TitleScreen6.png" id="19_1tsbe"]
+[ext_resource type="Texture2D" uid="uid://bko40177dfxyo" path="res://hud/title screen/TitleScreen7.png" id="20_fkg2q"]
+[ext_resource type="Texture2D" uid="uid://bpd0h3ogsespq" path="res://hud/title screen/TitleScreen8.png" id="21_8txkx"]
+[ext_resource type="Texture2D" uid="uid://btq41jqq1olnm" path="res://hud/title screen/TitleScreen9.png" id="22_xx3da"]
+[ext_resource type="Texture2D" uid="uid://bwt57db2j2om8" path="res://hud/title screen/TitleScreen10.png" id="23_mwgdd"]
+[ext_resource type="Texture2D" uid="uid://dlvg2xkxbfnb" path="res://hud/title screen/TitleScreen11.png" id="24_b4b4w"]
+[ext_resource type="Texture2D" uid="uid://c3i01frl5ohcj" path="res://hud/title screen/TitleScreen12.png" id="25_hh06a"]
+[ext_resource type="Texture2D" uid="uid://b84g701xysdo3" path="res://hud/title screen/TitleScreen13.png" id="26_dt2gf"]
+[ext_resource type="Texture2D" uid="uid://dlphfucjb30du" path="res://hud/title screen/TitleScreen14.png" id="27_1mo1c"]
+[ext_resource type="Texture2D" uid="uid://cyfs4pgx2olkd" path="res://hud/title screen/TitleScreen15.png" id="28_xs0ub"]
+[ext_resource type="Texture2D" uid="uid://c5x0538lpyemm" path="res://hud/title screen/TitleScreen16.png" id="29_iqqq5"]
+[ext_resource type="Texture2D" uid="uid://bqob760vud5ck" path="res://hud/title screen/TitleScreen17.png" id="30_31xeh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jvpmi"]
 texture = ExtResource("4_hwufu")
@@ -84,11 +101,49 @@ _data = {
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mq7b8"]
 
+[sub_resource type="Animation" id="Animation_n3i3j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+
+[sub_resource type="Animation" id="Animation_6qyl7"]
+resource_name = "title_screen"
+length = 1.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.19999999, 0.3, 0.39999998, 0.5, 0.6, 0.70000005, 0.79999995, 0.9, 1, 1.1, 1.2, 1.3, 1.4000001, 1.5, 1.5999999),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("14_ul0pr"), ExtResource("15_s867w"), ExtResource("16_s3k6s"), ExtResource("17_d3jir"), ExtResource("18_1cwdk"), ExtResource("19_1tsbe"), ExtResource("20_fkg2q"), ExtResource("21_8txkx"), ExtResource("22_xx3da"), ExtResource("23_mwgdd"), ExtResource("24_b4b4w"), ExtResource("25_hh06a"), ExtResource("26_dt2gf"), ExtResource("27_1mo1c"), ExtResource("28_xs0ub"), ExtResource("29_iqqq5"), ExtResource("30_31xeh")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mcppi"]
+_data = {
+&"RESET": SubResource("Animation_n3i3j"),
+&"title_screen": SubResource("Animation_6qyl7")
+}
+
 [node name="HUD" type="CanvasLayer" unique_id=179951230]
 process_mode = 3
 script = ExtResource("1_6ca3a")
 
 [node name="InGame" type="CanvasLayer" parent="." unique_id=655899486]
+visible = false
 
 [node name="GreyOut" type="ColorRect" parent="InGame" unique_id=307156639]
 visible = false
@@ -297,10 +352,16 @@ Again"
 
 [node name="TitleScreen" type="CanvasLayer" parent="." unique_id=265224508]
 
-[node name="ColorRect" type="ColorRect" parent="TitleScreen" unique_id=84389369]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="Background" type="TextureRect" parent="TitleScreen" unique_id=1304080602]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -318,6 +379,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_2gk58")
 text = "Start"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TitleScreen" unique_id=1566414271]
+libraries/ = SubResource("AnimationLibrary_mcppi")
 
 [node name="LogoScreen" type="CanvasLayer" parent="." unique_id=113019954]
 visible = false
