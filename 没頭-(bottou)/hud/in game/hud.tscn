@@ -168,6 +168,17 @@ tracks/3/keys = {
 "update": 1,
 "values": [ExtResource("14_s867w")]
 }
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Title Logo:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-107.88086, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="Animation" id="Animation_s3k6s"]
 resource_name = "passport"
@@ -209,9 +220,12 @@ tracks/2/keys = {
 "values": [ExtResource("14_s867w"), ExtResource("15_31xeh"), ExtResource("16_n3i3j"), ExtResource("17_6qyl7"), ExtResource("18_mcppi"), ExtResource("19_nfxdc"), ExtResource("20_x2qrc"), ExtResource("21_yrctj"), ExtResource("22_jgp2e"), ExtResource("23_e0moe"), ExtResource("24_rn1yl"), ExtResource("25_pouxf"), ExtResource("26_p75n7"), ExtResource("27_u3s1h"), ExtResource("28_ngomn"), ExtResource("29_wmwpu")]
 }
 
+[sub_resource type="Animation" id="Animation_mcppi"]
+resource_name = "title_logo"
+
 [sub_resource type="Animation" id="Animation_6qyl7"]
 resource_name = "title_screen"
-length = 1.2
+length = 8.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -224,11 +238,59 @@ tracks/0/keys = {
 "update": 1,
 "values": [ExtResource("14_ul0pr"), ExtResource("15_s867w"), ExtResource("16_s3k6s"), ExtResource("17_d3jir"), ExtResource("18_1cwdk"), ExtResource("19_1tsbe"), ExtResource("20_fkg2q"), ExtResource("21_8txkx"), ExtResource("22_xx3da"), ExtResource("23_mwgdd"), ExtResource("24_b4b4w"), ExtResource("25_hh06a"), ExtResource("26_dt2gf"), ExtResource("27_1mo1c"), ExtResource("28_xs0ub"), ExtResource("29_iqqq5"), ExtResource("30_31xeh")]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Passport:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.2750281, 1.9750282, 4, 4.5),
+"transitions": PackedFloat32Array(0.5, 2, 0.5, 2),
+"update": 0,
+"values": [Vector2(1920, 308), Vector2(608, 308), Vector2(608, 308), Vector2(1050, 308)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Passport:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.2750281, 1.9750282, 4, 4.5),
+"transitions": PackedFloat32Array(0.5, 2, 0.5, 2),
+"update": 0,
+"values": [0.15707963267948966, 0.0, 0.0, -0.10471976]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Passport:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.9750282, 2.0750282, 2.175028, 2.275028, 2.3750284, 2.4750283, 2.5750282, 2.675028, 2.775028, 2.8750284, 2.9750283, 3.0750282, 3.175028, 3.275028, 3.375028, 3.4750283, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("14_s867w"), ExtResource("15_31xeh"), ExtResource("16_n3i3j"), ExtResource("17_6qyl7"), ExtResource("18_mcppi"), ExtResource("19_nfxdc"), ExtResource("20_x2qrc"), ExtResource("21_yrctj"), ExtResource("22_jgp2e"), ExtResource("23_e0moe"), ExtResource("24_rn1yl"), ExtResource("25_pouxf"), ExtResource("26_p75n7"), ExtResource("27_u3s1h"), ExtResource("28_ngomn"), ExtResource("29_wmwpu"), ExtResource("15_31xeh")]
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Title Logo:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-720, 0, 0, 0.22655416, 368, 600.00055, -0.75071716, -729.00055, 0, 0),
+"times": PackedFloat32Array(3.7, 4.6)
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mcppi"]
 _data = {
 &"RESET": SubResource("Animation_n3i3j"),
 &"passport": SubResource("Animation_s3k6s"),
+&"title_logo": SubResource("Animation_mcppi"),
 &"title_screen": SubResource("Animation_6qyl7")
 }
 
@@ -474,26 +536,29 @@ grow_vertical = 2
 texture = ExtResource("14_s867w")
 
 [node name="Title Logo" type="TextureRect" parent="TitleScreen" unique_id=1930320092]
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -360.0
-offset_right = 360.0
-offset_bottom = 320.0
+anchor_bottom = 0.5
+offset_left = -1067.8809
+offset_top = -160.00003
+offset_right = -347.87872
+offset_bottom = 160.0
 grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("2_2gk58")
 texture = ExtResource("15_n3i3j")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TitleScreen" unique_id=1566414271]
 libraries/ = SubResource("AnimationLibrary_mcppi")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TitleScreen" unique_id=2056952131]
-visible = false
+[node name="TSButtons" type="HBoxContainer" parent="TitleScreen" unique_id=2056952131]
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.9
+anchor_top = 0.85
 anchor_right = 0.5
-anchor_bottom = 0.9
+anchor_bottom = 0.85
 offset_left = -276.0
 offset_top = -78.0
 offset_right = 276.0
@@ -503,13 +568,13 @@ theme = ExtResource("2_2gk58")
 theme_override_constants/separation = 70
 alignment = 1
 
-[node name="StartButton" type="Button" parent="TitleScreen/HBoxContainer" unique_id=1986163574]
+[node name="StartButton" type="Button" parent="TitleScreen/TSButtons" unique_id=1986163574]
 layout_mode = 2
 theme = ExtResource("2_2gk58")
 theme_override_font_sizes/font_size = 100
 text = "Start"
 
-[node name="SettingsButton" type="Button" parent="TitleScreen/HBoxContainer" unique_id=847954879]
+[node name="SettingsButton" type="Button" parent="TitleScreen/TSButtons" unique_id=847954879]
 layout_mode = 2
 theme = ExtResource("2_2gk58")
 theme_override_font_sizes/font_size = 100

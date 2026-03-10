@@ -47,7 +47,9 @@ func show_start():
 	
 	await title_screen_animate.animation_finished
 	
-	title_screen_animate.play("passport")
+	#title_screen_animate.play("passport")
+	#
+	#await title_screen_animate.animation_finished
 
 func show_middle():
 	
