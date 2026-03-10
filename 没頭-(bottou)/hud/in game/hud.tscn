@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://dg8df3c2mesr8" path="res://hud/title screen/OpenPassport1.png" id="14_s867w"]
 [ext_resource type="Texture2D" uid="uid://chrxsdpem181w" path="res://hud/title screen/TitleScreen1.png" id="14_ul0pr"]
 [ext_resource type="Texture2D" uid="uid://bu42hxku0aoel" path="res://hud/title screen/OpenPassport2.png" id="15_31xeh"]
+[ext_resource type="Texture2D" uid="uid://c7yhenlutu15v" path="res://hud/title screen/JapanPassport.png" id="15_mcppi"]
 [ext_resource type="Texture2D" uid="uid://b48e6qamaq6yx" path="res://hud/title screen/Title Logo.png" id="15_n3i3j"]
 [ext_resource type="Texture2D" uid="uid://j5dw0oh5d7nl" path="res://hud/title screen/TitleScreen2.png" id="15_s867w"]
 [ext_resource type="Texture2D" uid="uid://cokjp58l2p7fs" path="res://hud/title screen/OpenPassport3.png" id="16_n3i3j"]
@@ -48,6 +49,7 @@
 [ext_resource type="Texture2D" uid="uid://c5x0538lpyemm" path="res://hud/title screen/TitleScreen16.png" id="29_iqqq5"]
 [ext_resource type="Texture2D" uid="uid://djex00qvly55r" path="res://hud/title screen/OpenPassport16.png" id="29_wmwpu"]
 [ext_resource type="Texture2D" uid="uid://bqob760vud5ck" path="res://hud/title screen/TitleScreen17.png" id="30_31xeh"]
+[ext_resource type="Texture2D" uid="uid://cuwk73vu050o2" path="res://inventory/USPassport.png" id="49_nfxdc"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jvpmi"]
 texture = ExtResource("4_hwufu")
@@ -135,7 +137,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Passport:position")
+tracks/1/path = NodePath("USPassport:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -147,7 +149,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Passport:rotation")
+tracks/2/path = NodePath("USPassport:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -159,7 +161,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Passport:texture")
+tracks/3/path = NodePath("USPassport:texture")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -171,13 +173,49 @@ tracks/3/keys = {
 tracks/4/type = "bezier"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Title Logo:position:x")
+tracks/4/path = NodePath("TitleLogo:position:x")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "handle_modes": PackedInt32Array(0),
 "points": PackedFloat32Array(-107.88086, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("USPassport:size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(704.00024, 464.00037)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("JPNPassport:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(148, 271)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TSButtons:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_s3k6s"]
@@ -186,7 +224,7 @@ length = 2.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Passport:position")
+tracks/0/path = NodePath("USPassport:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -198,7 +236,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Passport:rotation")
+tracks/1/path = NodePath("USPassport:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -210,7 +248,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Passport:texture")
+tracks/2/path = NodePath("USPassport:texture")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -241,19 +279,19 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Passport:position")
+tracks/1/path = NodePath("USPassport:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(1.2750281, 1.9750282, 4, 4.5),
-"transitions": PackedFloat32Array(0.5, 2, 0.5, 2),
+"times": PackedFloat32Array(1.2750281, 1.9750282, 3.475, 4, 4.5),
+"transitions": PackedFloat32Array(0.5, 2, 0, 0.5, 2),
 "update": 0,
-"values": [Vector2(1920, 308), Vector2(608, 308), Vector2(608, 308), Vector2(1050, 308)]
+"values": [Vector2(1920, 308), Vector2(608, 308), Vector2(608, 308), Vector2(960, 308), Vector2(1400, 308)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Passport:rotation")
+tracks/2/path = NodePath("USPassport:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -265,25 +303,61 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Passport:texture")
+tracks/3/path = NodePath("USPassport:texture")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(1.9750282, 2.0750282, 2.175028, 2.275028, 2.3750284, 2.4750283, 2.5750282, 2.675028, 2.775028, 2.8750284, 2.9750283, 3.0750282, 3.175028, 3.275028, 3.375028, 3.4750283, 4),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("14_s867w"), ExtResource("15_31xeh"), ExtResource("16_n3i3j"), ExtResource("17_6qyl7"), ExtResource("18_mcppi"), ExtResource("19_nfxdc"), ExtResource("20_x2qrc"), ExtResource("21_yrctj"), ExtResource("22_jgp2e"), ExtResource("23_e0moe"), ExtResource("24_rn1yl"), ExtResource("25_pouxf"), ExtResource("26_p75n7"), ExtResource("27_u3s1h"), ExtResource("28_ngomn"), ExtResource("29_wmwpu"), ExtResource("15_31xeh")]
+"values": [ExtResource("14_s867w"), ExtResource("15_31xeh"), ExtResource("16_n3i3j"), ExtResource("17_6qyl7"), ExtResource("18_mcppi"), ExtResource("19_nfxdc"), ExtResource("20_x2qrc"), ExtResource("21_yrctj"), ExtResource("22_jgp2e"), ExtResource("23_e0moe"), ExtResource("24_rn1yl"), ExtResource("25_pouxf"), ExtResource("26_p75n7"), ExtResource("27_u3s1h"), ExtResource("28_ngomn"), ExtResource("29_wmwpu"), ExtResource("49_nfxdc")]
 }
 tracks/4/type = "bezier"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Title Logo:position:x")
+tracks/4/path = NodePath("TitleLogo:position:x")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(-720, 0, 0, 0.22655416, 368, 600.00055, -0.75071716, -729.00055, 0, 0),
 "times": PackedFloat32Array(3.7, 4.6)
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("USPassport:size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(3.475, 4),
+"transitions": PackedFloat32Array(0, 1),
+"update": 0,
+"values": [Vector2(704.00024, 464.00037), Vector2(352, 464)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("JPNPassport:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(4.5, 5),
+"transitions": PackedFloat32Array(0.5, 2),
+"update": 0,
+"values": [Vector2(148, -498), Vector2(148, 271)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TSButtons:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(5.1, 5.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mcppi"]
@@ -293,6 +367,18 @@ _data = {
 &"title_logo": SubResource("Animation_mcppi"),
 &"title_screen": SubResource("Animation_6qyl7")
 }
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mcppi"]
+texture = ExtResource("12_mq7b8")
+texture_margin_left = 20.0
+texture_margin_top = 10.0
+texture_margin_right = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nfxdc"]
+texture = ExtResource("12_mq7b8")
+texture_margin_left = 20.0
+texture_margin_top = 10.0
+texture_margin_right = 20.0
 
 [node name="HUD" type="CanvasLayer" unique_id=179951230]
 process_mode = 3
@@ -521,30 +607,31 @@ offset_bottom = 540.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Passport" type="TextureRect" parent="TitleScreen" unique_id=274798542]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -352.0
-offset_top = -232.0
-offset_right = 352.0
-offset_bottom = 232.00037
-grow_horizontal = 2
-grow_vertical = 2
+[node name="USPassport" type="TextureRect" parent="TitleScreen" unique_id=274798542]
+offset_left = 608.0
+offset_top = 308.0
+offset_right = 1312.0002
+offset_bottom = 772.00037
 texture = ExtResource("14_s867w")
 
-[node name="Title Logo" type="TextureRect" parent="TitleScreen" unique_id=1930320092]
+[node name="JPNPassport" type="TextureRect" parent="TitleScreen" unique_id=817778454]
+offset_left = 148.0
+offset_top = 271.0
+offset_right = 500.0
+offset_bottom = 735.0
+rotation = 0.10471976
+texture = ExtResource("15_mcppi")
+
+[node name="TitleLogo" type="TextureRect" parent="TitleScreen" unique_id=1930320092]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -1067.8809
-offset_top = -160.00003
-offset_right = -347.87872
-offset_bottom = 160.0
+offset_top = -232.0
+offset_right = -347.87946
+offset_bottom = 232.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_2gk58")
@@ -554,11 +641,12 @@ texture = ExtResource("15_n3i3j")
 libraries/ = SubResource("AnimationLibrary_mcppi")
 
 [node name="TSButtons" type="HBoxContainer" parent="TitleScreen" unique_id=2056952131]
+modulate = Color(1, 1, 1, 0)
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.85
+anchor_top = 0.9
 anchor_right = 0.5
-anchor_bottom = 0.85
+anchor_bottom = 0.9
 offset_left = -276.0
 offset_top = -78.0
 offset_right = 276.0
@@ -572,12 +660,14 @@ alignment = 1
 layout_mode = 2
 theme = ExtResource("2_2gk58")
 theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxTexture_mcppi")
 text = "Start"
 
 [node name="SettingsButton" type="Button" parent="TitleScreen/TSButtons" unique_id=847954879]
 layout_mode = 2
 theme = ExtResource("2_2gk58")
 theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxTexture_nfxdc")
 text = "Settings"
 
 [node name="Label" type="Label" parent="TitleScreen" unique_id=1208799082]

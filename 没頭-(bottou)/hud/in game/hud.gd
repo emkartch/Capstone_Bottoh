@@ -14,7 +14,9 @@ extends CanvasLayer
 @onready var transition_animation = get_node("/root/Main/SceneTransitionAnimation/AnimationPlayer")
 @onready var title_screen_animate = $TitleScreen/AnimationPlayer
 @onready var title_screen_background = $TitleScreen/Background
-@onready var title_screen_passport = $TitleScreen/Passport
+@onready var title_screen_uspassport = $TitleScreen/USPassport
+@onready var title_screen_jpnpassport = $TitleScreen/JPNPassport
+@onready var title_screen_logo = $TitleScreen/TitleLogo
 
 func _ready():
 	
@@ -23,7 +25,9 @@ func _ready():
 	in_game.visible = false
 	
 	title_screen_background.texture = preload("res://hud/title screen/TitleScreen1.png")
-	title_screen_passport.position.x = 1920
+	title_screen_uspassport.position.x = 1920
+	title_screen_logo.position.x = -720
+	title_screen_jpnpassport.position = Vector2(148,-498)
 
 func show_start():
 	
