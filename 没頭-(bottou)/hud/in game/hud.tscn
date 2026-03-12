@@ -50,6 +50,7 @@
 [ext_resource type="Texture2D" uid="uid://djex00qvly55r" path="res://hud/title screen/OpenPassport16.png" id="29_wmwpu"]
 [ext_resource type="Texture2D" uid="uid://bqob760vud5ck" path="res://hud/title screen/TitleScreen17.png" id="30_31xeh"]
 [ext_resource type="Texture2D" uid="uid://cuwk73vu050o2" path="res://inventory/USPassport.png" id="49_nfxdc"]
+[ext_resource type="Texture2D" uid="uid://bluwwa0v5iw15" path="res://inventory/NotificationBoxDarkVersion.png" id="50_nfxdc"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jvpmi"]
 texture = ExtResource("4_hwufu")
@@ -374,8 +375,44 @@ texture_margin_left = 20.0
 texture_margin_top = 10.0
 texture_margin_right = 20.0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x2qrc"]
+texture = ExtResource("50_nfxdc")
+texture_margin_left = 20.0
+texture_margin_top = 10.0
+texture_margin_right = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yrctj"]
+texture = ExtResource("50_nfxdc")
+texture_margin_left = 20.0
+texture_margin_top = 10.0
+texture_margin_right = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jgp2e"]
+texture = ExtResource("50_nfxdc")
+texture_margin_left = 20.0
+texture_margin_top = 10.0
+texture_margin_right = 20.0
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nfxdc"]
 texture = ExtResource("12_mq7b8")
+texture_margin_left = 20.0
+texture_margin_top = 10.0
+texture_margin_right = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e0moe"]
+texture = ExtResource("50_nfxdc")
+texture_margin_left = 20.0
+texture_margin_top = 10.0
+texture_margin_right = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rn1yl"]
+texture = ExtResource("50_nfxdc")
+texture_margin_left = 20.0
+texture_margin_top = 10.0
+texture_margin_right = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pouxf"]
+texture = ExtResource("50_nfxdc")
 texture_margin_left = 20.0
 texture_margin_top = 10.0
 texture_margin_right = 20.0
@@ -659,24 +696,28 @@ alignment = 1
 [node name="StartButton" type="Button" parent="TitleScreen/TSButtons" unique_id=1986163574]
 layout_mode = 2
 theme = ExtResource("2_2gk58")
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = SubResource("StyleBoxTexture_mcppi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_x2qrc")
+theme_override_styles/hover = SubResource("StyleBoxTexture_yrctj")
+theme_override_styles/focus = SubResource("StyleBoxTexture_jgp2e")
 text = "Start"
 
 [node name="SettingsButton" type="Button" parent="TitleScreen/TSButtons" unique_id=847954879]
 layout_mode = 2
 theme = ExtResource("2_2gk58")
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = SubResource("StyleBoxTexture_nfxdc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_e0moe")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rn1yl")
+theme_override_styles/focus = SubResource("StyleBoxTexture_pouxf")
 text = "Settings"
-
-[node name="Label" type="Label" parent="TitleScreen" unique_id=1208799082]
-visible = false
-offset_left = 15.0
-offset_top = 2.0
-offset_right = 55.0
-offset_bottom = 20.0
-text = "没頭"
 
 [node name="LogoScreen" type="CanvasLayer" parent="." unique_id=113019954]
 visible = false

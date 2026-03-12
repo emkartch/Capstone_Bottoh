@@ -1,10 +1,19 @@
 [gd_scene format=3 uid="uid://b3p7eckxviy0"]
 
+[ext_resource type="Script" uid="uid://chadilj3rgcg3" path="res://main.gd" id="1_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://ce2yvk10bvhy5" path="res://hud/in game/hud.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://c0jxwmx85e3fo" path="res://inventory/inventory.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://sq8w3l2vuppa" path="res://scene_transition_animation.tscn" id="3_h2yge"]
 
 [node name="Main" type="Node" unique_id=1584147130]
+script = ExtResource("1_1bvp3")
+
+[node name="MainBackground" type="TextureRect" parent="." unique_id=926982099]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Inventory" parent="." unique_id=1839383855 instance=ExtResource("2_h2yge")]
 z_index = 1

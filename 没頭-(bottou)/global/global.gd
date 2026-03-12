@@ -1,6 +1,7 @@
 extends Node
 
-var level = 1
+# 0 is for before the first goal is shown, then moving to up allows for iteration in arrays
+var level = 0
 
 var notepad_page = 1
 
@@ -66,7 +67,6 @@ var hairs_filled = false
 # For pickable clicked
 
 @onready var inventory_container = get_node("/root/Main/Inventory/InventoryContainer")
-#@onready var popup = get_node("/root/Main/HUD/InGame/PopUpMenu")
 @onready var dialog = get_node("/root/Main/HUD/InGame/Dialog")
 
 var run_show_popup = true
@@ -166,36 +166,6 @@ func _process(_delta):
 		connect_button.visible = true
 	else:
 		connect_button.visible = false
-	
-	#if visible_popup:
-		#
-		#if not popup_hover:
-			#
-			#popup.visible = false
-			#
-			#visible_popup = false
-			#
-			#popup_ans = "leave"
-			#
-		#elif info_click:
-			#
-			#popup.visible = false
-			#
-			#info_click = false
-			#
-			#visible_popup = false
-			#
-			#popup_ans =  "information"
-			#
-		#elif select_click:
-			#
-			#popup.visible = false
-			#
-			#select_click = false
-			#
-			#visible_popup = false
-			#
-			#popup_ans = "select"
 
 func _on_connect_button_pressed() -> void:
 	

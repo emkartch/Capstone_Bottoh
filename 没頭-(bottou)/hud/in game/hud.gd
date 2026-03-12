@@ -50,10 +50,6 @@ func show_start():
 	title_screen_animate.play("title_screen")
 	
 	await title_screen_animate.animation_finished
-	
-	#title_screen_animate.play("passport")
-	#
-	#await title_screen_animate.animation_finished
 
 func show_middle():
 	
