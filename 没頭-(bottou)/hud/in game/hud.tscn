@@ -495,6 +495,7 @@ text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at libero 
 fit_content = true
 
 [node name="Goal" type="Control" parent="InGame" unique_id=1521384049]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -748,3 +749,4 @@ texture = ExtResource("14_jvpmi")
 [connection signal="pressed" from="InGame/Goal/GoalOpen/ExitGoalButton" to="." method="_on_exit_goal_button_pressed"]
 [connection signal="pressed" from="InGame/Goal/GoalButton" to="." method="_on_goal_button_pressed"]
 [connection signal="pressed" from="InGame/Tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="TitleScreen/TSButtons/StartButton" to="." method="_on_start_button_pressed"]

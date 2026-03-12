@@ -16,6 +16,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Inventory" parent="." unique_id=1839383855 instance=ExtResource("2_h2yge")]
+visible = false
 z_index = 1
 
 [node name="HUD" parent="." unique_id=179951230 instance=ExtResource("1_ig7tw")]

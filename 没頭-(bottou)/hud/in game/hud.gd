@@ -114,3 +114,11 @@ func _on_tutorial_pressed() -> void:
 		#show_start()
 	#elif Global.level ==2:
 		#next_level_tutorial()
+
+
+func _on_start_button_pressed() -> void:
+	
+	title_screen.visible = false
+	in_game.visible = true
+	
+	main.level_0()
