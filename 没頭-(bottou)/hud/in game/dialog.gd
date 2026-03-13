@@ -10,10 +10,21 @@ extends Control
 
 signal continue_true
 
-func display_line(pause: bool,grey_out: bool, line: String, speaker : String = ""):
+func display_line(pause: bool,grey_out: bool, type: String, line: String, speaker : String = ""):
 	_speaker.visible = (speaker != "")
 	_speaker.text = speaker
-	_dialogue.text = line
+	
+	if type == "narrator":
+		
+		_dialogue.text = "[color=#8f563b]" + line + "[/color]"
+		
+	elif type == "thought":
+		
+		_dialogue.text = "[i]" + line + "[/i]"
+		
+	elif type == "speech":
+		
+		_dialogue.text = line
 	
 	if speaker != "":
 		

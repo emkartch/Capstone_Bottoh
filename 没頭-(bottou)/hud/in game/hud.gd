@@ -118,6 +118,10 @@ func _on_tutorial_pressed() -> void:
 
 func _on_start_button_pressed() -> void:
 	
+	transition_animation.play("fade_in")
+	
+	await transition_animation.animation_finished
+	
 	title_screen.visible = false
 	in_game.visible = true
 	
