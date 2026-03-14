@@ -16,11 +16,23 @@ func level_0():
 	
 	await get_tree().create_timer(1.0).timeout
 	
-	for line_info in GameScript.speech_0:
+	while GameScript.speech_0[GameScript.scene_line] != null:
+		
+		var line_info = GameScript.speech_0[GameScript.scene_line]
 		
 		dialog.display_line(true,false,line_info[0],line_info[1],line_info[2])
 		
+		GameScript.scene_line += 1
+		
 		await dialog.continue_true
+		
+	GameScript.scene_line += 1
+	
+	#for line_info in GameScript.speech_0:
+		#
+		#dialog.display_line(true,false,line_info[0],line_info[1],line_info[2])
+		#
+		#await dialog.continue_true
 
 func level_1():
 	

@@ -53,8 +53,10 @@ var s = "speech"
 var speech_0 = [
 	[n,"After a long flight you have finally arrived in Japan!",""],
 	[n,"Since you’re here for a business meeting you don’t have much luggage with you, but you can use the luggage delivery service to get your bags delivered to your hotel!",""],
-	[n,"Dropping off your luggage, you ensure you keep the essentials on you, including your notebook for notes during the work meeting and your passport.",""],
-	[n,"Stepping out of the airport, you are greeted with a small shopping area. While flying into a rural airport was cheaper for your company, it does mean you are on a tight schedule. With your business meeting happening soon in Osaka you better not miss the train!",""],
+	[n,"Dropping off your luggage, you ensure you keep the essentials on you, including your passport and your notebook for notes during the work meeting.",""],
+	null,
+	[n,"Stepping out of the airport, you are greeted with a small shopping area.",""],
+	[n,"While flying into a rural airport was cheaper for your company, it does mean you are on a tight schedule. With your business meeting happening soon in Osaka you better not miss the train!",""],
 	[n,"With a pep in your step, you take off towards the train station while excitedly taking in the sites.",""],
 	[t,"Wow, this is such a cute little shopping area! I wish I had more time to explore.",""],
 	[n,"On your way to the train, you spot a police officer asking other travelers to see their passports.",""],
@@ -67,7 +69,14 @@ var speech_0 = [
 	[t,"I must have dropped it somewhere right? I know I grabbed it out of my luggage…",""],
 	[s,"すみません。I saw something fall from your pocket earlier and I think someone else picked it up. Maybe you can check the convenience store? They could’ve dropped it off there.","Stranger"],
 	[s,"Ah! Thank you!","You"],
-	[n,"Crap, you need to get your passport back so you can get by the police officer before you miss your train!!",""]
-	]
+	[n,"Crap, you need to get your passport back so you can get by the police officer before you miss your train!!",""],
+	null
+]
+
+var speech_1 = [
+	[n,"Walking into the convenience store, you look around and notice no one else here aside from the clerk.",""],
+	[t,"I supposed I should just talk to the clerk.",""],
+	null
+]
 
 # Script
