@@ -79,4 +79,11 @@ var speech_1 = [
 	null
 ]
 
+var speech_2 = [
+	
+	[s,"Excuse me? Has anyone come in with an American passport they found on the street?","You"],
+	
+	
+]
+
 # Script
