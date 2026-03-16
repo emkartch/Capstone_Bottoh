@@ -696,6 +696,7 @@ alignment = 1
 
 [node name="StartButton" type="Button" parent="TitleScreen/TSButtons" unique_id=1986163574]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme = ExtResource("2_2gk58")
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -709,6 +710,7 @@ text = "Start"
 
 [node name="SettingsButton" type="Button" parent="TitleScreen/TSButtons" unique_id=847954879]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme = ExtResource("2_2gk58")
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)

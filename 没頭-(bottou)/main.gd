@@ -6,6 +6,13 @@ extends Node
 @onready var dialog = $HUD/InGame/Dialog
 @onready var transition_animation = get_node("/root/Main/SceneTransitionAnimation/AnimationPlayer")
 
+func _process(_delta):
+	
+	if main_background.texture == null:
+		main_background.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	else:
+		main_background.mouse_filter = Control.MOUSE_FILTER_STOP
+
 func level_0():
 	
 	main_background.texture = preload("res://areas/airport/Airport.png")
@@ -27,6 +34,16 @@ func level_0():
 		await dialog.continue_true
 		
 	GameScript.scene_line += 1
+	
+	transition_animation.play("fade_in")
+	
+	await transition_animation.animation_finished
+	
+	main_background.texture = null
+	
+	transition_animation.play("fade_out")
+	
+	await get_tree().create_timer(1.0).timeout
 	
 	#for line_info in GameScript.speech_0:
 		#

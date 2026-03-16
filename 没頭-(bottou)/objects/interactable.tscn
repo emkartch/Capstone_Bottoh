@@ -9,7 +9,7 @@ size = Vector2(18, 18)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tbuwl"]
 resource_local_to_scene = true
 shader = ExtResource("2_u3dfy")
-shader_parameter/color = Color(0.4117647, 0.4117647, 0.4117647, 1)
+shader_parameter/color = Color(0.72464263, 0.72464263, 0.72464246, 1)
 shader_parameter/width = 0.0
 shader_parameter/pattern = 2
 shader_parameter/inside = false

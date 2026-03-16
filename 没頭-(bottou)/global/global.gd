@@ -368,7 +368,7 @@ func _on_pickable_click(node):
 
 func _on_interactable_click(node):
 	
-	dialog.display_line(true,false,node.description)
+	dialog.display_line(true,false,"thought",node.description)
 	
 	await dialog.continue_true
 	

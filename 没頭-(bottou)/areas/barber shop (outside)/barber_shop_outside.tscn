@@ -1,28 +1,26 @@
 [gd_scene format=3 uid="uid://d4cf1lpegyvjo"]
 
-[ext_resource type="Theme" uid="uid://cp4nu80cltnic" path="res://theme/main_theme.tres" id="1_cb00g"]
+[ext_resource type="Texture2D" uid="uid://c5gdcvtt8iegc" path="res://areas/barber shop (outside)/BSO_Back_Layer.png" id="1_sckw2"]
 [ext_resource type="PackedScene" uid="uid://c13d8uvmyxs6j" path="res://door.tscn" id="2_ieic3"]
 [ext_resource type="PackedScene" uid="uid://5s8jfcpui2rh" path="res://objects/interactable.tscn" id="3_sckw2"]
 [ext_resource type="Texture2D" uid="uid://bntrb1aa3sigo" path="res://areas/barber shop (outside)/HaircutPoster.png" id="3_uypxc"]
+[ext_resource type="Texture2D" uid="uid://b10x40wmxba1a" path="res://assets/ArrowBox.png" id="4_uypxc"]
+[ext_resource type="Texture2D" uid="uid://d4lcey8yvvqql" path="res://assets/ArrowBoxGrey.png" id="5_sckw2"]
 
 [node name="BarberShopOutside" type="CanvasLayer" unique_id=1257489079]
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1137788919]
+[node name="Background" type="TextureRect" parent="." unique_id=730975654]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+texture = ExtResource("1_sckw2")
 
-[node name="Label" type="Label" parent="ColorRect" unique_id=1335133317]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 18.0
-theme = ExtResource("1_cb00g")
-text = "Barber Shop Outside"
-
-[node name="Selectables" type="Control" parent="ColorRect" unique_id=2098999776]
+[node name="Selectables" type="Control" parent="." unique_id=2098999776]
+visible = false
+layout_mode = 3
 anchors_preset = 0
 offset_left = 1253.0
 offset_top = 386.0
@@ -30,7 +28,7 @@ offset_right = 1293.0
 offset_bottom = 426.0
 mouse_filter = 2
 
-[node name="Interactable" parent="ColorRect/Selectables" unique_id=326485702 instance=ExtResource("3_sckw2")]
+[node name="Interactable" parent="Selectables" unique_id=326485702 instance=ExtResource("3_sckw2")]
 layout_mode = 0
 item_name = "HaircutPoster"
 item = ExtResource("3_uypxc")
@@ -38,15 +36,24 @@ description = "[i]These are my thoughts[/i]"
 
 [node name="Doors" type="Node" parent="." unique_id=1240796291]
 
-[node name="Door_SV" parent="Doors" unique_id=1136604104 instance=ExtResource("2_ieic3")]
-offset_left = 200.0
-offset_top = 200.0
-offset_right = 637.0
-offset_bottom = 278.0
+[node name="Door_SV2" parent="Doors" unique_id=1136604104 instance=ExtResource("2_ieic3")]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.96
+anchor_right = 0.5
+anchor_bottom = 0.96
+offset_left = -140.0
+offset_top = -120.0
+offset_right = 140.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0
 current_level_tag = "barber_shop_outside"
-destination_level_tag = "street_view"
+destination_level_tag = "street_view_2"
 
-[node name="Button" parent="Doors/Door_SV" index="0" unique_id=585534956]
-text = "Street View"
+[node name="Button" parent="Doors/Door_SV2" index="0" unique_id=846998799]
+texture_normal = ExtResource("4_uypxc")
+texture_pressed = ExtResource("5_sckw2")
+texture_hover = ExtResource("5_sckw2")
 
-[editable path="Doors/Door_SV"]
+[editable path="Doors/Door_SV2"]

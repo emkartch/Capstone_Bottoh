@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://c2vlp12b7utaj"]
+
+[ext_resource type="Texture2D" uid="uid://djpn0q57reo14" path="res://areas/street views/street view 3/StreetView3.png" id="1_fdqef"]
+[ext_resource type="PackedScene" uid="uid://c13d8uvmyxs6j" path="res://door.tscn" id="2_3v3i8"]
+[ext_resource type="Texture2D" uid="uid://b10x40wmxba1a" path="res://assets/ArrowBox.png" id="3_04rhb"]
+[ext_resource type="Texture2D" uid="uid://d4lcey8yvvqql" path="res://assets/ArrowBoxGrey.png" id="4_oxqs1"]
+
+[node name="StreetView3" type="CanvasLayer" unique_id=1923820669]
+
+[node name="Background" type="TextureRect" parent="." unique_id=2141900392]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_fdqef")
+
+[node name="Doors" type="Node" parent="." unique_id=1746481026]
+
+[node name="Door_SV2" parent="Doors" unique_id=1136604104 instance=ExtResource("2_3v3i8")]
+offset_left = 156.0
+offset_top = 710.0
+offset_right = 436.0
+offset_bottom = 830.0
+rotation = 1.5707964
+current_level_tag = "street_view_3"
+destination_level_tag = "street_view_2"
+
+[node name="Button" parent="Doors/Door_SV2" index="0" unique_id=846998799]
+texture_normal = ExtResource("3_04rhb")
+texture_pressed = ExtResource("4_oxqs1")
+texture_hover = ExtResource("4_oxqs1")
+
+[node name="Door_SSO" parent="Doors" unique_id=2032482295 instance=ExtResource("2_3v3i8")]
+anchors_preset = -1
+anchor_left = 0.75
+anchor_top = 1.0
+anchor_right = 0.75
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -650.0
+offset_right = 200.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0
+current_level_tag = "street_view_3"
+destination_level_tag = "stationary_store_outside"
+
+[node name="Door_ClSO" parent="Doors" unique_id=2145179920 instance=ExtResource("2_3v3i8")]
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 1.0
+anchor_right = 0.25
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -650.0
+offset_right = 200.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0
+current_level_tag = "street_view_3"
+destination_level_tag = "clothing_store_outside"
+
+[editable path="Doors/Door_SV2"]
+[editable path="Doors/Door_SSO"]
+[editable path="Doors/Door_ClSO"]
