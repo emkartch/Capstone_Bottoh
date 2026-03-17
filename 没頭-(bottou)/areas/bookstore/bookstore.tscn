@@ -5,8 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://c13d8uvmyxs6j" path="res://door.tscn" id="2_xc5xg"]
 [ext_resource type="Texture2D" uid="uid://doe1dkn7ligvj" path="res://areas/bookstore/BookstoreCounter.png" id="3_4vq32"]
 [ext_resource type="Texture2D" uid="uid://chocsl6pqcw1t" path="res://areas/bookstore/BookstoreBookSized.png" id="3_70fny"]
+[ext_resource type="Texture2D" uid="uid://o80v534hj4af" path="res://areas/bookstore/BookstoreBook_2.png" id="5_qgba8"]
 [ext_resource type="Texture2D" uid="uid://b10x40wmxba1a" path="res://assets/ArrowBox.png" id="6_4e0xy"]
+[ext_resource type="Texture2D" uid="uid://cuwquoqk07ldw" path="res://areas/bookstore/BookstoreBook_1.png" id="6_mgwi7"]
+[ext_resource type="Texture2D" uid="uid://d28a3ytuujwn7" path="res://areas/bookstore/BookstoreBook_3.png" id="6_shw4s"]
 [ext_resource type="Texture2D" uid="uid://d4lcey8yvvqql" path="res://assets/ArrowBoxGrey.png" id="7_nv534"]
+[ext_resource type="Texture2D" uid="uid://dlkh0rhffmox7" path="res://areas/bookstore/BookstoreBook_4.png" id="8_qnvv0"]
+[ext_resource type="Texture2D" uid="uid://ketwxlxk1lb2" path="res://areas/bookstore/BookstoreBook_5.png" id="9_v2vs6"]
+[ext_resource type="Texture2D" uid="uid://dmnvqkbyoncal" path="res://areas/bookstore/BookstoreBook_6.png" id="10_4aa8h"]
 
 [node name="Bookstore" type="CanvasLayer" unique_id=2098828111]
 
@@ -15,26 +21,90 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_npoyj")
 
-[node name="Selectables" type="Control" parent="Background" unique_id=2021018853]
-anchors_preset = 0
-offset_left = 919.0
-offset_top = 142.58
-offset_right = 919.0
-offset_bottom = 142.58
+[node name="Selectables" type="Control" parent="." unique_id=2021018853]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1920.0
+offset_bottom = -1080.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 
-[node name="Interactable" parent="Background/Selectables" unique_id=632896118 instance=ExtResource("2_70fny")]
+[node name="MainBook" parent="Selectables" unique_id=632896118 instance=ExtResource("2_70fny")]
 layout_mode = 0
-offset_right = 33.0
-offset_bottom = 165.0
+offset_left = 919.0
+offset_top = 143.0
+offset_right = 952.0
+offset_bottom = 308.0
 item_name = "BookstoreBook"
 item = ExtResource("3_70fny")
-description = "Book"
+description = "Main Book"
 
-[node name="Counter" type="TextureRect" parent="Background" unique_id=285709245]
+[node name="Book1" parent="Selectables" unique_id=588735707 instance=ExtResource("2_70fny")]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 210.0
+offset_top = 500.0
+offset_right = 266.0
+offset_bottom = 653.0
+item_name = "Book1"
+item = ExtResource("6_mgwi7")
+description = "Book 1"
+
+[node name="Book2" parent="Selectables" unique_id=520684440 instance=ExtResource("2_70fny")]
+layout_mode = 0
+offset_left = 458.0
+offset_top = 207.0
+offset_right = 514.0
+offset_bottom = 308.0
+item_name = "Book2"
+item = ExtResource("5_qgba8")
+description = "Book 2"
+
+[node name="Book3" parent="Selectables" unique_id=606611704 instance=ExtResource("2_70fny")]
+layout_mode = 0
+offset_left = 803.0
+offset_top = 488.0
+offset_right = 836.0
+offset_bottom = 653.0
+item_name = "Book3"
+item = ExtResource("6_shw4s")
+description = "Book 3"
+
+[node name="Book4" parent="Selectables" unique_id=1888871301 instance=ExtResource("2_70fny")]
+layout_mode = 0
+offset_left = 1061.0
+offset_top = 346.0
+offset_right = 1106.0
+offset_bottom = 458.0
+item_name = "Book4"
+item = ExtResource("8_qnvv0")
+description = "Book 4"
+
+[node name="Book5" parent="Selectables" unique_id=1065031118 instance=ExtResource("2_70fny")]
+layout_mode = 0
+offset_left = 1575.0
+offset_top = 173.0
+offset_right = 1612.0
+offset_bottom = 308.0
+item_name = "Book5"
+item = ExtResource("9_v2vs6")
+description = "Book 5"
+
+[node name="Book6" parent="Selectables" unique_id=2090754867 instance=ExtResource("2_70fny")]
+layout_mode = 0
+offset_left = 1823.0
+offset_top = 559.0
+offset_right = 1860.0
+offset_bottom = 652.0
+item_name = "Book6"
+item = ExtResource("10_4aa8h")
+description = "Book 6"
+
+[node name="Counter" type="TextureRect" parent="." unique_id=285709245]
+offset_right = 1920.0
+offset_bottom = 1080.0
 mouse_filter = 2
 texture = ExtResource("3_4vq32")
 

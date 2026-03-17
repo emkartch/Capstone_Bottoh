@@ -4,8 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://c13d8uvmyxs6j" path="res://door.tscn" id="2_0jmgq"]
 [ext_resource type="PackedScene" uid="uid://5s8jfcpui2rh" path="res://objects/interactable.tscn" id="2_lgj6w"]
 [ext_resource type="Texture2D" uid="uid://btp1l0xncg24f" path="res://areas/clothing store (outside)/ClothingPoster.png" id="3_1xu02"]
+[ext_resource type="Texture2D" uid="uid://bukaqpuveib6v" path="res://areas/clothing store (outside)/ClSO_Sign.png" id="4_qcqph"]
 [ext_resource type="Texture2D" uid="uid://b10x40wmxba1a" path="res://assets/ArrowBox.png" id="5_0v1ne"]
 [ext_resource type="Texture2D" uid="uid://d4lcey8yvvqql" path="res://assets/ArrowBoxGrey.png" id="6_f5mtg"]
+[ext_resource type="Texture2D" uid="uid://dd3wwmxg88mey" path="res://areas/clothing store (outside)/ClSO_Outfit_1.png" id="6_lu3f0"]
+[ext_resource type="Texture2D" uid="uid://bl7ricxenydx0" path="res://areas/clothing store (outside)/ClSO_Outfit_2.png" id="7_rv5aw"]
+[ext_resource type="Texture2D" uid="uid://typlb24kxai" path="res://areas/Closed_Sign.png" id="8_ykchw"]
 
 [node name="ClothingStoreOutside" type="CanvasLayer" unique_id=2071860568]
 
@@ -21,17 +25,56 @@ texture = ExtResource("1_lgj6w")
 [node name="Selectables" type="Control" parent="." unique_id=1013212452]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 1248.0
-offset_top = 303.0
-offset_right = 1288.0
-offset_bottom = 343.0
 mouse_filter = 2
 
-[node name="Interactable" parent="Selectables" unique_id=632896118 instance=ExtResource("2_lgj6w")]
+[node name="ClothingPoster" parent="Selectables" unique_id=632896118 instance=ExtResource("2_lgj6w")]
 layout_mode = 0
+offset_left = 1392.0
+offset_top = 272.0
+offset_right = 1392.0
+offset_bottom = 272.0
 item_name = "ClothingPoster"
 item = ExtResource("3_1xu02")
 description = "Clothing and Hats"
+
+[node name="Sign" parent="Selectables" unique_id=1516882306 instance=ExtResource("2_lgj6w")]
+layout_mode = 0
+offset_left = 630.0
+offset_right = 1290.0
+offset_bottom = 150.0
+item_name = "ClothingStoreSign"
+item = ExtResource("4_qcqph")
+description = "Clothing Store Sign"
+
+[node name="ShirtSkirt" parent="Selectables" unique_id=742946272 instance=ExtResource("2_lgj6w")]
+layout_mode = 0
+offset_left = 435.0
+offset_top = 705.0
+offset_right = 607.0
+offset_bottom = 1080.0
+item_name = "ShirtSkirt"
+item = ExtResource("6_lu3f0")
+description = "Shirt and Skirt"
+
+[node name="Suit" parent="Selectables" unique_id=1142420496 instance=ExtResource("2_lgj6w")]
+layout_mode = 0
+offset_left = 1553.0
+offset_top = 698.0
+offset_right = 1755.0
+offset_bottom = 1080.0
+item_name = "Suit"
+item = ExtResource("7_rv5aw")
+description = "Suit"
+
+[node name="ClosedSign" parent="Selectables" unique_id=1107865876 instance=ExtResource("2_lgj6w")]
+layout_mode = 0
+offset_left = 803.0
+offset_top = 607.0
+offset_right = 1088.0
+offset_bottom = 779.0
+item_name = "ClosedSign"
+item = ExtResource("8_ykchw")
+description = "Closed Sign"
 
 [node name="Doors" type="Node" parent="." unique_id=1652516609]
 

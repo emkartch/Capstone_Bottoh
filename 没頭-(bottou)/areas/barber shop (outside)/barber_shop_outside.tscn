@@ -3,9 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://c5gdcvtt8iegc" path="res://areas/barber shop (outside)/BSO_Back_Layer.png" id="1_sckw2"]
 [ext_resource type="PackedScene" uid="uid://c13d8uvmyxs6j" path="res://door.tscn" id="2_ieic3"]
 [ext_resource type="PackedScene" uid="uid://5s8jfcpui2rh" path="res://objects/interactable.tscn" id="3_sckw2"]
-[ext_resource type="Texture2D" uid="uid://bntrb1aa3sigo" path="res://areas/barber shop (outside)/HaircutPoster.png" id="3_uypxc"]
+[ext_resource type="Texture2D" uid="uid://bupaut53etpij" path="res://areas/barber shop (outside)/BSO_Sign.png" id="3_xbouf"]
+[ext_resource type="Texture2D" uid="uid://dhub22fudvsfg" path="res://areas/barber shop (outside)/BSO_Short_Hair_Poster.png" id="4_ho1fi"]
 [ext_resource type="Texture2D" uid="uid://b10x40wmxba1a" path="res://assets/ArrowBox.png" id="4_uypxc"]
 [ext_resource type="Texture2D" uid="uid://d4lcey8yvvqql" path="res://assets/ArrowBoxGrey.png" id="5_sckw2"]
+[ext_resource type="Texture2D" uid="uid://grr1m2bktjby" path="res://areas/barber shop (outside)/BSO_Long_Hair_Poster.png" id="5_tl415"]
+[ext_resource type="Texture2D" uid="uid://typlb24kxai" path="res://areas/Closed_Sign.png" id="6_y5vwt"]
 
 [node name="BarberShopOutside" type="CanvasLayer" unique_id=1257489079]
 
@@ -19,20 +22,54 @@ mouse_filter = 2
 texture = ExtResource("1_sckw2")
 
 [node name="Selectables" type="Control" parent="." unique_id=2098999776]
-visible = false
 layout_mode = 3
-anchors_preset = 0
-offset_left = 1253.0
-offset_top = 386.0
-offset_right = 1293.0
-offset_bottom = 426.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1920.0
+offset_bottom = -1080.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 
-[node name="Interactable" parent="Selectables" unique_id=326485702 instance=ExtResource("3_sckw2")]
+[node name="Sign" parent="Selectables" unique_id=326485702 instance=ExtResource("3_sckw2")]
 layout_mode = 0
-item_name = "HaircutPoster"
-item = ExtResource("3_uypxc")
-description = "[i]These are my thoughts[/i]"
+offset_left = 630.0
+offset_right = 1290.0
+offset_bottom = 150.0
+item_name = "BarberShopSign"
+item = ExtResource("3_xbouf")
+description = "Barber Shop Sign"
+
+[node name="ShortHairPoster" parent="Selectables" unique_id=632896118 instance=ExtResource("3_sckw2")]
+layout_mode = 0
+offset_left = 1380.0
+offset_top = 233.0
+offset_right = 1740.0
+offset_bottom = 705.0
+item_name = "ShortHairPoster"
+item = ExtResource("4_ho1fi")
+description = "Short Hair Poster"
+
+[node name="LongHairPoster" parent="Selectables" unique_id=1605407172 instance=ExtResource("3_sckw2")]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 233.0
+offset_right = 540.0
+offset_bottom = 705.0
+item_name = "LongHairPoster"
+item = ExtResource("5_tl415")
+description = "Long Hair Poster"
+
+[node name="ClosedSign" parent="Selectables" unique_id=1460644258 instance=ExtResource("3_sckw2")]
+layout_mode = 0
+offset_left = 803.0
+offset_top = 607.0
+offset_right = 1088.0
+offset_bottom = 779.0
+item_name = "ClosedSign"
+item = ExtResource("6_y5vwt")
+description = "Closed Sign"
 
 [node name="Doors" type="Node" parent="." unique_id=1240796291]
 

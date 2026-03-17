@@ -2,8 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://ckp36nk1lc1ut" path="res://areas/convenience store (outside)/CSO_Back_Layer.png" id="1_hxjli"]
 [ext_resource type="PackedScene" uid="uid://c13d8uvmyxs6j" path="res://door.tscn" id="2_hxjli"]
+[ext_resource type="PackedScene" uid="uid://5s8jfcpui2rh" path="res://objects/interactable.tscn" id="2_vmu5q"]
 [ext_resource type="Texture2D" uid="uid://bmjywtt1xvvu3" path="res://areas/DoorOpen.png" id="3_35j56"]
+[ext_resource type="Texture2D" uid="uid://fq72cpx8r7hr" path="res://areas/convenience store (outside)/CSO_Sign.png" id="3_iaffb"]
 [ext_resource type="Texture2D" uid="uid://b10x40wmxba1a" path="res://assets/ArrowBox.png" id="4_4qir6"]
+[ext_resource type="Texture2D" uid="uid://dxwrx5060pv55" path="res://areas/convenience store (outside)/CSO_Bonsai.png" id="4_nrb5r"]
 [ext_resource type="Texture2D" uid="uid://d4lcey8yvvqql" path="res://assets/ArrowBoxGrey.png" id="5_nw78h"]
 
 [node name="ConvenienceStoreOutside" type="CanvasLayer" unique_id=1632336513]
@@ -16,6 +19,30 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("1_hxjli")
+
+[node name="Selectables" type="Control" parent="." unique_id=1011409245]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sign" parent="Selectables" unique_id=632896118 instance=ExtResource("2_vmu5q")]
+layout_mode = 0
+offset_left = 630.0
+offset_right = 630.0
+item_name = "ConvenienceStoreSign"
+item = ExtResource("3_iaffb")
+description = "Convenience Store Sign"
+
+[node name="Bonsai" parent="Selectables" unique_id=1373415686 instance=ExtResource("2_vmu5q")]
+layout_mode = 0
+offset_left = 195.0
+offset_top = 608.0
+offset_right = 435.0
+offset_bottom = 1080.0
+item_name = "Bonsai 3"
+item = ExtResource("4_nrb5r")
+description = "Bonasi 3"
 
 [node name="Doors" type="Node" parent="." unique_id=1328366798]
 

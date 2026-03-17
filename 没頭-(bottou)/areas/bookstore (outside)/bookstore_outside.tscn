@@ -21,13 +21,14 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("1_w65lk")
 
-[node name="Selectables" type="Control" parent="Background" unique_id=1685126257]
+[node name="Selectables" type="Control" parent="." unique_id=1685126257]
+layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 
-[node name="Bonsai 1" parent="Background/Selectables" unique_id=632896118 instance=ExtResource("2_w65lk")]
+[node name="Bonsai 1" parent="Selectables" unique_id=632896118 instance=ExtResource("2_w65lk")]
 layout_mode = 0
 offset_left = 195.0
 offset_top = 608.0
@@ -37,7 +38,7 @@ item_name = "Bonsai 1"
 item = ExtResource("3_w65lk")
 description = "Bonsai 1"
 
-[node name="Bonsai 2" parent="Background/Selectables" unique_id=267599109 instance=ExtResource("2_w65lk")]
+[node name="Bonsai 2" parent="Selectables" unique_id=267599109 instance=ExtResource("2_w65lk")]
 layout_mode = 0
 offset_left = 1508.0
 offset_top = 630.0
@@ -47,7 +48,7 @@ item_name = "Bonsai 2"
 item = ExtResource("4_y6a8w")
 description = "Bonsai 2"
 
-[node name="Sign" parent="Background/Selectables" unique_id=1246618223 instance=ExtResource("2_w65lk")]
+[node name="Sign" parent="Selectables" unique_id=1246618223 instance=ExtResource("2_w65lk")]
 layout_mode = 0
 offset_left = 630.0
 offset_right = 1290.0

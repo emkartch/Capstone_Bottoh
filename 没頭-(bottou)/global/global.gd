@@ -43,7 +43,8 @@ var note_questions = null
 var notebook_appearances_nodes = []
 var notebook_clothes_hats_nodes = []
 var notebook_color_nodes = []
-var notebook_hair_nodes = []
+var notebook_longhair_nodes = []
+var notebook_shorthair_nodes = []
 
 var looks_ans = null
 var hair_ans = null
@@ -60,7 +61,8 @@ var hat_correct = false
 var appearance_filled = false
 var clothes_hats_filled = false
 var colors_filled = false
-var hairs_filled = false
+var long_hairs_filled = false
+var short_hairs_filled = false
 
 # Make connect button work 
 
@@ -120,9 +122,13 @@ func _ready():
 			
 		if child is not HSeparator:
 				
-			if child.name == "Long Hair" or child.name == "Short Hair" or child.name == "Long Hair JPN" or child.name == "Short Hair JPN":
+			if child.name == "Long Hair" or child.name == "Long Hair JPN":
 				
-				notebook_hair_nodes.append(child)
+				notebook_longhair_nodes.append(child)
+				
+			elif child.name == "Short Hair" or child.name == "Short Hair JPN":
+				
+				notebook_shorthair_nodes.append(child)
 				
 			elif child.name == "Tall" or child.name == "Short (Stature)" or child.name == "Tall JPN" or child.name == "Short (Stature) JPN":
 				
@@ -372,10 +378,6 @@ func _on_interactable_click(node):
 	
 	await dialog.continue_true
 	
-	#dialog.display_line(true,false,"[i]This might be good information to add to my notebook.[/i]")
-	#
-	#await dialog.continue_true
-	
 	if node.item_name == "BookstoreBook":
 		
 		if not appearance_filled:
@@ -412,17 +414,29 @@ func _on_interactable_click(node):
 			
 			colors_filled = true
 	
-	elif node.item_name == "HaircutPoster":
+	elif node.item_name == "ShortHairPoster":
 		
-		if not hairs_filled:
+		if not short_hairs_filled:
 			
 			new_info = true
 			
-			for item in notebook_hair_nodes:
+			for item in notebook_shorthair_nodes:
 				
 				item.modulate.a = 255
 			
-			hairs_filled = true
+			short_hairs_filled = true
+		
+	elif node.item_name == "LongHairPoster":
+		
+		if not long_hairs_filled:
+			
+			new_info = true
+			
+			for item in notebook_longhair_nodes:
+				
+				item.modulate.a = 255
+			
+			long_hairs_filled = true
 		
 	if new_info:
 		
@@ -440,7 +454,7 @@ func _on_slot_click(node):
 
 func check_correct():
 	
-	if appearance_filled and clothes_hats_filled and colors_filled and hairs_filled and level == 1:
+	if appearance_filled and clothes_hats_filled and colors_filled and long_hairs_filled and short_hairs_filled and level == 1:
 		
 		level += 1
 		

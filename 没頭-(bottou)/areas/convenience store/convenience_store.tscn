@@ -2,8 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://dld4egj6nx361" path="res://areas/convenience store/ConvienceStoreB.png" id="1_e7c0s"]
 [ext_resource type="PackedScene" uid="uid://c13d8uvmyxs6j" path="res://door.tscn" id="2_1ktli"]
+[ext_resource type="Texture2D" uid="uid://da6204n5038bo" path="res://areas/convenience store/CSAlt_Counter.png" id="2_ep2et"]
+[ext_resource type="PackedScene" uid="uid://5s8jfcpui2rh" path="res://objects/interactable.tscn" id="3_h6v2g"]
 [ext_resource type="Texture2D" uid="uid://b10x40wmxba1a" path="res://assets/ArrowBox.png" id="3_sq7hw"]
+[ext_resource type="Texture2D" uid="uid://t8cqdhfo1ufg" path="res://areas/convenience store/CSAlt_KinderEggs.png" id="4_cbhbi"]
 [ext_resource type="Texture2D" uid="uid://d4lcey8yvvqql" path="res://assets/ArrowBoxGrey.png" id="4_ep2et"]
+[ext_resource type="Texture2D" uid="uid://b2uma073xd6rs" path="res://areas/convenience store/CSAlt_Onigiri.png" id="5_74vvr"]
+[ext_resource type="Texture2D" uid="uid://blgclwenppvxh" path="res://areas/convenience store/CSAlt_Sandwiches.png" id="6_lxvmr"]
+[ext_resource type="Texture2D" uid="uid://7p25exw1m3pa" path="res://areas/convenience store/CSAlt_Newspaper.png" id="7_ikpat"]
 
 [node name="ConvenienceStore" type="CanvasLayer" unique_id=1704651114]
 
@@ -11,6 +17,58 @@
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_e7c0s")
+
+[node name="Counter" type="TextureRect" parent="." unique_id=1488060773]
+offset_left = 1320.0
+offset_top = 649.0
+offset_right = 1920.0
+offset_bottom = 1016.0
+texture = ExtResource("2_ep2et")
+
+[node name="Selectables" type="Control" parent="." unique_id=2091004699]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="KinderEggs" parent="Selectables" unique_id=632896118 instance=ExtResource("3_h6v2g")]
+layout_mode = 0
+offset_left = 1500.0
+offset_top = 945.0
+offset_right = 1920.0
+offset_bottom = 982.0
+item_name = "KinderEggs"
+item = ExtResource("4_cbhbi")
+description = "Kinder Eggs"
+
+[node name="Onigiri" parent="Selectables" unique_id=105556788 instance=ExtResource("3_h6v2g")]
+layout_mode = 0
+offset_top = 525.0
+offset_right = 348.0
+offset_bottom = 645.0
+item_name = "Onigiri"
+item = ExtResource("5_74vvr")
+description = "Onigiri"
+
+[node name="Sandwiches" parent="Selectables" unique_id=1570512484 instance=ExtResource("3_h6v2g")]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 552.0
+offset_right = 690.0
+offset_bottom = 642.0
+item_name = "Sandwiches"
+item = ExtResource("6_lxvmr")
+description = "Sandwiches"
+
+[node name="Newspaper" parent="Selectables" unique_id=609975581 instance=ExtResource("3_h6v2g")]
+layout_mode = 0
+offset_left = 1080.0
+offset_top = 627.0
+offset_right = 1320.0
+offset_bottom = 780.0
+item_name = "Newspaper"
+item = ExtResource("7_ikpat")
+description = "Newspaper"
 
 [node name="Doors" type="Node" parent="." unique_id=826049362]
 

@@ -2,8 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://bv2uyyxd22kft" path="res://areas/stationary store/StationaryStoreInsideB.png" id="1_3cjra"]
 [ext_resource type="PackedScene" uid="uid://c13d8uvmyxs6j" path="res://door.tscn" id="2_4u8tb"]
+[ext_resource type="Texture2D" uid="uid://c3h1tx0axkrwn" path="res://areas/stationary store/StationaryStoreInsideBCounter.png" id="2_asfm1"]
 [ext_resource type="Texture2D" uid="uid://b10x40wmxba1a" path="res://assets/ArrowBox.png" id="3_ufptl"]
+[ext_resource type="PackedScene" uid="uid://5s8jfcpui2rh" path="res://objects/interactable.tscn" id="3_weyfw"]
+[ext_resource type="Texture2D" uid="uid://cq7qsk2k43uq6" path="res://areas/stationary store/SS_Stickers.png" id="4_62gfl"]
 [ext_resource type="Texture2D" uid="uid://d4lcey8yvvqql" path="res://assets/ArrowBoxGrey.png" id="4_m6hpu"]
+[ext_resource type="Texture2D" uid="uid://cmwj56b8swd6x" path="res://areas/stationary store/SS_Notebooks.png" id="5_4jlfr"]
+[ext_resource type="Texture2D" uid="uid://pgb0aohvfvka" path="res://areas/stationary store/SS_Markers.png" id="6_rikge"]
 
 [node name="StationaryStore" type="CanvasLayer" unique_id=809007711]
 
@@ -11,6 +16,47 @@
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_3cjra")
+
+[node name="Counter" type="TextureRect" parent="." unique_id=419365201]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_asfm1")
+
+[node name="Selectables" type="Control" parent="." unique_id=1459891656]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Stickers" parent="Selectables" unique_id=632896118 instance=ExtResource("3_weyfw")]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 454.0
+offset_right = 634.0
+offset_bottom = 551.0
+item_name = "Stickers"
+item = ExtResource("4_62gfl")
+description = "Stickers"
+
+[node name="Notebooks" parent="Selectables" unique_id=1385706748 instance=ExtResource("3_weyfw")]
+layout_mode = 0
+offset_left = 1448.0
+offset_top = 480.0
+offset_right = 1920.0
+offset_bottom = 570.0
+item_name = "Notebooks"
+item = ExtResource("5_4jlfr")
+description = "Notebooks"
+
+[node name="Markers" parent="Selectables" unique_id=1199115630 instance=ExtResource("3_weyfw")]
+layout_mode = 0
+offset_left = 930.0
+offset_top = 705.0
+offset_right = 1050.0
+offset_bottom = 1050.0
+item_name = "Markers"
+item = ExtResource("6_rikge")
+description = "Markers"
 
 [node name="Door" type="Node" parent="." unique_id=1090544651]
 

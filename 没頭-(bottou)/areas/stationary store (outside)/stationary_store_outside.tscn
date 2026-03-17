@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://mfnya3fp0avt"]
 
 [ext_resource type="Texture2D" uid="uid://dmlkvd8qr4g2q" path="res://areas/stationary store (outside)/SSO_Back_Layer.png" id="1_tqcnd"]
+[ext_resource type="PackedScene" uid="uid://5s8jfcpui2rh" path="res://objects/interactable.tscn" id="2_jyvra"]
 [ext_resource type="PackedScene" uid="uid://c13d8uvmyxs6j" path="res://door.tscn" id="2_tqcnd"]
 [ext_resource type="Texture2D" uid="uid://bmjywtt1xvvu3" path="res://areas/DoorOpen.png" id="3_4a3ss"]
+[ext_resource type="Texture2D" uid="uid://dkbel86ly3y5t" path="res://areas/stationary store (outside)/SSO_Sign.png" id="3_csl80"]
 [ext_resource type="Texture2D" uid="uid://b10x40wmxba1a" path="res://assets/ArrowBox.png" id="4_8dmyj"]
 [ext_resource type="Texture2D" uid="uid://d4lcey8yvvqql" path="res://assets/ArrowBoxGrey.png" id="5_1rpcw"]
 
@@ -16,6 +18,20 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("1_tqcnd")
+
+[node name="Selectables" type="Control" parent="." unique_id=1274154167]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sign" parent="Selectables" unique_id=632896118 instance=ExtResource("2_jyvra")]
+layout_mode = 0
+offset_left = 630.0
+offset_right = 630.0
+item_name = "StationaryStoreSign"
+item = ExtResource("3_csl80")
+description = "Stationary Store Sign"
 
 [node name="Doors" type="Node" parent="." unique_id=1837340145]
 

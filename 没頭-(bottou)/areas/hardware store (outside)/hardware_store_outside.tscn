@@ -2,10 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://k0gaarogoili" path="res://areas/hardware store (outside)/HSO_Back_Layer.png" id="1_ttx4h"]
 [ext_resource type="PackedScene" uid="uid://c13d8uvmyxs6j" path="res://door.tscn" id="2_wip6l"]
+[ext_resource type="Texture2D" uid="uid://bclohp3ib7d4x" path="res://areas/hardware store (outside)/HSO_Color_Poster.png" id="3_e578q"]
 [ext_resource type="PackedScene" uid="uid://5s8jfcpui2rh" path="res://objects/interactable.tscn" id="3_i4d15"]
-[ext_resource type="Texture2D" uid="uid://dkcwojr2ma604" path="res://areas/hardware store (outside)/ColorPamphlet.png" id="3_ttx4h"]
+[ext_resource type="Texture2D" uid="uid://coc4weuabx3h8" path="res://areas/hardware store (outside)/HSO_Sign.png" id="4_ychry"]
 [ext_resource type="Texture2D" uid="uid://b10x40wmxba1a" path="res://assets/ArrowBox.png" id="5_e578q"]
+[ext_resource type="Texture2D" uid="uid://typlb24kxai" path="res://areas/Closed_Sign.png" id="5_oaue0"]
+[ext_resource type="Texture2D" uid="uid://bhrl4dqicrivc" path="res://areas/hardware store (outside)/HSO_Pots_1.png" id="6_28uhm"]
 [ext_resource type="Texture2D" uid="uid://d4lcey8yvvqql" path="res://assets/ArrowBoxGrey.png" id="6_ychry"]
+[ext_resource type="Texture2D" uid="uid://bk1bo2ogk8rm2" path="res://areas/hardware store (outside)/HSO_Pots_2.png" id="7_28uhm"]
 
 [node name="HardwareStoreOutside" type="CanvasLayer" unique_id=1574600429]
 
@@ -19,20 +23,57 @@ mouse_filter = 2
 texture = ExtResource("1_ttx4h")
 
 [node name="Selectables" type="Control" parent="." unique_id=590021954]
-visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_left = 1306.0
-offset_top = 752.0
-offset_right = 1346.0
-offset_bottom = 792.0
 mouse_filter = 2
 
-[node name="Interactable" parent="Selectables" unique_id=144506910 instance=ExtResource("3_i4d15")]
+[node name="Color Pamphlet" parent="Selectables" unique_id=144506910 instance=ExtResource("3_i4d15")]
 layout_mode = 0
+offset_left = 968.0
+offset_top = 263.0
+offset_right = 1268.0
+offset_bottom = 1043.0
 item_name = "ColorPamphlet"
-item = ExtResource("3_ttx4h")
+item = ExtResource("3_e578q")
 description = "Colors"
+
+[node name="Sign" parent="Selectables" unique_id=632896118 instance=ExtResource("3_i4d15")]
+layout_mode = 0
+offset_left = 630.0
+offset_right = 630.0
+item_name = "HardwareStoreSign"
+item = ExtResource("4_ychry")
+description = "Hardware Store Sign"
+
+[node name="ClosedSign" parent="Selectables" unique_id=883699498 instance=ExtResource("3_i4d15")]
+layout_mode = 0
+offset_left = 803.0
+offset_top = 607.0
+offset_right = 1088.0
+offset_bottom = 779.0
+item_name = "ClosedSign"
+item = ExtResource("5_oaue0")
+description = "Closed Sign"
+
+[node name="Pots 1" parent="Selectables" unique_id=478352327 instance=ExtResource("3_i4d15")]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 870.0
+offset_right = 772.0
+offset_bottom = 1080.0
+item_name = "Pots1"
+item = ExtResource("6_28uhm")
+description = "Pots 1"
+
+[node name="Pots 2" parent="Selectables" unique_id=431452955 instance=ExtResource("3_i4d15")]
+layout_mode = 0
+offset_left = 1350.0
+offset_top = 870.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+item_name = "Pots2"
+item = ExtResource("7_28uhm")
+description = "Pots 2"
 
 [node name="Doors" type="Node" parent="." unique_id=2121549788]
 
