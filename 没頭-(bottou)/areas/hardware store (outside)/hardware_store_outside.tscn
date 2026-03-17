@@ -1,28 +1,26 @@
 [gd_scene format=3 uid="uid://brybq5uqj71t7"]
 
-[ext_resource type="Theme" uid="uid://cp4nu80cltnic" path="res://theme/main_theme.tres" id="1_p62k5"]
+[ext_resource type="Texture2D" uid="uid://k0gaarogoili" path="res://areas/hardware store (outside)/HSO_Back_Layer.png" id="1_ttx4h"]
 [ext_resource type="PackedScene" uid="uid://c13d8uvmyxs6j" path="res://door.tscn" id="2_wip6l"]
 [ext_resource type="PackedScene" uid="uid://5s8jfcpui2rh" path="res://objects/interactable.tscn" id="3_i4d15"]
 [ext_resource type="Texture2D" uid="uid://dkcwojr2ma604" path="res://areas/hardware store (outside)/ColorPamphlet.png" id="3_ttx4h"]
+[ext_resource type="Texture2D" uid="uid://b10x40wmxba1a" path="res://assets/ArrowBox.png" id="5_e578q"]
+[ext_resource type="Texture2D" uid="uid://d4lcey8yvvqql" path="res://assets/ArrowBoxGrey.png" id="6_ychry"]
 
 [node name="HardwareStoreOutside" type="CanvasLayer" unique_id=1574600429]
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1670691750]
+[node name="Background" type="TextureRect" parent="." unique_id=530503450]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+texture = ExtResource("1_ttx4h")
 
-[node name="Label" type="Label" parent="ColorRect" unique_id=2128439521]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 18.0
-theme = ExtResource("1_p62k5")
-text = "Hardware Store Outside"
-
-[node name="Selectables" type="Control" parent="ColorRect" unique_id=590021954]
+[node name="Selectables" type="Control" parent="." unique_id=590021954]
+visible = false
+layout_mode = 3
 anchors_preset = 0
 offset_left = 1306.0
 offset_top = 752.0
@@ -30,7 +28,7 @@ offset_right = 1346.0
 offset_bottom = 792.0
 mouse_filter = 2
 
-[node name="Interactable" parent="ColorRect/Selectables" unique_id=144506910 instance=ExtResource("3_i4d15")]
+[node name="Interactable" parent="Selectables" unique_id=144506910 instance=ExtResource("3_i4d15")]
 layout_mode = 0
 item_name = "ColorPamphlet"
 item = ExtResource("3_ttx4h")
@@ -38,15 +36,24 @@ description = "Colors"
 
 [node name="Doors" type="Node" parent="." unique_id=2121549788]
 
-[node name="Door_SV" parent="Doors" unique_id=1136604104 instance=ExtResource("2_wip6l")]
-offset_left = 170.0
-offset_top = 226.0
-offset_right = 334.0
-offset_bottom = 304.0
+[node name="Door_SV2" parent="Doors" unique_id=1136604104 instance=ExtResource("2_wip6l")]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.96
+anchor_right = 0.5
+anchor_bottom = 0.96
+offset_left = -140.0
+offset_top = -120.0
+offset_right = 140.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0
 current_level_tag = "hardware_store_outside"
-destination_level_tag = "street_view"
+destination_level_tag = "street_view_2"
 
-[node name="Button" parent="Doors/Door_SV" index="0" unique_id=585534956]
-text = "Street View"
+[node name="Button" parent="Doors/Door_SV2" index="0" unique_id=846998799]
+texture_normal = ExtResource("5_e578q")
+texture_pressed = ExtResource("6_ychry")
+texture_hover = ExtResource("6_ychry")
 
-[editable path="Doors/Door_SV"]
+[editable path="Doors/Door_SV2"]
