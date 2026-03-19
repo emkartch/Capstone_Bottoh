@@ -44,12 +44,6 @@ func level_0():
 	transition_animation.play("fade_out")
 	
 	await get_tree().create_timer(1.0).timeout
-	
-	#for line_info in GameScript.speech_0:
-		#
-		#dialog.display_line(true,false,line_info[0],line_info[1],line_info[2])
-		#
-		#await dialog.continue_true
 
 func level_1():
 	
