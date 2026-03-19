@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bthma8uk8dn3h" path="res://assets/X.png" id="7_qv4qp"]
 [ext_resource type="Texture2D" uid="uid://cc2vq3gm7y48" path="res://assets/GreyX.png" id="8_sh35x"]
 [ext_resource type="Texture2D" uid="uid://d120m6w405qbg" path="res://assets/Notebookpaper.png" id="9_qv4qp"]
+[ext_resource type="Script" uid="uid://2ifejymgt2yb" path="res://hud/in game/option.gd" id="9_x2qrc"]
 [ext_resource type="Script" uid="uid://b4wnpbm4ar8gk" path="res://hud/in game/notification.gd" id="10_sh35x"]
 [ext_resource type="Texture2D" uid="uid://2uoeuu05tj0j" path="res://inventory/NotificationBox.png" id="12_mq7b8"]
 [ext_resource type="PackedScene" uid="uid://csnjyfc1uapsx" path="res://hud/in game/pop_up_menu.tscn" id="13_mq7b8"]
@@ -61,6 +62,34 @@ keycode = 4194309
 
 [sub_resource type="Shortcut" id="Shortcut_jvpmi"]
 events = [SubResource("InputEventKey_mq7b8")]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p75n7"]
+texture = ExtResource("12_mq7b8")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u3s1h"]
+texture = ExtResource("50_nfxdc")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ngomn"]
+texture = ExtResource("50_nfxdc")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wmwpu"]
+texture = ExtResource("50_nfxdc")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t2ad4"]
 texture = ExtResource("12_mq7b8")
@@ -119,7 +148,47 @@ _data = {
 &"notif_out": SubResource("Animation_jvpmi")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mq7b8"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_47eld"]
+texture = ExtResource("12_mq7b8")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bxb86"]
+texture = ExtResource("50_nfxdc")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bph8n"]
+texture = ExtResource("50_nfxdc")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_umayf"]
+texture = ExtResource("50_nfxdc")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sbknb"]
+texture = ExtResource("12_mq7b8")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_beqxr"]
+texture = ExtResource("50_nfxdc")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
 
 [sub_resource type="Animation" id="Animation_n3i3j"]
 length = 0.001
@@ -216,7 +285,7 @@ tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_s3k6s"]
@@ -372,57 +441,78 @@ _data = {
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mcppi"]
 texture = ExtResource("12_mq7b8")
 texture_margin_left = 20.0
-texture_margin_top = 10.0
+texture_margin_top = 20.0
 texture_margin_right = 20.0
+texture_margin_bottom = 20.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x2qrc"]
 texture = ExtResource("50_nfxdc")
 texture_margin_left = 20.0
-texture_margin_top = 10.0
+texture_margin_top = 20.0
 texture_margin_right = 20.0
+texture_margin_bottom = 20.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yrctj"]
 texture = ExtResource("50_nfxdc")
 texture_margin_left = 20.0
-texture_margin_top = 10.0
+texture_margin_top = 20.0
 texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nbt0b"]
+texture = ExtResource("12_mq7b8")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jgp2e"]
 texture = ExtResource("50_nfxdc")
 texture_margin_left = 20.0
-texture_margin_top = 10.0
+texture_margin_top = 20.0
 texture_margin_right = 20.0
+texture_margin_bottom = 20.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nfxdc"]
 texture = ExtResource("12_mq7b8")
 texture_margin_left = 20.0
-texture_margin_top = 10.0
+texture_margin_top = 20.0
 texture_margin_right = 20.0
+texture_margin_bottom = 20.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e0moe"]
 texture = ExtResource("50_nfxdc")
 texture_margin_left = 20.0
-texture_margin_top = 10.0
+texture_margin_top = 20.0
 texture_margin_right = 20.0
+texture_margin_bottom = 20.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rn1yl"]
 texture = ExtResource("50_nfxdc")
 texture_margin_left = 20.0
-texture_margin_top = 10.0
+texture_margin_top = 20.0
 texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7h5xr"]
+texture = ExtResource("12_mq7b8")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pouxf"]
 texture = ExtResource("50_nfxdc")
 texture_margin_left = 20.0
-texture_margin_top = 10.0
+texture_margin_top = 20.0
 texture_margin_right = 20.0
+texture_margin_bottom = 20.0
 
 [node name="HUD" type="CanvasLayer" unique_id=179951230]
 process_mode = 3
 script = ExtResource("1_6ca3a")
 
 [node name="InGame" type="CanvasLayer" parent="." unique_id=655899486]
-visible = false
 
 [node name="GreyOut" type="ColorRect" parent="InGame" unique_id=307156639]
 visible = false
@@ -485,6 +575,7 @@ mouse_filter = 2
 theme_override_constants/separation = 10
 
 [node name="Speaker" type="Label" parent="InGame/Dialog/VBoxContainer" unique_id=1959057897]
+visible = false
 layout_mode = 2
 text = "Somebody"
 
@@ -493,6 +584,66 @@ layout_mode = 2
 bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at libero et enim semper consectetur nec in quam. Morbi eu ante tortor. Integer scelerisque condimentum lorem, sed imperdiet nibh suscipit nec."
 fit_content = true
+
+[node name="Spacer" type="Control" parent="InGame/Dialog/VBoxContainer" unique_id=1094451360]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ChoiceContainer" type="HBoxContainer" parent="InGame/Dialog/VBoxContainer" unique_id=1646034108]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme = ExtResource("2_2gk58")
+alignment = 1
+
+[node name="Option 1" type="Button" parent="InGame/Dialog/VBoxContainer/ChoiceContainer" unique_id=1745096516]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_2gk58")
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_p75n7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_u3s1h")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ngomn")
+theme_override_styles/focus = SubResource("StyleBoxTexture_wmwpu")
+text = "Button"
+script = ExtResource("9_x2qrc")
+
+[node name="Option 2" type="Button" parent="InGame/Dialog/VBoxContainer/ChoiceContainer" unique_id=127700573]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_2gk58")
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_p75n7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_u3s1h")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ngomn")
+theme_override_styles/focus = SubResource("StyleBoxTexture_wmwpu")
+text = "Button"
+script = ExtResource("9_x2qrc")
+
+[node name="Option 3" type="Button" parent="InGame/Dialog/VBoxContainer/ChoiceContainer" unique_id=668949336]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_2gk58")
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_p75n7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_u3s1h")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ngomn")
+theme_override_styles/focus = SubResource("StyleBoxTexture_wmwpu")
+text = "Button"
+script = ExtResource("9_x2qrc")
 
 [node name="Goal" type="Control" parent="InGame" unique_id=1521384049]
 visible = false
@@ -598,15 +749,27 @@ autowrap_mode = 2
 libraries/ = SubResource("AnimationLibrary_t2ad4")
 
 [node name="ConnectButton" type="Button" parent="InGame" unique_id=555135791]
-anchors_preset = 5
+anchors_preset = -1
 anchor_left = 0.5
+anchor_top = 0.02
 anchor_right = 0.5
+anchor_bottom = 0.02
 offset_left = -146.0
+offset_top = 0.39999962
 offset_right = 146.0
-offset_bottom = 78.0
+offset_bottom = 78.4
 grow_horizontal = 2
 theme = ExtResource("2_2gk58")
-theme_override_styles/normal = SubResource("StyleBoxFlat_mq7b8")
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_47eld")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_bxb86")
+theme_override_styles/hover = SubResource("StyleBoxTexture_bph8n")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_umayf")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_sbknb")
+theme_override_styles/focus = SubResource("StyleBoxTexture_beqxr")
 text = "Connect"
 
 [node name="PopUpMenu" parent="InGame" unique_id=1848782344 instance=ExtResource("13_mq7b8")]
@@ -668,7 +831,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -1067.8809
 offset_top = -232.0
-offset_right = -347.87946
+offset_right = -347.87872
 offset_bottom = 232.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -678,49 +841,92 @@ texture = ExtResource("15_n3i3j")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TitleScreen" unique_id=1566414271]
 libraries/ = SubResource("AnimationLibrary_mcppi")
 
-[node name="TSButtons" type="HBoxContainer" parent="TitleScreen" unique_id=2056952131]
-modulate = Color(1, 1, 1, 0)
+[node name="TSButtons" type="Control" parent="TitleScreen" unique_id=170833601]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainButtons" type="HBoxContainer" parent="TitleScreen/TSButtons" unique_id=2056952131]
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.9
 anchor_right = 0.5
 anchor_bottom = 0.9
-offset_left = -276.0
-offset_top = -78.0
-offset_right = 276.0
+offset_left = -443.5
+offset_top = -151.0
+offset_right = 443.5
 grow_horizontal = 2
 grow_vertical = 0
+size_flags_vertical = 4
 theme = ExtResource("2_2gk58")
 theme_override_constants/separation = 70
 alignment = 1
 
-[node name="StartButton" type="Button" parent="TitleScreen/TSButtons" unique_id=1986163574]
+[node name="StartButton" type="Button" parent="TitleScreen/TSButtons/MainButtons" unique_id=1986163574]
 layout_mode = 2
+size_flags_vertical = 4
 mouse_default_cursor_shape = 2
 theme = ExtResource("2_2gk58")
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = SubResource("StyleBoxTexture_mcppi")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_x2qrc")
 theme_override_styles/hover = SubResource("StyleBoxTexture_yrctj")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_nbt0b")
 theme_override_styles/focus = SubResource("StyleBoxTexture_jgp2e")
 text = "Start"
 
-[node name="SettingsButton" type="Button" parent="TitleScreen/TSButtons" unique_id=847954879]
+[node name="SettingsButton" type="Button" parent="TitleScreen/TSButtons/MainButtons" unique_id=847954879]
 layout_mode = 2
+size_flags_vertical = 4
 mouse_default_cursor_shape = 2
 theme = ExtResource("2_2gk58")
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = SubResource("StyleBoxTexture_nfxdc")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_e0moe")
 theme_override_styles/hover = SubResource("StyleBoxTexture_rn1yl")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_7h5xr")
 theme_override_styles/focus = SubResource("StyleBoxTexture_pouxf")
 text = "Settings"
+
+[node name="CreditsButton" type="Button" parent="TitleScreen/TSButtons" unique_id=1559475135]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.99
+anchor_top = 0.01
+anchor_right = 0.99
+anchor_bottom = 0.01
+offset_left = -319.0
+offset_bottom = 118.0
+grow_horizontal = 0
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_2gk58")
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxTexture_nfxdc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_e0moe")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rn1yl")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_7h5xr")
+theme_override_styles/focus = SubResource("StyleBoxTexture_pouxf")
+text = "Credits"
 
 [node name="LogoScreen" type="CanvasLayer" parent="." unique_id=113019954]
 visible = false
@@ -751,4 +957,4 @@ texture = ExtResource("14_jvpmi")
 [connection signal="pressed" from="InGame/Goal/GoalOpen/ExitGoalButton" to="." method="_on_exit_goal_button_pressed"]
 [connection signal="pressed" from="InGame/Goal/GoalButton" to="." method="_on_goal_button_pressed"]
 [connection signal="pressed" from="InGame/Tutorial" to="." method="_on_tutorial_pressed"]
-[connection signal="pressed" from="TitleScreen/TSButtons/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="TitleScreen/TSButtons/MainButtons/StartButton" to="." method="_on_start_button_pressed"]

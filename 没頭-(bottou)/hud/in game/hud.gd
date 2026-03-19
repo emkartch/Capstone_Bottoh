@@ -17,6 +17,9 @@ extends CanvasLayer
 @onready var title_screen_uspassport = $TitleScreen/USPassport
 @onready var title_screen_jpnpassport = $TitleScreen/JPNPassport
 @onready var title_screen_logo = $TitleScreen/TitleLogo
+@onready var title_screen_buttons = $TitleScreen/TSButtons
+@onready var title_screen_start = $TitleScreen/TSButtons/MainButtons/StartButton
+@onready var title_screen_settings = $TitleScreen/TSButtons/MainButtons/SettingsButton
 
 func _ready():
 	
@@ -28,6 +31,22 @@ func _ready():
 	title_screen_uspassport.position.x = 1920
 	title_screen_logo.position.x = -720
 	title_screen_jpnpassport.position = Vector2(148,-498)
+
+func _process(_delta):
+	
+	if title_screen_buttons.modulate.a != 1:
+		
+		title_screen_start.disabled = true
+		title_screen_start.set_default_cursor_shape(Input.CURSOR_ARROW)
+		title_screen_settings.disabled = true
+		title_screen_settings.set_default_cursor_shape(Input.CURSOR_ARROW)
+		
+	else:
+		
+		title_screen_start.disabled = false
+		title_screen_start.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
+		title_screen_settings.disabled = false
+		title_screen_settings.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
 
 func show_start():
 	
@@ -114,7 +133,6 @@ func _on_tutorial_pressed() -> void:
 		#show_start()
 	#elif Global.level ==2:
 		#next_level_tutorial()
-
 
 func _on_start_button_pressed() -> void:
 	
