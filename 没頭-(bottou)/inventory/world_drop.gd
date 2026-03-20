@@ -91,6 +91,20 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 			else:
 				
 				node = Global.open_old_map
+				
+		elif data.item.item_name == "Passport":
+			
+			if Global.open_passport == null:
+				
+				node = world_item.instantiate()
+				
+				node.set_meta("item_data", data.item)
+				
+				Global.open_passport = node
+				
+			else:
+				
+				node = Global.open_passport
 		
 		node.get_node("OpenItemTexture").texture = data.item.item[0]
 		

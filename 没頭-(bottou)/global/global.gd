@@ -20,6 +20,7 @@ var open_new_map = null
 var open_note = null
 var open_notebook = null
 var open_old_map = null
+var open_passport = null
 
 var notebook_appearance = null
 var notebook_clothes = null
@@ -41,7 +42,9 @@ var note_questions = null
 @onready var notif = get_node("/root/Main/HUD/InGame/Notification")
 
 var notebook_appearances_nodes = []
-var notebook_clothes_hats_nodes = []
+var notebook_clothing_1_nodes = []
+var notebook_clothing_2_nodes = []
+var notebook_hats_nodes = []
 var notebook_color_nodes = []
 var notebook_longhair_nodes = []
 var notebook_shorthair_nodes = []
@@ -59,7 +62,9 @@ var clothes_type_correct = false
 var hat_correct = false
 
 var appearance_filled = false
-var clothes_hats_filled = false
+var clothes_1_filled = false
+var clothes_2_filled = false
+var hats_filled = false
 var colors_filled = false
 var long_hairs_filled = false
 var short_hairs_filled = false
@@ -140,7 +145,13 @@ func _ready():
 		
 		if child is not HSeparator:
 			
-			notebook_clothes_hats_nodes.append(child)
+			if child.name == "T-Shirt" or child.name == "T-Shirt JPN" or child.name == "Button Up Shirt" or child.name == "Button Up Shirt JPN":
+				
+				notebook_clothing_1_nodes.append(child)
+				
+			elif child.name == "Sweater" or child.name == "Sweater JPN" or child.name == "Jacket" or child.name == "Jacket JPN":
+				
+				notebook_clothing_2_nodes.append(child)
 		
 	notebook_colors = colors.instantiate()
 		
@@ -156,7 +167,7 @@ func _ready():
 		
 		if child is not HSeparator:
 			
-			notebook_clothes_hats_nodes.append(child)
+			notebook_hats_nodes.append(child)
 	
 	await hud.ready
 	
@@ -390,17 +401,41 @@ func _on_interactable_click(node):
 				
 			appearance_filled = true
 	
-	elif node.item_name == "ClothingPoster":
+	elif node.item_name == "ClothingPoster1":
 		
-		if not clothes_hats_filled:
+		if not clothes_1_filled:
 			
 			new_info = true
 			
-			for item in notebook_clothes_hats_nodes:
+			for item in notebook_clothing_1_nodes:
 				
 				item.modulate.a = 255
 			
-			clothes_hats_filled = true
+			clothes_1_filled = true
+	
+	elif node.item_name == "ClothingPoster2":
+		
+		if not clothes_2_filled:
+			
+			new_info = true
+			
+			for item in notebook_clothing_2_nodes:
+				
+				item.modulate.a = 255
+			
+			clothes_2_filled = true
+	
+	elif node.item_name == "HatPoster":
+		
+		if not hats_filled:
+			
+			new_info = true
+			
+			for item in notebook_hats_nodes:
+				
+				item.modulate.a = 255
+			
+			hats_filled = true
 	
 	elif node.item_name == "ColorPamphlet":
 		
@@ -454,7 +489,7 @@ func _on_slot_click(node):
 
 func check_correct():
 	
-	if appearance_filled and clothes_hats_filled and colors_filled and long_hairs_filled and short_hairs_filled and level == 1:
+	if appearance_filled and clothes_1_filled and clothes_2_filled and hats_filled and colors_filled and long_hairs_filled and short_hairs_filled and level == 1:
 		
 		level += 1
 		

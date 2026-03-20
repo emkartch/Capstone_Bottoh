@@ -1,6 +1,6 @@
 extends Control
 
-# Created with the help of Thomas Yanuziello - https://youtu.be/noOSZjaiTmo?si=HZuF39mPLIxkaSoa
+# Base created with the help of Thomas Yanuziello - https://youtu.be/noOSZjaiTmo?si=HZuF39mPLIxkaSoa
 
 @onready var main = get_node("/root/Main")
 @onready var _speaker = $VBoxContainer/Speaker
@@ -94,11 +94,11 @@ func display_line(pause: bool,grey_out: bool, type: String, line, speaker : Stri
 		
 		var line_choice = null
 		
-		if Global.appearance_filled and Global.clothes_hats_filled and Global.colors_filled and Global.long_hairs_filled and Global.short_hairs_filled:
+		if Global.appearance_filled and Global.clothes_1_filled and Global.clothes_2_filled and Global.hats_filled and Global.colors_filled and Global.long_hairs_filled and Global.short_hairs_filled:
 			
 			line_choice = line[0]
 			
-		elif Global.appearance_filled or Global.clothes_hats_filled or Global.colors_filled or Global.long_hairs_filled or Global.short_hairs_filled:
+		elif Global.appearance_filled or Global.clothes_1_filled or Global.clothes_2_filled or Global.hats_filled or Global.colors_filled or Global.long_hairs_filled or Global.short_hairs_filled:
 			
 			line_choice = line[1]
 			
