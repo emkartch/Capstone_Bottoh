@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://btthpf4ud7uwg"]
+
+[ext_resource type="Texture2D" uid="uid://dwwsrxelh54hx" path="res://areas/train/Train.png" id="1_yqis4"]
+[ext_resource type="PackedScene" uid="uid://c13d8uvmyxs6j" path="res://door.tscn" id="2_0wetn"]
+[ext_resource type="Texture2D" uid="uid://b10x40wmxba1a" path="res://assets/ArrowBox.png" id="3_4t8d3"]
+[ext_resource type="Texture2D" uid="uid://d4lcey8yvvqql" path="res://assets/ArrowBoxGrey.png" id="4_rbtpc"]
+
+[node name="Train" type="CanvasLayer" unique_id=1470835323]
+
+[node name="Background" type="TextureRect" parent="." unique_id=1257973291]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_yqis4")
+
+[node name="Doors" type="Node" parent="." unique_id=1106769206]
+
+[node name="Door_SV3" parent="Doors" unique_id=1136604104 instance=ExtResource("2_0wetn")]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.96
+anchor_right = 0.5
+anchor_bottom = 0.96
+offset_left = -140.0
+offset_top = -120.0
+offset_right = 140.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0
+current_level_tag = "train"
+destination_level_tag = "street_view_3"
+
+[node name="Button" parent="Doors/Door_SV3" index="0" unique_id=846998799]
+texture_normal = ExtResource("3_4t8d3")
+texture_pressed = ExtResource("4_rbtpc")
+texture_hover = ExtResource("4_rbtpc")
+
+[editable path="Doors/Door_SV3"]

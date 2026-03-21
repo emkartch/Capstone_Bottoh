@@ -27,6 +27,8 @@ func _ready():
 	title_screen.visible = false
 	in_game.visible = false
 	
+	title_screen_buttons.modulate.a = 0
+	
 	title_screen_background.texture = preload("res://hud/title screen/TitleScreen1.png")
 	title_screen_uspassport.position.x = 1920
 	title_screen_logo.position.x = -720

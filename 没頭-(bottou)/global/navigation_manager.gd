@@ -20,6 +20,7 @@ const SSO = preload("res://areas/stationary store (outside)/stationary_store_out
 const SV1 = preload("res://areas/street views/street view 1/street_view_1.tscn")
 const SV2 = preload("res://areas/street views/street view 2/street_view_2.tscn")
 const SV3 = preload("res://areas/street views/street view 3/street_view_3.tscn")
+const T = preload("res://areas/train/train.tscn")
 
 const BO_Door_Open = preload("res://areas/bookstore (outside)/BO_Door_Open.png")
 const CSO_Door_Open = preload("res://areas/convenience store (outside)/CSO_Door_Open.png")
@@ -37,6 +38,7 @@ var stationary_store_outside
 var street_view_1
 var street_view_2
 var street_view_3
+var train
 
 func _ready():
 	barber_shop_outside = BSO.instantiate()
@@ -51,6 +53,7 @@ func _ready():
 	street_view_1 = SV1.instantiate()
 	street_view_2 = SV2.instantiate()
 	street_view_3 = SV3.instantiate()
+	train = T.instantiate()
 	
 	main.add_child(street_view_1)
 	main.move_child(street_view_1,0)
@@ -86,6 +89,8 @@ func go_to_level(curr_level_tag,new_level_tag):
 			scene_to_remove = street_view_2
 		"street_view_3":
 			scene_to_remove = street_view_3
+		"train":
+			scene_to_remove = train
 	
 	match new_level_tag:
 		"barber_shop_outside":
@@ -112,6 +117,8 @@ func go_to_level(curr_level_tag,new_level_tag):
 			scene_to_load = street_view_2
 		"street_view_3":
 			scene_to_load = street_view_3
+		"train":
+			scene_to_load = train
 		
 	if scene_to_remove != null && scene_to_load != null:
 		

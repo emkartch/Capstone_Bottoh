@@ -424,10 +424,10 @@ tracks/7/path = NodePath("TSButtons:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(5.1, 5.4),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 5.1, 5.4),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mcppi"]
@@ -831,7 +831,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -1067.8809
 offset_top = -232.0
-offset_right = -347.87872
+offset_right = -347.87915
 offset_bottom = 232.0
 grow_horizontal = 2
 grow_vertical = 2

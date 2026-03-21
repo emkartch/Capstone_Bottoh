@@ -85,6 +85,7 @@ var speech_0 = [
 	[n,"While flying into a rural airport was cheaper for your company, it does mean you are on a tight schedule. With your business meeting happening soon in Osaka you better not miss the train!",""],
 	[n,"With a pep in your step, you take off towards the train station while excitedly taking in the sites.",""],
 	[t,"Wow, this is such a cute little shopping area! I wish I had more time to explore.",""],
+	null,
 	[n,"On your way to the train, you spot a police officer asking other travelers to see their passports.",""],
 	[t,"Okay! Good thing I remembered that you need to carry your passport around in Japan. Otherwise, I could be delayed or even detained.",""],
 	[n,"Walking up slowly to the police officer, you start reaching for your passport.",""],

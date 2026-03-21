@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eevv0dtvj4ss"
-path="res://.godot/imported/GirlW6.png-d0c36ad6d8ebb5fb1a5f4b108d9670cf.ctex"
+uid="uid://dwwsrxelh54hx"
+path="res://.godot/imported/Train.png-8915b173b8f101611a490b2df84c88da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://areas/street views/GirlW6.png"
-dest_files=["res://.godot/imported/GirlW6.png-d0c36ad6d8ebb5fb1a5f4b108d9670cf.ctex"]
+source_file="res://areas/train/Train.png"
+dest_files=["res://.godot/imported/Train.png-8915b173b8f101611a490b2df84c88da.ctex"]
 
 [params]
 
