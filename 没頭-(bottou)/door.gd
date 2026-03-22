@@ -6,6 +6,7 @@ class_name Door
 @export var destination_level_tag: String
 #@export var destination_door_tag: String
 
+@onready var main = get_node("/root/Main")
 @onready var door_texture = preload("res://areas/DoorOpen.png")
 @onready var button = $Button
 @onready var dialog = get_node("/root/Main/HUD/InGame/Dialog")
@@ -14,7 +15,7 @@ func _on_button_pressed() -> void:
 	
 	if Global.level == 0:
 		
-		if self.name == "Door_CSO" or self.name == "Door_BO" or self.name == "Door_HSO" or self.name == "Door_BSO" or self.name == "Door_SSO" or self.name == "Door_ClSO" or self.name == "Door_SV1_L" or self.name == "Door_SV2_L":
+		if self.name == "Door_CSO" or self.name == "Door_BO" or self.name == "Door_HSO" or self.name == "Door_BSO" or self.name == "Door_SSO" or self.name == "Door_ClSO" or self.name == "Door_SV1_L" or self.name == "Door_SV2_L" and Global.level == 0:
 		
 			dialog.display_line(true,false,"thought","I don't have time to look around.","")
 		
@@ -23,6 +24,22 @@ func _on_button_pressed() -> void:
 			Global.tutorial_1 = true
 			
 			NavigationManager.go_to_level(current_level_tag,destination_level_tag)
+			
+		elif self.name == "Door_CSO" and Global.tutorial_3 == false and Global.level == 1:
+		
+			Global.tutorial_3 = true
+			
+			NavigationManager.go_to_level(current_level_tag,destination_level_tag)
+			
+		elif self.name == "Door_CS" and Global.tutorial_4 == false and Global.level == 1:
+		
+			Global.tutorial_4 = true
+			
+			NavigationManager.go_to_level(current_level_tag,destination_level_tag)
+		
+		elif self.name == "Door_CSO" and main.has_node("ConvenienceStore") and Global.level <= 4:
+			
+			dialog.display_line(true,false,"thought","I should find out where my passport might be.","")
 		
 		else:
 			

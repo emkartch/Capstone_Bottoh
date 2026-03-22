@@ -21,6 +21,9 @@ const SV1 = preload("res://areas/street views/street view 1/street_view_1.tscn")
 const SV2 = preload("res://areas/street views/street view 2/street_view_2.tscn")
 const SV3 = preload("res://areas/street views/street view 3/street_view_3.tscn")
 const T = preload("res://areas/train/train.tscn")
+const BZ = preload("res://areas/bookstore/bookstore (zoom)/bookstore_zoom.tscn")
+const CSZ = preload("res://areas/convenience store/convenience store (zoom)/convenience_store_zoom.tscn")
+const SSZ = preload("res://areas/stationary store/stationary store (zoom)/stationary_store_zoom.tscn")
 
 const BO_Door_Open = preload("res://areas/bookstore (outside)/BO_Door_Open.png")
 const CSO_Door_Open = preload("res://areas/convenience store (outside)/CSO_Door_Open.png")
@@ -39,6 +42,9 @@ var street_view_1
 var street_view_2
 var street_view_3
 var train
+var bookstore_zoom
+var convenience_store_zoom
+var stationary_store_zoom
 
 func _ready():
 	barber_shop_outside = BSO.instantiate()
@@ -54,6 +60,9 @@ func _ready():
 	street_view_2 = SV2.instantiate()
 	street_view_3 = SV3.instantiate()
 	train = T.instantiate()
+	bookstore_zoom = BZ.instantiate()
+	convenience_store_zoom = CSZ.instantiate()
+	stationary_store_zoom = SSZ.instantiate()
 	
 	main.add_child(street_view_1)
 	main.move_child(street_view_1,0)
@@ -91,6 +100,12 @@ func go_to_level(curr_level_tag,new_level_tag):
 			scene_to_remove = street_view_3
 		"train":
 			scene_to_remove = train
+		"bookstore_zoom":
+			scene_to_remove = bookstore_zoom
+		"convenience_store_zoom":
+			scene_to_remove = convenience_store_zoom
+		"stationary_store_zoom":
+			scene_to_remove = stationary_store_zoom
 	
 	match new_level_tag:
 		"barber_shop_outside":
@@ -119,6 +134,12 @@ func go_to_level(curr_level_tag,new_level_tag):
 			scene_to_load = street_view_3
 		"train":
 			scene_to_load = train
+		"bookstore_zoom":
+			scene_to_load = bookstore_zoom
+		"convenience_store_zoom":
+			scene_to_load = convenience_store_zoom
+		"stationary_store_zoom":
+			scene_to_load = stationary_store_zoom
 		
 	if scene_to_remove != null && scene_to_load != null:
 		
@@ -282,7 +303,71 @@ func go_to_level(curr_level_tag,new_level_tag):
 			
 			transition_animation_LR.texture = null
 		
+		# Zoom In
+		elif (scene_to_remove == bookstore && scene_to_load == bookstore_zoom) or (scene_to_remove == convenience_store && scene_to_load == convenience_store_zoom) or (scene_to_remove == stationary_store && scene_to_load == stationary_store_zoom):
+			
+			if scene_to_remove == bookstore:
+				
+				transition_animation_LR.texture = scene_to_remove.get_node("Background").texture
+				
+				transition_animation.play("BSZ_in")
+			
+			elif scene_to_remove == convenience_store:
+				
+				transition_animation_LR.texture = scene_to_remove.get_node("Background").texture
+				
+				transition_animation.play("CSZ_in")
+				
+			elif scene_to_remove == stationary_store:
+				
+				transition_animation_LR.texture = scene_to_remove.get_node("Background").texture
+				
+				transition_animation.play("SSZ_in")
+			
+			main.remove_child(scene_to_remove)
+			main.add_child(scene_to_load)
+			main.move_child(scene_to_load,-1)
+			scene_to_load.layer = -2
+			
+			await transition_animation.animation_finished
+			
+			transition_animation_LR.texture = null
+		
+		# Zoom Out
+		elif (scene_to_remove == bookstore_zoom && scene_to_load == bookstore) or (scene_to_remove == convenience_store_zoom && scene_to_load == convenience_store) or (scene_to_remove == stationary_store_zoom && scene_to_load == stationary_store):
+			
+			if scene_to_remove == bookstore:
+				
+				transition_animation_LR.texture = scene_to_load.get_node("Background").texture
+				
+				transition_animation.play("BSZ_out")
+			
+			elif scene_to_remove == convenience_store:
+				
+				transition_animation_LR.texture = scene_to_load.get_node("Background").texture
+				
+				transition_animation.play("CSZ_out")
+				
+			elif scene_to_remove == stationary_store:
+				
+				transition_animation_LR.texture = scene_to_load.get_node("Background").texture
+				
+				transition_animation.play("SSZ_out")
+			
+			main.remove_child(scene_to_remove)
+			main.add_child(scene_to_load)
+			main.move_child(scene_to_load,-1)
+			scene_to_load.layer = -2
+			
+			await transition_animation.animation_finished
+			
+			transition_animation_LR.texture = null
+		
 		else:
+			
+			if scene_to_remove == train and Global.level == 1:
+				train.get_node("PolicePerson").visible = false
+			
 			transition_animation.play("fade_in")
 			main.remove_child(scene_to_remove)
 			main.add_child(scene_to_load)

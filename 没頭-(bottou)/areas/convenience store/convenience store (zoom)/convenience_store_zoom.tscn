@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://qj6j56n06ilp"]
+
+[ext_resource type="Texture2D" uid="uid://bv40ekfbld68r" path="res://areas/convenience store/ConvienceStore.png" id="1_vl6sc"]
+[ext_resource type="PackedScene" uid="uid://c13d8uvmyxs6j" path="res://door.tscn" id="2_rfata"]
+[ext_resource type="Texture2D" uid="uid://b10x40wmxba1a" path="res://assets/ArrowBox.png" id="3_66y6r"]
+[ext_resource type="Texture2D" uid="uid://d4lcey8yvvqql" path="res://assets/ArrowBoxGrey.png" id="4_1pcfx"]
+
+[node name="ConvenienceStoreZoom" type="CanvasLayer" unique_id=257595746]
+
+[node name="Background" type="TextureRect" parent="." unique_id=34360401]
+offset_left = -2880.0
+offset_top = -1117.0
+offset_right = -960.0
+offset_bottom = -37.0
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_vl6sc")
+
+[node name="Doors" type="Node" parent="." unique_id=965016176]
+
+[node name="Door_CSZ_Out" parent="Doors" unique_id=1136604104 instance=ExtResource("2_rfata")]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.96
+anchor_right = 0.5
+anchor_bottom = 0.96
+offset_left = -140.0
+offset_top = -120.0
+offset_right = 140.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0
+current_level_tag = "convenience_store_zoom"
+destination_level_tag = "convenience_store"
+
+[node name="Button" parent="Doors/Door_CSZ_Out" index="0" unique_id=846998799]
+texture_normal = ExtResource("3_66y6r")
+texture_pressed = ExtResource("4_1pcfx")
+texture_hover = ExtResource("4_1pcfx")
+
+[editable path="Doors/Door_CSZ_Out"]

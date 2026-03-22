@@ -104,8 +104,18 @@ var new_info = false
 # Tutorials
 
 var tutorial_1 = false
+var tutorial_2 = false
+var tutorial_3 = false
+var tutorial_4 = false
+var tutorial_5 = false
 
 # Tutorials
+
+# Zoom-in in stores
+
+var CS_Zoom = false
+
+# Zoom-in in stores
 
 func _ready():
 	
@@ -478,6 +488,7 @@ func _on_interactable_click(node):
 				item.modulate.a = 255
 			
 			long_hairs_filled = true
+		
 		
 	if new_info:
 		

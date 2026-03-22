@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://d4lcey8yvvqql" path="res://assets/ArrowBoxGrey.png" id="4_m6hpu"]
 [ext_resource type="Texture2D" uid="uid://cmwj56b8swd6x" path="res://areas/stationary store/SS_Notebooks.png" id="5_4jlfr"]
 [ext_resource type="Texture2D" uid="uid://pgb0aohvfvka" path="res://areas/stationary store/SS_Markers.png" id="6_rikge"]
+[ext_resource type="Texture2D" uid="uid://bc5l6k36xyhk0" path="res://areas/GirlWBig5.png" id="7_weyfw"]
 
 [node name="StationaryStore" type="CanvasLayer" unique_id=809007711]
 
@@ -58,6 +59,17 @@ item_name = "Markers"
 item = ExtResource("6_rikge")
 description = "Markers"
 
+[node name="RandomPerson" parent="Selectables" unique_id=1831069052 instance=ExtResource("3_weyfw")]
+visible = false
+layout_mode = 0
+offset_left = 1080.0
+offset_top = 600.0
+offset_right = 1267.0
+offset_bottom = 1080.0
+item_name = "RandomPerson"
+item = ExtResource("7_weyfw")
+description = "Random Person"
+
 [node name="Door" type="Node" parent="." unique_id=1090544651]
 
 [node name="Door_SSO" parent="Door" unique_id=1136604104 instance=ExtResource("2_4u8tb")]
@@ -80,4 +92,20 @@ texture_normal = ExtResource("3_ufptl")
 texture_pressed = ExtResource("4_m6hpu")
 texture_hover = ExtResource("4_m6hpu")
 
+[node name="Door_SSZ_In" parent="Door" unique_id=1240213787 instance=ExtResource("2_4u8tb")]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.96
+anchor_right = 0.5
+anchor_bottom = 0.96
+offset_left = -630.0
+offset_top = -473.79993
+offset_right = -487.0
+offset_bottom = -316.79993
+grow_horizontal = 2
+grow_vertical = 0
+current_level_tag = "stationary_store"
+destination_level_tag = "stationary_store_zoom"
+
 [editable path="Door/Door_SSO"]
+[editable path="Door/Door_SSZ_In"]

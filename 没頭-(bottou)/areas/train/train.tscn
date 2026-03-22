@@ -44,7 +44,14 @@ offset_bottom = 840.0
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_t34cx")
 
-[node name="PromptPerson" type="TextureRect" parent="." unique_id=1350287960]
+[node name="PromptPersonBack" type="TextureRect" parent="." unique_id=1575788605]
+offset_left = 239.0
+offset_top = 573.0
+offset_right = 426.0
+offset_bottom = 1053.0
+texture = ExtResource("5_t34cx")
+
+[node name="PromptPersonFront" type="TextureRect" parent="." unique_id=1350287960]
 visible = false
 offset_left = 168.0
 offset_top = 80.0

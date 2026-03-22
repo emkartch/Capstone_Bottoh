@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dnvvak36bdupi"]
 
-[ext_resource type="Texture2D" uid="uid://dld4egj6nx361" path="res://areas/convenience store/ConvienceStoreB.png" id="1_e7c0s"]
+[ext_resource type="Texture2D" uid="uid://bv40ekfbld68r" path="res://areas/convenience store/ConvienceStore.png" id="1_74vvr"]
 [ext_resource type="PackedScene" uid="uid://c13d8uvmyxs6j" path="res://door.tscn" id="2_1ktli"]
 [ext_resource type="Texture2D" uid="uid://da6204n5038bo" path="res://areas/convenience store/CSAlt_Counter.png" id="2_ep2et"]
 [ext_resource type="PackedScene" uid="uid://5s8jfcpui2rh" path="res://objects/interactable.tscn" id="3_h6v2g"]
@@ -14,9 +14,9 @@
 [node name="ConvenienceStore" type="CanvasLayer" unique_id=1704651114]
 
 [node name="Background" type="TextureRect" parent="." unique_id=1561829408]
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("1_e7c0s")
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_74vvr")
 
 [node name="Counter" type="TextureRect" parent="." unique_id=1488060773]
 offset_left = 1320.0
@@ -31,7 +31,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="KinderEggs" parent="Selectables" unique_id=632896118 instance=ExtResource("3_h6v2g")]
+[node name="KinderEggs" parent="Selectables" unique_id=1803791613 instance=ExtResource("3_h6v2g")]
 layout_mode = 0
 offset_left = 1500.0
 offset_top = 945.0
@@ -92,4 +92,20 @@ texture_normal = ExtResource("3_sq7hw")
 texture_pressed = ExtResource("4_ep2et")
 texture_hover = ExtResource("4_ep2et")
 
+[node name="Door_CSZ_In" parent="Doors" unique_id=511077419 instance=ExtResource("2_1ktli")]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.96
+anchor_right = 0.5
+anchor_bottom = 0.96
+offset_left = 672.0
+offset_top = -537.7999
+offset_right = 859.0
+offset_bottom = -316.79993
+grow_horizontal = 2
+grow_vertical = 0
+current_level_tag = "convenience_store"
+destination_level_tag = "convenience_store_zoom"
+
 [editable path="Doors/Door_CSO"]
+[editable path="Doors/Door_CSZ_In"]

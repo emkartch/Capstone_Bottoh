@@ -2,9 +2,11 @@ extends CanvasLayer
 
 @onready var main = get_node("/root/Main")
 @onready var dialog = $InGame/Dialog
+@onready var notif = $InGame/Notification
 
 @onready var goal_button = $InGame/Goal/GoalButton
 @onready var goal_open = $InGame/Goal/GoalOpen
+@onready var goal_text = $InGame/Goal/GoalOpen/VBoxContainer/GoalText
 @onready var tutorial_button = $InGame/Tutorial
 
 @onready var logo_screen = $LogoScreen
@@ -21,6 +23,9 @@ extends CanvasLayer
 @onready var title_screen_start = $TitleScreen/TSButtons/MainButtons/StartButton
 @onready var title_screen_settings = $TitleScreen/TSButtons/MainButtons/SettingsButton
 
+const goal_texture = preload("res://assets/Notebookpaper.png")
+const goal_update_texture = preload("res://assets/PenWNotepad.png")
+
 func _ready():
 	
 	logo_screen.visible = true
@@ -33,6 +38,8 @@ func _ready():
 	title_screen_uspassport.position.x = 1920
 	title_screen_logo.position.x = -720
 	title_screen_jpnpassport.position = Vector2(148,-498)
+	
+	goal_open.get_node("VBoxContainer/GoalText").text = GameScript.goal_0
 
 func _process(_delta):
 	
@@ -119,6 +126,10 @@ func next_level_tutorial():
 
 func _on_goal_button_pressed() -> void:
 	
+	if Global.level == 1 and Global.tutorial_2 == false:
+		
+		Global.tutorial_2 = true
+	
 	goal_button.visible = false
 	goal_open.visible = true
 
@@ -146,3 +157,13 @@ func _on_start_button_pressed() -> void:
 	in_game.visible = true
 	
 	main.level_0()
+
+func update_goal_text(goal):
+	
+	goal_text.text = goal
+	
+	goal_button.texture_normal = goal_update_texture
+	
+	await notif.display_notif("Goal Updated")
+	
+	goal_button.texture_normal = goal_texture

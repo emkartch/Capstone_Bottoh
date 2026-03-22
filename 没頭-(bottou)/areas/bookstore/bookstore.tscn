@@ -73,6 +73,7 @@ item = ExtResource("6_shw4s")
 description = "Book 3"
 
 [node name="Book4" parent="Selectables" unique_id=1888871301 instance=ExtResource("2_70fny")]
+visible = false
 layout_mode = 0
 offset_left = 1061.0
 offset_top = 346.0
@@ -130,4 +131,20 @@ texture_normal = ExtResource("6_4e0xy")
 texture_pressed = ExtResource("7_nv534")
 texture_hover = ExtResource("7_nv534")
 
+[node name="Door_BSZ_In" parent="Doors" unique_id=1037020950 instance=ExtResource("2_xc5xg")]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.96
+anchor_right = 0.5
+anchor_bottom = 0.96
+offset_left = 12.0
+offset_top = -739.7999
+offset_right = 439.0
+offset_bottom = -361.79993
+grow_horizontal = 2
+grow_vertical = 0
+current_level_tag = "bookstore_zoom"
+destination_level_tag = "bookstore"
+
 [editable path="Doors/Door_BO"]
+[editable path="Doors/Door_BSZ_In"]

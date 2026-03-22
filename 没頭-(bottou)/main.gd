@@ -4,6 +4,8 @@ extends Node
 @onready var hud = $HUD
 @onready var inventory = $Inventory
 @onready var dialog = $HUD/InGame/Dialog
+@onready var goal = get_node("/root/Main/HUD/InGame/Goal")
+@onready var goal_text = get_node("/root/Main/HUD/InGame/Goal/GoalOpen/VBoxContainer/GoalText")
 @onready var tutorial_wipe = $TutorialWipe
 @onready var transition_animation = get_node("/root/Main/SceneTransitionAnimation/AnimationPlayer")
 @onready var tutorial_animation = get_node("/root/Main/TutorialWipe/CircleColor/AnimationPlayer")
@@ -87,7 +89,9 @@ func level_0():
 	
 	GameScript.scene_line += 1
 	
-	self.get_node("Train/PromptPerson").visible = true
+	self.get_node("Train/PromptPersonBack").visible = false
+	
+	self.get_node("Train/PromptPersonFront").visible = true
 	
 	while GameScript.speech_0[GameScript.scene_line] != null:
 		
@@ -99,13 +103,137 @@ func level_0():
 		
 		await dialog.continue_true
 	
-	self.get_node("Train/PromptPerson").visible = false
+	self.get_node("Train/PromptPersonFront").visible = false
 	
 	Global.level += 1
+	GameScript.scene_line = 0
 	
 	level_1()
 
 func level_1():
 	
-	inventory.visible = true
-	hud.get_node("InGame/Goal").visible = true
+	goal.visible = true
+	
+	await hud.update_goal_text(GameScript.goal_1)
+	
+	tutorial_wipe.visible = true
+	
+	tutorial_animation.play("tutorial_2")
+	
+	await tutorial_animation.animation_finished
+	
+	while not Global.tutorial_2:
+		await get_tree().process_frame
+	
+	tutorial_wipe.visible = false
+	
+	while not self.has_node("StreetView1"):
+		await get_tree().process_frame
+	
+	tutorial_wipe.visible = true
+	
+	tutorial_animation.play("tutorial_3")
+	
+	await tutorial_animation.animation_finished
+	
+	while not Global.tutorial_3:
+		await get_tree().process_frame
+	
+	tutorial_wipe.visible = false
+	
+	while not self.has_node("ConvenienceStoreOutside"):
+		await get_tree().process_frame
+	
+	tutorial_wipe.visible = true
+	
+	tutorial_animation.play("tutorial_4")
+	
+	await tutorial_animation.animation_finished
+	
+	while not Global.tutorial_4:
+		await get_tree().process_frame
+	
+	tutorial_wipe.visible = false
+	
+	while not self.has_node("ConvenienceStore"):
+		await get_tree().process_frame
+	
+	for line_info in GameScript.speech_0[GameScript.scene_line]:
+		
+		dialog.display_line(true,false,line_info[0],line_info[1],line_info[2])
+		
+		GameScript.scene_line += 1
+		
+		await dialog.continue_true
+	
+	Global.level += 1
+	GameScript.scene_line = 0
+	
+	level_2()
+
+func level_2():
+	
+	await hud.update_goal_text(GameScript.goal_2)
+	
+	tutorial_wipe.visible = true
+	
+	tutorial_animation.play("tutorial_5")
+	
+	await tutorial_animation.animation_finished
+	
+	while not Global.tutorial_5:
+		await get_tree().process_frame
+	
+	tutorial_wipe.visible = false
+
+func level_3():
+	
+	await hud.update_goal_text(GameScript.goal_3)
+
+func level_4():
+	
+	await hud.update_goal_text(GameScript.goal_4)
+
+func level_5():
+	
+	await hud.update_goal_text(GameScript.goal_5)
+
+func level_6():
+	
+	await hud.update_goal_text(GameScript.goal_6)
+
+func level_7():
+	
+	await hud.update_goal_text(GameScript.goal_7)
+
+func level_8():
+	
+	await hud.update_goal_text(GameScript.goal_8)
+
+func level_9():
+	
+	await hud.update_goal_text(GameScript.goal_9)
+
+func level_10():
+	
+	await hud.update_goal_text(GameScript.goal_10)
+
+func level_11():
+	
+	await hud.update_goal_text(GameScript.goal_11)
+
+func level_12():
+	
+	await hud.update_goal_text(GameScript.goal_12)
+
+func level_13():
+	
+	await hud.update_goal_text(GameScript.goal_13)
+
+func level_14():
+	
+	await hud.update_goal_text(GameScript.goal_14)
+
+func level_15():
+	
+	await hud.update_goal_text(GameScript.goal_15)

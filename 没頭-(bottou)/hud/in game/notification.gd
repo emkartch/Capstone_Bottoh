@@ -13,3 +13,5 @@ func display_notif(notif: String):
 	await get_tree().create_timer(2.0).timeout
 	
 	animation.play("notif_out")
+	
+	await animation.animation_finished

@@ -48,33 +48,14 @@ func update_collision_shape():
 	
 	#select_line.position.y = pick_size[1]
 	#select_line.points[1][0] = pick_size[0]
-	
-
 
 func _on_area_2d_mouse_entered() -> void:
 	is_hover = true
 	
 	object.material.set_shader_parameter("width",5)
-	#
-		#if not is_select:
-		#
-			#object.material.set_shader_parameter("width",10)
 
 func _on_area_2d_mouse_exited() -> void:
 	is_hover = false
 	Input.set_custom_mouse_cursor(cursor_normal)
 	
-	#if item == null:
-		
-	#label.remove_theme_color_override("font_color")
-	#label.remove_theme_color_override("font_shadow_color")
-		
-	#else:
-		#
-		#if is_select:
-			#
-			#object.material.set_shader_parameter("color",Color.GOLD)
-	#
-		#if not is_select:
-		#
 	object.material.set_shader_parameter("width",0)
