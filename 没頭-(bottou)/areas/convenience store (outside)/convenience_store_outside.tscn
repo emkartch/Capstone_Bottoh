@@ -7,7 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://fq72cpx8r7hr" path="res://areas/convenience store (outside)/CSO_Sign.png" id="3_iaffb"]
 [ext_resource type="Texture2D" uid="uid://b10x40wmxba1a" path="res://assets/ArrowBox.png" id="4_4qir6"]
 [ext_resource type="Texture2D" uid="uid://dxwrx5060pv55" path="res://areas/convenience store (outside)/CSO_Bonsai.png" id="4_nrb5r"]
+[ext_resource type="Texture2D" uid="uid://2uvkdfxgxpat" path="res://areas/BoyWBig4.png" id="5_nrb5r"]
 [ext_resource type="Texture2D" uid="uid://d4lcey8yvvqql" path="res://assets/ArrowBoxGrey.png" id="5_nw78h"]
+[ext_resource type="Texture2D" uid="uid://dd4pj8p2rkk2s" path="res://areas/BoyWBig5.png" id="6_qhin4"]
 
 [node name="ConvenienceStoreOutside" type="CanvasLayer" unique_id=1632336513]
 
@@ -43,6 +45,26 @@ offset_bottom = 1080.0
 item_name = "Bonsai 3"
 item = ExtResource("4_nrb5r")
 description = "Bonasi 3"
+
+[node name="RandomPerson" parent="Selectables" unique_id=901100435 instance=ExtResource("2_vmu5q")]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 600.0
+offset_right = 337.0
+offset_bottom = 1080.0
+item_name = "RandomPerson"
+item = ExtResource("5_nrb5r")
+description = "RandomPerson"
+
+[node name="RandomPerson2" parent="Selectables" unique_id=1569815252 instance=ExtResource("2_vmu5q")]
+layout_mode = 0
+offset_left = 1350.0
+offset_top = 600.0
+offset_right = 1552.0
+offset_bottom = 1080.0
+item_name = "RandomPerson"
+item = ExtResource("6_qhin4")
+description = "RandomPerson"
 
 [node name="Doors" type="Node" parent="." unique_id=1328366798]
 

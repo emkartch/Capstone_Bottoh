@@ -18,30 +18,30 @@ texture = ExtResource("1_0upl3")
 
 [node name="Doors" type="Node" parent="." unique_id=1746481026]
 
-[node name="Door_SV1" parent="Doors" unique_id=1136604104 instance=ExtResource("2_2xio6")]
+[node name="Door_SV1_L" parent="Doors" unique_id=1136604104 instance=ExtResource("2_2xio6")]
 offset_left = 156.0
-offset_top = 710.0
+offset_top = 400.0
 offset_right = 436.0
-offset_bottom = 830.0
+offset_bottom = 520.0
 rotation = 1.5707964
 current_level_tag = "street_view_2"
 destination_level_tag = "street_view_1"
 
-[node name="Button" parent="Doors/Door_SV1" index="0" unique_id=846998799]
+[node name="Button" parent="Doors/Door_SV1_L" index="0" unique_id=846998799]
 texture_normal = ExtResource("3_rh5tb")
 texture_pressed = ExtResource("4_kptqr")
 texture_hover = ExtResource("4_kptqr")
 
-[node name="Door_SV3" parent="Doors" unique_id=2032482295 instance=ExtResource("2_2xio6")]
+[node name="Door_SV3_R" parent="Doors" unique_id=2032482295 instance=ExtResource("2_2xio6")]
 offset_left = 1764.0
-offset_top = 990.0
+offset_top = 680.0
 offset_right = 2044.0
-offset_bottom = 1110.0
+offset_bottom = 800.0
 rotation = -1.5707964
 current_level_tag = "street_view_2"
 destination_level_tag = "street_view_3"
 
-[node name="Button" parent="Doors/Door_SV3" index="0" unique_id=846998799]
+[node name="Button" parent="Doors/Door_SV3_R" index="0" unique_id=846998799]
 texture_normal = ExtResource("3_rh5tb")
 texture_pressed = ExtResource("4_kptqr")
 texture_hover = ExtResource("4_kptqr")
@@ -76,7 +76,7 @@ grow_vertical = 0
 current_level_tag = "street_view_2"
 destination_level_tag = "barber_shop_outside"
 
-[editable path="Doors/Door_SV1"]
-[editable path="Doors/Door_SV3"]
+[editable path="Doors/Door_SV1_L"]
+[editable path="Doors/Door_SV3_R"]
 [editable path="Doors/Door_HSO"]
 [editable path="Doors/Door_BSO"]

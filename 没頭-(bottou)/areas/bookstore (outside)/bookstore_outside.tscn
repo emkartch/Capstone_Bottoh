@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://c4mbnnu5mmujy" path="res://areas/bookstore (outside)/BO_Item_Layer_1.png" id="3_w65lk"]
 [ext_resource type="Texture2D" uid="uid://c7drnaxkcfbtf" path="res://areas/bookstore (outside)/BO_Item_Layer_2.png" id="4_y6a8w"]
 [ext_resource type="Texture2D" uid="uid://157x2dywltad" path="res://areas/bookstore (outside)/BO_Sign_Layer.png" id="5_y6a8w"]
+[ext_resource type="Texture2D" uid="uid://d3uwup1utha12" path="res://areas/GirlWBig6.png" id="6_2umbc"]
+[ext_resource type="Texture2D" uid="uid://b6d31kshwlygl" path="res://areas/GirlWBig4.png" id="7_2umbc"]
 [ext_resource type="Texture2D" uid="uid://bmjywtt1xvvu3" path="res://areas/DoorOpen.png" id="7_c0krv"]
 [ext_resource type="Texture2D" uid="uid://b10x40wmxba1a" path="res://assets/ArrowBox.png" id="8_o3yfd"]
 [ext_resource type="Texture2D" uid="uid://d4lcey8yvvqql" path="res://assets/ArrowBoxGrey.png" id="9_3bfy6"]
@@ -56,6 +58,26 @@ offset_bottom = 150.0
 item_name = "Bookstore Sign"
 item = ExtResource("5_y6a8w")
 description = "Bookstore Sign"
+
+[node name="RandomPerson" parent="Selectables" unique_id=341461310 instance=ExtResource("2_w65lk")]
+layout_mode = 0
+offset_left = -13.0
+offset_top = 584.0
+offset_right = 187.0
+offset_bottom = 1096.0
+item_name = "RandomPerson"
+item = ExtResource("7_2umbc")
+description = "Random Person"
+
+[node name="RandomPerson2" parent="Selectables" unique_id=1697259962 instance=ExtResource("2_w65lk")]
+layout_mode = 0
+offset_left = 428.0
+offset_top = 600.0
+offset_right = 615.0
+offset_bottom = 1080.0
+item_name = "RandomPerson"
+item = ExtResource("6_2umbc")
+description = "Random Person"
 
 [node name="Doors" type="Node" parent="." unique_id=1028086843]
 

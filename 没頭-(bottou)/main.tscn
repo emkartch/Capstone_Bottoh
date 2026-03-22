@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ce2yvk10bvhy5" path="res://hud/in game/hud.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://c0jxwmx85e3fo" path="res://inventory/inventory.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://sq8w3l2vuppa" path="res://scene_transition_animation.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://c5olifp7bpgcx" path="res://tutorial_wipe.tscn" id="5_lquwl"]
 
 [node name="Main" type="Node" unique_id=1584147130]
 script = ExtResource("1_1bvp3")
@@ -22,3 +23,7 @@ z_index = 1
 [node name="HUD" parent="." unique_id=179951230 instance=ExtResource("1_ig7tw")]
 
 [node name="SceneTransitionAnimation" parent="." unique_id=1882445901 instance=ExtResource("3_h2yge")]
+
+[node name="TutorialWipe" parent="." unique_id=136548352 instance=ExtResource("5_lquwl")]
+layer = 2
+visible = false

@@ -101,6 +101,12 @@ var text = null
 
 var new_info = false
 
+# Tutorials
+
+var tutorial_1 = false
+
+# Tutorials
+
 func _ready():
 	
 	# CUSTOM CURSOR

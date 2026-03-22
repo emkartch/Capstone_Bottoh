@@ -50,6 +50,7 @@ notebook_clothes_hats_poster=""
 notebook_color_pamphlet=""
 slot=""
 interactable=""
+door=""
 
 [gui]
 

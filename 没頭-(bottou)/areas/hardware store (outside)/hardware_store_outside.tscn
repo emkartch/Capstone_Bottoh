@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://bhrl4dqicrivc" path="res://areas/hardware store (outside)/HSO_Pots_1.png" id="6_28uhm"]
 [ext_resource type="Texture2D" uid="uid://d4lcey8yvvqql" path="res://assets/ArrowBoxGrey.png" id="6_ychry"]
 [ext_resource type="Texture2D" uid="uid://bk1bo2ogk8rm2" path="res://areas/hardware store (outside)/HSO_Pots_2.png" id="7_28uhm"]
+[ext_resource type="Texture2D" uid="uid://fkpfr54yd3w2" path="res://areas/GirlWBig2.png" id="8_3uucy"]
+[ext_resource type="Texture2D" uid="uid://dof1653in8dxb" path="res://areas/GirlWBig1.png" id="9_3uucy"]
 
 [node name="HardwareStoreOutside" type="CanvasLayer" unique_id=1574600429]
 
@@ -74,6 +76,26 @@ offset_bottom = 1080.0
 item_name = "Pots2"
 item = ExtResource("7_28uhm")
 description = "Pots 2"
+
+[node name="RandomPerson" parent="Selectables" unique_id=1122742599 instance=ExtResource("3_i4d15")]
+layout_mode = 0
+offset_left = 503.0
+offset_top = 600.0
+offset_right = 690.0
+offset_bottom = 1080.0
+item_name = "RandomPerson"
+item = ExtResource("8_3uucy")
+description = "Random Person"
+
+[node name="RandomPerson2" parent="Selectables" unique_id=2050448421 instance=ExtResource("3_i4d15")]
+layout_mode = 0
+offset_left = 1568.0
+offset_top = 600.0
+offset_right = 1755.0
+offset_bottom = 1080.0
+item_name = "RandomPerson"
+item = ExtResource("9_3uucy")
+description = "Random Person"
 
 [node name="Doors" type="Node" parent="." unique_id=2121549788]
 

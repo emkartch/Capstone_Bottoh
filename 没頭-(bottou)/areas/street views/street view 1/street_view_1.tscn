@@ -48,20 +48,20 @@ grow_vertical = 0
 current_level_tag = "street_view_1"
 destination_level_tag = "bookstore_outside"
 
-[node name="Door_SV2" parent="Doors" unique_id=2032482295 instance=ExtResource("2_160bg")]
+[node name="Door_SV2_R" parent="Doors" unique_id=2032482295 instance=ExtResource("2_160bg")]
 offset_left = 1764.0
-offset_top = 990.0
+offset_top = 680.0
 offset_right = 2044.0
-offset_bottom = 1110.0
+offset_bottom = 800.0
 rotation = -1.5707964
 current_level_tag = "street_view_1"
 destination_level_tag = "street_view_2"
 
-[node name="Button" parent="Doors/Door_SV2" index="0" unique_id=846998799]
+[node name="Button" parent="Doors/Door_SV2_R" index="0" unique_id=846998799]
 texture_normal = ExtResource("3_65fsp")
 texture_pressed = ExtResource("4_h750k")
 texture_hover = ExtResource("4_h750k")
 
 [editable path="Doors/Door_CSO"]
 [editable path="Doors/Door_BO"]
-[editable path="Doors/Door_SV2"]
+[editable path="Doors/Door_SV2_R"]

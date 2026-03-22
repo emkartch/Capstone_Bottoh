@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bmjywtt1xvvu3" path="res://areas/DoorOpen.png" id="3_4a3ss"]
 [ext_resource type="Texture2D" uid="uid://dkbel86ly3y5t" path="res://areas/stationary store (outside)/SSO_Sign.png" id="3_csl80"]
 [ext_resource type="Texture2D" uid="uid://b10x40wmxba1a" path="res://assets/ArrowBox.png" id="4_8dmyj"]
+[ext_resource type="Texture2D" uid="uid://pthxpeu225bc" path="res://areas/BoyWBig1.png" id="4_csl80"]
 [ext_resource type="Texture2D" uid="uid://d4lcey8yvvqql" path="res://assets/ArrowBoxGrey.png" id="5_1rpcw"]
 
 [node name="StationaryStoreOutside" type="CanvasLayer" unique_id=940126247]
@@ -32,6 +33,16 @@ offset_right = 630.0
 item_name = "StationaryStoreSign"
 item = ExtResource("3_csl80")
 description = "Stationary Store Sign"
+
+[node name="RandomPerson" parent="Selectables" unique_id=1242137623 instance=ExtResource("2_jyvra")]
+layout_mode = 0
+offset_left = 1425.0
+offset_top = 600.0
+offset_right = 1627.0
+offset_bottom = 1080.0
+item_name = "RandomPerson"
+item = ExtResource("4_csl80")
+description = "Random Person"
 
 [node name="Doors" type="Node" parent="." unique_id=1837340145]
 

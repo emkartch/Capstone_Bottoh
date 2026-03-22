@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://d4lcey8yvvqql" path="res://assets/ArrowBoxGrey.png" id="5_sckw2"]
 [ext_resource type="Texture2D" uid="uid://grr1m2bktjby" path="res://areas/barber shop (outside)/BSO_Long_Hair_Poster.png" id="5_tl415"]
 [ext_resource type="Texture2D" uid="uid://typlb24kxai" path="res://areas/Closed_Sign.png" id="6_y5vwt"]
+[ext_resource type="Texture2D" uid="uid://cjheoy8pnldg" path="res://areas/BoyWBig3.png" id="7_tl415"]
 
 [node name="BarberShopOutside" type="CanvasLayer" unique_id=1257489079]
 
@@ -70,6 +71,16 @@ offset_bottom = 779.0
 item_name = "ClosedSign"
 item = ExtResource("6_y5vwt")
 description = "Closed Sign"
+
+[node name="RandomPerson" parent="Selectables" unique_id=1740340122 instance=ExtResource("3_sckw2")]
+layout_mode = 0
+offset_left = 540.0
+offset_top = 600.0
+offset_right = 742.0
+offset_bottom = 1080.0
+item_name = "RandomPerson"
+item = ExtResource("7_tl415")
+description = "Random Person"
 
 [node name="Doors" type="Node" parent="." unique_id=1240796291]
 

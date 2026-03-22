@@ -5,7 +5,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v6xrn"]
 
-[node name="Door" type="PanelContainer" unique_id=1136604104]
+[node name="Door" type="PanelContainer" unique_id=1136604104 groups=["door"]]
 self_modulate = Color(1, 1, 1, 0)
 offset_right = 45.0
 offset_bottom = 26.0

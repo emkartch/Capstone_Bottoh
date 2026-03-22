@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxulbecj4lc6f"
-path="res://.godot/imported/PoliceOfficer1.png-72f287892b014e4dd7aa7f4f8a180cd9.ctex"
+uid="uid://dd4pj8p2rkk2s"
+path="res://.godot/imported/BoyWBig5.png-1b15fe965a84fca57a4ffcd8d49f2cd1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://areas/train/PoliceOfficer1.png"
-dest_files=["res://.godot/imported/PoliceOfficer1.png-72f287892b014e4dd7aa7f4f8a180cd9.ctex"]
+source_file="res://areas/BoyWBig5.png"
+dest_files=["res://.godot/imported/BoyWBig5.png-1b15fe965a84fca57a4ffcd8d49f2cd1.ctex"]
 
 [params]
 

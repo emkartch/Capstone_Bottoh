@@ -94,6 +94,7 @@ var speech_0 = [
 	[t,"Maybe it’s in my bag?!",""],
 	[n,"You start frantically looking around for your passport.",""],
 	[t,"I must have dropped it somewhere right? I know I grabbed it out of my luggage…",""],
+	null,
 	[s,"すみません。I saw something fall from your pocket earlier and I think someone else picked it up. Maybe you can check the convenience store? They could’ve dropped it off there.","Stranger"],
 	[s,"Ah! Thank you!","You"],
 	[n,"Crap, you need to get your passport back so you can get by the police officer before you miss your train!!",""],

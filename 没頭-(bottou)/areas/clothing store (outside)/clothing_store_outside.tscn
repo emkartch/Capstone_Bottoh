@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://87yk1xgkqipk" path="res://areas/clothing store (outside)/HatPosterFlat.png" id="6_w5noc"]
 [ext_resource type="Texture2D" uid="uid://bl7ricxenydx0" path="res://areas/clothing store (outside)/ClSO_Outfit_2.png" id="7_rv5aw"]
 [ext_resource type="Texture2D" uid="uid://typlb24kxai" path="res://areas/Closed_Sign.png" id="8_ykchw"]
+[ext_resource type="Texture2D" uid="uid://76xyuk2ml1ys" path="res://areas/BoyWBig2.png" id="10_w5noc"]
+[ext_resource type="Texture2D" uid="uid://cxlcepxilsy2" path="res://areas/GirlWBig3.png" id="11_tqka1"]
 [ext_resource type="Texture2D" uid="uid://c88a3e35mle15" path="res://areas/clothing store (outside)/ClSO_Front_Layer.png" id="11_ykchw"]
 
 [node name="ClothingStoreOutside" type="CanvasLayer" unique_id=2071860568]
@@ -98,6 +100,26 @@ offset_bottom = 1043.0
 item_name = "HatPoster"
 item = ExtResource("6_w5noc")
 description = "Hats"
+
+[node name="RandomPerson" parent="Selectables" unique_id=1168257841 instance=ExtResource("2_lgj6w")]
+layout_mode = 0
+offset_left = 225.0
+offset_top = 600.0
+offset_right = 427.0
+offset_bottom = 1080.0
+item_name = "RandomPerson"
+item = ExtResource("10_w5noc")
+description = "Random Person"
+
+[node name="RandomPerson2" parent="Selectables" unique_id=1968866818 instance=ExtResource("2_lgj6w")]
+layout_mode = 0
+offset_left = 622.0
+offset_top = 600.0
+offset_right = 809.0
+offset_bottom = 1080.0
+item_name = "RandomPerson"
+item = ExtResource("11_tqka1")
+description = "Random Person"
 
 [node name="Front Layer" type="TextureRect" parent="." unique_id=1431158940]
 offset_right = 40.0
