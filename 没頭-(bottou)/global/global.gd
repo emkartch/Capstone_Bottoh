@@ -93,11 +93,11 @@ var text = null
 
 # For pickable clicked
 
-# Goal changes
-
-@onready var goal_text = get_node("/root/Main/HUD/InGame/Goal/GoalOpen/VBoxContainer/GoalText")
-
-# Goal changes
+## Goal changes
+#
+#@onready var goal_text = get_node("/root/Main/HUD/InGame/Goal/GoalOpen/VBoxContainer/GoalText")
+#
+## Goal changes
 
 var new_info = false
 
@@ -108,14 +108,23 @@ var tutorial_2 = false
 var tutorial_3 = false
 var tutorial_4 = false
 var tutorial_5 = false
+var tutorial_6 = false
+var tutorial_7 = false
+var tutorial_8 = false
+var tutorial_9 = false
+var tutorial_10 = false
 
 # Tutorials
 
-# Zoom-in in stores
+# Working Inventory Add
 
-var CS_Zoom = false
+@onready var main = get_node("/root/Main")
 
-# Zoom-in in stores
+var have_newspaper = false
+
+var look_newspaper_passport = false
+
+# Working Inventory Add
 
 func _ready():
 	
@@ -401,9 +410,57 @@ func _on_pickable_click(node):
 
 func _on_interactable_click(node):
 	
+	if node.item_name == "ClosedDoorBS" or node.item_name == "ClosedDoorHS" or node.item_name == "ClosedDoorClS":
+		
+		if Global.level >= 12:
+			
+			if node.item_name == "ClosedDoorBS":
+				
+				node.description = GameScript.speech_BS[0][1]
+				
+			elif node.item_name == "ClosedDoorHS":
+				
+				node.description = GameScript.speech_HS[0][1]
+				
+			elif node.item_name == "ClosedDoorClS":
+				
+				node.description = GameScript.speech_ClS[0][1]
+				
+		else:
+			
+			if node.item_name == "ClosedDoorBS":
+				
+				node.description = GameScript.speech_BS[1][1]
+				
+			elif node.item_name == "ClosedDoorHS":
+				
+				node.description = GameScript.speech_HS[1][1]
+				
+			elif node.item_name == "ClosedDoorClS":
+				
+				node.description = GameScript.speech_ClS[1][1]
+	
 	dialog.display_line(true,false,"thought",node.description)
 	
 	await dialog.continue_true
+	
+	if node.item_name == "Newspaper" and not have_newspaper:
+		
+		for slot in inventory_container.get_node("ScrollContainer/VBoxInventory").get_children():
+			
+			if slot.item == null:
+				
+				slot.item = main.newspaper_ID
+				
+				notif.display_notif("Newspaper added to Inventory")
+				
+				have_newspaper = true
+				
+				break
+	
+	if tutorial_6 == false and level == 3:
+	
+		Global.tutorial_6 = true
 	
 	if node.item_name == "BookstoreBook":
 		
@@ -476,7 +533,7 @@ func _on_interactable_click(node):
 				item.modulate.a = 255
 			
 			short_hairs_filled = true
-		
+	
 	elif node.item_name == "LongHairPoster":
 		
 		if not long_hairs_filled:
@@ -488,11 +545,10 @@ func _on_interactable_click(node):
 				item.modulate.a = 255
 			
 			long_hairs_filled = true
-		
-		
+	
 	if new_info:
 		
-		dialog.display_line(true,false,"[i]This might be good information to add to my notebook.[/i]")
+		dialog.display_line(true,false,"[i]This might be good information to add to my notebook.[/i]","")
 		
 		await dialog.continue_true
 		
@@ -510,26 +566,10 @@ func check_correct():
 		
 		level += 1
 		
-		goal_text.text = "Finish filling out the note using your notebook."
+		#goal_text.text = "Finish filling out the note using your notebook."
 		
 		hud.next_level_tutorial()
 	
 	elif looks_correct and hair_correct and clothes_color_correct and clothes_type_correct and hat_correct:
 		Global.game_end = true
 		hud.show_end()
-
-#func show_popup():
-	#
-	#visible_popup = true
-	#
-	#var mouse_position: Vector2 = get_viewport().get_mouse_position()
-	#
-	#mouse_position.x -= 90
-	#
-	#mouse_position.y -= 90
-	#
-	#popup.position = mouse_position
-	#
-	#popup_hover = true
-	#
-	#popup.visible = true

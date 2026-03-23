@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bv2uyyxd22kft" path="res://areas/stationary store/StationaryStoreInsideB.png" id="2_4mwcp"]
 
 [sub_resource type="Animation" id="Animation_08idp"]
-resource_name = "BSZ_in"
+resource_name = "BZ_in"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -31,7 +31,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_euvk5"]
-resource_name = "BSZ_out"
+resource_name = "BZ_out"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -502,8 +502,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s0rk0"]
 _data = {
-&"BSZ_in": SubResource("Animation_08idp"),
-&"BSZ_out": SubResource("Animation_euvk5"),
+&"BZ_in": SubResource("Animation_08idp"),
+&"BZ_out": SubResource("Animation_euvk5"),
 &"CSZ_in": SubResource("Animation_qisvv"),
 &"CSZ_out": SubResource("Animation_qnl6x"),
 &"RESET": SubResource("Animation_s0rk0"),

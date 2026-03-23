@@ -1,21 +1,10 @@
 [gd_scene format=3 uid="uid://c5olifp7bpgcx"]
 
 [ext_resource type="Shader" uid="uid://b3fk6y20p62iu" path="res://tutorial_wipe.gdshader" id="1_66id8"]
-[ext_resource type="Texture2D" uid="uid://bv40ekfbld68r" path="res://areas/convenience store/ConvienceStore.png" id="1_xra1d"]
+[ext_resource type="Script" uid="uid://dxbqih0eutki2" path="res://tutorial_wipe.gd" id="1_s4ccm"]
 [ext_resource type="Theme" uid="uid://cp4nu80cltnic" path="res://theme/main_theme.tres" id="2_kqumg"]
 [ext_resource type="Texture2D" uid="uid://2uoeuu05tj0j" path="res://inventory/NotificationBox.png" id="3_s4ccm"]
 [ext_resource type="Texture2D" uid="uid://bluwwa0v5iw15" path="res://inventory/NotificationBoxDarkVersion.png" id="4_ayr78"]
-[ext_resource type="Script" uid="uid://dadl2ct6iu51b" path="res://hud/in game/dialog.gd" id="5_xyoh6"]
-[ext_resource type="Texture2D" uid="uid://nqspkns4iyov" path="res://inventory/TextBox.png" id="6_xra1d"]
-[ext_resource type="Texture2D" uid="uid://cbnhlqlr5fpw0" path="res://assets/Arrow.png" id="7_v353b"]
-[ext_resource type="Texture2D" uid="uid://cev8nqun6fo3" path="res://assets/GreyArrow.png" id="8_jwyls"]
-[ext_resource type="Script" uid="uid://2ifejymgt2yb" path="res://hud/in game/option.gd" id="9_el8xn"]
-[ext_resource type="Texture2D" uid="uid://dbq4s5le452yk" path="res://assets/NotePage (Smaller).png" id="10_456as"]
-[ext_resource type="Texture2D" uid="uid://bthma8uk8dn3h" path="res://assets/X.png" id="11_pj22c"]
-[ext_resource type="Texture2D" uid="uid://cc2vq3gm7y48" path="res://assets/GreyX.png" id="12_wdhfg"]
-[ext_resource type="Texture2D" uid="uid://df5psgvx88q7w" path="res://assets/PenWNotepad.png" id="13_xyoh6"]
-[ext_resource type="Script" uid="uid://b4wnpbm4ar8gk" path="res://hud/in game/notification.gd" id="14_p2nu3"]
-[ext_resource type="PackedScene" uid="uid://csnjyfc1uapsx" path="res://hud/in game/pop_up_menu.tscn" id="15_twl1w"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wxepr"]
 shader = ExtResource("1_66id8")
@@ -225,6 +214,109 @@ tracks/7/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(391, 181)]
+}
+
+[sub_resource type="Animation" id="Animation_pj22c"]
+resource_name = "tutorial_10"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.74, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["If an item has
+multiple pages,
+click on the arrows
+to look through them."]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Label:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(495, 229)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:material:shader_parameter/circle_size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.050000002375]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:material:shader_parameter/screen_width")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [400.0, 500.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:material:shader_parameter/screen_height")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [400.0, 300.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:material:shader_parameter/center")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.72, 0.5)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Label:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1334, 634)]
 }
 
 [sub_resource type="Animation" id="Animation_ye6ma"]
@@ -635,14 +727,430 @@ tracks/7/keys = {
 "values": [200.0, 100.0]
 }
 
+[sub_resource type="Animation" id="Animation_jwyls"]
+resource_name = "tutorial_6"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.74, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Click on people
+or objects with an
+outline on hover to
+interact with them."]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Label:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(454, 229)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:material:shader_parameter/circle_size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.14800000703]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:material:shader_parameter/screen_width")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [200.0, 300.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:material:shader_parameter/screen_height")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [300.0, 200.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:material:shader_parameter/center")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.275, 0.56)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Label:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(756, 497)]
+}
+
+[sub_resource type="Animation" id="Animation_456as"]
+resource_name = "tutorial_7"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.74, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Label:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(416, 181)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Label:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Click on this icon
+to open and close
+your inventory."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:material:shader_parameter/circle_size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.07200000342]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:material:shader_parameter/screen_width")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [200.0, 400.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:material:shader_parameter/screen_height")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [500.0, 300.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:material:shader_parameter/center")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.06, 0.93)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Label:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(254, 875)]
+}
+
+[sub_resource type="Animation" id="Animation_wdhfg"]
+resource_name = "tutorial_8"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.74, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Label:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(449, 229)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Label:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Click on the
+expand button
+to look closer
+at inventory items."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:material:shader_parameter/circle_size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0350000016625]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:material:shader_parameter/screen_width")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [300.0, 500.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:material:shader_parameter/screen_height")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [500.0, 300.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:material:shader_parameter/center")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.105, 0.35)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Label:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(265, 274)]
+}
+
+[sub_resource type="Animation" id="Animation_nw8am"]
+resource_name = "tutorial_9"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.74, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Click and drag
+an item to the
+center of the
+screen to look at it."]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Label:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(471, 229)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:material:shader_parameter/circle_size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.090000004275]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:material:shader_parameter/screen_width")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [300.0, 500.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:material:shader_parameter/screen_height")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [500.0, 300.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:material:shader_parameter/center")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.06, 0.57)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Label:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(253, 505)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ayr78"]
 _data = {
 &"RESET": SubResource("Animation_kqumg"),
 &"tutorial_1": SubResource("Animation_s4ccm"),
+&"tutorial_10": SubResource("Animation_pj22c"),
 &"tutorial_2": SubResource("Animation_ye6ma"),
 &"tutorial_3": SubResource("Animation_v353b"),
 &"tutorial_4": SubResource("Animation_el8xn"),
-&"tutorial_5": SubResource("Animation_xra1d")
+&"tutorial_5": SubResource("Animation_xra1d"),
+&"tutorial_6": SubResource("Animation_jwyls"),
+&"tutorial_7": SubResource("Animation_456as"),
+&"tutorial_8": SubResource("Animation_wdhfg"),
+&"tutorial_9": SubResource("Animation_nw8am")
 }
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r6ejs"]
@@ -659,149 +1167,8 @@ texture_margin_top = 20.0
 texture_margin_right = 20.0
 texture_margin_bottom = 20.0
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aqbeu"]
-texture = ExtResource("6_xra1d")
-
-[sub_resource type="InputEventKey" id="InputEventKey_mq7b8"]
-device = -1
-keycode = 4194309
-
-[sub_resource type="Shortcut" id="Shortcut_x3khl"]
-events = [SubResource("InputEventKey_mq7b8")]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1m5f1"]
-texture = ExtResource("3_s4ccm")
-texture_margin_left = 20.0
-texture_margin_top = 20.0
-texture_margin_right = 20.0
-texture_margin_bottom = 20.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rn3l6"]
-texture = ExtResource("4_ayr78")
-texture_margin_left = 20.0
-texture_margin_top = 20.0
-texture_margin_right = 20.0
-texture_margin_bottom = 20.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_whn3v"]
-texture = ExtResource("4_ayr78")
-texture_margin_left = 20.0
-texture_margin_top = 20.0
-texture_margin_right = 20.0
-texture_margin_bottom = 20.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ogw35"]
-texture = ExtResource("4_ayr78")
-texture_margin_left = 20.0
-texture_margin_top = 20.0
-texture_margin_right = 20.0
-texture_margin_bottom = 20.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ycx42"]
-texture = ExtResource("3_s4ccm")
-
-[sub_resource type="Animation" id="Animation_hwufu"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-470, 20)]
-}
-
-[sub_resource type="Animation" id="Animation_mq7b8"]
-resource_name = "notif_in"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-470, 20), Vector2(20, 20)]
-}
-
-[sub_resource type="Animation" id="Animation_jvpmi"]
-resource_name = "notif_out"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(20, 20), Vector2(-470, 20)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_8t2y4"]
-_data = {
-&"RESET": SubResource("Animation_hwufu"),
-&"notif_in": SubResource("Animation_mq7b8"),
-&"notif_out": SubResource("Animation_jvpmi")
-}
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bo87e"]
-texture = ExtResource("3_s4ccm")
-texture_margin_left = 20.0
-texture_margin_top = 20.0
-texture_margin_right = 20.0
-texture_margin_bottom = 20.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_37uuu"]
-texture = ExtResource("4_ayr78")
-texture_margin_left = 20.0
-texture_margin_top = 20.0
-texture_margin_right = 20.0
-texture_margin_bottom = 20.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_typl6"]
-texture = ExtResource("4_ayr78")
-texture_margin_left = 20.0
-texture_margin_top = 20.0
-texture_margin_right = 20.0
-texture_margin_bottom = 20.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w1024"]
-texture = ExtResource("4_ayr78")
-texture_margin_left = 20.0
-texture_margin_top = 20.0
-texture_margin_right = 20.0
-texture_margin_bottom = 20.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7kkkx"]
-texture = ExtResource("3_s4ccm")
-texture_margin_left = 20.0
-texture_margin_top = 20.0
-texture_margin_right = 20.0
-texture_margin_bottom = 20.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xfd7m"]
-texture = ExtResource("4_ayr78")
-texture_margin_left = 20.0
-texture_margin_top = 20.0
-texture_margin_right = 20.0
-texture_margin_bottom = 20.0
-
 [node name="TutorialWipe" type="CanvasLayer" unique_id=136548352]
-
-[node name="Background2" type="TextureRect" parent="." unique_id=591729020]
-offset_right = 1920.0
-offset_bottom = 1080.0
-texture = ExtResource("1_xra1d")
+script = ExtResource("1_s4ccm")
 
 [node name="CircleColor" type="ColorRect" parent="." unique_id=1585814263]
 material = SubResource("ShaderMaterial_wxepr")
@@ -829,286 +1196,3 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_h8spb")
 text = "Click on the
 arrows to move
 around the area."
-
-[node name="InGame" type="CanvasLayer" parent="." unique_id=2144414246]
-visible = false
-
-[node name="GreyOut" type="ColorRect" parent="InGame" unique_id=1290785284]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.43529412)
-
-[node name="Dialog" type="Control" parent="InGame" unique_id=1369383310]
-visible = false
-layout_mode = 3
-anchor_top = 0.667
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 0
-mouse_filter = 2
-theme = ExtResource("2_kqumg")
-script = ExtResource("5_xyoh6")
-
-[node name="Box" type="Panel" parent="InGame/Dialog" unique_id=486099857]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(960, 0)
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_aqbeu")
-
-[node name="Continue" type="TextureButton" parent="InGame/Dialog/Box" unique_id=724689243]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.985
-anchor_top = 0.96
-anchor_right = 0.985
-anchor_bottom = 0.96
-offset_left = -40.0
-offset_top = -40.0
-grow_horizontal = 0
-grow_vertical = 0
-mouse_default_cursor_shape = 2
-shortcut = SubResource("Shortcut_x3khl")
-texture_normal = ExtResource("7_v353b")
-texture_hover = ExtResource("8_jwyls")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="InGame/Dialog" unique_id=1325620339]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.015
-anchor_top = 0.09
-anchor_right = 0.985
-anchor_bottom = 0.93
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_constants/separation = 10
-
-[node name="Speaker" type="Label" parent="InGame/Dialog/VBoxContainer" unique_id=1344013996]
-visible = false
-layout_mode = 2
-text = "Somebody"
-
-[node name="Dialogue" type="RichTextLabel" parent="InGame/Dialog/VBoxContainer" unique_id=1264357758]
-layout_mode = 2
-bbcode_enabled = true
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at libero et enim semper consectetur nec in quam. Morbi eu ante tortor. Integer scelerisque condimentum lorem, sed imperdiet nibh suscipit nec."
-fit_content = true
-
-[node name="Spacer" type="Control" parent="InGame/Dialog/VBoxContainer" unique_id=1853638214]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="ChoiceContainer" type="HBoxContainer" parent="InGame/Dialog/VBoxContainer" unique_id=465721607]
-visible = false
-layout_mode = 2
-size_flags_vertical = 3
-mouse_filter = 2
-theme = ExtResource("2_kqumg")
-alignment = 1
-
-[node name="Option 1" type="Button" parent="InGame/Dialog/VBoxContainer/ChoiceContainer" unique_id=592229671]
-layout_mode = 2
-size_flags_horizontal = 3
-theme = ExtResource("2_kqumg")
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 60
-theme_override_styles/normal = SubResource("StyleBoxTexture_1m5f1")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_rn3l6")
-theme_override_styles/hover = SubResource("StyleBoxTexture_whn3v")
-theme_override_styles/focus = SubResource("StyleBoxTexture_ogw35")
-text = "Button"
-script = ExtResource("9_el8xn")
-
-[node name="Option 2" type="Button" parent="InGame/Dialog/VBoxContainer/ChoiceContainer" unique_id=2071773080]
-layout_mode = 2
-size_flags_horizontal = 3
-theme = ExtResource("2_kqumg")
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 60
-theme_override_styles/normal = SubResource("StyleBoxTexture_1m5f1")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_rn3l6")
-theme_override_styles/hover = SubResource("StyleBoxTexture_whn3v")
-theme_override_styles/focus = SubResource("StyleBoxTexture_ogw35")
-text = "Button"
-script = ExtResource("9_el8xn")
-
-[node name="Option 3" type="Button" parent="InGame/Dialog/VBoxContainer/ChoiceContainer" unique_id=1293445575]
-layout_mode = 2
-size_flags_horizontal = 3
-theme = ExtResource("2_kqumg")
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 60
-theme_override_styles/normal = SubResource("StyleBoxTexture_1m5f1")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_rn3l6")
-theme_override_styles/hover = SubResource("StyleBoxTexture_whn3v")
-theme_override_styles/focus = SubResource("StyleBoxTexture_ogw35")
-text = "Button"
-script = ExtResource("9_el8xn")
-
-[node name="Goal" type="Control" parent="InGame" unique_id=1716503741]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme = ExtResource("2_kqumg")
-
-[node name="GoalOpen" type="TextureRect" parent="InGame/Goal" unique_id=37045291]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.01
-anchor_top = -0.01
-anchor_right = 1.01
-anchor_bottom = -0.01
-offset_left = -384.0
-offset_bottom = 384.0
-grow_horizontal = 0
-texture = ExtResource("10_456as")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="InGame/Goal/GoalOpen" unique_id=1973249754]
-layout_mode = 0
-offset_left = 50.0
-offset_top = 50.0
-offset_right = 335.80005
-offset_bottom = 353.8
-theme_override_constants/separation = 15
-
-[node name="Label" type="Label" parent="InGame/Goal/GoalOpen/VBoxContainer" unique_id=469894868]
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "Goal:"
-
-[node name="GoalText" type="Label" parent="InGame/Goal/GoalOpen/VBoxContainer" unique_id=2077800001]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Use your surroundings to fill out your notebook."
-autowrap_mode = 2
-
-[node name="ExitGoalButton" type="TextureButton" parent="InGame/Goal/GoalOpen" unique_id=1888621942]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.87
-anchor_top = 0.12
-anchor_right = 0.87
-anchor_bottom = 0.12
-offset_left = -48.0
-offset_bottom = 48.0
-grow_horizontal = 0
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("11_pj22c")
-texture_hover = ExtResource("12_wdhfg")
-
-[node name="GoalButton" type="TextureButton" parent="InGame/Goal" unique_id=323966258]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.995
-anchor_top = 0.01
-anchor_right = 0.995
-anchor_bottom = 0.01
-offset_left = -128.0
-offset_bottom = 128.0
-grow_horizontal = 0
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("13_xyoh6")
-
-[node name="Notification" type="Control" parent="InGame" unique_id=401299726]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -470.0
-offset_top = 20.0
-offset_right = -20.0
-offset_bottom = 170.0
-theme = ExtResource("2_kqumg")
-script = ExtResource("14_p2nu3")
-
-[node name="Box" type="Panel" parent="InGame/Notification" unique_id=1473419996]
-layout_mode = 0
-offset_right = 450.0
-offset_bottom = 150.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_ycx42")
-
-[node name="Text" type="Label" parent="InGame/Notification/Box" unique_id=1467699358]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 60
-text = "Goal Updated"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="InGame/Notification" unique_id=2104825665]
-libraries/ = SubResource("AnimationLibrary_8t2y4")
-
-[node name="ConnectButton" type="Button" parent="InGame" unique_id=1368383667]
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.02
-anchor_right = 0.5
-anchor_bottom = 0.02
-offset_left = -146.0
-offset_top = 0.39999962
-offset_right = 146.0
-offset_bottom = 78.4
-grow_horizontal = 2
-theme = ExtResource("2_kqumg")
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxTexture_bo87e")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_37uuu")
-theme_override_styles/hover = SubResource("StyleBoxTexture_typl6")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_w1024")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_7kkkx")
-theme_override_styles/focus = SubResource("StyleBoxTexture_xfd7m")
-text = "Connect"
-
-[node name="PopUpMenu" parent="InGame" unique_id=1851742840 instance=ExtResource("15_twl1w")]
-visible = false
-
-[node name="Tutorial" type="Button" parent="InGame" unique_id=1585773234]
-visible = false
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -177.0
-offset_top = -43.5
-offset_bottom = 43.5
-grow_horizontal = 0
-grow_vertical = 2
-theme = ExtResource("2_kqumg")
-theme_override_font_sizes/font_size = 40
-text = "Show
-Tutorial
-Again"
-
-[connection signal="pressed" from="InGame/Dialog/Box/Continue" to="InGame/Dialog" method="_on_continue_pressed"]

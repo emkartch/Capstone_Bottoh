@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c13d8uvmyxs6j" path="res://door.tscn" id="2_wip6l"]
 [ext_resource type="Texture2D" uid="uid://bclohp3ib7d4x" path="res://areas/hardware store (outside)/HSO_Color_Poster.png" id="3_e578q"]
 [ext_resource type="PackedScene" uid="uid://5s8jfcpui2rh" path="res://objects/interactable.tscn" id="3_i4d15"]
+[ext_resource type="Texture2D" uid="uid://bmjywtt1xvvu3" path="res://areas/DoorOpen.png" id="3_klpew"]
 [ext_resource type="Texture2D" uid="uid://coc4weuabx3h8" path="res://areas/hardware store (outside)/HSO_Sign.png" id="4_ychry"]
 [ext_resource type="Texture2D" uid="uid://b10x40wmxba1a" path="res://assets/ArrowBox.png" id="5_e578q"]
 [ext_resource type="Texture2D" uid="uid://typlb24kxai" path="res://areas/Closed_Sign.png" id="5_oaue0"]
@@ -29,6 +30,16 @@ layout_mode = 3
 anchors_preset = 0
 mouse_filter = 2
 
+[node name="ClosedDoorHS" parent="Selectables" unique_id=632896118 instance=ExtResource("3_i4d15")]
+layout_mode = 0
+offset_left = 930.0
+offset_top = 225.0
+offset_right = 1305.0
+offset_bottom = 1080.0
+item_name = "ClosedDoorHS"
+item = ExtResource("3_klpew")
+description = "Closed Door"
+
 [node name="Color Pamphlet" parent="Selectables" unique_id=144506910 instance=ExtResource("3_i4d15")]
 layout_mode = 0
 offset_left = 968.0
@@ -39,7 +50,7 @@ item_name = "ColorPamphlet"
 item = ExtResource("3_e578q")
 description = "Colors"
 
-[node name="Sign" parent="Selectables" unique_id=632896118 instance=ExtResource("3_i4d15")]
+[node name="Sign" parent="Selectables" unique_id=1440582403 instance=ExtResource("3_i4d15")]
 layout_mode = 0
 offset_left = 630.0
 offset_right = 630.0

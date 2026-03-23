@@ -44,14 +44,13 @@ func update_collision_shape():
 	
 	area_2d.position.x = pick_size[0] / 2
 	area_2d.position.y = pick_size[1] / 2
-
 	
 	#select_line.position.y = pick_size[1]
 	#select_line.points[1][0] = pick_size[0]
 
 func _on_area_2d_mouse_entered() -> void:
 	is_hover = true
-	
+		
 	object.material.set_shader_parameter("width",5)
 
 func _on_area_2d_mouse_exited() -> void:
@@ -59,3 +58,9 @@ func _on_area_2d_mouse_exited() -> void:
 	Input.set_custom_mouse_cursor(cursor_normal)
 	
 	object.material.set_shader_parameter("width",0)
+
+
+#func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	#if event is InputEventMouseButton and event.pressed:
+		## This prevents the click from reaching nodes behind this Area2D
+		#get_viewport().set_input_as_handled()

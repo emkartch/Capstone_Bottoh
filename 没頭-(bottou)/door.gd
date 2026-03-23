@@ -41,6 +41,12 @@ func _on_button_pressed() -> void:
 			
 			dialog.display_line(true,false,"thought","I should find out where my passport might be.","")
 		
+		elif self.name == "Door_CSZ_In" and Global.tutorial_5 == false and Global.level == 2:
+		
+			Global.tutorial_5 = true
+			
+			NavigationManager.go_to_level(current_level_tag,destination_level_tag)
+		
 		else:
 			
 			NavigationManager.go_to_level(current_level_tag,destination_level_tag)

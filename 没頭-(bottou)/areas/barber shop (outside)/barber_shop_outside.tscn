@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b10x40wmxba1a" path="res://assets/ArrowBox.png" id="4_uypxc"]
 [ext_resource type="Texture2D" uid="uid://d4lcey8yvvqql" path="res://assets/ArrowBoxGrey.png" id="5_sckw2"]
 [ext_resource type="Texture2D" uid="uid://grr1m2bktjby" path="res://areas/barber shop (outside)/BSO_Long_Hair_Poster.png" id="5_tl415"]
+[ext_resource type="Texture2D" uid="uid://bmjywtt1xvvu3" path="res://areas/DoorOpen.png" id="6_o0ppp"]
 [ext_resource type="Texture2D" uid="uid://typlb24kxai" path="res://areas/Closed_Sign.png" id="6_y5vwt"]
 [ext_resource type="Texture2D" uid="uid://cjheoy8pnldg" path="res://areas/BoyWBig3.png" id="7_tl415"]
 
@@ -61,6 +62,16 @@ offset_bottom = 705.0
 item_name = "LongHairPoster"
 item = ExtResource("5_tl415")
 description = "Long Hair Poster"
+
+[node name="ClosedDoorBS" parent="Selectables" unique_id=1634877005 instance=ExtResource("3_sckw2")]
+layout_mode = 0
+offset_left = 930.0
+offset_top = 225.0
+offset_right = 1305.0
+offset_bottom = 1080.0
+item_name = "ClosedDoorBS"
+item = ExtResource("6_o0ppp")
+description = "Closed Door"
 
 [node name="ClosedSign" parent="Selectables" unique_id=1460644258 instance=ExtResource("3_sckw2")]
 layout_mode = 0

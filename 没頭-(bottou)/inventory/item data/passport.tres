@@ -2,12 +2,13 @@
 
 [ext_resource type="Script" uid="uid://dsc0p3v3tlf5d" path="res://inventory/item_data.gd" id="1_mtaeq"]
 [ext_resource type="Texture2D" uid="uid://cuwk73vu050o2" path="res://inventory/USPassport.png" id="1_r5wts"]
+[ext_resource type="Texture2D" uid="uid://ctompco58rnjh" path="res://inventory/OpenPassport(Human).png" id="2_uaec8"]
 
 [resource]
 script = ExtResource("1_mtaeq")
 item_name = "Passport"
 icon = ExtResource("1_r5wts")
-item = Array[Texture2D]([ExtResource("1_r5wts")])
-pages = 1
+item = Array[Texture2D]([ExtResource("1_r5wts"), ExtResource("2_uaec8")])
+pages = 2
 description = "Passport"
 metadata/_custom_type_script = "uid://dsc0p3v3tlf5d"

@@ -24,9 +24,11 @@ func _ready() -> void:
 	
 	self.set_meta('item_data', item)
 	
-	if item.item_name == "Notebook":
+	if item != null:
 		
-		self.add_to_group("notebook")
+		if item.item_name == "Notebook":
+			
+			self.add_to_group("notebook")
 
 func _process(_delta):
 	
@@ -59,6 +61,10 @@ func update_ui() -> void:
 	tooltip_text = item.item_name
 
 func _get_drag_data(_at_position: Vector2) -> Variant:
+	
+	if not Global.tutorial_9 and Global.level == 3:
+		
+		Global.tutorial_9 = true
 	
 	if not item:
 		return

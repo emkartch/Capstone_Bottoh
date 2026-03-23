@@ -10,6 +10,12 @@ extends Node
 @onready var transition_animation = get_node("/root/Main/SceneTransitionAnimation/AnimationPlayer")
 @onready var tutorial_animation = get_node("/root/Main/TutorialWipe/CircleColor/AnimationPlayer")
 
+const newspaper_ID = preload("res://inventory/item data/newspaper.tres")
+const new_map_ID = preload("res://inventory/item data/new_map.tres")
+const note_ID = preload("res://inventory/item data/note.tres")
+const old_map_ID = preload("res://inventory/item data/old_map.tres")
+const passport_ID = preload("res://inventory/item data/passport.tres")
+
 func _process(_delta):
 	
 	if main_background.texture == null:
@@ -158,7 +164,7 @@ func level_1():
 	while not self.has_node("ConvenienceStore"):
 		await get_tree().process_frame
 	
-	for line_info in GameScript.speech_0[GameScript.scene_line]:
+	for line_info in GameScript.speech_1[GameScript.scene_line]:
 		
 		dialog.display_line(true,false,line_info[0],line_info[1],line_info[2])
 		
@@ -185,10 +191,94 @@ func level_2():
 		await get_tree().process_frame
 	
 	tutorial_wipe.visible = false
+	
+	while not self.has_node("ConvenienceStoreZoom"):
+		await get_tree().process_frame
+	
+	await transition_animation.animation_finished
+	
+	for line_info in GameScript.speech_2[GameScript.scene_line]:
+		
+		dialog.display_line(true,false,line_info[0],line_info[1],line_info[2])
+		
+		GameScript.scene_line += 1
+		
+		await dialog.continue_true
+	
+	Global.level += 1
+	GameScript.scene_line = 0
+	
+	level_3()
 
 func level_3():
 	
 	await hud.update_goal_text(GameScript.goal_3)
+	
+	while not self.has_node("ConvenienceStore"):
+		await get_tree().process_frame
+	
+	tutorial_wipe.visible = true
+	
+	tutorial_animation.play("tutorial_6")
+	
+	await tutorial_animation.animation_finished
+	
+	while not Global.tutorial_6:
+		await get_tree().process_frame
+	
+	tutorial_wipe.visible = false
+	
+	while not Global.have_newspaper:
+		await get_tree().process_frame
+	
+	tutorial_wipe.visible = true
+	
+	tutorial_animation.play("tutorial_7")
+	
+	await tutorial_animation.animation_finished
+	
+	while not Global.tutorial_7:
+		await get_tree().process_frame
+	
+	tutorial_wipe.visible = false
+	
+	tutorial_wipe.visible = true
+	
+	tutorial_animation.play("tutorial_8")
+	
+	await tutorial_animation.animation_finished
+	
+	while not Global.tutorial_8:
+		await get_tree().process_frame
+	
+	tutorial_wipe.visible = false
+	
+	tutorial_wipe.visible = true
+	
+	tutorial_animation.play("tutorial_9")
+	
+	await tutorial_animation.animation_finished
+	
+	while not Global.tutorial_9:
+		await get_tree().process_frame
+	
+	tutorial_wipe.visible = false
+	
+	while not Global.look_newspaper_passport:
+		await get_tree().process_frame
+	
+	for line_info in GameScript.speech_3[GameScript.scene_line]:
+		
+		dialog.display_line(true,false,line_info[0],line_info[1],line_info[2])
+		
+		GameScript.scene_line += 1
+		
+		await dialog.continue_true
+	
+	Global.level += 1
+	GameScript.scene_line = 0
+	
+	level_4()
 
 func level_4():
 	

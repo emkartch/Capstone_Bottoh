@@ -11,12 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bvc443624xejf" path="res://inventory/Expandbutton.png" id="6_rsmrt"]
 [ext_resource type="Resource" uid="uid://bnqheekv7nxc5" path="res://inventory/item data/notebook.tres" id="7_ajlgj"]
 [ext_resource type="Shader" uid="uid://cv3ryj4ylh74m" path="res://assets/outline.gdshader" id="8_uj086"]
-[ext_resource type="Resource" uid="uid://b5k5k6lp5r1hh" path="res://inventory/item data/newspaper.tres" id="9_8eab2"]
-[ext_resource type="Resource" uid="uid://bv3sglq0n3auv" path="res://inventory/item data/note.tres" id="12_uj086"]
 [ext_resource type="Script" uid="uid://nspu8rfrhb32" path="res://inventory/world_drop.gd" id="14_8eab2"]
-[ext_resource type="Resource" uid="uid://dsym38gvsohug" path="res://inventory/item data/new_map.tres" id="14_x6dpd"]
-[ext_resource type="Resource" uid="uid://cl4ulsvk88ws3" path="res://inventory/item data/old_map.tres" id="16_tf2jx"]
-[ext_resource type="Resource" uid="uid://bq3sh6brpkqpd" path="res://inventory/item data/passport.tres" id="18_ihdgy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nclnd"]
 resource_local_to_scene = true
@@ -143,7 +138,6 @@ anchor_bottom = 0.95
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_62wf1")
-scroll_vertical = 100
 
 [node name="VBoxInventory" type="VBoxContainer" parent="InventoryContainer/ScrollContainer" unique_id=672727559]
 unique_name_in_owner = true
@@ -161,35 +155,30 @@ material = SubResource("ShaderMaterial_hg722")
 
 [node name="Slot2" parent="InventoryContainer/ScrollContainer/VBoxInventory" unique_id=556575379 instance=ExtResource("6_inc80")]
 layout_mode = 2
-item = ExtResource("9_8eab2")
 
 [node name="Item" parent="InventoryContainer/ScrollContainer/VBoxInventory/Slot2" index="0" unique_id=1804702880]
 material = SubResource("ShaderMaterial_t60ev")
 
 [node name="Slot3" parent="InventoryContainer/ScrollContainer/VBoxInventory" unique_id=1425520509 instance=ExtResource("6_inc80")]
 layout_mode = 2
-item = ExtResource("12_uj086")
 
 [node name="Item" parent="InventoryContainer/ScrollContainer/VBoxInventory/Slot3" index="0" unique_id=1804702880]
 material = SubResource("ShaderMaterial_7xpov")
 
 [node name="Slot4" parent="InventoryContainer/ScrollContainer/VBoxInventory" unique_id=1581384247 instance=ExtResource("6_inc80")]
 layout_mode = 2
-item = ExtResource("16_tf2jx")
 
 [node name="Item" parent="InventoryContainer/ScrollContainer/VBoxInventory/Slot4" index="0" unique_id=1804702880]
 material = SubResource("ShaderMaterial_tjdag")
 
 [node name="Slot5" parent="InventoryContainer/ScrollContainer/VBoxInventory" unique_id=1029458052 instance=ExtResource("6_inc80")]
 layout_mode = 2
-item = ExtResource("14_x6dpd")
 
 [node name="Item" parent="InventoryContainer/ScrollContainer/VBoxInventory/Slot5" index="0" unique_id=1804702880]
 material = SubResource("ShaderMaterial_uj086")
 
 [node name="Slot6" parent="InventoryContainer/ScrollContainer/VBoxInventory" unique_id=1916457453 instance=ExtResource("6_inc80")]
 layout_mode = 2
-item = ExtResource("18_ihdgy")
 
 [node name="Item" parent="InventoryContainer/ScrollContainer/VBoxInventory/Slot6" index="0" unique_id=1804702880]
 material = SubResource("ShaderMaterial_ihdgy")

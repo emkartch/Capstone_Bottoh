@@ -310,7 +310,7 @@ func go_to_level(curr_level_tag,new_level_tag):
 				
 				transition_animation_LR.texture = scene_to_remove.get_node("Background").texture
 				
-				transition_animation.play("BSZ_in")
+				transition_animation.play("BZ_in")
 			
 			elif scene_to_remove == convenience_store:
 				
@@ -340,7 +340,7 @@ func go_to_level(curr_level_tag,new_level_tag):
 				
 				transition_animation_LR.texture = scene_to_load.get_node("Background").texture
 				
-				transition_animation.play("BSZ_out")
+				transition_animation.play("BZ_out")
 			
 			elif scene_to_remove == convenience_store:
 				
