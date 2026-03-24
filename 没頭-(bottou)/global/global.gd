@@ -113,6 +113,9 @@ var tutorial_7 = false
 var tutorial_8 = false
 var tutorial_9 = false
 var tutorial_10 = false
+var tutorial_11 = false
+var tutorial_12 = false
+var tutorial_13 = false
 
 # Tutorials
 
@@ -125,6 +128,14 @@ var have_newspaper = false
 var look_newspaper_passport = false
 
 # Working Inventory Add
+
+var notebook_filled = false
+
+signal full_notebook
+
+signal connect_show
+
+signal translated_note
 
 func _ready():
 	
@@ -205,9 +216,25 @@ func _process(_delta):
 	var selected = get_tree().get_nodes_in_group("selected")
 	
 	if selected.size() == 2:
+		
+		if Global.level == 13 and not tutorial_13:
+			
+			emit_signal("connect_show")
+		
 		connect_button.visible = true
 	else:
 		connect_button.visible = false
+
+func _input(event):
+	
+	if main.tut_12_playing and not tutorial_12:
+		if event is InputEventMouseButton and event.pressed:
+			if event.button_index == MOUSE_BUTTON_LEFT:
+				tutorial_12 = true
+	elif main.tut_13_playing and not tutorial_13:
+		if event is InputEventMouseButton and event.pressed:
+			if event.button_index == MOUSE_BUTTON_LEFT:
+				tutorial_13 = true
 
 func _on_connect_button_pressed() -> void:
 	
@@ -556,18 +583,28 @@ func _on_interactable_click(node):
 
 func _on_slot_click(node):
 	
-	dialog.display_line(true,false,node.item.description)
+	dialog.display_line(true,false,"thought",node.item.description)
 
 func check_correct():
 	
-	if appearance_filled and clothes_1_filled and clothes_2_filled and hats_filled and colors_filled and long_hairs_filled and short_hairs_filled and level == 1:
+	if appearance_filled and clothes_1_filled and clothes_2_filled and hats_filled and colors_filled and long_hairs_filled and short_hairs_filled:
 		
-		level += 1
+		#level += 1
+		#
+		##goal_text.text = "Finish filling out the note using your notebook."
+		#
+		#hud.next_level_tutorial()
 		
-		#goal_text.text = "Finish filling out the note using your notebook."
+		notebook_filled = true
 		
-		hud.next_level_tutorial()
+		if Global.level == 12:
+			
+			emit_signal("full_notebook")
 	
-	elif looks_correct and hair_correct and clothes_color_correct and clothes_type_correct and hat_correct:
-		Global.game_end = true
-		hud.show_end()
+	if looks_correct and hair_correct and clothes_color_correct and clothes_type_correct and hat_correct:
+		#Global.game_end = true
+		#hud.show_end()
+		
+		if Global.level == 13:
+			
+			emit_signal("translated_note")

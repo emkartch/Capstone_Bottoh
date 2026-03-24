@@ -31,13 +31,21 @@ var newspaper_emit = false
 
 signal second_page_newspaper
 
+var open_new_map = false
+var open_old_map = false
+
+signal notes_look
+
+var open_notebook = false
+var open_note = false
+
+signal map_look
+
 func _ready():
 	
 	up_arrow.disabled = true
 	
 	hbox_size = 1526 #hbox_inventory.size.x
-	
-	#connect_button.pressed.connect(_on_connect_button_pressed)
 
 func _process(_delta):
 	
@@ -60,6 +68,14 @@ func _process(_delta):
 	if Global.tutorial_10 and Global.level == 8 and newspaper_emit:
 		
 		emit_signal("second_page_newspaper")
+	
+	if Global.level == 9 and open_new_map and open_old_map:
+		
+		emit_signal("map_look")
+	
+	if Global.level == 13 and open_notebook and open_note:
+		
+		emit_signal("notes_look")
 
 func _on_up_arrow_pressed() -> void:
 	var value = scroll_container.get_v_scroll()
@@ -174,6 +190,26 @@ func _on_h_box_inventory_child_entered_tree(node: Node) -> void:
 		
 		newspaper_emit = true
 	
+	if Global.level == 9:
+		
+		if node.item_data.item_name == "New Map":
+			
+			open_new_map = true
+			
+		if node.item_data.item_name == "Old Map":
+			
+			open_old_map = true
+	
+	if Global.level == 13:
+		
+		if node.item_data.item_name == "Note":
+			
+			open_note = true
+			
+		if node.item_data.item_name == "Notebook":
+			
+			open_notebook = true
+	
 	pickable_array = get_tree().get_nodes_in_group("pickable")
 	question_array = get_tree().get_nodes_in_group("question")
 	answer_array = get_tree().get_nodes_in_group("answer")
@@ -265,9 +301,19 @@ func _on_h_box_inventory_child_entered_tree(node: Node) -> void:
 			child.get_node("OpenItemTexture/L Arrow").position.x = 5
 			child.get_node("OpenItemTexture/L Arrow").position.y = child.get_node("OpenItemTexture").size.y / 2
 
-func _on_h_box_inventory_child_exiting_tree(_node: Node) -> void:
+func _on_h_box_inventory_child_exiting_tree(node: Node) -> void:
 	
 	await inventory_open._on_button_pressed
+	
+	if Global.level == 9:
+		
+		if node.item_data.item_name == "New Map":
+			
+			open_new_map = false
+			
+		if node.item_data.item_name == "Old Map":
+			
+			open_old_map = false
 	
 	var child_size_total = 0
 	

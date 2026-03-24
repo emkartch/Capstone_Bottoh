@@ -14,7 +14,6 @@
 [ext_resource type="Script" uid="uid://b4wnpbm4ar8gk" path="res://hud/in game/notification.gd" id="10_sh35x"]
 [ext_resource type="Texture2D" uid="uid://2uoeuu05tj0j" path="res://inventory/NotificationBox.png" id="12_mq7b8"]
 [ext_resource type="PackedScene" uid="uid://csnjyfc1uapsx" path="res://hud/in game/pop_up_menu.tscn" id="13_mq7b8"]
-[ext_resource type="Texture2D" uid="uid://dmhunreje6uf5" path="res://inventory/InventorySquare.png" id="14_jvpmi"]
 [ext_resource type="Texture2D" uid="uid://dg8df3c2mesr8" path="res://hud/title screen/OpenPassport1.png" id="14_s867w"]
 [ext_resource type="Texture2D" uid="uid://chrxsdpem181w" path="res://hud/title screen/TitleScreen1.png" id="14_ul0pr"]
 [ext_resource type="Texture2D" uid="uid://bu42hxku0aoel" path="res://hud/title screen/OpenPassport2.png" id="15_31xeh"]
@@ -52,6 +51,7 @@
 [ext_resource type="Texture2D" uid="uid://bqob760vud5ck" path="res://hud/title screen/TitleScreen17.png" id="30_31xeh"]
 [ext_resource type="Texture2D" uid="uid://cuwk73vu050o2" path="res://inventory/USPassport.png" id="49_nfxdc"]
 [ext_resource type="Texture2D" uid="uid://bluwwa0v5iw15" path="res://inventory/NotificationBoxDarkVersion.png" id="50_nfxdc"]
+[ext_resource type="Texture2D" uid="uid://dy0uanf2wrnej" path="res://assets/TheOriginalLibrasLogo.png" id="52_x2qrc"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jvpmi"]
 texture = ExtResource("4_hwufu")
@@ -950,13 +950,38 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -96.0
-offset_top = -96.0
-offset_right = 96.0
-offset_bottom = 96.0
+offset_left = -534.0
+offset_top = -144.0
+offset_right = 534.0
+offset_bottom = 144.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("14_jvpmi")
+texture = ExtResource("52_x2qrc")
+
+[node name="Credits" type="CanvasLayer" parent="." unique_id=451622785]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Credits" unique_id=1558438494]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Logo" type="TextureRect" parent="Credits" unique_id=1280068895]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -534.0
+offset_top = -144.0
+offset_right = 534.0
+offset_bottom = 144.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("52_x2qrc")
 
 [connection signal="pressed" from="InGame/Dialog/Box/Continue" to="InGame/Dialog" method="_on_continue_pressed"]
 [connection signal="pressed" from="InGame/Goal/GoalOpen/ExitGoalButton" to="." method="_on_exit_goal_button_pressed"]

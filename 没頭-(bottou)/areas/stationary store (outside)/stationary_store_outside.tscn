@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://mfnya3fp0avt"]
 
-[ext_resource type="Texture2D" uid="uid://dmlkvd8qr4g2q" path="res://areas/stationary store (outside)/SSO_Back_Layer.png" id="1_tqcnd"]
+[ext_resource type="Texture2D" uid="uid://cp0sc5oyfqi1o" path="res://areas/stationary store (outside)/stationary store (outside zoom)/SSO_Back_Layer(BLUE).png" id="1_laq2u"]
 [ext_resource type="PackedScene" uid="uid://5s8jfcpui2rh" path="res://objects/interactable.tscn" id="2_jyvra"]
 [ext_resource type="PackedScene" uid="uid://c13d8uvmyxs6j" path="res://door.tscn" id="2_tqcnd"]
 [ext_resource type="Texture2D" uid="uid://bmjywtt1xvvu3" path="res://areas/DoorOpen.png" id="3_4a3ss"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b10x40wmxba1a" path="res://assets/ArrowBox.png" id="4_8dmyj"]
 [ext_resource type="Texture2D" uid="uid://pthxpeu225bc" path="res://areas/BoyWBig1.png" id="4_csl80"]
 [ext_resource type="Texture2D" uid="uid://d4lcey8yvvqql" path="res://assets/ArrowBoxGrey.png" id="5_1rpcw"]
+[ext_resource type="Texture2D" uid="uid://cgnn8suevg5e4" path="res://areas/stationary store (outside)/stationary store (outside zoom)/BlueHatHuman.png" id="5_b2rc0"]
 
 [node name="StationaryStoreOutside" type="CanvasLayer" unique_id=940126247]
 
@@ -18,7 +19,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("1_tqcnd")
+texture = ExtResource("1_laq2u")
 
 [node name="Selectables" type="Control" parent="." unique_id=1274154167]
 layout_mode = 3
@@ -44,6 +45,17 @@ item_name = "RandomPerson"
 item = ExtResource("4_csl80")
 description = "Random Person"
 
+[node name="BlueHatGuy" parent="Selectables" unique_id=1162084306 instance=ExtResource("2_jyvra")]
+visible = false
+layout_mode = 0
+offset_left = 683.0
+offset_top = 600.0
+offset_right = 885.0
+offset_bottom = 1080.0
+item_name = "BlueHatGuy"
+item = ExtResource("5_b2rc0")
+description = "BLUE HAT GUY"
+
 [node name="Doors" type="Node" parent="." unique_id=1837340145]
 
 [node name="Door_SS" parent="Doors" unique_id=49959100 instance=ExtResource("2_tqcnd")]
@@ -59,7 +71,16 @@ texture_normal = ExtResource("3_4a3ss")
 texture_pressed = ExtResource("3_4a3ss")
 texture_hover = ExtResource("3_4a3ss")
 
-[node name="Door_SV3" parent="Doors" unique_id=1136604104 instance=ExtResource("2_tqcnd")]
+[node name="Door_SSOZ" parent="Doors" unique_id=1136604104 instance=ExtResource("2_tqcnd")]
+visible = false
+offset_left = 690.0
+offset_top = 600.0
+offset_right = 878.0
+offset_bottom = 1080.0
+current_level_tag = "stationary_store_outside"
+destination_level_tag = "stationary_store_outside_zoom"
+
+[node name="Door_SV3" parent="Doors" unique_id=1452567873 instance=ExtResource("2_tqcnd")]
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.96
@@ -80,4 +101,5 @@ texture_pressed = ExtResource("5_1rpcw")
 texture_hover = ExtResource("5_1rpcw")
 
 [editable path="Doors/Door_SS"]
+[editable path="Doors/Door_SSOZ"]
 [editable path="Doors/Door_SV3"]

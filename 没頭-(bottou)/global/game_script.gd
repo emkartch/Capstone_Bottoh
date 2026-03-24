@@ -30,11 +30,13 @@ var goal_11 = "Speak to the stationary store clerk."
 
 var goal_12 = "Fill out your notebook using items in the area to translate the note."
 
-var goal_13 = "Find the person fitting the given description."
+var goal_13 = "Translate the note by comparing your notebook and the note in your inventory."
 
-var goal_14 = "Speak to the police officer."
+var goal_14 = "Find the person fitting the given description."
 
-var goal_15 = "Show the police officer your passport."
+var goal_15 = "Speak to the police officer."
+
+var goal_16 = "Show the police officer your passport."
 
 #var goals = [goal_0,goal_1,goal_2,goal_3,goal_4,goal_5,goal_6,goal_7,goal_8,goal_9,goal_10,goal_11,goal_12,goal_13,goal_14]
 
@@ -205,6 +207,7 @@ var speech_11 = [
 	[s,"Uh...","You"],
 	[n,"The stationary store clerk thinks for a moment, then turns around to write something down.",""],
 	[n,"They hand a note to you.",""],
+	null,
 	[n,"The clerk gestures to the note, then to their eyes with their fingers.",""],
 	[s,"This is what they look like?","You"],
 	[s,"Yes! Look like.","Stationary Store Clerk"],
@@ -216,11 +219,12 @@ var speech_11 = [
 
 var speech_12 = [speech_ClS,speech_HS,speech_BS]
 
-var speech_13 = [
+var speech_14 = [
 	[s,"すみません。Did you happen to pick up an American passport near the airport exit?","You"],
 	[s,"What?","Baseball Cap Guy"],
 	[n,"Hand going into his pocket, the guy produces two passports from his pocket.",""],
 	[s,"Oh! My bad, I thought my own had fallen when I saw a passport on the floor. Here!","Baseball Cap Guy"],
+	null,
 	[s,"Thank you! I've been all over trying to find you. I didn't realize how hard it would be to communicate with people who don't speak the same language as me.","You"],
 	[s,"It is hard to know how hard a language barrier can be when you've never had that problem.","Baseball Cap Guy"],
 	[s,"You can't expect everyone you interact with to know English, but it's okay that you don't know Japanese very well. You are in the right place to learn, not only the language, but the culture too!","Baseball Cap Guy"],
@@ -230,12 +234,12 @@ var speech_13 = [
 	null
 ]
 
-var speech_14 = [
+var speech_15 = [
 	[s,"Passport please.","Police Officer"],
 	null
 ]
 
-var speech_15 = [
+var speech_16 = [
 	[n,"After showing the police officer your passport, you take off to the train station to make the train to Osaka.",""],
 	null
 ]
