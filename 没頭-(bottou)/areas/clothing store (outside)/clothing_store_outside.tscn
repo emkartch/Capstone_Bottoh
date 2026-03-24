@@ -63,6 +63,7 @@ item = ExtResource("7_rv5aw")
 description = "Suit"
 
 [node name="ClosedDoorClS" parent="Selectables" unique_id=632896118 instance=ExtResource("2_lgj6w")]
+visible = false
 layout_mode = 0
 offset_left = 930.0
 offset_top = 225.0
@@ -92,13 +93,6 @@ item_name = "ClothingPoster2"
 item = ExtResource("4_ykchw")
 description = "Clothing 2"
 
-[node name="Block3" type="Control" parent="Selectables" unique_id=2135432472]
-anchors_preset = 0
-offset_left = 968.0
-offset_top = 263.0
-offset_right = 1268.0
-offset_bottom = 1043.0
-
 [node name="HatPoster" parent="Selectables" unique_id=1442475547 instance=ExtResource("2_lgj6w")]
 layout_mode = 0
 offset_left = 968.0
@@ -109,29 +103,15 @@ item_name = "HatPoster"
 item = ExtResource("6_w5noc")
 description = "Hats"
 
-[node name="Block2" type="Control" parent="Selectables" unique_id=150666017]
-anchors_preset = 0
-offset_left = 803.0
-offset_top = 607.0
-offset_right = 1088.0
-offset_bottom = 779.0
-
-[node name="ClosedSign" parent="Selectables" unique_id=1107865876 instance=ExtResource("2_lgj6w")]
+[node name="ClosedSignClS" parent="Selectables" unique_id=1107865876 instance=ExtResource("2_lgj6w")]
 layout_mode = 0
 offset_left = 803.0
 offset_top = 607.0
 offset_right = 1088.0
 offset_bottom = 779.0
-item_name = "ClosedSign"
+item_name = "ClosedSignClS"
 item = ExtResource("8_ykchw")
 description = "Closed Sign"
-
-[node name="Block4" type="Control" parent="Selectables" unique_id=2086762181]
-anchors_preset = 0
-offset_left = 225.0
-offset_top = 600.0
-offset_right = 427.0
-offset_bottom = 1080.0
 
 [node name="RandomPerson" parent="Selectables" unique_id=1168257841 instance=ExtResource("2_lgj6w")]
 layout_mode = 0
@@ -142,13 +122,6 @@ offset_bottom = 1080.0
 item_name = "RandomPerson"
 item = ExtResource("10_w5noc")
 description = "Random Person"
-
-[node name="Block" type="Control" parent="Selectables" unique_id=736224489]
-anchors_preset = 0
-offset_left = 622.0
-offset_top = 600.0
-offset_right = 809.0
-offset_bottom = 1080.0
 
 [node name="RandomPerson2" parent="Selectables" unique_id=1968866818 instance=ExtResource("2_lgj6w")]
 layout_mode = 0

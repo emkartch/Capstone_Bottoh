@@ -18,7 +18,7 @@ var goal_5 = "Go to the bookstore."
 
 var goal_6 = "Speak to Tanaka-sama."
 
-var goal_7 = "Go to Vintage."
+var goal_7 = "Look around for Vintage."
 
 var goal_8 = "Look at the newspaper."
 
@@ -105,23 +105,27 @@ var speech_0 = [
 
 var speech_1 = [
 	[n,"Walking into the convenience store, you look around and notice no one else here aside from the clerk.",""],
-	[t,"I supposed I should just talk to the clerk.",""]
+	[t,"I supposed I should just talk to the clerk.",""],
+	null
 ]
 
 var speech_2 = [
 	
 	[s,"Excuse me? Has anyone come in with an American passport they found on the street?","You"],
 	[s,"申し訳ありませんが、英語があまり話せません。","Convenience Store Clerk"],
-	[t,"Hmm… Maybe there is something around here I can use to convey my question?",""]
+	[t,"Hmm… Maybe there is something around here I can use to convey my question?",""],
+	null
 ]
 
 var speech_3 = [
 	
-	[t,"Ah-ha! There is a picture of a passport on the front. Maybe I can show this to the clerk?",""]
+	[t,"Ah-ha! There is a picture of a passport on the front. Maybe I can show this to the clerk?",""],
+	null
 ]
 
 var speech_4 = [
 	
+	[n,"Walking up to the clerk, you place the newspaper in front of them.",""],
 	[s,"パスポートですか。","Convenience Store Clerk"],
 	[q,["They still seem to be confused…",[[true,n,"Point at the photo of the passport and shrug.","You point at the photo of the passport, point at yourself, then look around like you lost something while shrugging."],[true,n,"Point at the photo of the passport, then mimic dropping it.","You point at the photo of the passport, point at yourself, then drop the newspaper on the floor."],[true,n,"Try to spell it out in writing.","You pull out your notebook, write down ‘dropped passport’, rip the piece of paper out, then place it on the counter in front of the clerk."]]],""],
 	[n,"The clerk remains confused.",""],
@@ -142,10 +146,12 @@ var speech_4 = [
 	[s,"Thank you!","You"],
 	[t,"Wait, that’s one of the phrases I actually know in Japanese!",""],
 	[s,"Uh..  I mean… ありがとうございます！","You"],
+	null
 ]
 
 var speech_5 = [
 	[n,"Repeating the phrase from the convenience store clerk to yourself over and over, hoping you don’t get it wrong, you walk into the bookstore.",""],
+	null
 ]
 
 var speech_6 = [
@@ -156,30 +162,36 @@ var speech_6 = [
 	[s,"Oh! No, no, I’m sorry, I don’t speak Japanese well…","You"],
 	[s,"そうですね。","Tanaka-sama"],
 	[n,"Tanaka-sama turns around, picks up a piece of paper, and hands it over to you. It looks similar to the map the convenience store clerk handed you earlier.",""],
+	null,
 	[t,"Is this the same map that the other clerk gave me? It looks older…",""],
 	[s,"野球帽をかぶった人がVintageの方へ歩いていくのを見かけでした。","Tanaka-sama"],
 	[n,"Tanaka-sama starts gesturing out to the right end of the street.",""],
 	[s,"Vintage?","You"],
 	[n,"Tanaka-sama nods her head.",""],
 	[t,"Thankfully some Japanese stores have English names…",""],
-	[s,"ありがとうございます！","You"]
+	[s,"ありがとうございます！","You"],
+	null
 ]
 
 var speech_7 = [
 	[t,"… wait. I don’t see a store named Vintage here…",""],
 	[t,"Wasn’t something like it mentioned in that newspaper I picked up earlier?",""],
+	null
 ]
 
 var speech_8 = [
-	[t,"It looks like that store was recently replaced with a different one, maybe the maps will have more information?",""]
+	[t,"It looks like that store was recently replaced with a different one, maybe the maps will have more information?",""],
+	null
 ]
 
 var speech_9 = [
-	[t,"It seems like there is a brand new stationary store there!",""]
+	[t,"It seems like there is a brand new stationary store there!",""],
+	null
 ]
 
 var speech_10 = [
-	[n,"Walking into the store, you try to remember the phrase the convenience store clerk helped you with earlier, maybe it can still help here?",""]
+	[n,"Walking into the store, you try to remember the phrase the convenience store clerk helped you with earlier, maybe it can still help here?",""],
+	null
 ]
 
 var speech_11 = [
@@ -198,7 +210,8 @@ var speech_11 = [
 	[s,"Yes! Look like.","Stationary Store Clerk"],
 	[t,"Okay… well the note seems small enough.",""],
 	[c,[[t,"Maybe I can use the information in my notebook to translate this note!",""],[t,"I’ve already found some basic Japanese translations from items around here, maybe there are more I can find?",""],[t,"I think I saw a children’s translation book at the bookstore earlier, maybe I can find translations for the rest of the words around here?",""]],""],
-	[s,"ありがとうございます。","You"]
+	[s,"ありがとうございます。","You"],
+	null
 ]
 
 var speech_12 = [speech_ClS,speech_HS,speech_BS]
@@ -213,15 +226,18 @@ var speech_13 = [
 	[s,"You can't expect everyone you interact with to know English, but it's okay that you don't know Japanese very well. You are in the right place to learn, not only the language, but the culture too!","Baseball Cap Guy"],
 	[s,"Yeah. Hopefully I can get better at this over time. Anyway, thank you! Uh... I mean… ありがとうございます！","You"],
 	[n,"The guy bows and parts ways with you.",""],
-	[t,"Maybe I should also bow after parting ways with strangers…",""]
+	[t,"Maybe I should also bow after parting ways with strangers…",""],
+	null
 ]
 
 var speech_14 = [
 	[s,"Passport please.","Police Officer"],
+	null
 ]
 
 var speech_15 = [
 	[n,"After showing the police officer your passport, you take off to the train station to make the train to Osaka.",""],
+	null
 ]
 
 # Script

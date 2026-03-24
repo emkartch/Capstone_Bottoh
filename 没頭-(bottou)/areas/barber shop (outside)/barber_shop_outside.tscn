@@ -64,6 +64,7 @@ item = ExtResource("5_tl415")
 description = "Long Hair Poster"
 
 [node name="ClosedDoorBS" parent="Selectables" unique_id=1634877005 instance=ExtResource("3_sckw2")]
+visible = false
 layout_mode = 0
 offset_left = 930.0
 offset_top = 225.0
@@ -73,13 +74,13 @@ item_name = "ClosedDoorBS"
 item = ExtResource("6_o0ppp")
 description = "Closed Door"
 
-[node name="ClosedSign" parent="Selectables" unique_id=1460644258 instance=ExtResource("3_sckw2")]
+[node name="ClosedSignBS" parent="Selectables" unique_id=1460644258 instance=ExtResource("3_sckw2")]
 layout_mode = 0
 offset_left = 803.0
 offset_top = 607.0
 offset_right = 1088.0
 offset_bottom = 779.0
-item_name = "ClosedSign"
+item_name = "ClosedSignBS"
 item = ExtResource("6_y5vwt")
 description = "Closed Sign"
 

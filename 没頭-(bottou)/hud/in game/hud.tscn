@@ -513,7 +513,6 @@ process_mode = 3
 script = ExtResource("1_6ca3a")
 
 [node name="InGame" type="CanvasLayer" parent="." unique_id=655899486]
-visible = false
 
 [node name="GreyOut" type="ColorRect" parent="InGame" unique_id=307156639]
 visible = false
@@ -582,6 +581,7 @@ text = "Somebody"
 
 [node name="Dialogue" type="RichTextLabel" parent="InGame/Dialog/VBoxContainer" unique_id=1380198217]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/line_separation = 5
 bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at libero et enim semper consectetur nec in quam. Morbi eu ante tortor. Integer scelerisque condimentum lorem, sed imperdiet nibh suscipit nec."
@@ -590,6 +590,7 @@ fit_content = true
 [node name="Spacer" type="Control" parent="InGame/Dialog/VBoxContainer" unique_id=1094451360]
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 2
 
 [node name="ChoiceContainer" type="HBoxContainer" parent="InGame/Dialog/VBoxContainer" unique_id=1646034108]
 visible = false
@@ -717,6 +718,8 @@ offset_bottom = 128.0
 grow_horizontal = 0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("9_qv4qp")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="Notification" type="Control" parent="InGame" unique_id=1241564741]
 layout_mode = 3
@@ -742,7 +745,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 60
-text = "Goal Updated"
+text = "Newspaper added to Inventory"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
