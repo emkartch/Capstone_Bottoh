@@ -3,10 +3,13 @@ extends Node
 @onready var main_background = $MainBackground
 @onready var hud = $HUD
 @onready var inventory = $Inventory
+@onready var inventory_container = $Inventory/InventoryContainer
 @onready var dialog = $HUD/InGame/Dialog
 @onready var goal = get_node("/root/Main/HUD/InGame/Goal")
 @onready var goal_text = get_node("/root/Main/HUD/InGame/Goal/GoalOpen/VBoxContainer/GoalText")
+@onready var notif = get_node("/root/Main/HUD/InGame/Notification")
 @onready var tutorial_wipe = $TutorialWipe
+@onready var transition = $SceneTransitionAnimation
 @onready var transition_animation = get_node("/root/Main/SceneTransitionAnimation/AnimationPlayer")
 @onready var tutorial_animation = get_node("/root/Main/TutorialWipe/CircleColor/AnimationPlayer")
 
@@ -15,6 +18,10 @@ const new_map_ID = preload("res://inventory/item data/new_map.tres")
 const note_ID = preload("res://inventory/item data/note.tres")
 const old_map_ID = preload("res://inventory/item data/old_map.tres")
 const passport_ID = preload("res://inventory/item data/passport.tres")
+
+var view_SV1 = false
+var view_SV2 = false
+var view_SV3 = false
 
 func _process(_delta):
 	
@@ -30,8 +37,6 @@ func level_0():
 	transition_animation.play("fade_out")
 	
 	await transition_animation.animation_finished
-	
-	await get_tree().create_timer(1.0).timeout
 	
 	while GameScript.speech_0[GameScript.scene_line] != null:
 		
@@ -53,8 +58,9 @@ func level_0():
 	
 	transition_animation.play("fade_out")
 	
-	await get_tree().create_timer(1.0).timeout
+	await transition_animation.animation_finished
 	
+	# AFTER AIRPORT
 	while GameScript.speech_0[GameScript.scene_line] != null:
 		
 		var line_info = GameScript.speech_0[GameScript.scene_line]
@@ -80,8 +86,8 @@ func level_0():
 	
 	while not self.has_node("Train"):
 		await get_tree().process_frame
-	
-	await transition_animation.animation_finished
+
+	await transition.anim_finished
 	
 	while GameScript.speech_0[GameScript.scene_line] != null:
 		
@@ -136,6 +142,8 @@ func level_1():
 	while not self.has_node("StreetView1"):
 		await get_tree().process_frame
 	
+	await transition.anim_finished
+	
 	tutorial_wipe.visible = true
 	
 	tutorial_animation.play("tutorial_3")
@@ -149,6 +157,8 @@ func level_1():
 	
 	while not self.has_node("ConvenienceStoreOutside"):
 		await get_tree().process_frame
+	
+	await transition.anim_finished
 	
 	tutorial_wipe.visible = true
 	
@@ -164,7 +174,11 @@ func level_1():
 	while not self.has_node("ConvenienceStore"):
 		await get_tree().process_frame
 	
-	for line_info in GameScript.speech_1[GameScript.scene_line]:
+	await transition.anim_finished
+	
+	while GameScript.speech_1[GameScript.scene_line] != null:
+		
+		var line_info = GameScript.speech_1[GameScript.scene_line]
 		
 		dialog.display_line(true,false,line_info[0],line_info[1],line_info[2])
 		
@@ -195,9 +209,11 @@ func level_2():
 	while not self.has_node("ConvenienceStoreZoom"):
 		await get_tree().process_frame
 	
-	await transition_animation.animation_finished
+	await transition.anim_finished
 	
-	for line_info in GameScript.speech_2[GameScript.scene_line]:
+	while GameScript.speech_2[GameScript.scene_line] != null:
+		
+		var line_info = GameScript.speech_2[GameScript.scene_line]
 		
 		dialog.display_line(true,false,line_info[0],line_info[1],line_info[2])
 		
@@ -217,6 +233,8 @@ func level_3():
 	while not self.has_node("ConvenienceStore"):
 		await get_tree().process_frame
 	
+	await transition.anim_finished
+	
 	tutorial_wipe.visible = true
 	
 	tutorial_animation.play("tutorial_6")
@@ -230,6 +248,10 @@ func level_3():
 	
 	while not Global.have_newspaper:
 		await get_tree().process_frame
+	
+	await notif.display_notif("Newspaper added to Inventory",38)
+	
+	inventory.visible = true
 	
 	tutorial_wipe.visible = true
 	
@@ -267,7 +289,9 @@ func level_3():
 	while not Global.look_newspaper_passport:
 		await get_tree().process_frame
 	
-	for line_info in GameScript.speech_3[GameScript.scene_line]:
+	while GameScript.speech_3[GameScript.scene_line] != null:
+		
+		var line_info = GameScript.speech_3[GameScript.scene_line]
 		
 		dialog.display_line(true,false,line_info[0],line_info[1],line_info[2])
 		
@@ -283,22 +307,167 @@ func level_3():
 func level_4():
 	
 	await hud.update_goal_text(GameScript.goal_4)
+	
+	while not self.has_node("ConvenienceStoreZoom"):
+		await get_tree().process_frame
+	
+	await transition.anim_finished
+	
+	while GameScript.speech_4[GameScript.scene_line] != null:
+		
+		var line_info = GameScript.speech_4[GameScript.scene_line]
+		
+		dialog.display_line(true,false,line_info[0],line_info[1],line_info[2])
+		
+		GameScript.scene_line += 1
+		
+		await dialog.continue_true
+	
+	for slot in inventory_container.get_node("ScrollContainer/VBoxInventory").get_children():
+		
+		if slot.item == null:
+			
+			slot.item = new_map_ID
+			
+			break
+	
+	await notif.display_notif("New Map added to Inventory",38)
+	
+	while GameScript.speech_4[GameScript.scene_line] != null:
+		
+		var line_info = GameScript.speech_4[GameScript.scene_line]
+		
+		dialog.display_line(true,false,line_info[0],line_info[1],line_info[2])
+		
+		GameScript.scene_line += 1
+		
+		await dialog.continue_true
+	
+	Global.level += 1
+	GameScript.scene_line = 0
+	
+	level_5()
 
 func level_5():
 	
 	await hud.update_goal_text(GameScript.goal_5)
+	
+	while not self.has_node("Bookstore"):
+		await get_tree().process_frame
+	
+	await transition.anim_finished
+	
+	while GameScript.speech_5[GameScript.scene_line] != null:
+		
+		var line_info = GameScript.speech_5[GameScript.scene_line]
+		
+		dialog.display_line(true,false,line_info[0],line_info[1],line_info[2])
+		
+		GameScript.scene_line += 1
+		
+		await dialog.continue_true
+	
+	Global.level += 1
+	GameScript.scene_line = 0
+	
+	level_6()
 
 func level_6():
 	
 	await hud.update_goal_text(GameScript.goal_6)
+	
+	while not self.has_node("BookstoreZoom"):
+		await get_tree().process_frame
+	
+	await transition.anim_finished
+	
+	while GameScript.speech_6[GameScript.scene_line] != null:
+		
+		var line_info = GameScript.speech_6[GameScript.scene_line]
+		
+		dialog.display_line(true,false,line_info[0],line_info[1],line_info[2])
+		
+		GameScript.scene_line += 1
+		
+		await dialog.continue_true
+	
+	for slot in inventory_container.get_node("ScrollContainer/VBoxInventory").get_children():
+		
+		if slot.item == null:
+			
+			slot.item = old_map_ID
+			
+			break
+	
+	await notif.display_notif("Old Map added to Inventory",38)
+	
+	while GameScript.speech_6[GameScript.scene_line] != null:
+		
+		var line_info = GameScript.speech_6[GameScript.scene_line]
+		
+		dialog.display_line(true,false,line_info[0],line_info[1],line_info[2])
+		
+		GameScript.scene_line += 1
+		
+		await dialog.continue_true
+	
+	Global.level += 1
+	GameScript.scene_line = 0
+	
+	level_7()
 
 func level_7():
 	
 	await hud.update_goal_text(GameScript.goal_7)
+	
+	await NavigationManager.look_for_vintage
+	
+	while GameScript.speech_7[GameScript.scene_line] != null:
+		
+		var line_info = GameScript.speech_7[GameScript.scene_line]
+		
+		dialog.display_line(true,false,line_info[0],line_info[1],line_info[2])
+		
+		GameScript.scene_line += 1
+		
+		await dialog.continue_true
+	
+	Global.level += 1
+	GameScript.scene_line = 0
+	
+	level_8()
 
 func level_8():
 	
 	await hud.update_goal_text(GameScript.goal_8)
+	
+	await inventory_container.level_8_newspaper
+	
+	tutorial_wipe.visible = true
+	
+	tutorial_animation.play("tutorial_10")
+	
+	await tutorial_animation.animation_finished
+	
+	while not Global.tutorial_10:
+		await get_tree().process_frame
+	
+	tutorial_wipe.visible = false
+	
+	await inventory_container.second_page_newspaper
+	
+	while GameScript.speech_8[GameScript.scene_line] != null:
+		
+		var line_info = GameScript.speech_8[GameScript.scene_line]
+		
+		dialog.display_line(true,false,line_info[0],line_info[1],line_info[2])
+		
+		GameScript.scene_line += 1
+		
+		await dialog.continue_true
+	
+	Global.level += 1
+	GameScript.scene_line = 0
 
 func level_9():
 	

@@ -46,6 +46,10 @@ var bookstore_zoom
 var convenience_store_zoom
 var stationary_store_zoom
 
+signal navigation_finished
+
+signal look_for_vintage
+
 func _ready():
 	barber_shop_outside = BSO.instantiate()
 	bookstore = B.instantiate()
@@ -142,6 +146,24 @@ func go_to_level(curr_level_tag,new_level_tag):
 			scene_to_load = stationary_store_zoom
 		
 	if scene_to_remove != null && scene_to_load != null:
+		
+		if Global.level == 7:
+			
+			if scene_to_load == street_view_1:
+				
+				main.view_SV1 = true
+				
+			elif scene_to_load == street_view_2:
+				
+				main.view_SV2 = true
+				
+			elif scene_to_load == street_view_3:
+				
+				main.view_SV3 = true
+			
+			if main.view_SV1 and main.view_SV2 and main.view_SV3:
+				
+				emit_signal("look_for_vintage")
 		
 		# Street View Navigation
 		if (scene_to_remove == street_view_1 && scene_to_load == street_view_2) or (scene_to_remove == street_view_2 && scene_to_load == street_view_3):
@@ -336,19 +358,19 @@ func go_to_level(curr_level_tag,new_level_tag):
 		# Zoom Out
 		elif (scene_to_remove == bookstore_zoom && scene_to_load == bookstore) or (scene_to_remove == convenience_store_zoom && scene_to_load == convenience_store) or (scene_to_remove == stationary_store_zoom && scene_to_load == stationary_store):
 			
-			if scene_to_remove == bookstore:
+			if scene_to_remove == bookstore_zoom:
 				
 				transition_animation_LR.texture = scene_to_load.get_node("Background").texture
 				
 				transition_animation.play("BZ_out")
 			
-			elif scene_to_remove == convenience_store:
+			elif scene_to_remove == convenience_store_zoom:
 				
 				transition_animation_LR.texture = scene_to_load.get_node("Background").texture
 				
 				transition_animation.play("CSZ_out")
 				
-			elif scene_to_remove == stationary_store:
+			elif scene_to_remove == stationary_store_zoom:
 				
 				transition_animation_LR.texture = scene_to_load.get_node("Background").texture
 				
@@ -390,3 +412,5 @@ func go_to_level(curr_level_tag,new_level_tag):
 			if not interact.interact_clicked.is_connected(Global._on_interactable_click):
 			
 				interact.interact_clicked.connect(Global._on_interactable_click)
+		
+		emit_signal("navigation_finished")

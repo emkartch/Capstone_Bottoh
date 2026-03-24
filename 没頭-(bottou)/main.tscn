@@ -27,3 +27,12 @@ z_index = 1
 [node name="TutorialWipe" parent="." unique_id=136548352 instance=ExtResource("5_lquwl")]
 layer = 2
 visible = false
+
+[node name="Blocker" type="Control" parent="." unique_id=1521625364]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

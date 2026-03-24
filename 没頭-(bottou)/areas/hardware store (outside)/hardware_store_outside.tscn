@@ -31,6 +31,7 @@ anchors_preset = 0
 mouse_filter = 2
 
 [node name="ClosedDoorHS" parent="Selectables" unique_id=632896118 instance=ExtResource("3_i4d15")]
+visible = false
 layout_mode = 0
 offset_left = 930.0
 offset_top = 225.0
@@ -58,13 +59,13 @@ item_name = "HardwareStoreSign"
 item = ExtResource("4_ychry")
 description = "Hardware Store Sign"
 
-[node name="ClosedSign" parent="Selectables" unique_id=883699498 instance=ExtResource("3_i4d15")]
+[node name="ClosedSignHS" parent="Selectables" unique_id=883699498 instance=ExtResource("3_i4d15")]
 layout_mode = 0
 offset_left = 803.0
 offset_top = 607.0
 offset_right = 1088.0
 offset_bottom = 779.0
-item_name = "ClosedSign"
+item_name = "ClosedSignHS"
 item = ExtResource("5_oaue0")
 description = "Closed Sign"
 

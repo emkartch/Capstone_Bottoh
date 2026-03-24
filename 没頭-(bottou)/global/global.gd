@@ -215,37 +215,37 @@ func _on_connect_button_pressed() -> void:
 		
 	if selected[0].is_in_group("correct_looks") and selected[1].is_in_group("correct_looks"):
 		
-		notif.display_notif("Correct")
+		notif.display_notif("Correct",60)
 		looks_ans.modulate.a = 255
 		looks_correct = true
 		
 	elif selected[0].is_in_group("correct_hair") and selected[1].is_in_group("correct_hair"):
 		
-		notif.display_notif("Correct")
+		notif.display_notif("Correct",60)
 		hair_ans.modulate.a = 255
 		hair_correct = true
 		
 	elif selected[0].is_in_group("correct_color_clothes") and selected[1].is_in_group("correct_color_clothes"):
 		
-		notif.display_notif("Correct")
+		notif.display_notif("Correct",60)
 		clothes_color_ans.modulate.a = 255
 		clothes_color_correct = true
 		
 	elif selected[0].is_in_group("correct_type_clothes") and selected[1].is_in_group("correct_type_clothes"):
 		
-		notif.display_notif("Correct")
+		notif.display_notif("Correct",60)
 		clothes_type_ans.modulate.a = 255
 		clothes_type_correct = true
 		
 	elif selected[0].is_in_group("correct_hat") and selected[1].is_in_group("correct_hat"):
 	
-		notif.display_notif("Correct")
+		notif.display_notif("Correct",60)
 		hat_ans.modulate.a = 255
 		hat_correct = true
 	
 	else:
 		
-		notif.display_notif("No Correlation")
+		notif.display_notif("No Correlation",60)
 		
 	for select in selected:
 		select.select_line.visible = false
@@ -410,33 +410,37 @@ func _on_pickable_click(node):
 
 func _on_interactable_click(node):
 	
-	if node.item_name == "ClosedDoorBS" or node.item_name == "ClosedDoorHS" or node.item_name == "ClosedDoorClS":
+	if tutorial_6 == false and level == 3:
+		
+		Global.tutorial_6 = true
+	
+	if node.item_name == "ClosedSignBS" or node.item_name == "ClosedSignHS" or node.item_name == "ClosedSignClS":
 		
 		if Global.level >= 12:
 			
-			if node.item_name == "ClosedDoorBS":
+			if node.item_name == "ClosedSignBS":
 				
 				node.description = GameScript.speech_BS[0][1]
 				
-			elif node.item_name == "ClosedDoorHS":
+			elif node.item_name == "ClosedSignHS":
 				
 				node.description = GameScript.speech_HS[0][1]
 				
-			elif node.item_name == "ClosedDoorClS":
+			elif node.item_name == "ClosedSignClS":
 				
 				node.description = GameScript.speech_ClS[0][1]
 				
 		else:
 			
-			if node.item_name == "ClosedDoorBS":
+			if node.item_name == "ClosedSignBS":
 				
 				node.description = GameScript.speech_BS[1][1]
 				
-			elif node.item_name == "ClosedDoorHS":
+			elif node.item_name == "ClosedSignHS":
 				
 				node.description = GameScript.speech_HS[1][1]
 				
-			elif node.item_name == "ClosedDoorClS":
+			elif node.item_name == "ClosedSignClS":
 				
 				node.description = GameScript.speech_ClS[1][1]
 	
@@ -452,15 +456,9 @@ func _on_interactable_click(node):
 				
 				slot.item = main.newspaper_ID
 				
-				notif.display_notif("Newspaper added to Inventory")
-				
 				have_newspaper = true
 				
 				break
-	
-	if tutorial_6 == false and level == 3:
-	
-		Global.tutorial_6 = true
 	
 	if node.item_name == "BookstoreBook":
 		
@@ -548,11 +546,11 @@ func _on_interactable_click(node):
 	
 	if new_info:
 		
-		dialog.display_line(true,false,"[i]This might be good information to add to my notebook.[/i]","")
+		dialog.display_line(true,false,"thought","[i]This might be good information to add to my notebook.[/i]")
 		
 		await dialog.continue_true
 		
-		notif.display_notif("Notebook Updated")
+		notif.display_notif("Notebook Updated",60)
 		
 		new_info = false
 

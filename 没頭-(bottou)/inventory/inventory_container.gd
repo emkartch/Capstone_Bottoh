@@ -25,6 +25,12 @@ var expand_state = false
 
 var hbox_size = null
 
+signal level_8_newspaper
+
+var newspaper_emit = false
+
+signal second_page_newspaper
+
 func _ready():
 	
 	up_arrow.disabled = true
@@ -44,12 +50,16 @@ func _process(_delta):
 		up_arrow.disabled = false
 		up_arrow.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	
-	if value == 320:
+	if value == 480:
 		down_arrow.disabled = true
 		down_arrow.mouse_default_cursor_shape = Control.CURSOR_ARROW
 	else:
 		down_arrow.disabled = false
 		down_arrow.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	
+	if Global.tutorial_10 and Global.level == 8 and newspaper_emit:
+		
+		emit_signal("second_page_newspaper")
 
 func _on_up_arrow_pressed() -> void:
 	var value = scroll_container.get_v_scroll()
@@ -111,6 +121,8 @@ func _on_expand_button_pressed() -> void:
 		self.anchor_top = 0.34
 		self.anchor_bottom = 0.81
 		expand_button.set_button_icon(expand_texture)
+		expand_button.anchor_top = -0.03
+		expand_button.anchor_bottom = -0.03
 		expand_state = false
 		bag_button.visible = true
 		up_arrow.visible = true
@@ -119,10 +131,19 @@ func _on_expand_button_pressed() -> void:
 		hbox_inventory.mouse_filter = MOUSE_FILTER_IGNORE
 		background_blur.visible = false
 		
+		if hbox_inventory.get_children() != null:
+			
+			for node in hbox_inventory.get_children():
+				
+				inventory_open._on_button_pressed(node)
+		
+		
 	elif not expand_state:
-		self.anchor_top = 0.099
-		self.anchor_bottom = 0.901
+		self.anchor_top = 0.01
+		self.anchor_bottom = 0.99
 		expand_button.set_button_icon(minimize_texture)
+		expand_button.anchor_top = 0
+		expand_button.anchor_bottom = 0
 		expand_state = true
 		bag_button.visible = false
 		up_arrow.visible = false
@@ -143,9 +164,15 @@ func _notification(what: int) -> void:
 				data_bk.icon.show()
 				data_bk = null
 
-func _on_h_box_inventory_child_entered_tree(_node: Node) -> void:
+func _on_h_box_inventory_child_entered_tree(node: Node) -> void:
 	
 	await inventory_open.world_drop_finished
+	
+	if Global.level == 8 and node.item_data.item_name == "Newspaper":
+		
+		emit_signal("level_8_newspaper")
+		
+		newspaper_emit = true
 	
 	pickable_array = get_tree().get_nodes_in_group("pickable")
 	question_array = get_tree().get_nodes_in_group("question")

@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 @onready var circle = $CircleColor
-@onready var animation = $CircleColor/AnimationPlayer
+#@onready var animation = $CircleColor/AnimationPlayer
 @onready var text = $Label
 
 func _process(_delta: float) -> void:
@@ -10,3 +10,4 @@ func _process(_delta: float) -> void:
 		
 		circle.material.set_shader_parameter("screen_width",0)
 		circle.material.set_shader_parameter("screen_height",0)
+		text.modulate.a = 0

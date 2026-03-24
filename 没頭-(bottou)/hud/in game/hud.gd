@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var main = get_node("/root/Main")
+@onready var blocker = get_node("/root/Main/Blocker")
 @onready var dialog = $InGame/Dialog
 @onready var notif = $InGame/Notification
 
@@ -23,8 +24,8 @@ extends CanvasLayer
 @onready var title_screen_start = $TitleScreen/TSButtons/MainButtons/StartButton
 @onready var title_screen_settings = $TitleScreen/TSButtons/MainButtons/SettingsButton
 
-const goal_texture = preload("res://assets/Notebookpaper.png")
-const goal_update_texture = preload("res://assets/PenWNotepad.png")
+var goal_texture = preload("res://assets/Notebookpaper.png")
+var goal_update_texture = preload("res://assets/PenWNotepad.png")
 
 func _ready():
 	
@@ -160,10 +161,14 @@ func _on_start_button_pressed() -> void:
 
 func update_goal_text(goal):
 	
+	blocker.mouse_filter = Control.MOUSE_FILTER_STOP
+	
 	goal_text.text = goal
 	
 	goal_button.texture_normal = goal_update_texture
 	
-	await notif.display_notif("Goal Updated")
+	await notif.display_notif("Goal Updated",60)
 	
 	goal_button.texture_normal = goal_texture
+	
+	blocker.mouse_filter = Control.MOUSE_FILTER_IGNORE
