@@ -25,6 +25,7 @@ const BZ = preload("res://areas/bookstore/bookstore (zoom)/bookstore_zoom.tscn")
 const CSZ = preload("res://areas/convenience store/convenience store (zoom)/convenience_store_zoom.tscn")
 const SSZ = preload("res://areas/stationary store/stationary store (zoom)/stationary_store_zoom.tscn")
 const SSOZ = preload("res://areas/stationary store (outside)/stationary store (outside zoom)/stationary_store_outside_zoom.tscn")
+const TZ = preload("res://areas/train/train (zoom)/train_zoom.tscn")
 
 const BO_Door_Open = preload("res://areas/bookstore (outside)/BO_Door_Open.png")
 const CSO_Door_Open = preload("res://areas/convenience store (outside)/CSO_Door_Open.png")
@@ -47,6 +48,7 @@ var bookstore_zoom
 var convenience_store_zoom
 var stationary_store_zoom
 var stationary_store_outside_zoom
+var train_zoom
 
 signal navigation_finished
 
@@ -70,6 +72,7 @@ func _ready():
 	convenience_store_zoom = CSZ.instantiate()
 	stationary_store_zoom = SSZ.instantiate()
 	stationary_store_outside_zoom = SSOZ.instantiate()
+	train_zoom = TZ.instantiate()
 	
 	main.add_child(street_view_1)
 	main.move_child(street_view_1,0)
@@ -115,6 +118,8 @@ func go_to_level(curr_level_tag,new_level_tag):
 			scene_to_remove = stationary_store_zoom
 		"stationary_store_outside_zoom":
 			scene_to_remove = stationary_store_outside_zoom
+		"train_zoom":
+			scene_to_remove = train_zoom
 	
 	match new_level_tag:
 		"barber_shop_outside":
@@ -151,6 +156,8 @@ func go_to_level(curr_level_tag,new_level_tag):
 			scene_to_load = stationary_store_zoom
 		"stationary_store_outside_zoom":
 			scene_to_load = stationary_store_outside_zoom
+		"train_zoom":
+			scene_to_load = train_zoom
 		
 	if scene_to_remove != null && scene_to_load != null:
 		
@@ -333,7 +340,7 @@ func go_to_level(curr_level_tag,new_level_tag):
 			transition_animation_LR.texture = null
 		
 		# Zoom In
-		elif (scene_to_remove == bookstore && scene_to_load == bookstore_zoom) or (scene_to_remove == convenience_store && scene_to_load == convenience_store_zoom) or (scene_to_remove == stationary_store && scene_to_load == stationary_store_zoom) or (scene_to_remove == stationary_store_outside && scene_to_load == stationary_store_outside_zoom):
+		elif (scene_to_remove == bookstore && scene_to_load == bookstore_zoom) or (scene_to_remove == convenience_store && scene_to_load == convenience_store_zoom) or (scene_to_remove == stationary_store && scene_to_load == stationary_store_zoom) or (scene_to_remove == stationary_store_outside && scene_to_load == stationary_store_outside_zoom) or (scene_to_remove == train && scene_to_load == train_zoom):
 			
 			if scene_to_remove == bookstore:
 				
@@ -357,7 +364,13 @@ func go_to_level(curr_level_tag,new_level_tag):
 				
 				transition_animation_LR.texture = scene_to_remove.get_node("Background").texture
 				
-				transition_animation.play("SSZO_in")
+				transition_animation.play("SSOZ_in")
+				
+			elif scene_to_remove == train:
+				
+				transition_animation_LR.texture = scene_to_remove.get_node("Background").texture
+				
+				transition_animation.play("TZ_in")
 			
 			main.remove_child(scene_to_remove)
 			main.add_child(scene_to_load)
@@ -369,7 +382,7 @@ func go_to_level(curr_level_tag,new_level_tag):
 			transition_animation_LR.texture = null
 		
 		# Zoom Out
-		elif (scene_to_remove == bookstore_zoom && scene_to_load == bookstore) or (scene_to_remove == convenience_store_zoom && scene_to_load == convenience_store) or (scene_to_remove == stationary_store_zoom && scene_to_load == stationary_store) or (scene_to_remove == stationary_store_outside_zoom && scene_to_load == stationary_store_outside):
+		elif (scene_to_remove == bookstore_zoom && scene_to_load == bookstore) or (scene_to_remove == convenience_store_zoom && scene_to_load == convenience_store) or (scene_to_remove == stationary_store_zoom && scene_to_load == stationary_store) or (scene_to_remove == stationary_store_outside_zoom && scene_to_load == stationary_store_outside) or (scene_to_remove == train_zoom && scene_to_load == train):
 			
 			if scene_to_remove == bookstore_zoom:
 				
@@ -393,7 +406,13 @@ func go_to_level(curr_level_tag,new_level_tag):
 				
 				transition_animation_LR.texture = scene_to_load.get_node("Background").texture
 				
-				transition_animation.play("SSZO_in")
+				transition_animation.play("SSOZ_out")
+				
+			elif scene_to_remove == train_zoom:
+				
+				transition_animation_LR.texture = scene_to_load.get_node("Background").texture
+				
+				transition_animation.play("TZ_out")
 			
 			main.remove_child(scene_to_remove)
 			main.add_child(scene_to_load)

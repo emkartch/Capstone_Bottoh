@@ -34,9 +34,7 @@ var goal_13 = "Translate the note by comparing your notebook and the note in you
 
 var goal_14 = "Find the person fitting the given description."
 
-var goal_15 = "Speak to the police officer."
-
-var goal_16 = "Show the police officer your passport."
+var goal_15 = "Go to the police officer and show them your passport."
 
 #var goals = [goal_0,goal_1,goal_2,goal_3,goal_4,goal_5,goal_6,goal_7,goal_8,goal_9,goal_10,goal_11,goal_12,goal_13,goal_14]
 
@@ -236,11 +234,10 @@ var speech_14 = [
 
 var speech_15 = [
 	[s,"Passport please.","Police Officer"],
-	null
-]
-
-var speech_16 = [
-	[n,"After showing the police officer your passport, you take off to the train station to make the train to Osaka.",""],
+	[n,"You pull out your passport and hand it to the officer.",""],
+	[s,"...","Police Officer"],
+	[s,"ありがとうございます。","Police Officer"],
+	[n,"After the police officer gives you your passport back, you put it safely in your front pocket and get on the train to make it to Osaka.",""],
 	null
 ]
 

@@ -13,6 +13,8 @@ extends CanvasLayer
 @onready var logo_screen = $LogoScreen
 @onready var title_screen = $TitleScreen
 @onready var in_game = $InGame
+@onready var last_scene = $LastScene
+@onready var credits = $Credits
 
 @onready var transition_animation = get_node("/root/Main/SceneTransitionAnimation/AnimationPlayer")
 @onready var title_screen_animate = $TitleScreen/AnimationPlayer
@@ -24,6 +26,8 @@ extends CanvasLayer
 @onready var title_screen_start = $TitleScreen/TSButtons/MainButtons/StartButton
 @onready var title_screen_settings = $TitleScreen/TSButtons/MainButtons/SettingsButton
 
+@onready var last_scene_animation = $LastScene/AnimationPlayer
+
 var goal_texture = preload("res://assets/Notebookpaper.png")
 var goal_update_texture = preload("res://assets/PenWNotepad.png")
 
@@ -32,6 +36,8 @@ func _ready():
 	logo_screen.visible = true
 	title_screen.visible = false
 	in_game.visible = false
+	last_scene.visible = false
+	credits.visible = false
 	
 	title_screen_buttons.modulate.a = 0
 	
@@ -80,32 +86,40 @@ func show_start():
 	
 	await title_screen_animate.animation_finished
 
-func show_middle():
-	
-	tutorial_button.visible = false
-	
-	dialog.display_line(true,false,"Search the area to find information that will fill out the notebook in your inventory.","Tutorial")
-	
-	await dialog.continue_true
-	
-	dialog.display_line(true,false,"You can open your inventory by selecting the icon in the lower left corner.","Tutorial")
-	
-	await dialog.continue_true
-	
-	dialog.display_line(true,false,"To add information to your notebook, select the notebook in your inventory and an object in the world, then press the connect button that will appear.","Tutorial")
-	
-	await dialog.continue_true
-	
-	dialog.display_line(true,false,"You can check your progress by opening your inventory, selecting the expand button at the top right of your inventory, then dragging your notebook to the center of the screen.","Tutorial")
-	
-	await dialog.continue_true
-	
-	tutorial_button.visible = true
+#func show_middle():
+	#
+	#tutorial_button.visible = false
+	#
+	#dialog.display_line(true,false,"Search the area to find information that will fill out the notebook in your inventory.","Tutorial")
+	#
+	#await dialog.continue_true
+	#
+	#dialog.display_line(true,false,"You can open your inventory by selecting the icon in the lower left corner.","Tutorial")
+	#
+	#await dialog.continue_true
+	#
+	#dialog.display_line(true,false,"To add information to your notebook, select the notebook in your inventory and an object in the world, then press the connect button that will appear.","Tutorial")
+	#
+	#await dialog.continue_true
+	#
+	#dialog.display_line(true,false,"You can check your progress by opening your inventory, selecting the expand button at the top right of your inventory, then dragging your notebook to the center of the screen.","Tutorial")
+	#
+	#await dialog.continue_true
+	#
+	#tutorial_button.visible = true
 
 func show_end():
-	tutorial_button.visible = false
 	
-	dialog.display_line(true,false,"You did it!","Tutorial")
+	last_scene_animation.play("last_scene")
+	
+	await last_scene_animation.animation_finished
+	
+	#tutorial_button.visible = false
+	#
+	#dialog.display_line(true,false,"You did it!","Tutorial")
+
+func show_credits():
+	pass
 
 func next_level_tutorial():
 	
@@ -127,9 +141,9 @@ func next_level_tutorial():
 
 func _on_goal_button_pressed() -> void:
 	
-	if Global.level == 1 and Global.tutorial_2 == false:
-		
-		Global.tutorial_2 = true
+	#if Global.level == 1 and Global.tutorial_2 == false:
+		#
+		#Global.tutorial_2 = true
 	
 	goal_button.visible = false
 	goal_open.visible = true

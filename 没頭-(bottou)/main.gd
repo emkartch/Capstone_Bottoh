@@ -26,8 +26,7 @@ var view_SV3 = false
 var SV3_BLUE = preload("res://areas/street views/street view 3/street view 3 (BLUE)/StreetView3BLUE.png")
 var SSO_BLUE = preload("res://areas/stationary store (outside)/stationary store (outside zoom)/SSO_Back_Layer(BLUE).png")
 
-var tut_12_playing = false
-var tut_13_playing = false
+var train_no_police = preload("res://areas/train/TrainNoPolice.png")
 
 func _process(_delta):
 	
@@ -80,6 +79,8 @@ func level_0():
 	GameScript.scene_line += 1
 	
 	tutorial_wipe.visible = true
+	
+	Global.tut_1_playing = true
 	
 	tutorial_animation.play("tutorial_1")
 	
@@ -136,6 +137,8 @@ func level_1():
 	
 	tutorial_wipe.visible = true
 	
+	Global.tut_2_playing = true
+	
 	tutorial_animation.play("tutorial_2")
 	
 	await tutorial_animation.animation_finished
@@ -145,12 +148,21 @@ func level_1():
 	
 	tutorial_wipe.visible = false
 	
+	while self.has_node("Train"):
+		await get_tree().process_frame
+	
+	await transition.anim_finished
+	
+	NavigationManager.train.get_node("PolicePerson").visible = false
+	
 	while not self.has_node("StreetView1"):
 		await get_tree().process_frame
 	
 	await transition.anim_finished
 	
 	tutorial_wipe.visible = true
+	
+	Global.tut_3_playing = true
 	
 	tutorial_animation.play("tutorial_3")
 	
@@ -167,6 +179,8 @@ func level_1():
 	await transition.anim_finished
 	
 	tutorial_wipe.visible = true
+	
+	Global.tut_4_playing = true
 	
 	tutorial_animation.play("tutorial_4")
 	
@@ -202,6 +216,8 @@ func level_2():
 	await hud.update_goal_text(GameScript.goal_2)
 	
 	tutorial_wipe.visible = true
+	
+	Global.tut_5_playing = true
 	
 	tutorial_animation.play("tutorial_5")
 	
@@ -243,6 +259,8 @@ func level_3():
 	
 	tutorial_wipe.visible = true
 	
+	Global.tut_6_playing = true
+	
 	tutorial_animation.play("tutorial_6")
 	
 	await tutorial_animation.animation_finished
@@ -261,6 +279,8 @@ func level_3():
 	
 	tutorial_wipe.visible = true
 	
+	Global.tut_7_playing = true
+	
 	tutorial_animation.play("tutorial_7")
 	
 	await tutorial_animation.animation_finished
@@ -272,6 +292,8 @@ func level_3():
 	
 	tutorial_wipe.visible = true
 	
+	Global.tut_8_playing = true
+	
 	tutorial_animation.play("tutorial_8")
 	
 	await tutorial_animation.animation_finished
@@ -282,6 +304,8 @@ func level_3():
 	tutorial_wipe.visible = false
 	
 	tutorial_wipe.visible = true
+	
+	Global.tut_9_playing = true
 	
 	tutorial_animation.play("tutorial_9")
 	
@@ -451,6 +475,8 @@ func level_8():
 	
 	tutorial_wipe.visible = true
 	
+	Global.tut_10_playing = true
+	
 	tutorial_animation.play("tutorial_10")
 	
 	await tutorial_animation.animation_finished
@@ -482,6 +508,8 @@ func level_9():
 	await hud.update_goal_text(GameScript.goal_9)
 	
 	tutorial_wipe.visible = true
+	
+	Global.tut_11_playing = true
 	
 	tutorial_animation.play("tutorial_11")
 	
@@ -608,7 +636,7 @@ func level_13():
 	
 	tutorial_wipe.visible = true
 	
-	tut_12_playing = true
+	Global.tut_12_playing = true
 	
 	tutorial_animation.play("tutorial_12")
 	
@@ -623,7 +651,7 @@ func level_13():
 	
 	tutorial_wipe.visible = true
 	
-	tut_13_playing = true
+	Global.tut_13_playing = true
 	
 	tutorial_animation.play("tutorial_13")
 	
@@ -672,6 +700,9 @@ func level_14():
 	
 	await notif.display_notif("Passport added to Inventory",38)
 	
+	NavigationManager.train.get_node("Selectables/PoliceOfficer").visible = false
+	NavigationManager.train.get_node("Doors/Door_TZ_In").visible = true
+	
 	while GameScript.speech_14[GameScript.scene_line] != null:
 		
 		var line_info = GameScript.speech_14[GameScript.scene_line]
@@ -690,7 +721,30 @@ func level_14():
 func level_15():
 	
 	await hud.update_goal_text(GameScript.goal_15)
-
-func level_16():
 	
-	await hud.update_goal_text(GameScript.goal_16)
+	while not self.has_node("TrainZoom"):
+		await get_tree().process_frame
+	
+	await transition.anim_finished
+	
+	while GameScript.speech_15[GameScript.scene_line] != null:
+		
+		var line_info = GameScript.speech_15[GameScript.scene_line]
+		
+		dialog.display_line(true,false,line_info[0],line_info[1],line_info[2])
+		
+		GameScript.scene_line += 1
+		
+		await dialog.continue_true
+	
+	#Global.level += 1
+	#GameScript.scene_line = 0
+	
+	NavigationManager.train.get_node("Background").texture = train_no_police
+	
+	while not self.has_node("Train"):
+		await get_tree().process_frame
+	
+	await transition.anim_finished
+	
+	hud.show_end()
