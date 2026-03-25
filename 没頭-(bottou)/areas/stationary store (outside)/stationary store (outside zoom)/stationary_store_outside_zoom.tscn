@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dtkfsdalkpw1i"]
+
+[ext_resource type="Texture2D" uid="uid://76k64lc8k42m" path="res://areas/stationary store (outside)/stationary store (outside zoom)/SSO_Zoom_Layer(BLUE).png" id="1_8m2v5"]
+[ext_resource type="PackedScene" uid="uid://c13d8uvmyxs6j" path="res://door.tscn" id="2_v46sj"]
+[ext_resource type="Texture2D" uid="uid://b10x40wmxba1a" path="res://assets/ArrowBox.png" id="3_aj44f"]
+[ext_resource type="Texture2D" uid="uid://d4lcey8yvvqql" path="res://assets/ArrowBoxGrey.png" id="4_qysuf"]
+
+[node name="StationaryStoreOutsideZoom" type="CanvasLayer" unique_id=1897644264]
+
+[node name="Background" type="TextureRect" parent="." unique_id=905569322]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_8m2v5")
+
+[node name="Door" type="Node" parent="." unique_id=1266388228]
+
+[node name="Door_SSO" parent="Door" unique_id=1136604104 instance=ExtResource("2_v46sj")]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.96
+anchor_right = 0.5
+anchor_bottom = 0.96
+offset_left = -140.0
+offset_top = -120.0
+offset_right = 140.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0
+current_level_tag = "stationary_store_outside_zoom"
+destination_level_tag = "stationary_store_outside"
+
+[node name="Button" parent="Door/Door_SSO" index="0" unique_id=846998799]
+texture_normal = ExtResource("3_aj44f")
+texture_pressed = ExtResource("4_qysuf")
+texture_hover = ExtResource("4_qysuf")
+
+[editable path="Door/Door_SSO"]

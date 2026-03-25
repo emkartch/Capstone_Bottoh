@@ -17,7 +17,7 @@ func _on_button_pressed() -> void:
 		
 		if self.name == "Door_CSO" or self.name == "Door_BO" or self.name == "Door_HSO" or self.name == "Door_BSO" or self.name == "Door_SSO" or self.name == "Door_ClSO" or self.name == "Door_SV1_L" or self.name == "Door_SV2_L":
 		
-			dialog.display_line(true,false,"thought","I don't have time to look around.","")
+			dialog.display_line(true,false,"thought","I don't have time to look around, I have to catch my train!","")
 		
 		elif self.name == "Door_SV2_R" and Global.tutorial_1 == false:
 		

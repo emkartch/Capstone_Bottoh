@@ -66,6 +66,10 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 		
 		Global.tutorial_9 = true
 	
+	if not Global.tutorial_11 and Global.level == 9:
+		
+		Global.tutorial_11 = true
+	
 	if not item:
 		return
 	

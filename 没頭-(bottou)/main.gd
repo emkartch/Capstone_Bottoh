@@ -23,6 +23,12 @@ var view_SV1 = false
 var view_SV2 = false
 var view_SV3 = false
 
+var SV3_BLUE = preload("res://areas/street views/street view 3/street view 3 (BLUE)/StreetView3BLUE.png")
+var SSO_BLUE = preload("res://areas/stationary store (outside)/stationary store (outside zoom)/SSO_Back_Layer(BLUE).png")
+
+var tut_12_playing = false
+var tut_13_playing = false
+
 func _process(_delta):
 	
 	if main_background.texture == null:
@@ -468,31 +474,223 @@ func level_8():
 	
 	Global.level += 1
 	GameScript.scene_line = 0
+	
+	level_9()
 
 func level_9():
 	
 	await hud.update_goal_text(GameScript.goal_9)
+	
+	tutorial_wipe.visible = true
+	
+	tutorial_animation.play("tutorial_11")
+	
+	await tutorial_animation.animation_finished
+	
+	while not Global.tutorial_11:
+		await get_tree().process_frame
+	
+	tutorial_wipe.visible = false
+	
+	await inventory_container.map_look
+	
+	while GameScript.speech_9[GameScript.scene_line] != null:
+		
+		var line_info = GameScript.speech_9[GameScript.scene_line]
+		
+		dialog.display_line(true,false,line_info[0],line_info[1],line_info[2])
+		
+		GameScript.scene_line += 1
+		
+		await dialog.continue_true
+	
+	Global.level += 1
+	GameScript.scene_line = 0
+	
+	level_10()
 
 func level_10():
 	
 	await hud.update_goal_text(GameScript.goal_10)
+	
+	while not self.has_node("StationaryStore"):
+		await get_tree().process_frame
+	
+	await transition.anim_finished
+	
+	while GameScript.speech_10[GameScript.scene_line] != null:
+		
+		var line_info = GameScript.speech_10[GameScript.scene_line]
+		
+		dialog.display_line(true,false,line_info[0],line_info[1],line_info[2])
+		
+		GameScript.scene_line += 1
+		
+		await dialog.continue_true
+	
+	Global.level += 1
+	GameScript.scene_line = 0
+	
+	level_11()
 
 func level_11():
 	
 	await hud.update_goal_text(GameScript.goal_11)
+	
+	while not self.has_node("StationaryStoreZoom"):
+		await get_tree().process_frame
+	
+	await transition.anim_finished
+	
+	while GameScript.speech_11[GameScript.scene_line] != null:
+		
+		var line_info = GameScript.speech_11[GameScript.scene_line]
+		
+		dialog.display_line(true,false,line_info[0],line_info[1],line_info[2])
+		
+		GameScript.scene_line += 1
+		
+		await dialog.continue_true
+	
+	for slot in inventory_container.get_node("ScrollContainer/VBoxInventory").get_children():
+		
+		if slot.item == null:
+			
+			slot.item = note_ID
+			
+			break
+	
+	await notif.display_notif("Note added to Inventory",38)
+	
+	while GameScript.speech_11[GameScript.scene_line] != null:
+		
+		var line_info = GameScript.speech_11[GameScript.scene_line]
+		
+		dialog.display_line(true,false,line_info[0],line_info[1],line_info[2])
+		
+		GameScript.scene_line += 1
+		
+		await dialog.continue_true
+	
+	NavigationManager.street_view_3.get_node("Background").texture = SV3_BLUE
+	NavigationManager.stationary_store_outside.get_node("Background").texture = SSO_BLUE
+	NavigationManager.stationary_store_outside.get_node("Selectables/BlueHatGuy").visible = true
+	
+	GameScript.scene_line = 0
+	
+	if Global.notebook_filled:
+		
+		Global.level += 2
+		
+		level_13()
+		
+	else:
+		
+		Global.level += 1
+		
+		level_12()
 
 func level_12():
 	
 	await hud.update_goal_text(GameScript.goal_12)
+	
+	await Global.full_notebook
+	
+	Global.level += 1
+	
+	level_13()
 
 func level_13():
 	
 	await hud.update_goal_text(GameScript.goal_13)
+	
+	await inventory_container.notes_look
+	
+	tutorial_wipe.visible = true
+	
+	tut_12_playing = true
+	
+	tutorial_animation.play("tutorial_12")
+	
+	await tutorial_animation.animation_finished
+	
+	while not Global.tutorial_12:
+		await get_tree().process_frame
+	
+	tutorial_wipe.visible = false
+	
+	await Global.connect_show
+	
+	tutorial_wipe.visible = true
+	
+	tut_13_playing = true
+	
+	tutorial_animation.play("tutorial_13")
+	
+	await tutorial_animation.animation_finished
+	
+	while not Global.tutorial_13:
+		await get_tree().process_frame
+	
+	tutorial_wipe.visible = false
+	
+	await Global.translated_note
+	
+	Global.level += 1
+	
+	level_14()
 
 func level_14():
 	
 	await hud.update_goal_text(GameScript.goal_14)
+	
+	NavigationManager.stationary_store_outside.get_node("Selectables/BlueHatGuy").visible = false
+	NavigationManager.stationary_store_outside.get_node("Doors/Door_SSOZ").visible = true
+	
+	while not self.has_node("StationaryStoreOutsideZoom"):
+		await get_tree().process_frame
+	
+	await transition.anim_finished
+	
+	while GameScript.speech_14[GameScript.scene_line] != null:
+		
+		var line_info = GameScript.speech_14[GameScript.scene_line]
+		
+		dialog.display_line(true,false,line_info[0],line_info[1],line_info[2])
+		
+		GameScript.scene_line += 1
+		
+		await dialog.continue_true
+	
+	for slot in inventory_container.get_node("ScrollContainer/VBoxInventory").get_children():
+		
+		if slot.item == null:
+			
+			slot.item = passport_ID
+			
+			break
+	
+	await notif.display_notif("Passport added to Inventory",38)
+	
+	while GameScript.speech_14[GameScript.scene_line] != null:
+		
+		var line_info = GameScript.speech_14[GameScript.scene_line]
+		
+		dialog.display_line(true,false,line_info[0],line_info[1],line_info[2])
+		
+		GameScript.scene_line += 1
+		
+		await dialog.continue_true
+	
+	Global.level += 1
+	GameScript.scene_line = 0
+	
+	level_15()
 
 func level_15():
 	
 	await hud.update_goal_text(GameScript.goal_15)
+
+func level_16():
+	
+	await hud.update_goal_text(GameScript.goal_16)
