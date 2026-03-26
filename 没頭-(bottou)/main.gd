@@ -30,6 +30,9 @@ var train_no_police = preload("res://areas/train/TrainNoPolice.png")
 
 func _process(_delta):
 	
+	if Global.game_end:
+		self.get_tree().quit()
+	
 	if main_background.texture == null:
 		main_background.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	else:
@@ -122,6 +125,8 @@ func level_0():
 		
 		await dialog.continue_true
 	
+	GameScript.scene_line += 1
+	
 	self.get_node("Train/PromptPersonFront").visible = false
 	
 	Global.level += 1
@@ -154,6 +159,7 @@ func level_1():
 	await transition.anim_finished
 	
 	NavigationManager.train.get_node("PolicePerson").visible = false
+	NavigationManager.train.get_node("Selectables/PoliceOfficer").description = "I need to find my passport first!"
 	
 	while not self.has_node("StreetView1"):
 		await get_tree().process_frame
@@ -206,6 +212,8 @@ func level_1():
 		
 		await dialog.continue_true
 	
+	GameScript.scene_line += 1
+	
 	Global.level += 1
 	GameScript.scene_line = 0
 	
@@ -242,6 +250,8 @@ func level_2():
 		GameScript.scene_line += 1
 		
 		await dialog.continue_true
+	
+	GameScript.scene_line += 1
 	
 	Global.level += 1
 	GameScript.scene_line = 0
@@ -329,6 +339,8 @@ func level_3():
 		
 		await dialog.continue_true
 	
+	GameScript.scene_line += 1
+	
 	Global.level += 1
 	GameScript.scene_line = 0
 	
@@ -353,6 +365,8 @@ func level_4():
 		
 		await dialog.continue_true
 	
+	GameScript.scene_line += 1
+	
 	for slot in inventory_container.get_node("ScrollContainer/VBoxInventory").get_children():
 		
 		if slot.item == null:
@@ -372,6 +386,8 @@ func level_4():
 		GameScript.scene_line += 1
 		
 		await dialog.continue_true
+	
+	GameScript.scene_line += 1
 	
 	Global.level += 1
 	GameScript.scene_line = 0
@@ -397,6 +413,8 @@ func level_5():
 		
 		await dialog.continue_true
 	
+	GameScript.scene_line += 1
+	
 	Global.level += 1
 	GameScript.scene_line = 0
 	
@@ -421,6 +439,8 @@ func level_6():
 		
 		await dialog.continue_true
 	
+	GameScript.scene_line += 1
+	
 	for slot in inventory_container.get_node("ScrollContainer/VBoxInventory").get_children():
 		
 		if slot.item == null:
@@ -441,6 +461,8 @@ func level_6():
 		
 		await dialog.continue_true
 	
+	GameScript.scene_line += 1
+	
 	Global.level += 1
 	GameScript.scene_line = 0
 	
@@ -452,6 +474,8 @@ func level_7():
 	
 	await NavigationManager.look_for_vintage
 	
+	await transition.anim_finished
+	
 	while GameScript.speech_7[GameScript.scene_line] != null:
 		
 		var line_info = GameScript.speech_7[GameScript.scene_line]
@@ -461,6 +485,8 @@ func level_7():
 		GameScript.scene_line += 1
 		
 		await dialog.continue_true
+	
+	GameScript.scene_line += 1
 	
 	Global.level += 1
 	GameScript.scene_line = 0
@@ -488,6 +514,8 @@ func level_8():
 	
 	await inventory_container.second_page_newspaper
 	
+	await get_tree().create_timer(1.0).timeout
+	
 	while GameScript.speech_8[GameScript.scene_line] != null:
 		
 		var line_info = GameScript.speech_8[GameScript.scene_line]
@@ -497,6 +525,8 @@ func level_8():
 		GameScript.scene_line += 1
 		
 		await dialog.continue_true
+	
+	GameScript.scene_line += 1
 	
 	Global.level += 1
 	GameScript.scene_line = 0
@@ -532,6 +562,8 @@ func level_9():
 		
 		await dialog.continue_true
 	
+	GameScript.scene_line += 1
+	
 	Global.level += 1
 	GameScript.scene_line = 0
 	
@@ -555,6 +587,8 @@ func level_10():
 		GameScript.scene_line += 1
 		
 		await dialog.continue_true
+	
+	GameScript.scene_line += 1
 	
 	Global.level += 1
 	GameScript.scene_line = 0
@@ -580,6 +614,8 @@ func level_11():
 		
 		await dialog.continue_true
 	
+	GameScript.scene_line += 1
+	
 	for slot in inventory_container.get_node("ScrollContainer/VBoxInventory").get_children():
 		
 		if slot.item == null:
@@ -599,6 +635,8 @@ func level_11():
 		GameScript.scene_line += 1
 		
 		await dialog.continue_true
+	
+	GameScript.scene_line += 1
 	
 	NavigationManager.street_view_3.get_node("Background").texture = SV3_BLUE
 	NavigationManager.stationary_store_outside.get_node("Background").texture = SSO_BLUE
@@ -672,6 +710,17 @@ func level_14():
 	
 	await hud.update_goal_text(GameScript.goal_14)
 	
+	NavigationManager.barber_shop_outside.get_node("Selectables/BSRandomPerson").description = "They don't fit the description I was given..."
+	NavigationManager.bookstore_outside.get_node("Selectables/BRandomPerson").description = "They don't fit the description I was given..."
+	NavigationManager.bookstore_outside.get_node("Selectables/BRandomPerson2").description = "They don't fit the description I was given..."
+	NavigationManager.clothing_store_outside.get_node("Selectables/ClSRandomPerson").description = "They don't fit the description I was given..."
+	NavigationManager.convenience_store_outside.get_node("Selectables/CSRandomPerson").description = "They don't fit the description I was given..."
+	NavigationManager.convenience_store_outside.get_node("Selectables/CSRandomPerson2").description = "They don't fit the description I was given..."
+	NavigationManager.hardware_store_outside.get_node("Selectables/HSRandomPerson").description = "They don't fit the description I was given..."
+	NavigationManager.hardware_store_outside.get_node("Selectables/HSRandomPerson2").description = "They don't fit the description I was given..."
+	NavigationManager.stationary_store.get_node("Selectables/SSRandomPerson").description = "They don't fit the description I was given..."
+	NavigationManager.stationary_store_outside.get_node("Selectables/SSORandomPerson").description = "They don't fit the description I was given..."
+	
 	NavigationManager.stationary_store_outside.get_node("Selectables/BlueHatGuy").visible = false
 	NavigationManager.stationary_store_outside.get_node("Doors/Door_SSOZ").visible = true
 	
@@ -689,6 +738,8 @@ func level_14():
 		GameScript.scene_line += 1
 		
 		await dialog.continue_true
+	
+	GameScript.scene_line += 1
 	
 	for slot in inventory_container.get_node("ScrollContainer/VBoxInventory").get_children():
 		
@@ -712,6 +763,8 @@ func level_14():
 		GameScript.scene_line += 1
 		
 		await dialog.continue_true
+	
+	GameScript.scene_line += 1
 	
 	Global.level += 1
 	GameScript.scene_line = 0
@@ -737,14 +790,16 @@ func level_15():
 		
 		await dialog.continue_true
 	
-	#Global.level += 1
-	#GameScript.scene_line = 0
+	GameScript.scene_line += 1
 	
-	NavigationManager.train.get_node("Background").texture = train_no_police
-	
-	while not self.has_node("Train"):
-		await get_tree().process_frame
-	
-	await transition.anim_finished
+	##Global.level += 1
+	##GameScript.scene_line = 0
+	#
+	#NavigationManager.train.get_node("Background").texture = train_no_police
+	#
+	#while not self.has_node("Train"):
+		#await get_tree().process_frame
+	#
+	#await transition.anim_finished
 	
 	hud.show_end()

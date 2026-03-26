@@ -40,7 +40,7 @@ offset_right = 952.0
 offset_bottom = 308.0
 item_name = "BookstoreBook"
 item = ExtResource("3_70fny")
-description = "Main Book"
+description = "A children's book with Japanese and English translations of appearances."
 
 [node name="Book1" parent="Selectables" unique_id=588735707 instance=ExtResource("2_70fny")]
 layout_mode = 0
@@ -50,7 +50,7 @@ offset_right = 266.0
 offset_bottom = 653.0
 item_name = "Book1"
 item = ExtResource("6_mgwi7")
-description = "Book 1"
+description = "A thriller about multiple assassins whose missions collide on a bullet train."
 
 [node name="Book2" parent="Selectables" unique_id=520684440 instance=ExtResource("2_70fny")]
 layout_mode = 0
@@ -60,7 +60,7 @@ offset_right = 514.0
 offset_bottom = 308.0
 item_name = "Book2"
 item = ExtResource("5_qgba8")
-description = "Book 2"
+description = "A book about young wizards and witches at age eleven who go to a magic school."
 
 [node name="Book3" parent="Selectables" unique_id=606611704 instance=ExtResource("2_70fny")]
 layout_mode = 0
@@ -70,7 +70,7 @@ offset_right = 836.0
 offset_bottom = 653.0
 item_name = "Book3"
 item = ExtResource("6_shw4s")
-description = "Book 3"
+description = "Considered the world’s first novel, chronicling the life, romantic pursuits, and political fortunes of a Japanese emperor."
 
 [node name="Book4" parent="Selectables" unique_id=1888871301 instance=ExtResource("2_70fny")]
 visible = false
@@ -91,7 +91,7 @@ offset_right = 1612.0
 offset_bottom = 308.0
 item_name = "Book5"
 item = ExtResource("9_v2vs6")
-description = "Book 5"
+description = "A manga about a boy looking for treasure to become King of the Pirates."
 
 [node name="Book6" parent="Selectables" unique_id=2090754867 instance=ExtResource("2_70fny")]
 layout_mode = 0
@@ -101,7 +101,7 @@ offset_right = 1860.0
 offset_bottom = 652.0
 item_name = "Book6"
 item = ExtResource("10_4aa8h")
-description = "Book 6"
+description = "A manga about a girl who befriends a family that are cursed to turn into a Chinese Zodiac animal when touched by someone of the opposite sex."
 
 [node name="Counter" type="TextureRect" parent="." unique_id=285709245]
 offset_right = 1920.0
@@ -143,8 +143,8 @@ offset_right = 439.0
 offset_bottom = -361.79993
 grow_horizontal = 2
 grow_vertical = 0
-current_level_tag = "bookstore_zoom"
-destination_level_tag = "bookstore"
+current_level_tag = "bookstore"
+destination_level_tag = "bookstore_zoom"
 
 [editable path="Doors/Door_BO"]
 [editable path="Doors/Door_BSZ_In"]

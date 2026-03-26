@@ -37,7 +37,7 @@ offset_right = 634.0
 offset_bottom = 551.0
 item_name = "Stickers"
 item = ExtResource("4_62gfl")
-description = "Stickers"
+description = "These could be used in a notebook."
 
 [node name="Notebooks" parent="Selectables" unique_id=1385706748 instance=ExtResource("3_weyfw")]
 layout_mode = 0
@@ -47,7 +47,7 @@ offset_right = 1920.0
 offset_bottom = 570.0
 item_name = "Notebooks"
 item = ExtResource("5_4jlfr")
-description = "Notebooks"
+description = "These notebooks are cute!"
 
 [node name="Markers" parent="Selectables" unique_id=1199115630 instance=ExtResource("3_weyfw")]
 layout_mode = 0
@@ -57,18 +57,17 @@ offset_right = 1050.0
 offset_bottom = 1050.0
 item_name = "Markers"
 item = ExtResource("6_rikge")
-description = "Markers"
+description = "These beautiful colors would make journaling fun."
 
-[node name="RandomPerson" parent="Selectables" unique_id=1831069052 instance=ExtResource("3_weyfw")]
-visible = false
+[node name="SSRandomPerson" parent="Selectables" unique_id=1831069052 instance=ExtResource("3_weyfw")]
 layout_mode = 0
 offset_left = 1080.0
 offset_top = 600.0
 offset_right = 1267.0
 offset_bottom = 1080.0
-item_name = "RandomPerson"
+item_name = "SSRandomPerson"
 item = ExtResource("7_weyfw")
-description = "Random Person"
+description = "They are browsing the markers."
 
 [node name="Door" type="Node" parent="." unique_id=1090544651]
 

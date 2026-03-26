@@ -34,9 +34,10 @@ offset_left = 630.0
 offset_right = 630.0
 item_name = "ConvenienceStoreSign"
 item = ExtResource("3_iaffb")
-description = "Convenience Store Sign"
+description = "A place that has easy access to drinks and snacks."
 
 [node name="Bonsai" parent="Selectables" unique_id=1373415686 instance=ExtResource("2_vmu5q")]
+visible = false
 layout_mode = 0
 offset_left = 195.0
 offset_top = 608.0
@@ -46,25 +47,25 @@ item_name = "Bonsai 3"
 item = ExtResource("4_nrb5r")
 description = "Bonasi 3"
 
-[node name="RandomPerson" parent="Selectables" unique_id=901100435 instance=ExtResource("2_vmu5q")]
+[node name="CSRandomPerson" parent="Selectables" unique_id=901100435 instance=ExtResource("2_vmu5q")]
 layout_mode = 0
 offset_left = 135.0
 offset_top = 600.0
 offset_right = 337.0
 offset_bottom = 1080.0
-item_name = "RandomPerson"
+item_name = "CSRandomPerson"
 item = ExtResource("5_nrb5r")
-description = "RandomPerson"
+description = "They are looking around like they are waiting for someone."
 
-[node name="RandomPerson2" parent="Selectables" unique_id=1569815252 instance=ExtResource("2_vmu5q")]
+[node name="CSRandomPerson2" parent="Selectables" unique_id=1569815252 instance=ExtResource("2_vmu5q")]
 layout_mode = 0
 offset_left = 1350.0
 offset_top = 600.0
 offset_right = 1552.0
 offset_bottom = 1080.0
-item_name = "RandomPerson"
+item_name = "CSRandomPerson2"
 item = ExtResource("6_qhin4")
-description = "RandomPerson"
+description = "They are reading the local newspaper."
 
 [node name="Doors" type="Node" parent="." unique_id=1328366798]
 

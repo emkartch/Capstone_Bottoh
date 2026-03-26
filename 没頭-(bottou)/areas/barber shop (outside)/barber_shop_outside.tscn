@@ -41,7 +41,7 @@ offset_right = 1290.0
 offset_bottom = 150.0
 item_name = "BarberShopSign"
 item = ExtResource("3_xbouf")
-description = "Barber Shop Sign"
+description = "A cute barber shop!"
 
 [node name="ShortHairPoster" parent="Selectables" unique_id=632896118 instance=ExtResource("3_sckw2")]
 layout_mode = 0
@@ -51,7 +51,7 @@ offset_right = 1740.0
 offset_bottom = 705.0
 item_name = "ShortHairPoster"
 item = ExtResource("4_ho1fi")
-description = "Short Hair Poster"
+description = "A poster with three short hairstyles to choose from."
 
 [node name="LongHairPoster" parent="Selectables" unique_id=1605407172 instance=ExtResource("3_sckw2")]
 layout_mode = 0
@@ -61,7 +61,7 @@ offset_right = 540.0
 offset_bottom = 705.0
 item_name = "LongHairPoster"
 item = ExtResource("5_tl415")
-description = "Long Hair Poster"
+description = "A poster with two long hairstyles to choose from."
 
 [node name="ClosedDoorBS" parent="Selectables" unique_id=1634877005 instance=ExtResource("3_sckw2")]
 visible = false
@@ -82,17 +82,17 @@ offset_right = 1088.0
 offset_bottom = 779.0
 item_name = "ClosedSignBS"
 item = ExtResource("6_y5vwt")
-description = "Closed Sign"
+description = "Seems that the store is closed."
 
-[node name="RandomPerson" parent="Selectables" unique_id=1740340122 instance=ExtResource("3_sckw2")]
+[node name="BSRandomPerson" parent="Selectables" unique_id=1740340122 instance=ExtResource("3_sckw2")]
 layout_mode = 0
 offset_left = 540.0
 offset_top = 600.0
 offset_right = 742.0
 offset_bottom = 1080.0
-item_name = "RandomPerson"
+item_name = "BSRandomPerson"
 item = ExtResource("7_tl415")
-description = "Random Person"
+description = "It seems like he might be waiting for the store to open."
 
 [node name="Doors" type="Node" parent="." unique_id=1240796291]
 

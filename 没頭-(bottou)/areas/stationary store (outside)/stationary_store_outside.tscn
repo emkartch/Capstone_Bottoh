@@ -33,17 +33,17 @@ offset_left = 630.0
 offset_right = 630.0
 item_name = "StationaryStoreSign"
 item = ExtResource("3_csl80")
-description = "Stationary Store Sign"
+description = "A store that has cute, artsy items to liven up journals."
 
-[node name="RandomPerson" parent="Selectables" unique_id=1242137623 instance=ExtResource("2_jyvra")]
+[node name="SSORandomPerson" parent="Selectables" unique_id=1242137623 instance=ExtResource("2_jyvra")]
 layout_mode = 0
 offset_left = 1425.0
 offset_top = 600.0
 offset_right = 1627.0
 offset_bottom = 1080.0
-item_name = "RandomPerson"
+item_name = "SSORandomPerson"
 item = ExtResource("4_csl80")
-description = "Random Person"
+description = "They seem to be waiting on someone to finish up inside the store."
 
 [node name="BlueHatGuy" parent="Selectables" unique_id=1162084306 instance=ExtResource("2_jyvra")]
 visible = false
@@ -54,7 +54,7 @@ offset_right = 885.0
 offset_bottom = 1080.0
 item_name = "BlueHatGuy"
 item = ExtResource("5_b2rc0")
-description = "BLUE HAT GUY"
+description = "They seem to be looking at some newly bought markers."
 
 [node name="Doors" type="Node" parent="." unique_id=1837340145]
 

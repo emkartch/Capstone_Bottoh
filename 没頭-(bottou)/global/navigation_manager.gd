@@ -54,6 +54,8 @@ signal navigation_finished
 
 signal look_for_vintage
 
+var vintage_look = true
+
 func _ready():
 	barber_shop_outside = BSO.instantiate()
 	bookstore = B.instantiate()
@@ -77,6 +79,14 @@ func _ready():
 	main.add_child(street_view_1)
 	main.move_child(street_view_1,0)
 	street_view_1.layer = -2
+
+func _process(_delta: float) -> void:
+	
+	if main.view_SV1 and main.view_SV2 and main.view_SV3 and vintage_look:
+		
+		emit_signal("look_for_vintage")
+		
+		vintage_look = false
 
 func go_to_level(curr_level_tag,new_level_tag):
 	
@@ -174,10 +184,6 @@ func go_to_level(curr_level_tag,new_level_tag):
 			elif scene_to_load == street_view_3:
 				
 				main.view_SV3 = true
-			
-			if main.view_SV1 and main.view_SV2 and main.view_SV3:
-				
-				emit_signal("look_for_vintage")
 		
 		# Street View Navigation
 		if (scene_to_remove == street_view_1 && scene_to_load == street_view_2) or (scene_to_remove == street_view_2 && scene_to_load == street_view_3):

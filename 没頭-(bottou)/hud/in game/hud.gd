@@ -28,6 +28,8 @@ extends CanvasLayer
 
 @onready var last_scene_animation = $LastScene/AnimationPlayer
 
+@onready var credits_animation = $Credits/AnimationPlayer
+
 var goal_texture = preload("res://assets/Notebookpaper.png")
 var goal_update_texture = preload("res://assets/PenWNotepad.png")
 
@@ -86,40 +88,23 @@ func show_start():
 	
 	await title_screen_animate.animation_finished
 
-#func show_middle():
-	#
-	#tutorial_button.visible = false
-	#
-	#dialog.display_line(true,false,"Search the area to find information that will fill out the notebook in your inventory.","Tutorial")
-	#
-	#await dialog.continue_true
-	#
-	#dialog.display_line(true,false,"You can open your inventory by selecting the icon in the lower left corner.","Tutorial")
-	#
-	#await dialog.continue_true
-	#
-	#dialog.display_line(true,false,"To add information to your notebook, select the notebook in your inventory and an object in the world, then press the connect button that will appear.","Tutorial")
-	#
-	#await dialog.continue_true
-	#
-	#dialog.display_line(true,false,"You can check your progress by opening your inventory, selecting the expand button at the top right of your inventory, then dragging your notebook to the center of the screen.","Tutorial")
-	#
-	#await dialog.continue_true
-	#
-	#tutorial_button.visible = true
-
 func show_end():
 	
 	last_scene_animation.play("last_scene")
 	
 	await last_scene_animation.animation_finished
 	
-	#tutorial_button.visible = false
-	#
-	#dialog.display_line(true,false,"You did it!","Tutorial")
+	credits.visible = true
+	
+	await show_credits()
+	
+	Global.game_end = true
 
 func show_credits():
-	pass
+	
+	credits_animation.play("credits")
+	
+	await credits_animation.animation_finished
 
 func next_level_tutorial():
 	
@@ -186,3 +171,25 @@ func update_goal_text(goal):
 	goal_button.texture_normal = goal_texture
 	
 	blocker.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
+func _on_credits_button_pressed() -> void:
+	
+	transition_animation.play("fade_in")
+	
+	await transition_animation.animation_finished
+	
+	credits.visible = true
+	
+	transition_animation.play("fade_out")
+	
+	await transition_animation.animation_finished
+	
+	await show_credits()
+	
+	transition_animation.play("fade_in")
+	
+	await transition_animation.animation_finished
+	
+	credits.visible = false
+	
+	transition_animation.play("fade_out")

@@ -39,7 +39,7 @@ offset_right = 1920.0
 offset_bottom = 982.0
 item_name = "KinderEggs"
 item = ExtResource("4_cbhbi")
-description = "Kinder Eggs"
+description = "Chocolate eggs with a hidden toy inside! They are banned in the US."
 
 [node name="Onigiri" parent="Selectables" unique_id=105556788 instance=ExtResource("3_h6v2g")]
 layout_mode = 0
@@ -48,7 +48,7 @@ offset_right = 348.0
 offset_bottom = 645.0
 item_name = "Onigiri"
 item = ExtResource("5_74vvr")
-description = "Onigiri"
+description = "These plain, but simple white rice and seaweed snacks look delicious. I wish they were in convenience stores in America."
 
 [node name="Sandwiches" parent="Selectables" unique_id=1570512484 instance=ExtResource("3_h6v2g")]
 layout_mode = 0
@@ -58,7 +58,7 @@ offset_right = 690.0
 offset_bottom = 642.0
 item_name = "Sandwiches"
 item = ExtResource("6_lxvmr")
-description = "Sandwiches"
+description = "An Egg Salad Sandwich, a soft white bread with a classic creamy egg salad, and more options."
 
 [node name="Newspaper" parent="Selectables" unique_id=609975581 instance=ExtResource("3_h6v2g")]
 layout_mode = 0
@@ -68,7 +68,7 @@ offset_right = 1320.0
 offset_bottom = 780.0
 item_name = "Newspaper"
 item = ExtResource("7_ikpat")
-description = "Newspaper"
+description = "How to get information locally. Maybe it could be useful?"
 
 [node name="Doors" type="Node" parent="." unique_id=826049362]
 
