@@ -99,9 +99,9 @@ func _on_down_arrow_pressed() -> void:
 
 func _on_messanger_bag_pressed() -> void:
 	
-	if not Global.tutorial_7 and Global.level == 3:
-		
-		Global.tutorial_7 = true
+	#if not Global.tutorial_7 and Global.level == 3:
+		#
+		#Global.tutorial_7 = true
 	
 	if state:
 		bag_button.set_button_icon(closed_texture)
@@ -129,9 +129,9 @@ func _on_messanger_bag_pressed() -> void:
 
 func _on_expand_button_pressed() -> void:
 	
-	if not Global.tutorial_8 and Global.level == 3:
-		
-		Global.tutorial_8 = true
+	#if not Global.tutorial_8 and Global.level == 3:
+		#
+		#Global.tutorial_8 = true
 	
 	if expand_state:
 		self.anchor_top = 0.34

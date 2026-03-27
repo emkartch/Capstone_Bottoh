@@ -26,10 +26,12 @@ var view_SV3 = false
 var SV3_BLUE = preload("res://areas/street views/street view 3/street view 3 (BLUE)/StreetView3BLUE.png")
 var SSO_BLUE = preload("res://areas/stationary store (outside)/stationary store (outside zoom)/SSO_Back_Layer(BLUE).png")
 
-var tut_12_playing = false
-var tut_13_playing = false
+var train_no_police = preload("res://areas/train/TrainNoPolice.png")
 
 func _process(_delta):
+	
+	if Global.game_end:
+		self.get_tree().quit()
 	
 	if main_background.texture == null:
 		main_background.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -81,6 +83,8 @@ func level_0():
 	
 	tutorial_wipe.visible = true
 	
+	Global.tut_1_playing = true
+	
 	tutorial_animation.play("tutorial_1")
 	
 	await tutorial_animation.animation_finished
@@ -121,6 +125,8 @@ func level_0():
 		
 		await dialog.continue_true
 	
+	GameScript.scene_line += 1
+	
 	self.get_node("Train/PromptPersonFront").visible = false
 	
 	Global.level += 1
@@ -136,6 +142,8 @@ func level_1():
 	
 	tutorial_wipe.visible = true
 	
+	Global.tut_2_playing = true
+	
 	tutorial_animation.play("tutorial_2")
 	
 	await tutorial_animation.animation_finished
@@ -145,12 +153,22 @@ func level_1():
 	
 	tutorial_wipe.visible = false
 	
+	while self.has_node("Train"):
+		await get_tree().process_frame
+	
+	await transition.anim_finished
+	
+	NavigationManager.train.get_node("PolicePerson").visible = false
+	NavigationManager.train.get_node("Selectables/PoliceOfficer").description = "I need to find my passport first!"
+	
 	while not self.has_node("StreetView1"):
 		await get_tree().process_frame
 	
 	await transition.anim_finished
 	
 	tutorial_wipe.visible = true
+	
+	Global.tut_3_playing = true
 	
 	tutorial_animation.play("tutorial_3")
 	
@@ -167,6 +185,8 @@ func level_1():
 	await transition.anim_finished
 	
 	tutorial_wipe.visible = true
+	
+	Global.tut_4_playing = true
 	
 	tutorial_animation.play("tutorial_4")
 	
@@ -192,6 +212,8 @@ func level_1():
 		
 		await dialog.continue_true
 	
+	GameScript.scene_line += 1
+	
 	Global.level += 1
 	GameScript.scene_line = 0
 	
@@ -202,6 +224,8 @@ func level_2():
 	await hud.update_goal_text(GameScript.goal_2)
 	
 	tutorial_wipe.visible = true
+	
+	Global.tut_5_playing = true
 	
 	tutorial_animation.play("tutorial_5")
 	
@@ -227,6 +251,8 @@ func level_2():
 		
 		await dialog.continue_true
 	
+	GameScript.scene_line += 1
+	
 	Global.level += 1
 	GameScript.scene_line = 0
 	
@@ -242,6 +268,8 @@ func level_3():
 	await transition.anim_finished
 	
 	tutorial_wipe.visible = true
+	
+	Global.tut_6_playing = true
 	
 	tutorial_animation.play("tutorial_6")
 	
@@ -261,6 +289,8 @@ func level_3():
 	
 	tutorial_wipe.visible = true
 	
+	Global.tut_7_playing = true
+	
 	tutorial_animation.play("tutorial_7")
 	
 	await tutorial_animation.animation_finished
@@ -272,6 +302,8 @@ func level_3():
 	
 	tutorial_wipe.visible = true
 	
+	Global.tut_8_playing = true
+	
 	tutorial_animation.play("tutorial_8")
 	
 	await tutorial_animation.animation_finished
@@ -282,6 +314,8 @@ func level_3():
 	tutorial_wipe.visible = false
 	
 	tutorial_wipe.visible = true
+	
+	Global.tut_9_playing = true
 	
 	tutorial_animation.play("tutorial_9")
 	
@@ -304,6 +338,8 @@ func level_3():
 		GameScript.scene_line += 1
 		
 		await dialog.continue_true
+	
+	GameScript.scene_line += 1
 	
 	Global.level += 1
 	GameScript.scene_line = 0
@@ -329,6 +365,8 @@ func level_4():
 		
 		await dialog.continue_true
 	
+	GameScript.scene_line += 1
+	
 	for slot in inventory_container.get_node("ScrollContainer/VBoxInventory").get_children():
 		
 		if slot.item == null:
@@ -348,6 +386,8 @@ func level_4():
 		GameScript.scene_line += 1
 		
 		await dialog.continue_true
+	
+	GameScript.scene_line += 1
 	
 	Global.level += 1
 	GameScript.scene_line = 0
@@ -373,6 +413,8 @@ func level_5():
 		
 		await dialog.continue_true
 	
+	GameScript.scene_line += 1
+	
 	Global.level += 1
 	GameScript.scene_line = 0
 	
@@ -397,6 +439,8 @@ func level_6():
 		
 		await dialog.continue_true
 	
+	GameScript.scene_line += 1
+	
 	for slot in inventory_container.get_node("ScrollContainer/VBoxInventory").get_children():
 		
 		if slot.item == null:
@@ -417,6 +461,8 @@ func level_6():
 		
 		await dialog.continue_true
 	
+	GameScript.scene_line += 1
+	
 	Global.level += 1
 	GameScript.scene_line = 0
 	
@@ -428,6 +474,8 @@ func level_7():
 	
 	await NavigationManager.look_for_vintage
 	
+	await transition.anim_finished
+	
 	while GameScript.speech_7[GameScript.scene_line] != null:
 		
 		var line_info = GameScript.speech_7[GameScript.scene_line]
@@ -437,6 +485,8 @@ func level_7():
 		GameScript.scene_line += 1
 		
 		await dialog.continue_true
+	
+	GameScript.scene_line += 1
 	
 	Global.level += 1
 	GameScript.scene_line = 0
@@ -451,6 +501,8 @@ func level_8():
 	
 	tutorial_wipe.visible = true
 	
+	Global.tut_10_playing = true
+	
 	tutorial_animation.play("tutorial_10")
 	
 	await tutorial_animation.animation_finished
@@ -462,6 +514,8 @@ func level_8():
 	
 	await inventory_container.second_page_newspaper
 	
+	await get_tree().create_timer(1.0).timeout
+	
 	while GameScript.speech_8[GameScript.scene_line] != null:
 		
 		var line_info = GameScript.speech_8[GameScript.scene_line]
@@ -471,6 +525,8 @@ func level_8():
 		GameScript.scene_line += 1
 		
 		await dialog.continue_true
+	
+	GameScript.scene_line += 1
 	
 	Global.level += 1
 	GameScript.scene_line = 0
@@ -482,6 +538,8 @@ func level_9():
 	await hud.update_goal_text(GameScript.goal_9)
 	
 	tutorial_wipe.visible = true
+	
+	Global.tut_11_playing = true
 	
 	tutorial_animation.play("tutorial_11")
 	
@@ -503,6 +561,8 @@ func level_9():
 		GameScript.scene_line += 1
 		
 		await dialog.continue_true
+	
+	GameScript.scene_line += 1
 	
 	Global.level += 1
 	GameScript.scene_line = 0
@@ -528,6 +588,8 @@ func level_10():
 		
 		await dialog.continue_true
 	
+	GameScript.scene_line += 1
+	
 	Global.level += 1
 	GameScript.scene_line = 0
 	
@@ -552,6 +614,8 @@ func level_11():
 		
 		await dialog.continue_true
 	
+	GameScript.scene_line += 1
+	
 	for slot in inventory_container.get_node("ScrollContainer/VBoxInventory").get_children():
 		
 		if slot.item == null:
@@ -571,6 +635,8 @@ func level_11():
 		GameScript.scene_line += 1
 		
 		await dialog.continue_true
+	
+	GameScript.scene_line += 1
 	
 	NavigationManager.street_view_3.get_node("Background").texture = SV3_BLUE
 	NavigationManager.stationary_store_outside.get_node("Background").texture = SSO_BLUE
@@ -608,7 +674,7 @@ func level_13():
 	
 	tutorial_wipe.visible = true
 	
-	tut_12_playing = true
+	Global.tut_12_playing = true
 	
 	tutorial_animation.play("tutorial_12")
 	
@@ -623,7 +689,7 @@ func level_13():
 	
 	tutorial_wipe.visible = true
 	
-	tut_13_playing = true
+	Global.tut_13_playing = true
 	
 	tutorial_animation.play("tutorial_13")
 	
@@ -644,6 +710,17 @@ func level_14():
 	
 	await hud.update_goal_text(GameScript.goal_14)
 	
+	NavigationManager.barber_shop_outside.get_node("Selectables/BSRandomPerson").description = "They don't fit the description I was given..."
+	NavigationManager.bookstore_outside.get_node("Selectables/BRandomPerson").description = "They don't fit the description I was given..."
+	NavigationManager.bookstore_outside.get_node("Selectables/BRandomPerson2").description = "They don't fit the description I was given..."
+	NavigationManager.clothing_store_outside.get_node("Selectables/ClSRandomPerson").description = "They don't fit the description I was given..."
+	NavigationManager.convenience_store_outside.get_node("Selectables/CSRandomPerson").description = "They don't fit the description I was given..."
+	NavigationManager.convenience_store_outside.get_node("Selectables/CSRandomPerson2").description = "They don't fit the description I was given..."
+	NavigationManager.hardware_store_outside.get_node("Selectables/HSRandomPerson").description = "They don't fit the description I was given..."
+	NavigationManager.hardware_store_outside.get_node("Selectables/HSRandomPerson2").description = "They don't fit the description I was given..."
+	NavigationManager.stationary_store.get_node("Selectables/SSRandomPerson").description = "They don't fit the description I was given..."
+	NavigationManager.stationary_store_outside.get_node("Selectables/SSORandomPerson").description = "They don't fit the description I was given..."
+	
 	NavigationManager.stationary_store_outside.get_node("Selectables/BlueHatGuy").visible = false
 	NavigationManager.stationary_store_outside.get_node("Doors/Door_SSOZ").visible = true
 	
@@ -662,6 +739,8 @@ func level_14():
 		
 		await dialog.continue_true
 	
+	GameScript.scene_line += 1
+	
 	for slot in inventory_container.get_node("ScrollContainer/VBoxInventory").get_children():
 		
 		if slot.item == null:
@@ -671,6 +750,9 @@ func level_14():
 			break
 	
 	await notif.display_notif("Passport added to Inventory",38)
+	
+	NavigationManager.train.get_node("Selectables/PoliceOfficer").visible = false
+	NavigationManager.train.get_node("Doors/Door_TZ_In").visible = true
 	
 	while GameScript.speech_14[GameScript.scene_line] != null:
 		
@@ -682,6 +764,8 @@ func level_14():
 		
 		await dialog.continue_true
 	
+	GameScript.scene_line += 1
+	
 	Global.level += 1
 	GameScript.scene_line = 0
 	
@@ -690,7 +774,32 @@ func level_14():
 func level_15():
 	
 	await hud.update_goal_text(GameScript.goal_15)
-
-func level_16():
 	
-	await hud.update_goal_text(GameScript.goal_16)
+	while not self.has_node("TrainZoom"):
+		await get_tree().process_frame
+	
+	await transition.anim_finished
+	
+	while GameScript.speech_15[GameScript.scene_line] != null:
+		
+		var line_info = GameScript.speech_15[GameScript.scene_line]
+		
+		dialog.display_line(true,false,line_info[0],line_info[1],line_info[2])
+		
+		GameScript.scene_line += 1
+		
+		await dialog.continue_true
+	
+	GameScript.scene_line += 1
+	
+	##Global.level += 1
+	##GameScript.scene_line = 0
+	#
+	#NavigationManager.train.get_node("Background").texture = train_no_police
+	#
+	#while not self.has_node("Train"):
+		#await get_tree().process_frame
+	#
+	#await transition.anim_finished
+	
+	hud.show_end()

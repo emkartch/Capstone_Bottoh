@@ -52,6 +52,36 @@
 [ext_resource type="Texture2D" uid="uid://cuwk73vu050o2" path="res://inventory/USPassport.png" id="49_nfxdc"]
 [ext_resource type="Texture2D" uid="uid://bluwwa0v5iw15" path="res://inventory/NotificationBoxDarkVersion.png" id="50_nfxdc"]
 [ext_resource type="Texture2D" uid="uid://dy0uanf2wrnej" path="res://assets/TheOriginalLibrasLogo.png" id="52_x2qrc"]
+[ext_resource type="Texture2D" uid="uid://dsblqaehqn8gn" path="res://hud/last scene/Train_Animation1.png" id="53_rlodl"]
+[ext_resource type="Texture2D" uid="uid://bx0smv6xk0dl1" path="res://hud/last scene/Train_Animation2.png" id="54_0iumu"]
+[ext_resource type="Texture2D" uid="uid://iy2jarujx3qr" path="res://hud/last scene/Train_Animation3.png" id="55_e6lsk"]
+[ext_resource type="Texture2D" uid="uid://brt10n38uqf5y" path="res://hud/last scene/Train_Animation4.png" id="56_w2mnw"]
+[ext_resource type="Texture2D" uid="uid://do3qa14gu8g64" path="res://hud/last scene/Train_Animation5.png" id="57_4fnem"]
+[ext_resource type="Texture2D" uid="uid://b3a3f32oq450p" path="res://hud/last scene/Train_Animation6.png" id="58_dfipd"]
+[ext_resource type="Texture2D" uid="uid://kjdpag13w38i" path="res://hud/last scene/Train_Animation7.png" id="59_ettoi"]
+[ext_resource type="Texture2D" uid="uid://bgvi4lkgdbawk" path="res://hud/last scene/Train_Animation8.png" id="60_vkvpa"]
+[ext_resource type="Texture2D" uid="uid://bsbxtbpw550ey" path="res://hud/last scene/Train_Animation9.png" id="61_snpu5"]
+[ext_resource type="Texture2D" uid="uid://lua3ngx1j612" path="res://hud/last scene/Train_Animation10.png" id="62_ky5hp"]
+[ext_resource type="Texture2D" uid="uid://dnoaevewwp0qf" path="res://hud/last scene/Train_Animation11.png" id="63_m7chj"]
+[ext_resource type="Texture2D" uid="uid://do0eua63hvnqb" path="res://hud/last scene/Train_Animation12.png" id="64_idqbe"]
+[ext_resource type="Texture2D" uid="uid://cw4pdj1ya7gxm" path="res://hud/last scene/Train_Animation13.png" id="65_jvakv"]
+[ext_resource type="Texture2D" uid="uid://bych2fqh6uf0q" path="res://hud/last scene/Train_Animation14.png" id="66_w0tsr"]
+[ext_resource type="Texture2D" uid="uid://dide4nxhoy8u7" path="res://hud/last scene/Train_Animation15.png" id="67_mklrc"]
+[ext_resource type="Texture2D" uid="uid://0ydqkwn70a7h" path="res://hud/last scene/Train_Animation16.png" id="68_ohhmn"]
+[ext_resource type="Texture2D" uid="uid://c3hc5ga1t2xiy" path="res://hud/last scene/Train_Animation17.png" id="69_2l566"]
+[ext_resource type="Texture2D" uid="uid://dom2d08h80hhg" path="res://hud/last scene/Train_Animation18.png" id="70_r3wmq"]
+[ext_resource type="Texture2D" uid="uid://kxiqlwmw2sk0" path="res://hud/last scene/Train_Animation19.png" id="71_3a8i0"]
+[ext_resource type="Texture2D" uid="uid://cyh4yuh3kjyct" path="res://hud/last scene/Train_Animation20.png" id="72_3qbo3"]
+[ext_resource type="Texture2D" uid="uid://cpsi3uo4gcyyc" path="res://hud/last scene/Train_Animation21.png" id="73_gng1b"]
+[ext_resource type="Texture2D" uid="uid://b6ghc3y0v7dt5" path="res://hud/last scene/Train_Animation22.png" id="74_hhd82"]
+[ext_resource type="Texture2D" uid="uid://ttfkdofejg0p" path="res://hud/last scene/Train_Animation23.png" id="75_sga3b"]
+[ext_resource type="Texture2D" uid="uid://r02itfkc71yl" path="res://hud/last scene/Train_Animation24.png" id="76_wvnsy"]
+[ext_resource type="Texture2D" uid="uid://b1l82uecegxvs" path="res://hud/last scene/Train_Animation25.png" id="77_3vlp5"]
+[ext_resource type="Texture2D" uid="uid://43fu5n6ancio" path="res://hud/last scene/Train_Animation26.png" id="78_smqft"]
+[ext_resource type="Texture2D" uid="uid://bxay15dpn22k" path="res://hud/last scene/Train_Animation27.png" id="79_uurd3"]
+[ext_resource type="Texture2D" uid="uid://l0tp747lve68" path="res://hud/last scene/Train_Animation28.png" id="80_y0edm"]
+[ext_resource type="Texture2D" uid="uid://51eiv84vqa5f" path="res://hud/last scene/Train_Animation29.png" id="81_acjfr"]
+[ext_resource type="Texture2D" uid="uid://d15qiljbphg1d" path="res://hud/last scene/Train_Animation30.png" id="82_xbb0w"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jvpmi"]
 texture = ExtResource("4_hwufu")
@@ -508,6 +538,152 @@ texture_margin_top = 20.0
 texture_margin_right = 20.0
 texture_margin_bottom = 20.0
 
+[sub_resource type="Animation" id="Animation_xgtuy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("53_rlodl")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Immersion is a big part of going to another country. There aren’t enough people that talk about the experience of full immersion in a country where you don’t speak the language. Many Americans expect visitors to communicate with English, but we want them to think about how that might be from another point of view. "]
+}
+
+[sub_resource type="Animation" id="Animation_qid84"]
+resource_name = "last_scene"
+length = 22.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("53_rlodl"), ExtResource("54_0iumu"), ExtResource("55_e6lsk"), ExtResource("56_w2mnw"), ExtResource("57_4fnem"), ExtResource("58_dfipd"), ExtResource("59_ettoi"), ExtResource("60_vkvpa"), ExtResource("61_snpu5"), ExtResource("62_ky5hp"), ExtResource("63_m7chj"), ExtResource("64_idqbe"), ExtResource("65_jvakv"), ExtResource("66_w0tsr"), ExtResource("67_mklrc"), ExtResource("68_ohhmn"), ExtResource("69_2l566"), ExtResource("70_r3wmq"), ExtResource("71_3a8i0"), ExtResource("72_3qbo3"), ExtResource("73_gng1b"), ExtResource("74_hhd82"), ExtResource("75_sga3b"), ExtResource("76_wvnsy"), ExtResource("77_3vlp5"), ExtResource("78_smqft"), ExtResource("79_uurd3"), ExtResource("80_y0edm"), ExtResource("81_acjfr"), ExtResource("82_xbb0w"), ExtResource("82_xbb0w")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4.5, 5, 15, 15.5, 16, 22, 22.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4.5, 15.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["Immersion is a big part of going to another country. There aren’t enough people that talk about the experience of full immersion in a country where you don’t speak the language. Many Americans expect visitors to communicate with English, but we want them to think about how that might be from another point of view. ", "Next time you end up communicating with someone who may not speak the same language as you, remember, we are all humans. We can work together to communicate better than ever."]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5s7fo"]
+_data = {
+&"RESET": SubResource("Animation_xgtuy"),
+&"last_scene": SubResource("Animation_qid84")
+}
+
+[sub_resource type="Animation" id="Animation_rlodl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(298.5, 308)]
+}
+
+[sub_resource type="Animation" id="Animation_0iumu"]
+resource_name = "credits"
+length = 21.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(298.5, 308), Vector2(298.5, 308), Vector2(298.5, -3129)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e6lsk"]
+_data = {
+&"RESET": SubResource("Animation_rlodl"),
+&"credits": SubResource("Animation_0iumu")
+}
+
 [node name="HUD" type="CanvasLayer" unique_id=179951230]
 process_mode = 3
 script = ExtResource("1_6ca3a")
@@ -614,6 +790,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_u3s1h")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ngomn")
 theme_override_styles/focus = SubResource("StyleBoxTexture_wmwpu")
 text = "Button"
+autowrap_mode = 2
 script = ExtResource("9_x2qrc")
 
 [node name="Option 2" type="Button" parent="InGame/Dialog/VBoxContainer/ChoiceContainer" unique_id=127700573]
@@ -630,6 +807,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_u3s1h")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ngomn")
 theme_override_styles/focus = SubResource("StyleBoxTexture_wmwpu")
 text = "Button"
+autowrap_mode = 2
 script = ExtResource("9_x2qrc")
 
 [node name="Option 3" type="Button" parent="InGame/Dialog/VBoxContainer/ChoiceContainer" unique_id=668949336]
@@ -646,6 +824,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_u3s1h")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ngomn")
 theme_override_styles/focus = SubResource("StyleBoxTexture_wmwpu")
 text = "Button"
+autowrap_mode = 2
 script = ExtResource("9_x2qrc")
 
 [node name="Goal" type="Control" parent="InGame" unique_id=1521384049]
@@ -799,6 +978,7 @@ Tutorial
 Again"
 
 [node name="TitleScreen" type="CanvasLayer" parent="." unique_id=265224508]
+visible = false
 
 [node name="Background" type="TextureRect" parent="TitleScreen" unique_id=1304080602]
 anchors_preset = 8
@@ -958,6 +1138,43 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("52_x2qrc")
 
+[node name="LastScene" type="CanvasLayer" parent="." unique_id=979448725]
+visible = false
+
+[node name="Background" type="TextureRect" parent="LastScene" unique_id=1983707438]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("53_rlodl")
+
+[node name="ColorRect" type="ColorRect" parent="LastScene" unique_id=1837959576]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="LastScene" unique_id=1629941256]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_2gk58")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Immersion is a big part of going to another country. There aren’t enough people that talk about the experience of full immersion in a country where you don’t speak the language. Many Americans expect visitors to communicate with English, but we want them to think about how that might be from another point of view. "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LastScene" unique_id=398654294]
+libraries/ = SubResource("AnimationLibrary_5s7fo")
+
 [node name="Credits" type="CanvasLayer" parent="." unique_id=451622785]
 visible = false
 
@@ -969,22 +1186,195 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Logo" type="TextureRect" parent="Credits" unique_id=1280068895]
+[node name="VBoxContainer" type="VBoxContainer" parent="Credits" unique_id=2126442730]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -534.0
-offset_top = -144.0
-offset_right = 534.0
-offset_bottom = 144.0
+offset_left = -661.5
+offset_top = -232.0
+offset_right = 661.5
+offset_bottom = 3588.0005
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TitleLogo" type="TextureRect" parent="Credits/VBoxContainer" unique_id=1280068895]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("15_n3i3j")
+
+[node name="Spacer" type="Control" parent="Credits/VBoxContainer" unique_id=1197647530]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MainCredits" type="GridContainer" parent="Credits/VBoxContainer" unique_id=995503205]
+layout_mode = 2
+theme = ExtResource("2_2gk58")
+theme_override_constants/h_separation = 50
+theme_override_constants/v_separation = 50
+columns = 2
+
+[node name="Title" type="Label" parent="Credits/VBoxContainer/MainCredits" unique_id=2110705698]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_2gk58")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 45
+text = "Developed By"
+horizontal_alignment = 2
+
+[node name="Name" type="Label" parent="Credits/VBoxContainer/MainCredits" unique_id=539122265]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme = ExtResource("2_2gk58")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Original Libras"
+
+[node name="Title2" type="Label" parent="Credits/VBoxContainer/MainCredits" unique_id=1325994693]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_2gk58")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 45
+text = "Game Design Leads"
+horizontal_alignment = 2
+
+[node name="Name2" type="Label" parent="Credits/VBoxContainer/MainCredits" unique_id=393063723]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_2gk58")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Elle Kartchner
+Jade Singer"
+
+[node name="Title3" type="Label" parent="Credits/VBoxContainer/MainCredits" unique_id=1538296490]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_2gk58")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 45
+text = "Programming Lead"
+horizontal_alignment = 2
+
+[node name="Name3" type="Label" parent="Credits/VBoxContainer/MainCredits" unique_id=979096070]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_2gk58")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Elle Kartchner"
+
+[node name="Title4" type="Label" parent="Credits/VBoxContainer/MainCredits" unique_id=941974716]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_2gk58")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 45
+text = "Art and Animation Lead"
+horizontal_alignment = 2
+
+[node name="Name4" type="Label" parent="Credits/VBoxContainer/MainCredits" unique_id=1785495627]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_2gk58")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Jade Singer"
+
+[node name="Title5" type="Label" parent="Credits/VBoxContainer/MainCredits" unique_id=487523885]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_2gk58")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 45
+text = "Audio Design"
+horizontal_alignment = 2
+
+[node name="Name5" type="Label" parent="Credits/VBoxContainer/MainCredits" unique_id=1545078426]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_2gk58")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Elle Kartchner
+Jade Singer"
+
+[node name="Spacer2" type="Control" parent="Credits/VBoxContainer" unique_id=303515345]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SpecialThanks" type="Label" parent="Credits/VBoxContainer" unique_id=701481722]
+layout_mode = 2
+theme = ExtResource("2_2gk58")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 80
+text = "Special Thanks to:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer3" type="Control" parent="Credits/VBoxContainer" unique_id=84476655]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="STCredits" type="GridContainer" parent="Credits/VBoxContainer" unique_id=1960731459]
+layout_mode = 2
+theme = ExtResource("2_2gk58")
+theme_override_constants/h_separation = 90
+theme_override_constants/v_separation = 30
+columns = 2
+
+[node name="Label" type="Label" parent="Credits/VBoxContainer/STCredits" unique_id=1823550136]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Nicky Britt
+Daniel Rankin
+David Schaal
+Kiyomi Kawakami
+Eldon Kartchner
+Joshua Atchison
+Eden Kartchner
+Makai Kartchner"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Credits/VBoxContainer/STCredits" unique_id=231853346]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Sadie Howard
+Sam Howard
+Emma Jones
+Iris Singer
+Adam Singer
+Alix Singer
+Samantha Singer
+Zach Driver"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer4" type="Control" parent="Credits/VBoxContainer" unique_id=1229416522]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Logo" type="TextureRect" parent="Credits/VBoxContainer" unique_id=563379884]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture = ExtResource("52_x2qrc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Credits" unique_id=613378740]
+libraries/ = SubResource("AnimationLibrary_e6lsk")
 
 [connection signal="pressed" from="InGame/Dialog/Box/Continue" to="InGame/Dialog" method="_on_continue_pressed"]
 [connection signal="pressed" from="InGame/Goal/GoalOpen/ExitGoalButton" to="." method="_on_exit_goal_button_pressed"]
 [connection signal="pressed" from="InGame/Goal/GoalButton" to="." method="_on_goal_button_pressed"]
 [connection signal="pressed" from="InGame/Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="TitleScreen/TSButtons/MainButtons/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="TitleScreen/TSButtons/CreditsButton" to="." method="_on_credits_button_pressed"]

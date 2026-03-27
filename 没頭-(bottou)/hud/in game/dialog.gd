@@ -29,7 +29,7 @@ func display_line(pause: bool,grey_out: bool, type: String, line, speaker : Stri
 	_speaker.visible = (speaker != "")
 	_speaker.text = speaker
 	
-	_choice_container.visible = (line is Array)
+	_choice_container.visible = (type == "question")
 	
 	if type == "narrator":
 		
@@ -75,15 +75,16 @@ func display_line(pause: bool,grey_out: bool, type: String, line, speaker : Stri
 			
 			if option[2] == previous_button_text:
 				
-				if type == "narrator":
+				
+				if option[0] == "narrator":
 					
 					_dialogue.text = "[color=#8f563b]" + option[1] + "[/color]"
 					
-				elif type == "thought":
+				elif option[0] == "thought":
 					
 					_dialogue.text = "[i]" + option[1] + "[/i]"
 					
-				elif type == "speech":
+				elif option[0] == "speech":
 					
 					_speaker.visible = (option[3] != "")
 					_speaker.text = option[3]
@@ -156,9 +157,6 @@ func close():
 		Global.main_pause = false
 	
 	visible = false
-	
-	if Global.game_end:
-		main.get_tree().quit()
 	
 	emit_signal("continue_true")
 

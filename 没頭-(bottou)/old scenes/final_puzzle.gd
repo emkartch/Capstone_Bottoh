@@ -48,9 +48,9 @@ func _ready():
 	
 func _process(_delta):
 	
-	if looks_correct and hair_correct and clothes_color_correct and clothes_type_correct and hat_correct:
-		Global.game_end = true
-		hud.show_end()
+	#if looks_correct and hair_correct and clothes_color_correct and clothes_type_correct and hat_correct:
+		#Global.game_end = true
+		#hud.show_end()
 	
 	var selected = get_tree().get_nodes_in_group("selected")
 	

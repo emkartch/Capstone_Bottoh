@@ -40,7 +40,7 @@ offset_right = 1290.0
 offset_bottom = 150.0
 item_name = "ClothingStoreSign"
 item = ExtResource("4_qcqph")
-description = "Clothing Store Sign"
+description = "A niche thrift store in town."
 
 [node name="ShirtSkirt" parent="Selectables" unique_id=742946272 instance=ExtResource("2_lgj6w")]
 layout_mode = 0
@@ -50,7 +50,7 @@ offset_right = 607.0
 offset_bottom = 1080.0
 item_name = "ShirtSkirt"
 item = ExtResource("6_lu3f0")
-description = "Shirt and Skirt"
+description = "A cute, trendy outfit."
 
 [node name="Suit" parent="Selectables" unique_id=1142420496 instance=ExtResource("2_lgj6w")]
 layout_mode = 0
@@ -60,7 +60,7 @@ offset_right = 1755.0
 offset_bottom = 1080.0
 item_name = "Suit"
 item = ExtResource("7_rv5aw")
-description = "Suit"
+description = "A clean classic work suit for business."
 
 [node name="ClosedDoorClS" parent="Selectables" unique_id=632896118 instance=ExtResource("2_lgj6w")]
 visible = false
@@ -81,7 +81,7 @@ offset_right = 540.0
 offset_bottom = 720.0
 item_name = "ClothingPoster1"
 item = ExtResource("3_rv5aw")
-description = "Clothing 1"
+description = "A poster showing two different types of clothes available in the store."
 
 [node name="ClothingPoster2" parent="Selectables" unique_id=872450927 instance=ExtResource("2_lgj6w")]
 layout_mode = 0
@@ -91,7 +91,7 @@ offset_right = 1740.0
 offset_bottom = 720.0
 item_name = "ClothingPoster2"
 item = ExtResource("4_ykchw")
-description = "Clothing 2"
+description = "A poster showing two different types of clothes available in the store."
 
 [node name="HatPoster" parent="Selectables" unique_id=1442475547 instance=ExtResource("2_lgj6w")]
 layout_mode = 0
@@ -101,7 +101,7 @@ offset_right = 1268.0
 offset_bottom = 1043.0
 item_name = "HatPoster"
 item = ExtResource("6_w5noc")
-description = "Hats"
+description = "A poster showing some of the hats available in the store."
 
 [node name="ClosedSignClS" parent="Selectables" unique_id=1107865876 instance=ExtResource("2_lgj6w")]
 layout_mode = 0
@@ -111,27 +111,27 @@ offset_right = 1088.0
 offset_bottom = 779.0
 item_name = "ClosedSignClS"
 item = ExtResource("8_ykchw")
-description = "Closed Sign"
+description = "Seems that the store is closed."
 
-[node name="RandomPerson" parent="Selectables" unique_id=1168257841 instance=ExtResource("2_lgj6w")]
+[node name="ClSRandomPerson" parent="Selectables" unique_id=1168257841 instance=ExtResource("2_lgj6w")]
 layout_mode = 0
 offset_left = 225.0
 offset_top = 600.0
 offset_right = 427.0
 offset_bottom = 1080.0
-item_name = "RandomPerson"
+item_name = "ClSRandomPerson"
 item = ExtResource("10_w5noc")
-description = "Random Person"
+description = "They are looking at the poster of shirts."
 
-[node name="RandomPerson2" parent="Selectables" unique_id=1968866818 instance=ExtResource("2_lgj6w")]
+[node name="ClSRandomPerson2" parent="Selectables" unique_id=1968866818 instance=ExtResource("2_lgj6w")]
 layout_mode = 0
 offset_left = 622.0
 offset_top = 600.0
 offset_right = 809.0
 offset_bottom = 1080.0
-item_name = "RandomPerson"
+item_name = "ClSRandomPerson2"
 item = ExtResource("11_tqka1")
-description = "Random Person"
+description = "They are looking at the sweater displayed on the mannequin."
 
 [node name="Front Layer" type="TextureRect" parent="." unique_id=1431158940]
 offset_right = 40.0

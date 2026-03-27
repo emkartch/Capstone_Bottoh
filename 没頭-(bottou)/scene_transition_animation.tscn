@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://sq8w3l2vuppa"]
 
 [ext_resource type="Script" uid="uid://cfgqsw6r6sud8" path="res://scene_transition_animation.gd" id="1_s0rk0"]
+[ext_resource type="Texture2D" uid="uid://dwwsrxelh54hx" path="res://areas/train/Train.png" id="2_4mwcp"]
 
 [sub_resource type="Animation" id="Animation_08idp"]
 resource_name = "BZ_in"
-length = 1.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -174,6 +174,60 @@ tracks/4/keys = {
 "values": [Vector2(1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_b7ke3"]
+resource_name = "SSOZ_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LeftRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-405, -1080)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LeftRect:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_b0csp"]
+resource_name = "SSOZ_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LeftRect:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LeftRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-405, -1080), Vector2(0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_vbru6"]
 resource_name = "SSZ_in"
 tracks/0/type = "value"
@@ -226,6 +280,60 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(2.5, 2.5), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_u8gj8"]
+resource_name = "TZ_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LeftRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-960.00006, -455)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LeftRect:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 1.5)]
+}
+
+[sub_resource type="Animation" id="Animation_dcoue"]
+resource_name = "TZ_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LeftRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-960.00006, -455), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LeftRect:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.5, 1.5), Vector2(1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_xnhyq"]
@@ -509,8 +617,12 @@ _data = {
 &"CSZ_in": SubResource("Animation_qisvv"),
 &"CSZ_out": SubResource("Animation_qnl6x"),
 &"RESET": SubResource("Animation_s0rk0"),
+&"SSOZ_in": SubResource("Animation_b7ke3"),
+&"SSOZ_out": SubResource("Animation_b0csp"),
 &"SSZ_in": SubResource("Animation_vbru6"),
 &"SSZ_out": SubResource("Animation_t144m"),
+&"TZ_in": SubResource("Animation_u8gj8"),
+&"TZ_out": SubResource("Animation_dcoue"),
 &"fade_in": SubResource("Animation_xnhyq"),
 &"fade_out": SubResource("Animation_4mwcp"),
 &"in_store_left_outside": SubResource("Animation_jl818"),
@@ -529,6 +641,7 @@ script = ExtResource("1_s0rk0")
 [node name="LeftRect" type="TextureRect" parent="." unique_id=1814809048]
 offset_left = -1920.0
 offset_bottom = 1080.0
+texture = ExtResource("2_4mwcp")
 
 [node name="RightRect" type="TextureRect" parent="." unique_id=208471049]
 offset_right = 1920.0005

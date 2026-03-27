@@ -184,9 +184,9 @@ func _on_r_arrow_pressed() -> void:
 			
 			open_item_texture.texture = item_data.item[1]
 			
-		if not Global.tutorial_10 and Global.level == 8:
-			
-			Global.tutorial_10 = true
+		#if not Global.tutorial_10 and Global.level == 8:
+			#
+			#Global.tutorial_10 = true
 
 func _on_l_arrow_pressed() -> void:
 	

@@ -49,7 +49,7 @@ offset_right = 1268.0
 offset_bottom = 1043.0
 item_name = "ColorPamphlet"
 item = ExtResource("3_e578q")
-description = "Colors"
+description = "A poster with the English and Japanese translations of the rainbow."
 
 [node name="Sign" parent="Selectables" unique_id=1440582403 instance=ExtResource("3_i4d15")]
 layout_mode = 0
@@ -57,7 +57,7 @@ offset_left = 630.0
 offset_right = 630.0
 item_name = "HardwareStoreSign"
 item = ExtResource("4_ychry")
-description = "Hardware Store Sign"
+description = "A place to get color palettes for paint and tools for DIY."
 
 [node name="ClosedSignHS" parent="Selectables" unique_id=883699498 instance=ExtResource("3_i4d15")]
 layout_mode = 0
@@ -67,7 +67,7 @@ offset_right = 1088.0
 offset_bottom = 779.0
 item_name = "ClosedSignHS"
 item = ExtResource("5_oaue0")
-description = "Closed Sign"
+description = "Seems that the store is closed."
 
 [node name="Pots 1" parent="Selectables" unique_id=478352327 instance=ExtResource("3_i4d15")]
 layout_mode = 0
@@ -77,7 +77,7 @@ offset_right = 772.0
 offset_bottom = 1080.0
 item_name = "Pots1"
 item = ExtResource("6_28uhm")
-description = "Pots 1"
+description = "One of these small pots would look amazing on my dining room table."
 
 [node name="Pots 2" parent="Selectables" unique_id=431452955 instance=ExtResource("3_i4d15")]
 layout_mode = 0
@@ -87,27 +87,27 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 item_name = "Pots2"
 item = ExtResource("7_28uhm")
-description = "Pots 2"
+description = "A big pot or two would look great on my parents' front porch."
 
-[node name="RandomPerson" parent="Selectables" unique_id=1122742599 instance=ExtResource("3_i4d15")]
+[node name="HSRandomPerson" parent="Selectables" unique_id=1122742599 instance=ExtResource("3_i4d15")]
 layout_mode = 0
 offset_left = 503.0
 offset_top = 600.0
 offset_right = 690.0
 offset_bottom = 1080.0
-item_name = "RandomPerson"
+item_name = "HSRandomPerson"
 item = ExtResource("8_3uucy")
-description = "Random Person"
+description = "They are looking at the pottery."
 
-[node name="RandomPerson2" parent="Selectables" unique_id=2050448421 instance=ExtResource("3_i4d15")]
+[node name="HSRandomPerson2" parent="Selectables" unique_id=2050448421 instance=ExtResource("3_i4d15")]
 layout_mode = 0
 offset_left = 1568.0
 offset_top = 600.0
 offset_right = 1755.0
 offset_bottom = 1080.0
-item_name = "RandomPerson"
+item_name = "HSRandomPerson2"
 item = ExtResource("9_3uucy")
-description = "Random Person"
+description = "They are comparing the sizes of pots."
 
 [node name="Doors" type="Node" parent="." unique_id=2121549788]
 

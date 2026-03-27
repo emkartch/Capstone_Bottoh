@@ -38,7 +38,7 @@ offset_right = 435.0
 offset_bottom = 1080.0
 item_name = "Bonsai 1"
 item = ExtResource("3_w65lk")
-description = "Bonsai 1"
+description = "A popular style with an S-curve truck that goes upwards, it's a Moyogi species, also known more simply as informal upright."
 
 [node name="Bonsai 2" parent="Selectables" unique_id=267599109 instance=ExtResource("2_w65lk")]
 layout_mode = 0
@@ -48,7 +48,7 @@ offset_right = 1733.0
 offset_bottom = 1080.0
 item_name = "Bonsai 2"
 item = ExtResource("4_y6a8w")
-description = "Bonsai 2"
+description = "A beginner-friendly oval leaves and drooping branches called Ficus benjamina, also known simply as the Weeping Fig."
 
 [node name="Sign" parent="Selectables" unique_id=1246618223 instance=ExtResource("2_w65lk")]
 layout_mode = 0
@@ -57,27 +57,27 @@ offset_right = 1290.0
 offset_bottom = 150.0
 item_name = "Bookstore Sign"
 item = ExtResource("5_y6a8w")
-description = "Bookstore Sign"
+description = "This seems to be an old bookstore that has been passed down for generations."
 
-[node name="RandomPerson" parent="Selectables" unique_id=341461310 instance=ExtResource("2_w65lk")]
+[node name="BRandomPerson" parent="Selectables" unique_id=341461310 instance=ExtResource("2_w65lk")]
 layout_mode = 0
 offset_left = -13.0
 offset_top = 584.0
 offset_right = 187.0
 offset_bottom = 1096.0
-item_name = "RandomPerson"
+item_name = "BRandomPerson"
 item = ExtResource("7_2umbc")
-description = "Random Person"
+description = "They seem to be minding their own business."
 
-[node name="RandomPerson2" parent="Selectables" unique_id=1697259962 instance=ExtResource("2_w65lk")]
+[node name="BRandomPerson2" parent="Selectables" unique_id=1697259962 instance=ExtResource("2_w65lk")]
 layout_mode = 0
 offset_left = 428.0
 offset_top = 600.0
 offset_right = 615.0
 offset_bottom = 1080.0
-item_name = "RandomPerson"
+item_name = "BRandomPerson2"
 item = ExtResource("6_2umbc")
-description = "Random Person"
+description = "They are admiring the bonsai tree."
 
 [node name="Doors" type="Node" parent="." unique_id=1028086843]
 
