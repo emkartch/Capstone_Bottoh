@@ -12,6 +12,8 @@ extends Control
 @onready var option_1 = $"VBoxContainer/ChoiceContainer/Option 1"
 @onready var option_2 = $"VBoxContainer/ChoiceContainer/Option 2"
 @onready var option_3 = $"VBoxContainer/ChoiceContainer/Option 3"
+@onready var inventory = get_node("/root/Main/Inventory")
+
 
 signal continue_true
 
@@ -161,6 +163,9 @@ func close():
 	emit_signal("continue_true")
 
 func _on_continue_pressed() -> void:
+	
+	Audio.play_audio('sfx',Audio.sfx_click)
+	
 	close()
 
 func _on_option_pressed(node) -> void:

@@ -19,49 +19,49 @@ func _on_button_pressed() -> void:
 		
 			dialog.display_line(true,false,"thought","I don't have time to look around, I have to catch my train!","")
 		
-		#elif self.name == "Door_SV2_R" and Global.tutorial_1 == false:
-		#
-			##Global.tutorial_1 = true
-			#
-			#NavigationManager.go_to_level(current_level_tag,destination_level_tag)
+		elif self.name == "Door_SV2_R" and Global.tutorial_1 == false:
+		
+			Global.tutorial_1 = true
+			
+			NavigationManager.go_to_level(current_level_tag,destination_level_tag)
 		
 		else:
 			
 			NavigationManager.go_to_level(current_level_tag,destination_level_tag)
 		
-	#elif Global.level == 1:
-		#
-		##if self.name == "Door_CSO" and Global.tutorial_3 == false:
-			##
-			##Global.tutorial_3 = true
-			##
-			##NavigationManager.go_to_level(current_level_tag,destination_level_tag)
-			#
-		#if self.name == "Door_CS" and Global.tutorial_4 == false:
-		#
-			#Global.tutorial_4 = true
-			#
-			#NavigationManager.go_to_level(current_level_tag,destination_level_tag)
+	elif Global.level == 1:
 		
-		#else:
-			#
-			#NavigationManager.go_to_level(current_level_tag,destination_level_tag)
+		if self.name == "Door_CSO" and Global.tutorial_3 == false:
+			
+			Global.tutorial_3 = true
+			
+			NavigationManager.go_to_level(current_level_tag,destination_level_tag)
+			
+		elif self.name == "Door_CS" and Global.tutorial_4 == false:
+		
+			Global.tutorial_4 = true
+			
+			NavigationManager.go_to_level(current_level_tag,destination_level_tag)
+		
+		else:
+			
+			NavigationManager.go_to_level(current_level_tag,destination_level_tag)
 		
 	elif self.name == "Door_CSO" and main.has_node("ConvenienceStore") and Global.level <= 4:
 		
 		dialog.display_line(true,false,"thought","I should find out where my passport might be.","")
 		
-	#elif Global.level == 2:
-		#
-		#if self.name == "Door_CSZ_In" and Global.tutorial_5 == false:
-		#
-			#Global.tutorial_5 = true
-			#
-			#NavigationManager.go_to_level(current_level_tag,destination_level_tag)
-		#
-		#else:
-			#
-			#NavigationManager.go_to_level(current_level_tag,destination_level_tag)
+	elif Global.level == 2:
+		
+		if self.name == "Door_CSZ_In" and Global.tutorial_5 == false:
+		
+			Global.tutorial_5 = true
+			
+			NavigationManager.go_to_level(current_level_tag,destination_level_tag)
+		
+		else:
+			
+			NavigationManager.go_to_level(current_level_tag,destination_level_tag)
 		
 	else:
 		NavigationManager.go_to_level(current_level_tag,destination_level_tag)

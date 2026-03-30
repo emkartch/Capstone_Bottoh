@@ -13,6 +13,9 @@ extends Node
 @onready var transition_animation = get_node("/root/Main/SceneTransitionAnimation/AnimationPlayer")
 @onready var tutorial_animation = get_node("/root/Main/TutorialWipe/CircleColor/AnimationPlayer")
 
+#@onready var music = $Music
+#@onready var sfx = $SFX
+
 const newspaper_ID = preload("res://inventory/item data/newspaper.tres")
 const new_map_ID = preload("res://inventory/item data/new_map.tres")
 const note_ID = preload("res://inventory/item data/note.tres")
@@ -40,11 +43,20 @@ func _process(_delta):
 
 func level_0():
 	
+	#dialog.anchor_top = 0.0
+	#dialog.anchor_bottom = 0.334
+	
 	main_background.texture = preload("res://areas/airport/Airport.png")
 	
 	transition_animation.play("fade_out")
 	
+	#await
+	Audio.play_audio("music",Audio.music_airport)
+	
 	await transition_animation.animation_finished
+	
+	#Audio.music.stream = Audio.music_airport
+	#Audio.music.play()
 	
 	while GameScript.speech_0[GameScript.scene_line] != null:
 		
@@ -58,15 +70,28 @@ func level_0():
 		
 	GameScript.scene_line += 1
 	
+	#Audio.music.stop()
+	
+	Audio.stop_audio('music')
+	
 	transition_animation.play("fade_in")
+	
+	#dialog.anchor_top = 0.667
+	#dialog.anchor_bottom = 1.0
 	
 	await transition_animation.animation_finished
 	
+	Audio.play_audio('music',Audio.music_outdoor)
+	
 	main_background.texture = null
+	
+	#Audio.music.stream = Audio.music_generic_indoor
 	
 	transition_animation.play("fade_out")
 	
 	await transition_animation.animation_finished
+	
+	#Audio.music.play()
 	
 	# AFTER AIRPORT
 	while GameScript.speech_0[GameScript.scene_line] != null:
@@ -223,6 +248,8 @@ func level_2():
 	
 	await hud.update_goal_text(GameScript.goal_2)
 	
+	NavigationManager.convenience_store.get_node("Selectables/Newspaper").visible = false
+	
 	tutorial_wipe.visible = true
 	
 	Global.tut_5_playing = true
@@ -252,6 +279,8 @@ func level_2():
 		await dialog.continue_true
 	
 	GameScript.scene_line += 1
+	
+	NavigationManager.convenience_store.get_node("Selectables/Newspaper").visible = true
 	
 	Global.level += 1
 	GameScript.scene_line = 0
@@ -283,7 +312,10 @@ func level_3():
 	while not Global.have_newspaper:
 		await get_tree().process_frame
 	
-	await notif.display_notif("Newspaper added to Inventory",38)
+	#Audio.play_audio('sfx',Audio.sfx_paper_rustle)
+	
+	#await
+	notif.display_notif("Newspaper added to Inventory",38)
 	
 	inventory.visible = true
 	
@@ -375,7 +407,10 @@ func level_4():
 			
 			break
 	
-	await notif.display_notif("New Map added to Inventory",38)
+	#Audio.play_audio('sfx',Audio.sfx_paper_rustle)
+	
+	#await
+	notif.display_notif("New Map added to Inventory",38)
 	
 	while GameScript.speech_4[GameScript.scene_line] != null:
 		
@@ -449,7 +484,10 @@ func level_6():
 			
 			break
 	
-	await notif.display_notif("Old Map added to Inventory",38)
+	#Audio.play_audio('sfx',Audio.sfx_paper_rustle)
+	
+	#await
+	notif.display_notif("Old Map added to Inventory",38)
 	
 	while GameScript.speech_6[GameScript.scene_line] != null:
 		
@@ -624,7 +662,10 @@ func level_11():
 			
 			break
 	
-	await notif.display_notif("Note added to Inventory",38)
+	#Audio.play_audio('sfx',Audio.sfx_paper_rustle)
+	
+	#await
+	notif.display_notif("Note added to Inventory",38)
 	
 	while GameScript.speech_11[GameScript.scene_line] != null:
 		
@@ -641,6 +682,7 @@ func level_11():
 	NavigationManager.street_view_3.get_node("Background").texture = SV3_BLUE
 	NavigationManager.stationary_store_outside.get_node("Background").texture = SSO_BLUE
 	NavigationManager.stationary_store_outside.get_node("Selectables/BlueHatGuy").visible = true
+	NavigationManager.SSO_Door_Open = preload("res://areas/stationary store (outside)/SSO_Door_Open_Alt.png")
 	
 	GameScript.scene_line = 0
 	
@@ -662,6 +704,19 @@ func level_12():
 	
 	await Global.full_notebook
 	
+	while GameScript.speech_12[GameScript.scene_line] != null:
+		
+		var line_info = GameScript.speech_12[GameScript.scene_line]
+		
+		dialog.display_line(true,false,line_info[0],line_info[1],line_info[2])
+		
+		GameScript.scene_line += 1
+		
+		await dialog.continue_true
+	
+	GameScript.scene_line += 1
+	
+	GameScript.scene_line = 0
 	Global.level += 1
 	
 	level_13()
@@ -749,7 +804,10 @@ func level_14():
 			
 			break
 	
-	await notif.display_notif("Passport added to Inventory",38)
+	#Audio.play_audio('sfx',Audio.sfx_paper_rustle)
+	
+	#await
+	notif.display_notif("Passport added to Inventory",38)
 	
 	NavigationManager.train.get_node("Selectables/PoliceOfficer").visible = false
 	NavigationManager.train.get_node("Doors/Door_TZ_In").visible = true

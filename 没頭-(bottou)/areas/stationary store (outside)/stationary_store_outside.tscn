@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://mfnya3fp0avt"]
 
-[ext_resource type="Texture2D" uid="uid://cp0sc5oyfqi1o" path="res://areas/stationary store (outside)/stationary store (outside zoom)/SSO_Back_Layer(BLUE).png" id="1_laq2u"]
+[ext_resource type="Texture2D" uid="uid://dmlkvd8qr4g2q" path="res://areas/stationary store (outside)/SSO_Back_Layer.png" id="1_laq2u"]
 [ext_resource type="PackedScene" uid="uid://5s8jfcpui2rh" path="res://objects/interactable.tscn" id="2_jyvra"]
 [ext_resource type="PackedScene" uid="uid://c13d8uvmyxs6j" path="res://door.tscn" id="2_tqcnd"]
 [ext_resource type="Texture2D" uid="uid://bmjywtt1xvvu3" path="res://areas/DoorOpen.png" id="3_4a3ss"]

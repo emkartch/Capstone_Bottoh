@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cs8lv0yeq3lb0"]
+
+[ext_resource type="Script" uid="uid://bc4mfq4jovuqb" path="res://audio/volume_controller.gd" id="1_6ue3e"]
+[ext_resource type="Theme" uid="uid://cp4nu80cltnic" path="res://theme/main_theme.tres" id="1_ksc4t"]
+
+[node name="Volume Controller" type="HSlider" unique_id=239548507]
+offset_right = 8.0
+offset_bottom = 30.0
+theme = ExtResource("1_ksc4t")
+max_value = 1.0
+step = 0.001
+script = ExtResource("1_6ue3e")

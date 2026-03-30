@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bl2v7axkehcna"
+path="res://.godot/imported/Correct SFX.wav-2b199fe98d6dbf3f6fc61c61b69b47dd.sample"
+
+[deps]
+
+source_file="res://audio/SFX/Correct SFX.wav"
+dest_files=["res://.godot/imported/Correct SFX.wav-2b199fe98d6dbf3f6fc61c61b69b47dd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
