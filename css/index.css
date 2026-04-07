@@ -44,7 +44,8 @@
 
 body {
 
-    background-color: #F5F5F5;
+    background-color: #ffefd5;
+    /* #F5F5F5; */
 
     font-family: "Lato", sans-serif;
     font-weight: 400;
@@ -66,7 +67,7 @@ body {
     align-items: center;
 }
 
-header, nav, main, aside, footer {
+header, nav, aside, footer {
     padding-left: 1em;
     padding-right: 1em;
     padding-top: 0.6em;
@@ -82,17 +83,55 @@ header {
 }
 
 nav {
-    background: #97A97C;
+    background: #B5C99A;
 }
 
 main {
-    background: #CFE1B9;
+    background: #ffefd5;
+    /* #CFE1B9; */
     display: block;
     margin-left: 1.5em;
     margin-right: 1.5em;
     flex: 2;
+    /* border-radius: 16px;
+    box-shadow: 0 0 10px #b98159; */
+    /* #718355; */
+}
+
+main section {
+
+    background-image: url('/img/PaperBackground.png');
+    background-size: 100% 100%;
+
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 1.2em;
+    padding-bottom: 1.2em;
     border-radius: 16px;
-    box-shadow: 0 0 10px #718355;
+    box-shadow: 0 0 10px #b98159;
+
+}
+
+.iframe-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0em;
+    padding-right: 0em;
+    /* margin-left: 1em;
+    margin-right: 1em; */
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
+    border-radius: 16px;
+    box-shadow: 0 0 10px #b98159;
+}
+
+iframe {
+
+    flex-grow: 1;
+    aspect-ratio: 16 / 9;
+    height: auto;
+
 }
 
 aside {
@@ -102,10 +141,18 @@ aside {
     margin-left: 2em;
     margin-right: 2em;
     width: 60%;
+    background-color: #ffefd5;
 }
 
 footer {
     background: #B5C99A;
+}
+
+header img {
+
+    padding-left: 50px;
+    padding-right: 50px;
+
 }
 
 aside img {
@@ -113,6 +160,20 @@ aside img {
     width: 100%;
     box-shadow: 0 0 10px #718355;
     border-radius: 72px;
+}
+
+aside figure a {
+    display: block;
+    width: 100%;
+    box-shadow: 0 0 10px #b98159;
+    /* border-radius: 16px; */
+    background-image: url('/img/PaperBackground.png');
+    background-size: 100% 100%;
+
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 1.2em;
+    padding-bottom: 1.2em;
 }
 
 p {
@@ -144,7 +205,7 @@ h3 {
 
 h1 {
 
-    font-size: 3em;
+    font-size: 2em;
 
 }
 
@@ -198,6 +259,13 @@ a:visited {
 a:hover {
 
     background: #F5F5F5;
+
+}
+
+aside figure a:hover {
+
+    background-image: url('/img/PaperBackgroundHover.png');
+    background-size: 100% 100%;
 
 }
 
