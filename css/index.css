@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,700;1,700&family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Hide only visually, but have it available for screen readers: */
+.sr-only {
+    
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  
+}
+
+/* for skip-nav */
+.skip-link {
+
+    background: white;
+    color: black;
+    font-weight: 700;
+    padding: 4px;
+    position: absolute;
+    transform: translate(-200%);
+
+}
+
+/* for skip-nav */
+.skip-link:focus {
+
+    transform: translate(0%);
+
+}
+
+/* for skip-nav */
+.skip-link {
+
+    /* Same as before */
+    transition: transform 0.3s;
+
+}
+
+body {
+
+    background-color: #F5F5F5;
+
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    font-size: 18px;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    max-width: 1200px;
+    margin: 2em auto;
+    align-items: center;
+}
+
+header, nav, main, aside, footer {
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+}
+
+header, footer {
+    text-align: center;
+}
+
+header {
+    background: #718355;
+}
+
+nav {
+    background: #97A97C;
+}
+
+main {
+    background: #CFE1B9;
+    display: block;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    flex: 2;
+    border-radius: 16px;
+    box-shadow: 0 0 10px #718355;
+}
+
+aside {
+    flex: 1;
+    margin: 2px;
+    padding: 0px;
+    margin-left: 2em;
+    margin-right: 2em;
+    width: 60%;
+}
+
+footer {
+    background: #B5C99A;
+}
+
+aside img {
+    display: block;
+    width: 100%;
+    box-shadow: 0 0 10px #718355;
+    border-radius: 72px;
+}
+
+p {
+
+    /* super important */
+    line-height: 1.8em;
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+
+}
+
+footer p {
+
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+
+}
+
+h1,
+h2,
+h3 {
+
+    font-family: "Alegreya", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+
+}
+
+h1 {
+
+    font-size: 2em;
+
+}
+
+h2 {
+
+    font-size: 1.7em;
+
+}
+
+h3 {
+
+    font-size: 1.4em;
+
+}
+
+nav ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul a {
+
+    text-decoration: none;
+    margin: 0px;
+    font-size: 1.1em;
+    padding: 8px 15px;
+    transition: background-color 0.2s, color 0.2s;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+
+}
+
+a:link {
+
+    color: black;
+
+}
+
+a:visited {
+
+    color: darkblue;
+
+}
+
+a:hover {
+
+    background: #F5F5F5;
+
+}
+
+a:active {
+
+    color: darkmagenta;
+
+}
+
+/* tablet */
+@media screen and (min-width: 641px) and (max-width: 900px) {
+    main {
+        flex: 1;
+    }
+}
+
+@media screen and (max-width: 640px) {
+
+    .wrapper {
+
+        flex-direction: column-reverse;
+
+    }
+
+    main {
+
+        margin-top: 1em;
+
+    }
+
+    aside {
+
+        margin-bottom: 1em;
+
+    }
+
+    nav ul {
+        flex-flow: column nowrap;
+        text-align: center;
+        padding: 0;
+    }
+
+    /* thumbable */
+    nav ul li a {
+        display: block;
+        padding: 10px 5px;
+        margin: 5px;
+        border: 1px #F5F5F5 solid;
+        background: #F5F5F5;
+    }
+}
