@@ -29,7 +29,9 @@ const TZ = preload("res://areas/train/train (zoom)/train_zoom.tscn")
 
 const BO_Door_Open = preload("res://areas/bookstore (outside)/BO_Door_Open.png")
 const CSO_Door_Open = preload("res://areas/convenience store (outside)/CSO_Door_Open.png")
-const SSO_Door_Open = preload("res://areas/stationary store (outside)/SSO_Door_Open.png")
+var SSO_Door_Open = preload("res://areas/stationary store (outside)/SSO_Door_Open.png")
+
+const SSOZ_Door_Closed = preload("res://areas/stationary store (outside)/stationary store (outside zoom)/SSO_Back_Layer_Door(BLUE).png")
 
 var barber_shop_outside
 var bookstore
@@ -302,6 +304,10 @@ func go_to_level(curr_level_tag,new_level_tag):
 			
 			transition_animation.play("store_in")
 			
+			Audio.play_audio('sfx',Audio.sfx_door_slide)
+			
+			Audio.stop_audio('music')
+			
 			await transition_animation.animation_finished
 			
 			main.remove_child(scene_to_remove)
@@ -313,12 +319,20 @@ func go_to_level(curr_level_tag,new_level_tag):
 			
 			transition_animation.play("fade_out")
 			
+			Audio.play_audio('music',Audio.music_generic_indoor)
+			
+			if scene_to_remove == convenience_store_outside:
+			
+				Audio.play_audio('sfx',Audio.sfx_CS_ding)
+			
 			await transition_animation.animation_finished
 		
 		# Out of a store
 		elif (scene_to_remove == bookstore && scene_to_load == bookstore_outside) or (scene_to_remove == convenience_store && scene_to_load == convenience_store_outside) or (scene_to_remove == stationary_store && scene_to_load == stationary_store_outside):
 			
 			transition_animation.play("fade_in")
+			
+			Audio.stop_audio('music')
 			
 			await transition_animation.animation_finished
 			
@@ -340,6 +354,10 @@ func go_to_level(curr_level_tag,new_level_tag):
 			scene_to_load.layer = -2
 			
 			transition_animation.play("store_out")
+			
+			Audio.play_audio('sfx',Audio.sfx_door_slide)
+			
+			Audio.play_audio('music',Audio.music_outdoor)
 			
 			await transition_animation.animation_finished
 			
@@ -368,7 +386,7 @@ func go_to_level(curr_level_tag,new_level_tag):
 				
 			elif scene_to_remove == stationary_store_outside:
 				
-				transition_animation_LR.texture = scene_to_remove.get_node("Background").texture
+				transition_animation_LR.texture = SSOZ_Door_Closed #scene_to_remove.get_node("Background").texture
 				
 				transition_animation.play("SSOZ_in")
 				
@@ -410,7 +428,7 @@ func go_to_level(curr_level_tag,new_level_tag):
 				
 			elif scene_to_remove == stationary_store_outside_zoom:
 				
-				transition_animation_LR.texture = scene_to_load.get_node("Background").texture
+				transition_animation_LR.texture = SSOZ_Door_Closed #scene_to_load.get_node("Background").texture
 				
 				transition_animation.play("SSOZ_out")
 				
@@ -431,15 +449,24 @@ func go_to_level(curr_level_tag,new_level_tag):
 		
 		else:
 			
+			transition_animation.play("fade_in")
+			if scene_to_load == train or scene_to_load == street_view_3:
+				Audio.stop_audio('music')
+			await transition_animation.animation_finished
+			
 			if scene_to_remove == train and Global.level == 1:
 				train.get_node("PolicePerson").visible = false
 			
-			transition_animation.play("fade_in")
 			main.remove_child(scene_to_remove)
 			main.add_child(scene_to_load)
 			main.move_child(scene_to_load,-1)
 			scene_to_load.layer = -2
 			transition_animation.play("fade_out")
+			if scene_to_load == train:
+				Audio.play_audio('music',Audio.music_generic_indoor)
+			elif scene_to_load == street_view_3:
+				Audio.play_audio('music',Audio.music_outdoor)
+			await transition_animation.animation_finished
 		
 		var pickable_array = get_tree().get_nodes_in_group("pickable")
 		

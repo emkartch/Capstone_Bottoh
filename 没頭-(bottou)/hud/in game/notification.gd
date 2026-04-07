@@ -3,8 +3,23 @@ extends Control
 @onready var box = $Box
 @onready var notify = $Box/Text
 @onready var animation = $AnimationPlayer
+#@onready var blocker = get_node("/root/Main/Blocker")
 
 func display_notif(notif: String,text_size: int):
+	
+	#blocker.mouse_filter = Control.MOUSE_FILTER_STOP
+	
+	if notif == "Correct":
+		
+		Audio.play_audio('sfx',Audio.sfx_correct)
+		
+	elif notif == "Incorrect":
+		
+		Audio.play_audio('sfx',Audio.sfx_incorrect)
+		
+	else:
+		
+		Audio.play_audio('sfx',Audio.sfx_paper_rustle)
 	
 	notify.text = notif
 	
@@ -17,3 +32,5 @@ func display_notif(notif: String,text_size: int):
 	animation.play("notif_out")
 	
 	await animation.animation_finished
+	
+	#blocker.mouse_filter = Control.MOUSE_FILTER_IGNORE

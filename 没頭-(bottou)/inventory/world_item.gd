@@ -141,6 +141,8 @@ func _ready():
 
 func _on_r_arrow_pressed() -> void:
 	
+	Audio.play_audio('sfx',Audio.sfx_page_turn)
+	
 	curr_page += 1
 	
 	for page in range(item_data.pages - 1):
@@ -184,11 +186,19 @@ func _on_r_arrow_pressed() -> void:
 			
 			open_item_texture.texture = item_data.item[1]
 			
-		#if not Global.tutorial_10 and Global.level == 8:
-			#
-			#Global.tutorial_10 = true
+		if not Global.tutorial_10 and Global.level == 8:
+			
+			Global.tutorial_10 = true
+			
+	elif item_data.item_name == "Passport":
+		
+		if curr_page == 2:
+			
+			open_item_texture.texture = item_data.item[1]
 
 func _on_l_arrow_pressed() -> void:
+	
+	Audio.play_audio('sfx',Audio.sfx_page_turn)
 	
 	curr_page -= 1
 	
@@ -227,7 +237,7 @@ func _on_l_arrow_pressed() -> void:
 			notebook_title.text = "Colors"
 			page_number.text = "3/4"
 	
-	elif item_data.item_name == "Newspaper":
+	elif item_data.item_name == "Newspaper" or item_data.item_name == 'Passport':
 		
 		if curr_page == 1:
 			

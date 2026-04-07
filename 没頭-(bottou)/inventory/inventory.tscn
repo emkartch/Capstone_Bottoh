@@ -95,6 +95,16 @@ grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("1_62wf1")
 
+[node name="BackgroundBlock" type="ColorRect" parent="." unique_id=1171590884]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.21568628)
+
 [node name="BackgroundBlur" type="ColorRect" parent="." unique_id=553406456]
 visible = false
 material = SubResource("ShaderMaterial_nclnd")

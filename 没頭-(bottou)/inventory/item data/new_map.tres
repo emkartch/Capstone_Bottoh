@@ -10,5 +10,5 @@ item_name = "New Map"
 icon = ExtResource("1_tsv7o")
 item = Array[Texture2D]([ExtResource("2_pl854")])
 pages = 1
-description = "This is new map"
+description = "A new-looking map detailing the shopping area."
 metadata/_custom_type_script = "uid://dsc0p3v3tlf5d"

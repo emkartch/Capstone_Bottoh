@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ouf3yhokmj1r"
+path="res://.godot/imported/Train Leaving SFX.wav-7513c59f13fbd201206e864e41de32be.sample"
+
+[deps]
+
+source_file="res://audio/SFX/Train Leaving SFX.wav"
+dest_files=["res://.godot/imported/Train Leaving SFX.wav-7513c59f13fbd201206e864e41de32be.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -17,13 +17,18 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="没頭 (bottou)"
 run/main_scene="uid://b3p7eckxviy0"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://drdup7n68agbv"
+
+[audio]
+
+buses/default_bus_layout="uid://dicyeatasaylq"
 
 [autoload]
 
 Global="*uid://c323jwsg8s3to"
 NavigationManager="*uid://csln5hpn6etp8"
 GameScript="*uid://ck6dr2m3oma7s"
+Audio="*uid://cqgfgy6o6c4w3"
 
 [display]
 
@@ -67,3 +72,8 @@ connect={
 "deadzone": 0.2,
 "events": []
 }
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

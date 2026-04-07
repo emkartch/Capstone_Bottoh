@@ -8,13 +8,14 @@ extends CanvasLayer
 @onready var goal_button = $InGame/Goal/GoalButton
 @onready var goal_open = $InGame/Goal/GoalOpen
 @onready var goal_text = $InGame/Goal/GoalOpen/VBoxContainer/GoalText
-@onready var tutorial_button = $InGame/Tutorial
+#@onready var tutorial_button = $InGame/Tutorial
 
 @onready var logo_screen = $LogoScreen
 @onready var title_screen = $TitleScreen
 @onready var in_game = $InGame
 @onready var last_scene = $LastScene
 @onready var credits = $Credits
+@onready var settings = $Settings
 
 @onready var transition_animation = get_node("/root/Main/SceneTransitionAnimation/AnimationPlayer")
 @onready var title_screen_animate = $TitleScreen/AnimationPlayer
@@ -29,6 +30,10 @@ extends CanvasLayer
 @onready var last_scene_animation = $LastScene/AnimationPlayer
 
 @onready var credits_animation = $Credits/AnimationPlayer
+
+@onready var settings_button = $InGame/Settings
+
+#@onready var sfx = get_node("/root/Main/SFX")
 
 var goal_texture = preload("res://assets/Notebookpaper.png")
 var goal_update_texture = preload("res://assets/PenWNotepad.png")
@@ -84,17 +89,35 @@ func show_start():
 	
 	await transition_animation.animation_finished
 	
+	#Audio.play_audio("sfx",Audio.sfx_airplane)
+	#Audio.sfx.stream = Audio.sfx_airplane
+	#Audio.sfx.play()
+	
 	title_screen_animate.play("title_screen")
+	
+	#Audio.play_audio("sfx",Audio.sfx_page_turn)
 	
 	await title_screen_animate.animation_finished
 
 func show_end():
 	
+	Audio.stop_audio('music')
+	
+	transition_animation.play("fade_in")
+	
+	await transition_animation.animation_finished
+	
+	#credits.visible = true
+	
+	transition_animation.play("fade_out")
+	
+	await transition_animation.animation_finished
+	
+	last_scene.visible = true
+	
 	last_scene_animation.play("last_scene")
 	
 	await last_scene_animation.animation_finished
-	
-	credits.visible = true
 	
 	await show_credits()
 	
@@ -102,41 +125,57 @@ func show_end():
 
 func show_credits():
 	
+	transition_animation.play("fade_in")
+	
+	await transition_animation.animation_finished
+	
+	credits.visible = true
+	
+	transition_animation.play("fade_out")
+	
+	await transition_animation.animation_finished
+	
 	credits_animation.play("credits")
 	
 	await credits_animation.animation_finished
 
-func next_level_tutorial():
-	
-	tutorial_button.visible = false
-	
-	dialog.display_line(true,false,"Now we have to figure out the English meanings of the information found on the note in your inventory.","Tutorial")
-	
-	await dialog.continue_true
-	
-	dialog.display_line(true,false,"To do this, open your notebook and note in your expanded inventory by selecting the expand button at the top right of your inventory, then dragging your notebook and your note to the center of the screen.","Tutorial")
-	
-	await dialog.continue_true
-	
-	dialog.display_line(true,false,"Use your notebook and flip through the pages using the arrows on screen to match the English defintions to the Japanese characters.","Tutorial")
-	
-	await dialog.continue_true
-	
-	tutorial_button.visible = true
+#func next_level_tutorial():
+	#
+	#tutorial_button.visible = false
+	#
+	#dialog.display_line(true,false,"Now we have to figure out the English meanings of the information found on the note in your inventory.","Tutorial")
+	#
+	#await dialog.continue_true
+	#
+	#dialog.display_line(true,false,"To do this, open your notebook and note in your expanded inventory by selecting the expand button at the top right of your inventory, then dragging your notebook and your note to the center of the screen.","Tutorial")
+	#
+	#await dialog.continue_true
+	#
+	#dialog.display_line(true,false,"Use your notebook and flip through the pages using the arrows on screen to match the English defintions to the Japanese characters.","Tutorial")
+	#
+	#await dialog.continue_true
+	#
+	#tutorial_button.visible = true
 
 func _on_goal_button_pressed() -> void:
 	
-	#if Global.level == 1 and Global.tutorial_2 == false:
-		#
-		#Global.tutorial_2 = true
+	if Global.level == 1 and Global.tutorial_2 == false:
+		
+		Global.tutorial_2 = true
 	
 	goal_button.visible = false
 	goal_open.visible = true
+	
+	settings_button.anchor_top = 0.35
+	settings_button.anchor_bottom = 0.35
 
 func _on_exit_goal_button_pressed() -> void:
 	
 	goal_open.visible = false
 	goal_button.visible = true
+	
+	settings_button.anchor_top = 0.15
+	settings_button.anchor_bottom = 0.15
 
 func _on_tutorial_pressed() -> void:
 	
@@ -174,16 +213,6 @@ func update_goal_text(goal):
 
 func _on_credits_button_pressed() -> void:
 	
-	transition_animation.play("fade_in")
-	
-	await transition_animation.animation_finished
-	
-	credits.visible = true
-	
-	transition_animation.play("fade_out")
-	
-	await transition_animation.animation_finished
-	
 	await show_credits()
 	
 	transition_animation.play("fade_in")
@@ -193,3 +222,20 @@ func _on_credits_button_pressed() -> void:
 	credits.visible = false
 	
 	transition_animation.play("fade_out")
+
+func _on_settings_pressed() -> void:
+	
+	settings.visible = true
+
+# settings back button
+func _on_back_button_pressed() -> void:
+	
+	settings.visible = false
+
+
+func _on_settings_button_pressed() -> void:
+	
+	settings.visible = true
+
+func global_audio_play(type : String,audio : AudioStreamWAV):
+	Audio.play_audio(type,audio)

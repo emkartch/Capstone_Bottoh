@@ -244,51 +244,12 @@ func _input(event):
 		
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			
-			if tut_1_playing and not tutorial_1:
-				
-				tutorial_1 = true
+			var current_shape = Input.get_current_cursor_shape()
 			
-			elif tut_2_playing and not tutorial_2:
-				
-				tutorial_2 = true
-				
-			elif tut_3_playing and not tutorial_3:
-				
-				tutorial_3 = true
-				
-			elif tut_4_playing and not tutorial_4:
-				
-				tutorial_4 = true
-				
-			elif tut_5_playing and not tutorial_5:
-				
-				tutorial_5 = true
-				
-			elif tut_6_playing and not tutorial_6:
-				
-				tutorial_6 = true
-				
-			elif tut_7_playing and not tutorial_7:
-				
-				tutorial_7 = true
-				
-			elif tut_8_playing and not tutorial_8:
-				
-				tutorial_8 = true
-				
-			elif tut_9_playing and not tutorial_9:
-				
-				tutorial_9 = true
-				
-			elif tut_10_playing and not tutorial_10:
-				
-				tutorial_10 = true
-				
-			elif tut_11_playing and not tutorial_11:
-				
-				tutorial_11 = true
-				
-			elif tut_12_playing and not tutorial_12:
+			if current_shape == Input.CURSOR_POINTING_HAND:
+				Audio.play_audio('sfx',Audio.sfx_click)
+			
+			if tut_12_playing and not tutorial_12:
 				
 				tutorial_12 = true
 				
@@ -298,51 +259,9 @@ func _input(event):
 	
 	elif event.is_action_pressed("ui_accept"):
 		
-		if tut_1_playing and not tutorial_1:
-			
-			tutorial_1 = true
+		#Audio.play_audio('sfx',Audio.sfx_click)
 		
-		elif tut_2_playing and not tutorial_2:
-			
-			tutorial_2 = true
-			
-		elif tut_3_playing and not tutorial_3:
-			
-			tutorial_3 = true
-			
-		elif tut_4_playing and not tutorial_4:
-			
-			tutorial_4 = true
-			
-		elif tut_5_playing and not tutorial_5:
-			
-			tutorial_5 = true
-			
-		elif tut_6_playing and not tutorial_6:
-			
-			tutorial_6 = true
-			
-		elif tut_7_playing and not tutorial_7:
-			
-			tutorial_7 = true
-			
-		elif tut_8_playing and not tutorial_8:
-			
-			tutorial_8 = true
-			
-		elif tut_9_playing and not tutorial_9:
-			
-			tutorial_9 = true
-			
-		elif tut_10_playing and not tutorial_10:
-			
-			tutorial_10 = true
-			
-		elif tut_11_playing and not tutorial_11:
-			
-			tutorial_11 = true
-			
-		elif tut_12_playing and not tutorial_12:
+		if tut_12_playing and not tutorial_12:
 			
 			tutorial_12 = true
 			
@@ -552,9 +471,9 @@ func _on_pickable_click(node):
 
 func _on_interactable_click(node):
 	
-	#if tutorial_6 == false and level == 3:
-		#
-		#Global.tutorial_6 = true
+	if tutorial_6 == false and level == 3:
+		
+		Global.tutorial_6 = true
 	
 	if node.item_name == "ClosedSignBS" or node.item_name == "ClosedSignHS" or node.item_name == "ClosedSignClS":
 		

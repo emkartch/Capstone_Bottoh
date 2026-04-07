@@ -11,5 +11,5 @@ item_name = "Newspaper"
 icon = ExtResource("1_qul3g")
 item = Array[Texture2D]([ExtResource("2_lrl0y"), ExtResource("3_lrl0y")])
 pages = 2
-description = "This is news"
+description = "How to get information locally."
 metadata/_custom_type_script = "uid://dsc0p3v3tlf5d"

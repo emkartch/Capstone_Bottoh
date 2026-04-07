@@ -215,7 +215,10 @@ var speech_11 = [
 	null
 ]
 
-var speech_12 = [speech_ClS,speech_HS,speech_BS]
+var speech_12 = [
+	[t,"I think I have all the information I need.",""],
+	null
+]
 
 var speech_14 = [
 	[s,"すみません。Did you happen to pick up an American passport near the airport exit?","You"],

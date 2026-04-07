@@ -9,7 +9,7 @@ extends TextureRect
 @onready var expand_button = $ExpandButton
 @onready var inventory_open = $"../InventoryOpen"
 @onready var hbox_inventory = $"../InventoryOpen/HBoxInventory"
-@onready var background_blur = $"../BackgroundBlur"
+@onready var background_blur = $"../BackgroundBlock" #$"../BackgroundBlur"
 
 var open_texture = preload("res://inventory/MessangerbagOpen.png")
 var closed_texture = preload("res://inventory/MessangerbagClosed.png")
@@ -99,11 +99,12 @@ func _on_down_arrow_pressed() -> void:
 
 func _on_messanger_bag_pressed() -> void:
 	
-	#if not Global.tutorial_7 and Global.level == 3:
-		#
-		#Global.tutorial_7 = true
+	if not Global.tutorial_7 and Global.level == 3:
+		
+		Global.tutorial_7 = true
 	
 	if state:
+		Audio.play_audio('sfx',Audio.sfx_bag_close)
 		bag_button.set_button_icon(closed_texture)
 		state = false
 		self.visible = false
@@ -123,17 +124,19 @@ func _on_messanger_bag_pressed() -> void:
 				select.remove_from_group("selected")
 				
 	elif not state:
+		Audio.play_audio('sfx',Audio.sfx_bag_open)
 		bag_button.set_button_icon(open_texture)
 		state = true
 		self.visible = true
 
 func _on_expand_button_pressed() -> void:
 	
-	#if not Global.tutorial_8 and Global.level == 3:
-		#
-		#Global.tutorial_8 = true
+	if not Global.tutorial_8 and Global.level == 3:
+		
+		Global.tutorial_8 = true
 	
 	if expand_state:
+		Audio.play_audio('sfx',Audio.sfx_bag_close)
 		self.anchor_top = 0.34
 		self.anchor_bottom = 0.81
 		expand_button.set_button_icon(expand_texture)
@@ -155,6 +158,7 @@ func _on_expand_button_pressed() -> void:
 		
 		
 	elif not expand_state:
+		Audio.play_audio('sfx',Audio.sfx_bag_open)
 		self.anchor_top = 0.01
 		self.anchor_bottom = 0.99
 		expand_button.set_button_icon(minimize_texture)
@@ -183,6 +187,8 @@ func _notification(what: int) -> void:
 func _on_h_box_inventory_child_entered_tree(node: Node) -> void:
 	
 	await inventory_open.world_drop_finished
+	
+	Audio.play_audio('sfx',Audio.sfx_page_turn)
 	
 	if Global.level == 8 and node.item_data.item_name == "Newspaper":
 		
@@ -304,6 +310,8 @@ func _on_h_box_inventory_child_entered_tree(node: Node) -> void:
 func _on_h_box_inventory_child_exiting_tree(node: Node) -> void:
 	
 	await inventory_open._on_button_pressed
+	
+	Audio.play_audio('sfx',Audio.sfx_page_turn)
 	
 	if Global.level == 9:
 		

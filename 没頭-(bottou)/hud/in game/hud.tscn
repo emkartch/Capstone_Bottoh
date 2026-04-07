@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://c7yhenlutu15v" path="res://hud/title screen/JapanPassport.png" id="15_mcppi"]
 [ext_resource type="Texture2D" uid="uid://b48e6qamaq6yx" path="res://hud/title screen/Title Logo.png" id="15_n3i3j"]
 [ext_resource type="Texture2D" uid="uid://j5dw0oh5d7nl" path="res://hud/title screen/TitleScreen2.png" id="15_s867w"]
+[ext_resource type="Texture2D" uid="uid://dk2x6tk6gqdu" path="res://assets/settings_icon.png" id="16_0iumu"]
 [ext_resource type="Texture2D" uid="uid://cokjp58l2p7fs" path="res://hud/title screen/OpenPassport3.png" id="16_n3i3j"]
 [ext_resource type="Texture2D" uid="uid://17w82mmu55nk" path="res://hud/title screen/TitleScreen3.png" id="16_s3k6s"]
 [ext_resource type="Texture2D" uid="uid://gh7mt5x2ic8l" path="res://hud/title screen/OpenPassport4.png" id="17_6qyl7"]
@@ -52,9 +53,13 @@
 [ext_resource type="Texture2D" uid="uid://cuwk73vu050o2" path="res://inventory/USPassport.png" id="49_nfxdc"]
 [ext_resource type="Texture2D" uid="uid://bluwwa0v5iw15" path="res://inventory/NotificationBoxDarkVersion.png" id="50_nfxdc"]
 [ext_resource type="Texture2D" uid="uid://dy0uanf2wrnej" path="res://assets/TheOriginalLibrasLogo.png" id="52_x2qrc"]
+[ext_resource type="PackedScene" uid="uid://cs8lv0yeq3lb0" path="res://audio/volume_controller.tscn" id="53_e6lsk"]
 [ext_resource type="Texture2D" uid="uid://dsblqaehqn8gn" path="res://hud/last scene/Train_Animation1.png" id="53_rlodl"]
+[ext_resource type="AudioStream" uid="uid://cpn0tsuhfs6yl" path="res://audio/SFX/Airplane SFX (Speed).wav" id="53_w2mnw"]
 [ext_resource type="Texture2D" uid="uid://bx0smv6xk0dl1" path="res://hud/last scene/Train_Animation2.png" id="54_0iumu"]
+[ext_resource type="AudioStream" uid="uid://l0xniciiam6g" path="res://audio/SFX/Turning Page SFX (Cut).wav" id="54_4fnem"]
 [ext_resource type="Texture2D" uid="uid://iy2jarujx3qr" path="res://hud/last scene/Train_Animation3.png" id="55_e6lsk"]
+[ext_resource type="AudioStream" uid="uid://cjqefvsijgkwb" path="res://audio/SFX/Stamp SFX (Cut).wav" id="55_ettoi"]
 [ext_resource type="Texture2D" uid="uid://brt10n38uqf5y" path="res://hud/last scene/Train_Animation4.png" id="56_w2mnw"]
 [ext_resource type="Texture2D" uid="uid://do3qa14gu8g64" path="res://hud/last scene/Train_Animation5.png" id="57_4fnem"]
 [ext_resource type="Texture2D" uid="uid://b3a3f32oq450p" path="res://hud/last scene/Train_Animation6.png" id="58_dfipd"]
@@ -82,6 +87,7 @@
 [ext_resource type="Texture2D" uid="uid://l0tp747lve68" path="res://hud/last scene/Train_Animation28.png" id="80_y0edm"]
 [ext_resource type="Texture2D" uid="uid://51eiv84vqa5f" path="res://hud/last scene/Train_Animation29.png" id="81_acjfr"]
 [ext_resource type="Texture2D" uid="uid://d15qiljbphg1d" path="res://hud/last scene/Train_Animation30.png" id="82_xbb0w"]
+[ext_resource type="AudioStream" uid="uid://dvf82p3qdinuj" path="res://audio/SFX/Train Leaving SFX (Cut).wav" id="87_dfipd"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jvpmi"]
 texture = ExtResource("4_hwufu")
@@ -95,30 +101,30 @@ events = [SubResource("InputEventKey_mq7b8")]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p75n7"]
 texture = ExtResource("12_mq7b8")
-texture_margin_left = 20.0
+texture_margin_left = 30.0
 texture_margin_top = 20.0
-texture_margin_right = 20.0
+texture_margin_right = 30.0
 texture_margin_bottom = 20.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u3s1h"]
 texture = ExtResource("50_nfxdc")
-texture_margin_left = 20.0
+texture_margin_left = 30.0
 texture_margin_top = 20.0
-texture_margin_right = 20.0
+texture_margin_right = 30.0
 texture_margin_bottom = 20.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ngomn"]
 texture = ExtResource("50_nfxdc")
-texture_margin_left = 20.0
+texture_margin_left = 30.0
 texture_margin_top = 20.0
-texture_margin_right = 20.0
+texture_margin_right = 30.0
 texture_margin_bottom = 20.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wmwpu"]
 texture = ExtResource("50_nfxdc")
-texture_margin_left = 20.0
+texture_margin_left = 30.0
 texture_margin_top = 20.0
-texture_margin_right = 20.0
+texture_margin_right = 30.0
 texture_margin_bottom = 20.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t2ad4"]
@@ -459,6 +465,29 @@ tracks/7/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("..")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 2.375, 2.775, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": ["sfx", ExtResource("53_w2mnw")],
+"method": &"global_audio_play"
+}, {
+"args": ["sfx", ExtResource("54_4fnem")],
+"method": &"global_audio_play"
+}, {
+"args": ["sfx", ExtResource("55_ettoi")],
+"method": &"global_audio_play"
+}, {
+"args": ["sfx", ExtResource("54_4fnem")],
+"method": &"global_audio_play"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mcppi"]
 _data = {
@@ -536,6 +565,13 @@ texture = ExtResource("50_nfxdc")
 texture_margin_left = 20.0
 texture_margin_top = 20.0
 texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0iumu"]
+texture = ExtResource("12_mq7b8")
+texture_margin_left = 30.0
+texture_margin_top = 20.0
+texture_margin_right = 30.0
 texture_margin_bottom = 20.0
 
 [sub_resource type="Animation" id="Animation_xgtuy"]
@@ -640,6 +676,20 @@ tracks/3/keys = {
 "update": 1,
 "values": ["Immersion is a big part of going to another country. There aren’t enough people that talk about the experience of full immersion in a country where you don’t speak the language. Many Americans expect visitors to communicate with English, but we want them to think about how that might be from another point of view. ", "Next time you end up communicating with someone who may not speak the same language as you, remember, we are all humans. We can work together to communicate better than ever."]
 }
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("..")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["sfx", ExtResource("87_dfipd")],
+"method": &"global_audio_play"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5s7fo"]
 _data = {
@@ -664,7 +714,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_0iumu"]
 resource_name = "credits"
-length = 21.5
+length = 31.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -672,10 +722,10 @@ tracks/0/path = NodePath("VBoxContainer:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5, 20),
+"times": PackedFloat32Array(0, 1.5, 30),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(298.5, 308), Vector2(298.5, 308), Vector2(298.5, -3129)]
+"values": [Vector2(298.5, 308), Vector2(298.5, 308), Vector2(298.5, -4594)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e6lsk"]
@@ -784,7 +834,7 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxTexture_p75n7")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_u3s1h")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ngomn")
@@ -801,7 +851,7 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxTexture_p75n7")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_u3s1h")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ngomn")
@@ -818,7 +868,7 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxTexture_p75n7")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_u3s1h")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ngomn")
@@ -828,7 +878,6 @@ autowrap_mode = 2
 script = ExtResource("9_x2qrc")
 
 [node name="Goal" type="Control" parent="InGame" unique_id=1521384049]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -959,26 +1008,20 @@ text = "Connect"
 [node name="PopUpMenu" parent="InGame" unique_id=1848782344 instance=ExtResource("13_mq7b8")]
 visible = false
 
-[node name="Tutorial" type="Button" parent="InGame" unique_id=1903746495]
-visible = false
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -177.0
-offset_top = -43.5
-offset_bottom = 43.5
+[node name="Settings" type="TextureButton" parent="InGame" unique_id=720311945]
+anchors_preset = -1
+anchor_left = 0.994
+anchor_top = 0.15
+anchor_right = 0.994
+anchor_bottom = 0.15
+offset_left = -128.0
+offset_bottom = 128.0
 grow_horizontal = 0
-grow_vertical = 2
+mouse_default_cursor_shape = 2
 theme = ExtResource("2_2gk58")
-theme_override_font_sizes/font_size = 40
-text = "Show
-Tutorial
-Again"
+texture_normal = ExtResource("16_0iumu")
 
 [node name="TitleScreen" type="CanvasLayer" parent="." unique_id=265224508]
-visible = false
 
 [node name="Background" type="TextureRect" parent="TitleScreen" unique_id=1304080602]
 anchors_preset = 8
@@ -1016,7 +1059,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -1067.8809
 offset_top = -232.0
-offset_right = -347.87915
+offset_right = -347.87848
 offset_bottom = 232.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -1113,6 +1156,96 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_7h5xr")
 theme_override_styles/focus = SubResource("StyleBoxTexture_pouxf")
 text = "Credits"
 
+[node name="Settings" type="CanvasLayer" parent="." unique_id=344514287]
+visible = false
+
+[node name="GreyOut" type="ColorRect" parent="Settings" unique_id=1828932349]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.43529412)
+
+[node name="BackButton" type="TextureButton" parent="Settings" unique_id=1357982879]
+offset_left = 180.0
+offset_top = 180.0
+offset_right = 260.0
+offset_bottom = 260.0
+rotation = 3.1415927
+scale = Vector2(1.75, 1.75)
+texture_normal = ExtResource("3_w8tcp")
+texture_pressed = ExtResource("4_svhta")
+texture_hover = ExtResource("4_svhta")
+
+[node name="Panel" type="PanelContainer" parent="Settings" unique_id=1333313977]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -188.0
+offset_top = -59.0
+offset_right = 188.0
+offset_bottom = 59.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_2gk58")
+theme_override_styles/panel = SubResource("StyleBoxTexture_0iumu")
+
+[node name="MarginContainer" type="MarginContainer" parent="Settings/Panel" unique_id=1973222320]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/Panel/MarginContainer" unique_id=155002332]
+layout_mode = 2
+theme = ExtResource("2_2gk58")
+
+[node name="SettingLabel" type="Label" parent="Settings/Panel/MarginContainer/VBoxContainer" unique_id=566787380]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Settings/Panel/MarginContainer/VBoxContainer" unique_id=215799004]
+layout_mode = 2
+theme = ExtResource("2_2gk58")
+
+[node name="Label" type="Label" parent="Settings/Panel/MarginContainer/VBoxContainer" unique_id=1107721874]
+layout_mode = 2
+theme = ExtResource("2_2gk58")
+theme_override_font_sizes/font_size = 60
+text = "Master Volume"
+
+[node name="Volume Controller" parent="Settings/Panel/MarginContainer/VBoxContainer" unique_id=239548507 instance=ExtResource("53_e6lsk")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="Label2" type="Label" parent="Settings/Panel/MarginContainer/VBoxContainer" unique_id=1383240238]
+layout_mode = 2
+theme = ExtResource("2_2gk58")
+theme_override_font_sizes/font_size = 60
+text = "Music Volume"
+
+[node name="Volume Controller2" parent="Settings/Panel/MarginContainer/VBoxContainer" unique_id=393278661 instance=ExtResource("53_e6lsk")]
+layout_mode = 2
+bus_name = "Music"
+
+[node name="Label3" type="Label" parent="Settings/Panel/MarginContainer/VBoxContainer" unique_id=1562501579]
+layout_mode = 2
+theme = ExtResource("2_2gk58")
+theme_override_font_sizes/font_size = 60
+text = "SFX Volume"
+
+[node name="Volume Controller3" parent="Settings/Panel/MarginContainer/VBoxContainer" unique_id=2011521116 instance=ExtResource("53_e6lsk")]
+layout_mode = 2
+bus_name = "SFX"
+
 [node name="LogoScreen" type="CanvasLayer" parent="." unique_id=113019954]
 visible = false
 
@@ -1195,7 +1328,7 @@ anchor_bottom = 0.5
 offset_left = -661.5
 offset_top = -232.0
 offset_right = 661.5
-offset_bottom = 3588.0005
+offset_bottom = 5046.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -1302,6 +1435,33 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Elle Kartchner
 Jade Singer"
 
+[node name="Title6" type="Label" parent="Credits/VBoxContainer/MainCredits" unique_id=1734496164]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_2gk58")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 45
+text = "Freesound Clips By"
+horizontal_alignment = 2
+
+[node name="Name6" type="Label" parent="Credits/VBoxContainer/MainCredits" unique_id=730636693]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_2gk58")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "MattRuthSound
+krnash
+keweldog
+zebragrrl
+Bertrof
+polymorpheva
+TriqyStudio
+Bird_man
+klankbeeld
+iamaviolin
+Tony_Cannoli
+vladnegrila"
+
 [node name="Spacer2" type="Control" parent="Credits/VBoxContainer" unique_id=303515345]
 custom_minimum_size = Vector2(0, 500)
 layout_mode = 2
@@ -1359,6 +1519,21 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Spacer4" type="Control" parent="Credits/VBoxContainer" unique_id=1229416522]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="NoAI" type="Label" parent="Credits/VBoxContainer" unique_id=175697693]
+layout_mode = 2
+theme = ExtResource("2_2gk58")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 80
+text = "No AI was used in the
+creation of this game."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer5" type="Control" parent="Credits/VBoxContainer" unique_id=1864314635]
 custom_minimum_size = Vector2(0, 500)
 layout_mode = 2
 size_flags_vertical = 3
@@ -1375,6 +1550,8 @@ libraries/ = SubResource("AnimationLibrary_e6lsk")
 [connection signal="pressed" from="InGame/Dialog/Box/Continue" to="InGame/Dialog" method="_on_continue_pressed"]
 [connection signal="pressed" from="InGame/Goal/GoalOpen/ExitGoalButton" to="." method="_on_exit_goal_button_pressed"]
 [connection signal="pressed" from="InGame/Goal/GoalButton" to="." method="_on_goal_button_pressed"]
-[connection signal="pressed" from="InGame/Tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="InGame/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="TitleScreen/TSButtons/MainButtons/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="TitleScreen/TSButtons/MainButtons/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="TitleScreen/TSButtons/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Settings/BackButton" to="." method="_on_back_button_pressed"]

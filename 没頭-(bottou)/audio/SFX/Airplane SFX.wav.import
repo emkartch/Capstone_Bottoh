@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://drm7fodaonn2g"
+path="res://.godot/imported/Airplane SFX.wav-72f5e24e75792e1672203a7991325115.sample"
+
+[deps]
+
+source_file="res://audio/SFX/Airplane SFX.wav"
+dest_files=["res://.godot/imported/Airplane SFX.wav-72f5e24e75792e1672203a7991325115.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
