@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Design and Accessibility</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/final-project.css">
+</head>
+<body>
+
+    <a class="skip-link" href="#maincontent">Skip to main content</a>
+       
+    <!-- main heading of page - only use h1 once per page -->
+    <header>
+
+        <h1>Universal Design and Accessibility: How</h1>
+
+    </header>
+
+    <!-- main navigation links to relative internal links only (once per page)-->
+    <nav id="main-nav">
+
+        <h2 class="sr-only">Main Navigation</h2>
+
+        <ul>
+
+            <li><a href="final-project.html"><span aria-hidden="true" class="material-icons">home</span></a></li>
+
+            <li><a href="final-project-what.html">What</a></li>
+
+            <li><a href="final-project-why.html">Why</a></li>
+
+            <li><a href="final-project-how.html">How</a></li>
+
+        </ul>
+
+    </nav>
+
+    <div class="wrapper">
+
+        <aside id="page-nav">
+
+            <h2 class="sr-only">Page Navigation</h2>
+
+            <nav>
+
+                <h3 class="sr-only">Navigation for How page</h3>
+
+                <ul id="page-main-ul">
+
+                    <li><a href="#start-with-access">Start with Accessibility and Usability</a></li>
+        
+                    <li><a href="#follow-7-principles">Follow the 7 Principles of Universal Design</a></li>
+
+                    <li><a href="#how-to-design-access-web">How to Design an Accessible Website</a></li>
+
+                    <li>
+
+                        <ul>
+
+                            <li><a href="#structure-and-semantics">Structure and Semantics</a></li>
+
+                            <li><a href="#access-forms">Accessible Forms</a></li>
+
+                            <li><a href="#access-tables">Accessible Tables</a></li>
+
+                            <li><a href="#access-css-layout">Responsive and Accessible CSS Layout</a></li>
+
+                            <li><a href="#mobile-access">Mobile Accessibility</a></li>
+
+                            <li><a href="#rich-internet-app">Rich Internet Applications</a></li>
+
+                        </ul>
+
+                    </li>
+
+                    <li><a href="#references">References</a></li>
+
+                </ul>
+
+            </nav>
+
+        </aside>
+
+        <div class="container">
+
+            <!-- main content of the page -->
+            <main id="maincontent">
+
+                <!-- grouping content together -->
+                <section>
+                    <span id="start-with-access"></span>
+
+                    <h2>Start with Accessibility and Usability</h2>
+
+                    <hr>
+
+                        <p>
+                            Think of accessibility and usability from the <b>start</b>, don't make accessibility part of a checklist.
+
+                        </p>
+
+                </section>
+
+                <section>
+                    <span id="follow-7-principles"></span>
+
+                    <h2>Follow the 7 Principles of Universal Design</h2>
+
+                    <hr>
+
+                        <p>
+                            When designing something, physically or digitally, make the means of access the same (or VERY similar), consider variations in ability, make it simple and easy to understand, provide necessary information to the user (no matter ability level), minimize chances for hazard or error, make it comfortable to use, and provide space for anyone to be able to approach and use effectively.
+                        </p>
+
+                </section>
+
+                <section>
+                    <span id="how-to-design-access-web"></span>
+                    <h2>How to Design an Accessible Website</h2>
+
+                    <hr>
+
+                        <section>
+                            <span id="structure-and-semantics"></span>
+
+                            <h3>Structure and Semantics</h3>
+
+                                <h4>HTML Hierarchy</h4>
+
+                                <p>
+                                    As mentioned on the "What" page of this website, HTML hierarchy is important to follow. Here is an example of how it might look if you follow it correctly:
+                                </p>
+                                <pre>
+                                    <code>         
+&lt;h1&gt;Heading 1&lt;/h1&gt;
+
+    &lt;h2&gt;Heading 2&lt;/h2&gt;
+    
+        &lt;h3&gt;Heading 3&lt;/h3&gt;
+
+        &lt;h3&gt;Heading 3&lt;/h3&gt;
+
+    &lt;h2&gt;Heading 2&lt;/h2&gt;
+
+        &lt;h3&gt;Heading 3&lt;/h3&gt;
+    
+    &lt;h2&gt;Heading 2&lt;/h2&gt;
+
+        &lt;h3&gt;Heading 3&lt;/h3&gt;
+                                        </code>
+                                    </pre>
+                                    <h4>Screen Reader Only</h4>
+                                    <p>
+                                        Also mentioned on the "What" page, you can use CSS to hide elements like headings so it doesn't take up space, but a screen reader can still detect and read it. Here is an example of what your code may look like:
+                                    </p>
+
+                                    <p>
+                                        HTML
+                                    </p>
+                                    <pre>
+                                        <code>         
+&lt;nav&gt;
+
+    &lt;h2 class="sr-only"&gt;
+        Main Navigation
+    &lt;/h2&gt;
+
+&lt;/nav&gt;
+                                        </code>
+                                    </pre>
+                                    <p>
+                                        CSS
+                                    </p>
+                                    <pre>
+                                        <code>   
+.sr-only {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}      
+                                        </code>
+                                    </pre>
+                                    <h4>Bold vs. Strong Attributes</h4>
+
+                                        <p>
+                                            While they visually look the same, strong and bold both convey a different meaning to assistive technologies and code-reading systems, so it is important to use them correctly.
+                                        </p>
+
+                                        <dl>
+
+                                            <dt>Bold</dt>
+                                                <dd>Use it for a piece of text where you want to draw attention without adding any extra importance or meaning.</dd>
+
+                                            <dt>Strong</dt>
+                                                <dd>Use it for a piece of text where you want to draw attention and add extra importance and meaning.</dd>
+
+                                        </dl>
+
+                                    <h4>Using Native HTML elements</h4>
+
+                                        <p>
+                                            When creating a header, nav, main, aside, or footer for your website, use the native HTML elements instead of a span or a div. This allows for assistive technology and code-reading systems to more accurately understand your content.
+                                        </p>
+
+                                        <aside>
+
+                                            <h5 class="sr-only">Relationship between Native HTML elements and ARIA</h5>
+
+                                            <p>
+                                                It's the first rule of <abbr title="Accessible Rich Internet Applications">ARIA</abbr>.
+                                            </p>
+
+                                        </aside>
+
+                        </section>
+
+                        <section>
+                            <span id="access-forms"></span>
+                            <h3>Accessible Forms</h3>
+
+                                <p>
+                                    Ensure your website forms can be operated using keyboard alone.
+                                </p>
+
+                                <h4>Labels</h4>
+
+                                    <p>
+                                        A label describes the function of a form control (text area, checkbox, menu, etc.) and generally appears adjacent to it. The label element programmatically associates a text label to a form control, creating a connection in the code that doesn't rely on vision.
+                                    </p>
+
+                                <h4>Intuitive Instructions</h4>
+
+                                    <p>
+                                        Make sure it is clear with use of color and shape when certain fields of the form are required to be filled out. For example, you may see that a lot of forms use “*” to indicate a required questions.
+                                    </p>
+
+                                    <p>
+                                        Include a grayed out example of the information needed in a field so users have a visual understanding of what you want. For example, a field that asks for your name and the greyed out example reads “Last Name, First Name” so users know to put their last name and a comma before their first name.
+                                    </p>
+
+                        </section>
+
+                        <section>
+                            <span id="access-tables"></span>
+                            <h3>Accessible Tables</h3>
+
+                                <p>
+                                    As your tables get a bit more complex in structure, it is useful to give them more structural definition. One clear way to do this is by using "thead," "tbody," and "tfoot," which allow you to mark up a header, body, and footer section for the table.
+                                </p>
+
+                                <aside>
+
+                                    <h4 class="sr-only">Note about Adding Structural Definition to Tables</h4>
+
+                                    <p>
+                                        These elements don't make the table any more accessible to screen reader users, and don't result in any visual enhancement on their own. Instead they help with any style specification you might want to do.
+                                    </p>
+
+                                </aside>
+
+                                <p>
+                                    Make sure to add a caption to your table to describe the table's content and to use row and column headers.
+                                </p>
+
+                        </section>
+
+                        <section>
+                            <span id="access-css-layout"></span>
+                            <h3>Responsive and Accessible CSS Layout</h3>
+
+                            <h4>CSS Grid and Flexbox</h4>
+
+                                <p>
+                                    Use CSS grid and flexbox to create the layout for your page instead of workarounds because assistive technologies and code-reading systems will be able to more easily and effectively understand your content and its structure.
+                                </p>
+
+                        </section>
+
+                        <section>
+                            <span id="mobile-access"></span>
+                            <h3>Mobile Accessibility</h3>
+
+                                <p>
+                                    Design for mobile first, make your website accessible over a broad range of devices.
+                                </p>
+
+                                <p>
+                                    Account for things like touch screen use, small screen sizes, different input modalities, device use in different settings (like in the sunlight), and more.
+                                </p>
+
+                        </section>
+
+                        <section>
+                            <span id="rich-internet-app"></span>
+                            <h3>Rich Internet Applications</h3>
+
+                            <h4>ARIA</h4>
+
+                                <p>
+                                    Follow the five rules of ARIA.
+                                </p>
+
+                                <p>
+                                    Adding an ARIA role <b>overrides</b> the native role semantics in the accessibility tree and indirectly affects what is reported to a screen reader or other assistive technology.
+                                </p>
+
+                                <p>
+                                    Adding an ARIA role will not make an element look or act differently for people <b>not</b> using assistive technology. It <b>does not</b> change the behaviors, states and properties of the host element but only the native role semantics.
+                                </p>
+
+                        </section>
+
+                        <aside>
+
+                            <h3>Tools to Test for Accessibility</h3>
+
+                            <ul>
+
+                                <li><a href="https://validator.w3.org/nu/">Nu HTML Checker</a>
+
+                                    <ul>
+
+                                        <li>Checks your HTML for any coding errors that may result accessibility issues.</li>
+
+                                    </ul>
+
+                                </li>
+
+                                <li><a href="https://chromewebstore.google.com/detail/html5-outliner/afoibpobokebhgfnknfndkgemglggomo">HTML5 Outliner</a>
+
+                                    <ul>
+
+                                        <li>Shows a page outline of heading and sectioning elements so you can check your heirarchy and if there are any accidentally unnamed elements.</li>
+
+                                    </ul>
+
+                                </li>
+
+                                <li><a href="https://chromewebstore.google.com/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh">WAVE Evaluation Tool</a>
+
+                                    <ul>
+
+                                        <li>WAVE is a web accessibility evaluation tool developed by WebAIM.org, it provides visual feedback about the accessibility of your web content.</li>
+
+                                    </ul>
+
+                                </li>
+
+                                <li>Test your keyboard accessibility by attempting to navigate your website using only your keyboard.</li>
+
+                                <li>Test your screen reader accessibility by going through your website with a screen reader.</li>
+
+                            </ul>
+
+                        </aside>
+
+                </section>
+
+            </main>
+
+            <aside id="references">
+
+                <h2>References</h2>
+
+                <h3>Articles, Books, and Papers</h3>
+        
+                <ul>
+        
+                    <li>Universal Design for Digital Media by Howard Kramer (pp. 19-33)</li>
+        
+                </ul>
+
+                <h3>Websites</h3>
+
+                <ul>
+        
+                    <li><a href="https://www.lullabot.com/articles/what-heck-aria-beginners-guide-aria-accessibility">What the Heck is ARIA? A Beginner's Guide to ARIA for Accessibility</a></li>
+        
+                    <li><a href="https://www.w3.org/TR/using-aria/">Using ARIA</a></li>
+        
+                    <li><a href="http://webaim.org/techniques/forms/">Creating Accessible Forms: General Form Accessibility</a></li>
+        
+                    <li><a href="http://webaim.org/techniques/forms/controls">Creating Accessible Forms: Accessible Form Controls</a></li>
+        
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Advanced">HTML table advanced features and accessibility</a></li>
+        
+                    <li><a href="https://www.w3.org/WAI/standards-guidelines/mobile/">Mobile Accessibility at W3C</a></li>
+        
+                </ul>
+        
+            </aside>
+
+        </div>
+
+    </div>
+
+    <footer>
+
+        <p>Designed by Elle</p>
+
+        <address>Elle.Kartchner@Colorado.EDU</address>
+
+        <small>&copy; 2024</small>
+
+    </footer>
+    
+</body>
+</html>
