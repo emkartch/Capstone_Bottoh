@@ -725,7 +725,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1.5, 30),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(298.5, 308), Vector2(298.5, 308), Vector2(298.5, -4594)]
+"values": [Vector2(298.5, 308), Vector2(298.5, 308), Vector2(298.5, -4756)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e6lsk"]
@@ -1328,7 +1328,7 @@ anchor_bottom = 0.5
 offset_left = -661.5
 offset_top = -232.0
 offset_right = 661.5
-offset_bottom = 5046.0
+offset_bottom = 5208.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -1499,7 +1499,9 @@ Kiyomi Kawakami
 Eldon Kartchner
 Joshua Atchison
 Eden Kartchner
-Makai Kartchner"
+Makai Kartchner
+Sadie Howard
+Sam Howard"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1507,14 +1509,15 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "Sadie Howard
-Sam Howard
-Emma Jones
+text = "Emma Jones
 Iris Singer
 Adam Singer
 Alix Singer
 Samantha Singer
-Zach Driver"
+Zach Driver
+Ralph Cuellar
+Sylvia Cuellar
+Linda Goldner"
 horizontal_alignment = 1
 vertical_alignment = 1
 
