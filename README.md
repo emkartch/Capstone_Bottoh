@@ -19,10 +19,10 @@ This game is located on Itch.io.
 
 ### Run Locally
 
-                # Clone the repository
-                git clone https://github.com/yourusername/Capstone_Bottou.git
-                # Open in Godot
-                # Import the project.godot file and hit play
+```# Clone the repository
+git clone https://github.com/yourusername/Capstone_Bottou.git
+# Open in Godot
+# Import the project.godot file and hit play```
 
 ---
 
@@ -30,7 +30,7 @@ This game is located on Itch.io.
 
 ### Functionality
 
-The game is a point-and-click - a user moves their mouse cursor to a specific screen location and presses a button to select, activate, or interact with an item. Players can press the return key to cycle through dialogue.
+The game is a point-and-click; a user moves their mouse cursor to a specific screen location and presses a button to select, activate, or interact with an item. Players can press the return key to cycle through dialogue.
 
 The inventory has a click-and-drag function and can open, close, and expand. The player can click and then drag an inventory item out to the center of the screen to make it bigger.
 
@@ -50,7 +50,7 @@ For the art/animation, we used **Aesprite**, a dedicated 2D raster graphics edit
 
 ![Art of a bullet train leaving the station.](/img/Train.gif)
 
-![Art of a US passport opening and closing.](/img/Passport.gif)
+![Art of a US passport opening and closing.](/img/OpenPassport.gif)
 
 ![Art of a messenger bag opening and closing.](/img/Bag.gif)
 
@@ -60,16 +60,21 @@ For the art/animation, we used **Aesprite**, a dedicated 2D raster graphics edit
 
 **Developed by:**
 * Original Libras
+
 **Game Design Leads:**
 * Elle Kartchner
 * Jade Singer
+
 **Programming Lead:**
 * Elle Kartchner
+
 **Art and Animation Lead:**
 * Jade Singer
+
 **Audio Design:**
 * Elle Kartchner
 * Jade Singer 
+
 **Freesound Clips In-Game By:**
 * MattRuthSound
 * krnash
@@ -83,9 +88,11 @@ For the art/animation, we used **Aesprite**, a dedicated 2D raster graphics edit
 * Iamaviolin
 * Tony_Cannoli
 * vladnegrila
+
 **Freesound Clips In-Trailer By:**
 * SoundsLikeFoley
 * Bertsz
+
 **Special Thanks to:**
 * Nicky Britt
 * Daniel Rankin
