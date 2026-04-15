@@ -19,10 +19,15 @@ This game is located on Itch.io.
 
 ### Run Locally
 
-```# Clone the repository
+```
+# Clone the repository
+
 git clone https://github.com/yourusername/Capstone_Bottou.git
+
 # Open in Godot
-# Import the project.godot file and hit play```
+
+# Import the project.godot file and hit play
+```
 
 ---
 
